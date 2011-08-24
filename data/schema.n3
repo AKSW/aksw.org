@@ -1,0 +1,130 @@
+@prefix aksw: <http://aksw.org/schema/> .
+@prefix content: <http://purl.org/rss/1.0/modules/content/>.
+@prefix data: <http://aksw.org/> .
+@prefix dc: <http://purl.org/dc/terms/>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix groups: <http://aksw.org/Groups/> .
+@prefix : <http://aksw.org/> .
+@prefix lod2: <http://lod2.eu/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix people: <http://aksw.org/> .
+@prefix projects: <http://aksw.org/Projects/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sioc: <http://rdfs.org/sioc/ns#>.
+@prefix sioct: <http://rdfs.org/sioc/types#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+aksw:Page a owl:Class;
+    rdfs:label "Pages".
+
+foaf:Group a owl:Class;
+    rdfs:label "Group".
+
+foaf:Project a owl:Class;
+    rdfs:label "Project".
+aksw:CommunityProject a owl:Class;
+    rdfs:subClassOf foaf:Project;
+    rdfs:label "Community Project".
+aksw:OpenSourceProject a owl:Class;
+    rdfs:subClassOf foaf:Project;
+    rdfs:label "OpenSource Project".
+aksw:FundedProject a owl:Class;
+    rdfs:subClassOf foaf:Project;
+    rdfs:label "Funded Project".
+
+foaf:Person a owl:Class;
+    rdfs:label "Person".
+
+# AKSW properties
+
+aksw:location a owl:DatatypeProperty;
+    rdfs:label "location".
+
+aksw:postalCode a owl:DatatypeProperty;
+    rdfs:label "postal code".
+
+aksw:publicationTag a owl:DatatypeProperty;
+    rdfs:comment "the tag which is used for this project / agend in the aksw.bib file";
+    rdfs:label "publication tag".
+
+aksw:room a owl:DatatypeProperty;
+    rdfs:label "room".
+
+aksw:street  a owl:DatatypeProperty;
+    rdfs:label "street".
+
+aksw:abbrevation a owl:DatatypeProperty;
+    rdfs:domain owl:Thing;
+    rdfs:label "abbrevation".
+
+aksw:abstract a owl:DatatypeProperty;
+    rdfs:domain owl:Thing;
+    rdfs:label "abstract".
+
+aksw:content a owl:DatatypeProperty;
+    rdfs:domain owl:Thing;
+    rdfs:label "main content".
+
+aksw:hookline a owl:DatatypeProperty;
+    rdfs:label "hookline".
+
+aksw:researchAreas a owl:DatatypeProperty;
+    rdfs:domain foaf:Agent;
+    rdfs:label "research areas".
+
+aksw:status a owl:DatatypeProperty;
+    rdfs:domain foaf:Project;
+    rdfs:label "status".
+
+aksw:screenshot a owl:ObjectProperty;
+    rdfs:domain foaf:Project;
+    rdfs:label "screenshot".
+
+# LOD2 properties
+lod2:contentRaw a owl:DatatypeProperty;
+    rdfs:label "raw content".
+
+lod2:exhibitData a owl:ObjectProperty;
+    rdfs:label "exhibit data".
+
+# other properties
+sioc:feed a owl:ObjectProperty;
+    rdfs:label "feed".
+
+doap:homepage a owl:ObjectProperty;
+    rdfs:label "homepage".
+
+rdf:type a owl:ObjectProperty;
+    rdfs:label "type".
+
+rdfs:label a owl:DatatypeProperty;
+    rdfs:label "label".
+
+rdfs:subClassOf a owl:ObjectProperty;
+    rdfs:label "subClassOf".
+
+foaf:depiction a owl:ObjectProperty;
+    rdfs:label "depiction".
+
+foaf:member a owl:ObjectProperty;
+    rdfs:label "member".
+
+foaf:currentProject  a owl:ObjectProperty;
+    rdfs:label "current project".
+
+foaf:mbox a owl:ObjectProperty;
+    rdfs:label "email".
+
+foaf:name a owl:ObjectProperty;
+    rdfs:label "name".
+
+foaf:pastProject a owl:ObjectProperty;
+    rdfs:label "past project".
+
+foaf:phone a owl:ObjectProperty;
+    rdfs:label "phone".
+

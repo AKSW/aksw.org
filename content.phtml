@@ -1,0 +1,38 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org content template
+ *
+ * this template renders the main content (e.g. main textarea) of a resource
+ */
+
+// TODO: move to config?
+$depiction = 'http://xmlns.com/foaf/0.1/depiction';
+
+// add an depiction if one exist
+// TODO: look for foaf:img (and maybe others) too and use the most specific one
+// TODO: use instant picture creator with URI mode here
+if (isset($this->description[$depiction])) {
+    $imgRel   = $this->curie($depiction);
+    $imgSrc   = $this->description[$depiction][0]['value'];
+    $imgalt   = 'Depiction of ' . htmlentities($this->title);
+    $imgClass = 'depiction';
+    echo "<img rel='$imgRel' src='$imgSrc' alt='$imgSrc' class='$imgClass' />";
+}
+
+$this->outputDivContent($this->description);
+
+// raw content is added in addition to sioc or formatted content
+$rawContent = 'http://lod2.eu/schema/contentRaw';
+if (isset($this->description[$rawContent])) {
+    echo '<div property="' . $this->curie($rawContent) . '">' . PHP_EOL;
+    echo $this->description[$rawContent][0]['value'];
+    echo '</div>';
+}
+

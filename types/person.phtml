@@ -1,0 +1,31 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org (foaf:)Person template
+ *
+ * this template renders a person
+ */
+
+$templateData = array(
+    'title'             => $this->title,
+    'resourceUri'       => $this->resourceUri,
+    'description'       => $this->description,
+    'descriptionHelper' => $this->descriptionHelper,
+    'options'           => $this->options
+);
+?>
+
+<h3><?php echo $this->description['http://xmlns.com/foaf/0.1/name'][0]['value'] ?></h3>
+<?php if (isset($this->description['http://xmlns.com/foaf/0.1/depiction'][0]['value'])): ?>
+    <img rel="foaf:depiction"
+         src="<?php echo $this->description['http://xmlns.com/foaf/0.1/depiction'][0]['value'] ?>"
+         alt="depiction of <?php echo $this->title ?>"
+    />
+<?php endif; ?>
+
