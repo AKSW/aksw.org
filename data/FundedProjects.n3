@@ -21,33 +21,39 @@
 projects:LOD2 a foaf:Project, aksw:FundedProject;
     aksw:content "..."^^sysont:Markdown;
     doap:homepage <http://lod2.eu>;
-    rdfs:label "LOD2 – Creating Knowledge out of Interlinked Data".
+    aksw:hookline "Creating Knowledge out of Interlinked Data";
+    rdfs:label "LOD2".
 
 projects:LATC a foaf:Project, aksw:FundedProject;
     aksw:content "..."^^sysont:Markdown;
     doap:homepage <http://latc-project.eu>;
-    rdfs:label "LATC – LOD Around-the-Clock".
+    aksw:hookline "LOD Around-the-Clock";
+    rdfs:label "LATC".
 
 projects:SCMS a foaf:Project, aksw:FundedProject;
     aksw:content "..."^^sysont:Markdown;
     doap:homepage <http://scms.eu>;
-    rdfs:label "SCMS – Semantic Content Management Systems".
+    aksw:hookline "Semantic Content Management Systems";
+    rdfs:label "SCMS".
 
 projects:LE4SW a foaf:Project, aksw:FundedProject;
     aksw:content "..."^^sysont:Markdown;
     doap:homepage <http://le4sw.de>;
     aksw:status "finished";
-    rdfs:label "LE4SW Regional Technology Platform of Social Semantic Collaboration".
+    aksw:hookline "Regional Technology Platform of Social Semantic Collaboration";
+    rdfs:label "LE4SW".
 
 projects:SoftWiki a foaf:Project, aksw:FundedProject;
     aksw:content "..."^^sysont:Markdown;
     doap:homepage <http://softwiki.de>;
     aksw:status "finished";
-    rdfs:label "SoftWiki – Semantics- and Community-Based Requirements Engineering".
+    aksw:hookline "Semantics- and Community-Based Requirements Engineering";
+    rdfs:label "SoftWiki".
 
 projects:OntoWikiEU a foaf:Project, aksw:FundedProject;
     aksw:content "..."^^sysont:Markdown;
     doap:homepage <http://ontowiki.eu>;
     aksw:status "finished";
-    rdfs:label "Social Semantic Collaboration for EKM, E-Learning & E-Tourism".
+    aksw:hookline "Social Semantic Collaboration for EKM, E-Learning & E-Tourism";
+    rdfs:label "OntoWiki.eu".
 

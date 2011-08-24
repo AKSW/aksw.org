@@ -9,16 +9,12 @@
 /**
  * aksw.org feed template
  *
- * arranges the content for the default class (unknown class)
+ * arranges the news feed for the resource
  */
 
 
 // prepare module options
 $moduleOptions = array('noChrome' => true);
-if ($this->resourceUri == 'http://lod2.eu/Welcome') {
-    // fetch feed module with relevant feeds
-    $moduleOptions['relevant'] = 'http://lod2.eu/schema/feedRelevantFor';
-}
 $moduleConfig = new Zend_Config($moduleOptions);
 $content = trim($this->module('feeds', $moduleConfig));
 ?>

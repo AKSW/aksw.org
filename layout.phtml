@@ -64,10 +64,10 @@ $templateData = array(
 <body<?php
     foreach ($this->namespaces as $prefix => $ns): ?><?php echo ' xmlns:' . $prefix . '="' . $ns . '"' ?><?php endforeach; ?>>
 
-<?php echo $this->partial('aksw2010/main.phtml', $templateData) ?>
-<?php // echo $this->partial('aksw2010/query.phtml', $templateData) ?> <!-- Related Query -->
-<?php //echo $this->partial('aksw2010/feed.phtml', $templateData) ?> <!-- NEWS -->
-<?php echo $this->partial('aksw2010/lastchange.phtml', $this->lastchange($this->resourceUri)); ?>
+<?php echo $this->partial('aksw2011/main.phtml', $templateData) ?>
+<?php // echo $this->partial('aksw2011/query.phtml', $templateData) ?> <!-- Related Query -->
+<?php //echo $this->partial('aksw2011/feed.phtml', $templateData) ?> <!-- NEWS -->
+<?php echo $this->partial('aksw2011/lastchange.phtml', $this->lastchange($this->resourceUri)); ?>
 
 </body>
 </html>

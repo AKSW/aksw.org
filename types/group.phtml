@@ -1,0 +1,68 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org project template
+ *
+ * arranges the content for the project class
+ */
+
+// this is the standard template data
+$templateData = array(
+                'title' => $this->title,
+                'resourceUri' => $this->resourceUri,
+                'description' => $this->description,
+                'descriptionHelper' => $this->descriptionHelper,
+                'options'           => $this->options
+            );
+?>
+
+<h1>Research Group <?php echo $this->title ?></h1>
+<?php echo $this->returnLiteralTag($this->description,
+    'http://aksw.org/schema/abstract', array('tag' => 'div', 'class' => 'abstract'));
+?>
+<?php echo $this->returnLiteralTag($this->description,
+    'http://aksw.org/schema/content', array('tag' => 'div', 'class' => 'content'));
+?>
+<?php // PROJECTS
+$query = '
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT DISTINCT ?resourceUri
+WHERE {
+<'.$this->resourceUri.'> foaf:member ?person.
+?person ?relation ?resourceUri.
+?resourceUri a foaf:Project.
+}
+';
+//var_dump(htmlentities($query));
+if ($member = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
+<h2>Projects</h2>
+<ul>
+    <?php echo $member ?>
+</ul>
+<?php endif; ?>
+<?php // MEMBER
+$query = '
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT DISTINCT ?resourceUri
+WHERE {
+<'.$this->resourceUri.'> foaf:member ?resourceUri.
+?resourceUri a foaf:Person.
+?resourceUri foaf:name ?name.
+}
+';
+//var_dump(htmlentities($query));
+if ($member = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
+<h2>Member</h2>
+<ul>
+    <?php echo $member ?>
+</ul>
+<?php endif; ?>
+
+<?php echo $this->partial('aksw2011/feed.phtml', $templateData) ?> <!-- NEWS -->
+

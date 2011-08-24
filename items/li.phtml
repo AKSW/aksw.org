@@ -1,0 +1,38 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org li element template
+ *
+ * this template is used in combination with the querylist helper to render 
+ * lists of resources which match a given SPARQL query
+ */
+
+// do nothing, if we do not have a standard resource query from ontowiki ...
+if (!isset($this->resourceUri)) {
+    return;
+}
+
+$resource = new OntoWiki_Resource($this->resourceUri, OntoWiki::getInstance()->selectedModel);
+$descriptionHelper = $resource->getDescriptionHelper();
+$title = $descriptionHelper->getTitle($this->resourceUri);
+$resourceUri = $this->resourceUri;
+
+$fullDescription = $resource->getDescription();
+$description = $fullDescription[$this->resourceUri];
+
+//$url = new OntoWiki_Url(array('route' => 'properties'), array('r'));
+//$url->setParam('r', $resourceUri, true);
+$url = $resourceUri;
+$hookline = $this->returnLiteralTag(
+    $description,
+    'http://aksw.org/schema/hookline',
+    array('tag' => 'span', 'class' => 'hookline', 'prefix' => ' – ')
+);
+?>
+    <li about="<?php echo $url ?>"><a href="<?php echo $url ?>"><span property="rdfs:label"><?php echo $title ?></span></a><?php echo $hookline ?></li>
