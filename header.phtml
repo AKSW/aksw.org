@@ -1,0 +1,54 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org header template
+ */
+
+// this is the standard template data
+$templateData = array(
+    'title' => $this->title,
+    'resourceUri' => $this->resourceUri,
+    'description' => $this->description,
+    'descriptionHelper' => $this->descriptionHelper,
+    'options'           => $this->options
+);
+?>
+<header id="header">
+    <h1><a href="#"><img src="<?php echo $this->baseUri; ?>/images/logo-aksw.png" alt="Agile Knowledge Engineering and Semantic Web (AKSW) Research Group" /></a></h1>
+    <nav id="nav-main">
+        <ul>
+            <li><strong>Home</strong></li>
+            <li><a href="#">About</a></li>
+            <!-- li class="active"><a href="#">Groups</a></li -->
+            <li><a href="#">Groups</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Publications</a></li>
+            <li><a href="#">Presentations</a></li>
+            <li><a href="#">Teaching</a></li>
+            <li><a href="#">Partners</a></li>
+        </ul>
+    </nav> <!-- /#nav-main -->
+    <nav id="nav-top">
+        <ul>
+            <li><a href="#">Contact</a></li>
+            <!-- li><strong>Blog</strong></li -->
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Internal Area</a></li>
+            <!-- li class="active"><a href="#">Imprint</a></li -->
+            <li><a href="#">Imprint</a></li>
+        </ul>
+    </nav> <!-- /#nav-top -->
+    <aside id="associations">
+        <h2 class="hideme">Associated with</h2>
+        <a href="http://www.uni-leipzig.de"><img src="<?php echo $this->baseUri; ?>/images/logo-unileipzig.png" alt="Universität Leipzig" /></a> <span>,</span>
+        <a href="http://infai.org"><img src="<?php echo $this->baseUri; ?>/images/logo-infai.png" alt="InfAI: Institut für Angewandte Informatik" /></a>
+    </aside> <!-- /#associations -->
+</header> <!-- /#header -->
+<hr class="hideme">
+

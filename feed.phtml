@@ -20,10 +20,6 @@ $content = trim($this->module('feeds', $moduleConfig));
 ?>
 
 <?php if (!empty($content)): ?>
-<div class="section">
-    <h3>News</h3>
-    <div class="section-content">
-        <?php echo $content; ?>
-    </div>
-</div>
+<h1>News</h1>
+<?php echo $content; ?>
 <?php endif; ?>

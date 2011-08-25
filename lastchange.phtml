@@ -12,6 +12,7 @@
  * renders the last modification section of a resource
  */
 ?>
+<p>
 <span rdf:about="<?php echo $this->resourceUri;?>">last modification
 <span
     property="<?php echo $this->curie('http://rdfs.org/sioc/ns#last_activity_date');?>"
@@ -22,3 +23,4 @@
 </span>
 by <a href="<?php echo $this->userHref;?>"><?php echo $this->userTitle;?></a>
 </span>
+</p>

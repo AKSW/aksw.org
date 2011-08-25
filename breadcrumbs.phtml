@@ -1,0 +1,32 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org breadcrumb template
+ */
+
+// this is the standard template data
+$templateData = array(
+    'title' => $this->title,
+    'resourceUri' => $this->resourceUri,
+    'description' => $this->description,
+    'descriptionHelper' => $this->descriptionHelper,
+    'options'           => $this->options
+);
+?>
+<nav id="nav-breadcrumbs" class="linkinverse">
+    <p>
+        <strong class="hideme">You are here:</strong>
+        <a href="#">As you can see</a> <span class="del">/</span>
+        <a href="#">This is a beautiful</a> <span class="del">/</span>
+        <a href="#">Breadcrumb path to</a> <span class="del">/</span>
+        <strong>The current article</strong>
+    </p>
+</nav> <!-- /#nav-breadcrumbs -->
+<hr class="hideme">
+

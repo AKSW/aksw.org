@@ -1,0 +1,62 @@
+/*
+Syntax error: File to import not found or unreadable: yaml/core/iehacks.
+              Load paths:
+                /var/www/aksw.org/_sass/.
+                /home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/frameworks/blueprint/stylesheets
+                /home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/frameworks/compass/stylesheets
+                /home/haschek/Dropbox/eye48/_libs/extensions-compass/css-frameworks/yaml/stylesheets
+                /home/haschek/Dropbox/eye48/_libs/extensions-compass/css-snippets-intern/48augen/stylesheets
+                /home/haschek/Dropbox/eye48/_libs/extensions-compass/css-snippets-intern/anatom5/stylesheets
+                Compass::SpriteImporter
+        on line 7 of /var/www/aksw.org/_sass/./patches/ie7.scss
+
+Backtrace:
+/var/www/aksw.org/_sass/./patches/ie7.scss:7
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/import_node.rb:64:in `import'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/import_node.rb:25:in `imported_file'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/perform.rb:148:in `visit_import'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/perform.rb:18:in `visit'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/base.rb:53:in `map'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/perform.rb:27:in `visit_children'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/perform.rb:39:in `with_environment'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/perform.rb:26:in `visit_children'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/perform.rb:47:in `visit_root'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/perform.rb:18:in `visit'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/perform.rb:7:in `send'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/visitors/perform.rb:7:in `visit'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/tree/root_node.rb:20:in `render'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/engine.rb:291:in `_render'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/sass-3.1.2/lib/sass/../sass/engine.rb:238:in `render'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/compiler.rb:133:in `compile'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/compiler.rb:119:in `timed'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/compiler.rb:132:in `compile'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/logger.rb:45:in `red'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/compiler.rb:131:in `compile'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/compiler.rb:111:in `compile_if_required'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/compiler.rb:98:in `run'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/compiler.rb:96:in `each'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/compiler.rb:96:in `run'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/compiler.rb:119:in `timed'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/compiler.rb:95:in `run'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/commands/update_project.rb:37:in `perform'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/commands/base.rb:18:in `execute'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/commands/project_base.rb:19:in `execute'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/bin/compass:25
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/bin/compass:39:in `call'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/bin/compass:39
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/bin/compass:19:in `load'
+/home/haschek/.rvm/gems/ruby-1.8.7-p334/bin/compass:19
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: yaml/core/iehacks.\A               Load paths:\A                 /var/www/aksw.org/_sass/.\A                 /home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/frameworks/blueprint/stylesheets\A                 /home/haschek/.rvm/gems/ruby-1.8.7-p334/gems/compass-0.11.3/frameworks/compass/stylesheets\A                 /home/haschek/Dropbox/eye48/_libs/extensions-compass/css-frameworks/yaml/stylesheets\A                 /home/haschek/Dropbox/eye48/_libs/extensions-compass/css-snippets-intern/48augen/stylesheets\A                 /home/haschek/Dropbox/eye48/_libs/extensions-compass/css-snippets-intern/anatom5/stylesheets\A                 Compass::SpriteImporter\A         on line 7 of /var/www/aksw.org/_sass/./patches/ie7.scss"; }

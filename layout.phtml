@@ -13,23 +13,28 @@
  */
 
 // this is the standard template data
-$templateData = array(
-    'title' => $this->descriptionHelper->getTitle($this->resourceUri),
-    'resourceUri' => $this->resourceUri,
-    'description' => $this->description[$this->resourceUri],
+$templateData           = array(
+    'title'             => $this->descriptionHelper->getTitle($this->resourceUri),
+    'resourceUri'       => $this->resourceUri,
+    'description'       => $this->description[$this->resourceUri],
     'descriptionHelper' => $this->descriptionHelper,
-    'options'           => $this->options
+    'options'           => $this->options,
+    'baseUri'           => $this->baseUri
 );
-?><?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+?><!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
     xmlns:dc="http://purl.org/dc/terms/"
     xmlns:foaf="http://xmlns.com/foaf/0.1/">
 <head>
+    <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
     <meta name="generator" content="<?php echo $this->generator ?>" />
     <link rel="alternate" type="application/rdf+xml" href="<?php echo $this->resourceUri ?>.rdf" />
     <link rel="pingback" href="<?php echo $this->pingbackUri ?>" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
         rel="<?php echo $this->curie('http://xmlns.com/foaf/0.1/primaryTopic') ?>"
@@ -37,20 +42,14 @@ $templateData = array(
 
     <link
         rel="stylesheet" type="text/css" media="all"
-        href="<?php echo $this->baseUri ?>/css/styleimports.css"
+        href="<?php echo $this->baseUri ?>/css/all.dev.css"
         title="Standard" />
 
-    <!--[if lte IE 6]>
-        <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUri ?>/css/patches/ie6.css" media="all" />
-    <![endif]-->
-
-    <!-- jQuery -->
     <script type="text/javascript" src="<?php echo $this->themeUrlBase ?>scripts/libraries/jquery.js"></script>
     <script type="text/javascript" src="<?php echo $this->themeUrlBase ?>scripts/libraries/jquery-ui.js"></script>
-
     <!--script type="text/javascript" src="<?php echo $this->libraryUrlBase ?>RDFauthor/src/rdfauthor.js"></script-->
 
-    <title><?php echo $this->descriptionHelper->getTitle($this->resourceUri) ?> &mdash; <?php echo $this->site['name'] ?></title>
+    <title><?php echo $templateData['title'] ?> &mdash; <?php echo $this->site['name'] ?></title>
 
 <?php
     // includes the GA header script
@@ -63,12 +62,20 @@ $templateData = array(
 </head>
 <body<?php
     foreach ($this->namespaces as $prefix => $ns): ?><?php echo ' xmlns:' . $prefix . '="' . $ns . '"' ?><?php endforeach; ?>>
-
-<?php echo $this->partial('aksw2011/main.phtml', $templateData) ?>
-<?php // echo $this->partial('aksw2011/query.phtml', $templateData) ?> <!-- Related Query -->
-<?php //echo $this->partial('aksw2011/feed.phtml', $templateData) ?> <!-- NEWS -->
-<?php echo $this->partial('aksw2011/lastchange.phtml', $this->lastchange($this->resourceUri)); ?>
-
+    <div class="page_margins">
+        <div id="page">
+                <?php echo $this->partial('aksw2011/header.phtml', $templateData) ?>
+            <article id="content">
+                <?php echo $this->partial('aksw2011/breadcrumbs.phtml', $templateData) ?>
+                <?php echo $this->partial('aksw2011/main.phtml', $templateData) ?>
+                <?php echo $this->partial('aksw2011/query.phtml', $templateData) ?>
+            </article> <!-- /#content -->
+            <section id="sidecontent">
+                <?php echo $this->partial('aksw2011/feed.phtml', $templateData) ?>
+            </section> <!-- /#sidecontent -->
+            <?php echo $this->partial('aksw2011/footer.phtml', $templateData) ?>
+        </div> <!-- /#page -->
+    </div> <!-- /.page_margins -->
 </body>
 </html>
 

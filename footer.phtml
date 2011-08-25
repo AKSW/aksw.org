@@ -1,0 +1,33 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org footer template
+ */
+
+// this is the standard template data
+$templateData = array(
+    'title' => $this->title,
+    'resourceUri' => $this->resourceUri,
+    'description' => $this->description,
+    'descriptionHelper' => $this->descriptionHelper,
+    'options'           => $this->options
+);
+?>
+<footer id="footer">
+    <aside id="articleinfo">
+        <div class="subc">
+            <?php echo $this->partial('aksw2011/lastchange.phtml', $this->lastchange($this->resourceUri)); ?>
+        </div>
+    </aside>
+    <aside id="userinfo">
+        <div class="subc">
+            <p>User meta data ...</p>
+        </div>
+    </aside>
+</footer>

@@ -23,13 +23,24 @@ $templateData = array(
 ?>
 
 <h1><?php echo $this->title ?></h1>
+<nav class="nav-sidelinks">
+    <ul>
+        <li><a href="#">SoftWiki</a></li>
+        <li><a href="#">OntoWiki</a></li>
+        <li><a href="#">DBpedia</a></li>
+        <li><a href="#">LinkedGeoData</a></li>
+        <li><a href="#">Triplify</a></li>
+        <li><a href="#">DL-Learner</a></li>
+    </ul>
+</nav>
+<header class="intro">
 <?php echo $this->returnLiteralTag($this->description,
-    'http://aksw.org/schema/hookline', array('tag' => 'div', 'class' => 'hookline'));
+    'http://aksw.org/schema/hookline', array('tag' => 'p', 'class' => 'hookline'));
 ?>
 <?php echo $this->returnLiteralTag($this->description,
-    'http://aksw.org/schema/abstract', array('tag' => 'div', 'class' => 'abstract'));
+    'http://aksw.org/schema/abstract', array('tag' => 'p', 'class' => 'abstract'));
 ?>
+</header> <!-- /.intro -->
 <?php echo $this->returnLiteralTag($this->description,
     'http://aksw.org/schema/content', array('tag' => 'div', 'class' => 'content'));
 ?>
-<?php echo $this->partial('aksw2011/feed.phtml', $templateData) ?> <!-- NEWS -->
