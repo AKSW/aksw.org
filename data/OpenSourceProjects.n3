@@ -36,7 +36,7 @@ projects:LinkedGeoData a foaf:Project, aksw:CommunityProject;
     rdfs:label "LinkedGeoData".
 
 projects:Triplify a foaf:Project, aksw:OpenSourceProject;
-    aksw:hookline "makes Web applications easier mashable and lays the foundation for next-generation, semantics-based Web searches";
+    aksw:hookline "tackles the chicken-and-egg problem of the Semantic Web by providing a building block for the 'semantification' of Web applications";
     aksw:abstract "Triplify tackles the chicken-and-egg problem of the Semantic Web by providing a building block for the “semantification” of Web applications. Triplify provides small, light-weight plugins for database-backed Web applications and exposes semantics as RDF, Linked Data and JSON.";
     aksw:content "..."^^sysont:Markdown;
     sioc:feed <http://blog.aksw.org/category/projects/triplify/feed/>;
