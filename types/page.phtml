@@ -22,7 +22,7 @@ $templateData = array(
             );
 ?>
 
-<h1><?php echo $this->title ?></h1>
+<h1>ttt<?php echo $this->title ?></h1>
 <?php echo $this->returnLiteralTag($this->description,
     'http://aksw.org/schema/hookline', array('tag' => 'div', 'class' => 'hookline'));
 ?>
@@ -31,4 +31,13 @@ $templateData = array(
 ?>
 <?php echo $this->returnLiteralTag($this->description,
     'http://aksw.org/schema/content', array('tag' => 'div', 'class' => 'content'));
+?>
+<?php
+// raw content is added in addition to sioc or formatted content
+$rawContent = 'http://lod2.eu/schema/contentRaw';
+if (isset($this->description[$rawContent])) {
+    echo '<div property="' . $this->curie($rawContent) . '">' . PHP_EOL;
+    echo $this->description[$rawContent][0]['value'];
+    echo '</div>';
+}
 ?>
