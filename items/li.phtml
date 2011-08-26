@@ -11,6 +11,8 @@
  *
  * this template is used in combination with the querylist helper to render 
  * lists of resources which match a given SPARQL query
+ *
+ * TODO: make more independend from the query (e.g. take the first)
  */
 
 // do nothing, if we do not have a standard resource query from ontowiki ...
@@ -35,4 +37,8 @@ $hookline = $this->returnLiteralTag(
     array('tag' => 'span', 'class' => 'hookline', 'prefix' => ' – ')
 );
 ?>
+<?php if (Erfurt_Uri::check($resourceUri)) : ?>
     <li about="<?php echo $url ?>"><a href="<?php echo $url ?>"><span property="rdfs:label"><?php echo $title ?></span></a><?php echo $hookline ?></li>
+<?php else: ?>
+    <li about="<?php echo $url ?>"><?php echo $title ?><?php echo $hookline ?></li>
+<?php endif; ?>
