@@ -31,7 +31,7 @@ $description = $fullDescription[$this->resourceUri];
 //$url = new OntoWiki_Url(array('route' => 'properties'), array('r'));
 //$url->setParam('r', $resourceUri, true);
 $url = $resourceUri;
-$hookline = $this->returnLiteralTag(
+$hookline = $this->literalTag(
     $description,
     'http://aksw.org/schema/hookline',
     array('tag' => 'span', 'class' => 'hookline', 'prefix' => ' – ')

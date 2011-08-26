@@ -23,11 +23,11 @@ $templateData = array(
 ?>
 <h1><?php echo $this->title ?></h1>
 <header class="intro">
-<?php echo $this->returnLiteralTag($this->description,
+<?php echo $this->literalTag($this->description,
     'http://aksw.org/schema/abstract', array('tag' => 'p', 'class' => 'abstract'));
 ?>
 </header> <!-- /.intro -->
-<?php echo $this->returnLiteralTag($this->description,
+<?php echo $this->literalTag($this->description,
     'http://aksw.org/schema/content', array('tag' => 'p', 'class' => 'abstract'));
 ?>
 <div class="subcolumns">

@@ -26,7 +26,7 @@ if (isset($this->description[$depiction])) {
     echo "<img rel='$imgRel' src='$imgSrc' alt='$imgSrc' class='$imgClass' />";
 }
 
-echo $this->returnLiteralTag($this->description);
+echo $this->literalTag($this->description);
 
 // raw content is added in addition to sioc or formatted content
 $rawContent = 'http://lod2.eu/schema/contentRaw';
