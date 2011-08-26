@@ -21,29 +21,24 @@ $templateData = array(
 ?>
 <header id="header">
     <h1><a href="#"><img src="<?php echo $this->baseUri; ?>/images/logo-aksw.png" alt="Agile Knowledge Engineering and Semantic Web (AKSW) Research Group" /></a></h1>
-    <nav id="nav-main">
-        <ul>
-            <li><strong>Home</strong></li>
-            <li><a href="#">About</a></li>
-            <!-- li class="active"><a href="#">Groups</a></li -->
-            <li><a href="#">Groups</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Publications</a></li>
-            <li><a href="#">Presentations</a></li>
-            <li><a href="#">Teaching</a></li>
-            <li><a href="#">Partners</a></li>
-        </ul>
-    </nav> <!-- /#nav-main -->
-    <nav id="nav-top">
-        <ul>
-            <li><a href="#">Contact</a></li>
-            <!-- li><strong>Blog</strong></li -->
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Internal Area</a></li>
-            <!-- li class="active"><a href="#">Imprint</a></li -->
-            <li><a href="#">Imprint</a></li>
-        </ul>
-    </nav> <!-- /#nav-top -->
+<?php
+$navOptions = array(
+    'prefix'    => '<nav id="nav-main">',
+    'suffix'    => '</nav> <!-- /#nav-main -->',
+    'titleProperty' => 'http://aksw.org/schema/menuLabel',
+    'activeUrl' => $this->resourceUri
+);
+echo $this->returnNavigationList('http://aksw.org/Navigation/Main', $navOptions);
+?>
+<?php
+$navOptions = array(
+    'prefix'    => '<nav id="nav-top">',
+    'suffix'    => '</nav> <!-- /#nav-top -->',
+    'titleProperty' => 'http://aksw.org/schema/menuLabel',
+    'activeUrl' => $this->resourceUri
+);
+echo $this->returnNavigationList('http://aksw.org/Navigation/Top', $navOptions);
+?>
     <aside id="associations">
         <h2 class="hideme">Associated with</h2>
         <a href="http://www.uni-leipzig.de"><img src="<?php echo $this->baseUri; ?>/images/logo-unileipzig.png" alt="Universität Leipzig" /></a> <span>,</span>

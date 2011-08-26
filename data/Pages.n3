@@ -18,11 +18,90 @@
 @prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:About a aksw:Page;
+
+# navigation resources and external pages
+<http://aksw.org/Navigation/Main> a aksw:Navigation;
+    rdf:_1 :About;
+    rdf:_2 :Groups;
+    rdf:_3 :Projects;
+    rdf:_4 :Publications;
+    rdf:_5 :Presentations;
+    rdf:_6 :Teaching;
+    rdf:_7 :Partners;
+    rdfs:label "Main Navigation".
+
+<http://aksw.org/Navigation/Top> a aksw:Navigation;
+    rdf:_1 :Contact;
+    rdf:_2 <http://blog.aksw.org>;
+    rdf:_3 <http://wiki.aksw.org/Internal>;
+    rdf:_4 :Imprint;
+    rdfs:label "Top Navigation".
+
+<http://blog.aksw.org> rdfs:label "Blog".
+<http://wiki.aksw.org/Internal> rdfs:label "Internal Area".
+
+# page resources
+:Contact a foaf:Document;
+    rdfs:label "Contact".
+
+:Imprint a foaf:Document;
+    rdfs:label "Imprint".
+
+:Partners a foaf:Document;
+    rdfs:label "Partners".
+
+:Teaching a foaf:Document;
+    rdfs:label "Teaching".
+
+:Presentations a foaf:Document;
+    rdfs:label "Presentations".
+
+:Publications a foaf:Document;
+    lod2:exhibitData <http://docs.aksw.org/BibsonomyProxy/exhibit-proxy.php?suffix=user/aksw/group_aksw&callback=cb>;
+    lod2:contentRaw """
+    <table width="100%">
+        <tr valign="top">
+            <td ex:role="view" ex:grouped="false" ex:orders=".year,.label" ex:directions="descending,ascending" ex:showSummary="false" " ex:showDuplicates="false">
+<p ex:role="lens" ex:itemTypes="Publication" style="display: none">
+<strong ex:if-exists=".author">
+<span class="author" ex:content=".author"></span>:
+</strong>
+<i ex:content=".label"></i>
+<span ex:content="if(exists(.booktitle), concat('In: ', .booktitle), '')"></span>
+<span ex:if-exists=".editor">(Editors:
+<span class="editor" ex:content=".editor"></span>
+)</span>
+<span class="journal" ex:content="if(exists(.journal), concat('In: ', .journal), '')"></span>
+<span class="note" ex:content="if(exists(.note), concat(', Note: ', .note), '')"></span>
+<span ex:content="if(exists(.url), .url, ''), '')"></span>
+<!--span class="abstract" style="display:none" ex:content="if(exists(.abstract), .abstract, '')"></span-->
+</p>
+            </td>
+            <td width="25%">
+<p style="float:right width:200px">
+<span ex:role="facet" ex:facetClass="TextSearch"></span>
+<span ex:role="facet" ex:expression=".year" ex:facetLabel="Year" ex:sortDirection="reverse"></span>
+<span ex:role="facet" ex:expression=".pub-type" ex:facetLabel="Type" ex:sortMode="count"></span>
+<span ex:role="facet" ex:expression=".author" ex:facetLabel="Author" ex:sortMode="count"></span>
+</p>
+            </td>
+        </tr>
+</table>
+""";
+    rdfs:label "Publications".
+
+:Projects a foaf:Document;
+    rdfs:label "Projects".
+
+:Groups a foaf:Document;
+    rdfs:label "Groups".
+
+:About a foaf:Document;
     aksw:content """
 ...
 
 """;
     sioc:feed <http://blog.aksw.org/feed/>;
-    rdfs:label "About ...".
+    rdfs:label "Agile Knowledge Engineering and Semantic Web (AKSW)";
+    aksw:menuLabel "About".
 
