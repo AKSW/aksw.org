@@ -1,6 +1,7 @@
 options=--inputOptions="-i turtle"
 OWCLIDATA=owcli -w aksw.org -m http://aksw.org ${options}
 OWCLISCHEMA=owcli -w aksw.org -m http://aksw.org ${options}
+OWCLICONFIG=owcli -w aksw.org -m http://localhost/OntoWiki/Config/ ${options}
 
 default:
 	@echo "no default target"
@@ -12,6 +13,7 @@ clean:
 
 create:
 	${OWCLIDATA} -e model:create
+	${OWCLICONFIG} -e model:add -i config.n3
 
 install-projects:
 	${OWCLIDATA} -e model:add -i FundedProjects.n3 

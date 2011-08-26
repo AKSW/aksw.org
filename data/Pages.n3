@@ -94,6 +94,12 @@
     rdfs:label "Projects".
 
 :Groups a foaf:Document;
+    aksw:content """
+The following subgroups belong to {{link literal="AKSW"}}:
+
+* {{link literal="SIMBA" property="aksw:abbrevation"}}
+* {{link literal="MOLE"}}
+"""^^sysont:Markdown;
     rdfs:label "Groups".
 
 :About a foaf:Document;
