@@ -18,14 +18,9 @@
 @prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-aksw:Page a owl:Class;
-    rdfs:label "Pages".
-
-foaf:Group a owl:Class;
-    rdfs:label "Group".
-
-foaf:Project a owl:Class;
-    rdfs:label "Project".
+aksw:Navigation a rdfs:Class;
+    #rdfs:subClassOf rdf:Seq;
+    rdfs:label "Navigation".
 aksw:CommunityProject a owl:Class;
     rdfs:subClassOf foaf:Project;
     rdfs:label "Community Project".
@@ -36,8 +31,15 @@ aksw:FundedProject a owl:Class;
     rdfs:subClassOf foaf:Project;
     rdfs:label "Funded Project".
 
+foaf:Group a owl:Class;
+    rdfs:label "Group".
 foaf:Person a owl:Class;
     rdfs:label "Person".
+foaf:Document a owl:Class;
+    rdfs:label "Document".
+foaf:Project a owl:Class;
+    rdfs:label "Project".
+
 
 # AKSW properties
 
@@ -84,6 +86,9 @@ aksw:screenshot a owl:ObjectProperty;
     rdfs:domain foaf:Project;
     rdfs:label "screenshot".
 
+aksw:menuLabel a owl:DatatypeProperty;
+    rdfs:label "menu label".
+
 # LOD2 properties
 lod2:contentRaw a owl:DatatypeProperty;
     rdfs:label "raw content".
@@ -128,3 +133,23 @@ foaf:pastProject a owl:ObjectProperty;
 foaf:phone a owl:ObjectProperty;
     rdfs:label "phone".
 
+rdf:_1 a rdfs:ContainerMembershipProperty;
+    rdfs:label "1.".
+rdf:_2 a rdfs:ContainerMembershipProperty;
+    rdfs:label "2.".
+rdf:_3 a rdfs:ContainerMembershipProperty;
+    rdfs:label "3.".
+rdf:_4 a rdfs:ContainerMembershipProperty;
+    rdfs:label "4.".
+rdf:_5 a rdfs:ContainerMembershipProperty;
+    rdfs:label "5.".
+rdf:_6 a rdfs:ContainerMembershipProperty;
+    rdfs:label "6.".
+rdf:_7 a rdfs:ContainerMembershipProperty;
+    rdfs:label "7.".
+rdf:_8 a rdfs:ContainerMembershipProperty;
+    rdfs:label "8.".
+rdf:_9 a rdfs:ContainerMembershipProperty;
+    rdfs:label "9.".
+rdf:_10 a rdfs:ContainerMembershipProperty;
+    rdfs:label "10.".
