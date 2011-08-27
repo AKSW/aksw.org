@@ -1,7 +1,7 @@
 @prefix aksw: <http://aksw.org/schema/> .
 @prefix content: <http://purl.org/rss/1.0/modules/content/>.
 @prefix data: <http://aksw.org/> .
-@prefix dc: <http://purl.org/dc/terms/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
 @prefix doap: <http://usefulinc.com/ns/doap#>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix groups: <http://aksw.org/Groups/> .
@@ -62,10 +62,6 @@ aksw:street  a owl:DatatypeProperty;
 aksw:abbrevation a owl:DatatypeProperty;
     rdfs:domain owl:Thing;
     rdfs:label "abbrevation".
-
-aksw:abstract a owl:DatatypeProperty;
-    rdfs:domain owl:Thing;
-    rdfs:label "abstract".
 
 aksw:content a owl:DatatypeProperty;
     rdfs:domain owl:Thing;
@@ -153,3 +149,14 @@ rdf:_9 a rdfs:ContainerMembershipProperty;
     rdfs:label "9.".
 rdf:_10 a rdfs:ContainerMembershipProperty;
     rdfs:label "10.".
+
+dcterms:abstract a rdf:Property ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#abstract-003> ;
+    dcterms:issued "2000-07-11" ;
+    dcterms:modified "2008-01-14" ;
+    rdfs:comment "A summary of the resource.";
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Abstract";
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description>, <http://purl.org/dc/terms/description>.
+
+
