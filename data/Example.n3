@@ -1,0 +1,123 @@
+@prefix aksw: <http://aksw.org/schema/> .
+@prefix content: <http://purl.org/rss/1.0/modules/content/>.
+@prefix data: <http://aksw.org/> .
+@prefix dc: <http://purl.org/dc/terms/>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix groups: <http://aksw.org/Groups/> .
+@prefix : <http://aksw.org/> .
+@prefix lod2: <http://lod2.eu/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix people: <http://aksw.org/> .
+@prefix projects: <http://aksw.org/Projects/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sioc: <http://rdfs.org/sioc/ns#>.
+@prefix sioct: <http://rdfs.org/sioc/types#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+:Example a foaf:Document;
+    aksw:abstract "This example page demonstrates some feautures of the OntoWiki site extension as well as the AKSW layout.";
+    aksw:content """
+## Subhead 1
+
+<p>
+Blindtext. Development of methods, tools and applications for adaptive
+Knowledge Engineering in the context of the Semantic Web Research of underlying Semantic Web technologies
+and development of fundamental <a href="#">Semantic Webtools</a> and applications Maturation of strategies for
+fruitfully combining the Social Web paradigms with semantic knowledge representation techniques AKSW is
+committed to the open source, open access and open knowledge movements. 
+</p>
+
+<div class="subcolumns">
+<div class="c50l">
+<div class="subc">
+<h2>Zweispaltig</h2>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</p>
+<h3>Dritte Ebene</h3>
+<p>
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<p>
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <a href="#">culpa qui officia deserunt</a> mollit anim id est laborum.
+</p>
+</div>
+</div>
+<div class="c50r">
+<div class="subc">
+<h2>Projects</h2>
+<ul>
+<li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+<li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+</ul>
+<ol>
+<li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Tabelle Head</th>
+<th>Tabelle Head</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Development</td>
+<td>methods, tools and applications</td>
+</tr>
+<tr>
+<td>applications</td>
+<td>adaptive Knowledge Engineering</td>
+</tr>
+<tr>
+<td>Engineering</td>
+<td>Research of underlying Semantic Web technologies and development of fundamental Semantic Webtools and applications</td>
+</tr>
+</tbody>
+</table>
+
+<div class="multicolumns2">
+<h2>Zweispaltig</h2>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</p>
+<h3>Dritte Ebene</h3>
+<p>
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<p>
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<h2>Projects</h2>
+<ul>
+<li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+<li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+</ul>
+<ol>
+<li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do <a href="#">eiusmod tempor incididunt</a> ut labore et dolore magna aliqua.</li>
+</ol>
+</div>
+
+<h2>Subhead 1</h2>
+<p>
+Development of methods, tools and applications for adaptive Knowledge Engineering in the
+context of the Semantic Web Research of underlying Semantic Web technologies...
+</p>
+
+
+"""^^sysont:Markdown;
+    sioc:feed <http://blog.aksw.org/feed/>;
+    rdfs:label "Example Page";
+    aksw:menuLabel "Example".
+
