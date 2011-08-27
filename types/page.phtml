@@ -22,15 +22,14 @@ $templateData = array(
             );
 ?>
 
-<h1>ttt<?php echo $this->title ?></h1>
+<h1><?php echo $this->title ?></h1>
+<header class="intro">
 <?php echo $this->literalTag($this->description,
-    'http://aksw.org/schema/hookline', array('tag' => 'div', 'class' => 'hookline'));
+    'http://purl.org/dc/terms/abstract', array('tag' => 'p', 'class' => 'abstract'));
 ?>
+</header> <!-- /.intro -->
 <?php echo $this->literalTag($this->description,
-    'http://aksw.org/schema/abstract', array('tag' => 'div', 'class' => 'abstract'));
-?>
-<?php echo $this->literalTag($this->description,
-    'http://aksw.org/schema/content', array('tag' => 'div', 'class' => 'content'));
+    'http://aksw.org/schema/content', array('tag' => 'p', 'class' => 'abstract'));
 ?>
 <?php
 // raw content is added in addition to sioc or formatted content

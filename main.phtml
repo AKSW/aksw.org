@@ -37,7 +37,7 @@ if (isset($this->description['http://www.w3.org/1999/02/22-rdf-syntax-ns#type'])
         case (isset($types['http://xmlns.com/foaf/0.1/Group'])):
             echo $this->partial('aksw2011/types/group.phtml', $templateData);
             break;
-        case (isset($types['http://aksw.org/schema/Page'])):
+        case (isset($types['http://xmlns.com/foaf/0.1/Document'])):
             echo $this->partial('aksw2011/types/page.phtml', $templateData);
             break;
         case (isset($types['http://xmlns.com/foaf/0.1/Person'])):
