@@ -21,6 +21,7 @@ install-projects:
 
 install-pages:
 	${OWCLIDATA} -e model:add -i Pages.n3
+	${OWCLIDATA} -e model:add -i Example.n3
 
 install-groups:
 	${OWCLIDATA} -e model:add -i Groups.n3
