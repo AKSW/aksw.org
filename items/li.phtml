@@ -7,38 +7,53 @@
  */
 
 /**
- * aksw.org li element template
+ * querylist li element template (site independent)
  *
- * this template is used in combination with the querylist helper to render 
+ * this template is used in combination with the querylist helper to render
  * lists of resources which match a given SPARQL query
  *
  * TODO: make more independend from the query (e.g. take the first)
  */
 
-// do nothing, if we do not have a standard resource query from ontowiki ...
-if (!isset($this->resourceUri)) {
-    return;
+// prepare vars from the querylist helper
+$resourceUri = $this->resourceUri;
+$title       = $this->title;
+$oddclass    = $this->oddclass;
+$tag         = (isset($this->tag)) ? $this->tag : 'ul';
+
+if ($this->listhint == 'first') {
+    echo "<$tag>" . PHP_EOL;
 }
 
-$resource = new OntoWiki_Resource($this->resourceUri, OntoWiki::getInstance()->selectedModel);
-$descriptionHelper = $resource->getDescriptionHelper();
-$title = $descriptionHelper->getTitle($this->resourceUri);
-$resourceUri = $this->resourceUri;
+// if we have a literal item, do not do anything but an li item
+if (!Erfurt_Uri::check($resourceUri)) {
+    echo "<li class='$oddclass'>$title</li>";
+} else {
+    // prepare resource description
+    $resource    = new OntoWiki_Resource($resourceUri, OntoWiki::getInstance()->selectedModel);
+    $description = $resource->getDescription();
+    $description = $description[$resourceUri];
 
-$fullDescription = $resource->getDescription();
-$description = $fullDescription[$this->resourceUri];
+    // prepare the link url
+    $url = $resourceUri;
+    //$url = new OntoWiki_Url(array('route' => 'properties'), array('r'));
+    //$url->setParam('r', $resourceUri, true);
 
-//$url = new OntoWiki_Url(array('route' => 'properties'), array('r'));
-//$url->setParam('r', $resourceUri, true);
-$url = $resourceUri;
-$hookline = $this->literalTag(
-    $description,
-    'http://aksw.org/schema/hookline',
-    array('tag' => 'span', 'class' => 'hookline', 'prefix' => ' – ')
-);
+    // prepare the optional hookline
+    $hookline = $this->literalTag(
+        $description,
+        'http://aksw.org/schema/hookline',
+        array('tag' => 'span', 'class' => 'hookline', 'prefix' => ' – ')
+    );
 ?>
-<?php if (Erfurt_Uri::check($resourceUri)) : ?>
-    <li about="<?php echo $url ?>"><a href="<?php echo $url ?>"><span property="rdfs:label"><?php echo $title ?></span></a><?php echo $hookline ?></li>
-<?php else: ?>
-    <li about="<?php echo $url ?>"><?php echo $title ?><?php echo $hookline ?></li>
-<?php endif; ?>
+    <li class="<?php echo $oddclass ?>" about="<?php echo $url ?>">
+        <a href="<?php echo $url ?>">
+            <span property="rdfs:label"><?php echo $title ?></span>
+        </a><?php echo $hookline ?>
+    </li>
+<?php
+}
+
+if ($this->listhint == 'last') {
+    echo "</$tag>" . PHP_EOL;
+}
