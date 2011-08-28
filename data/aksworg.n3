@@ -94,17 +94,36 @@ If you need to link to an aksw.org resource, you should use this helper instead 
 Possible parameters are:
 
 * `literal`: search for this literal and link to its resource (the first found).
+  * short form: `l`
+* 'uri': instead of searching for a resource, use the given qname or uri string
+  * short form: `r`
 * `property`: search only for literals of the given property.
+  * short form: `p`
 * `text`: instead of using the resource title, use the given string as link text.
+  * short form: `t`
 
 Examples (use a single `=` instead of `==`):
 
-* `{{link uri=="http://aksw.org/About"}}`: {{link uri="http://aksw.org/About"}}
-* `{{link literal=="Projects"}}`: {{link literal="Projects"}}
-* `{{link text=="our projects" literal="Projects"}}`: {{link text="our projects" literal="Projects"}}
-* `{{link property=="aksw:menuLabel" literal="About"}}`: {{link property="aksw:menuLabel" literal="About"}}
-* `{{link literal=="MyPage"}}`: {{link literal="MyPage"}} (no links to non existing resources ...)
-* `{{link test="."}}`: {{link test="."}} (wrong usage is indicated in this way, a mouseover tooltip over the error gives you more information about the problem)
+* `{{link uri=="http://aksw.org/About"}}`
+  * result: {{link uri="http://aksw.org/About"}}
+* `{{link uri=="aksw:About"}}`
+  * result: {{link uri="foaf:Person"}}
+  * comment: use qnames where possible ...
+* `{{link literal=="Projects"}}`
+  * result: {{link literal="Projects"}}
+* `{{link text=="our projects" literal="Projects"}}`
+  * result: {{link text="our projects" literal="Projects"}}
+* `{{link property=="aksw:menuLabel" literal="About"}}`
+  * result: {{link property="aksw:menuLabel" literal="About"}}
+* `{{link literal=="MyPage"}}`
+  * result: {{link literal="MyPage"}}
+  * comment: no links to non existing resources
+* `{{link uri=="no/uri"}}`
+  * result: {{link uri="no/uri"}}
+  * comment: wrong usage is indicated in this way, a mouseover tooltip over the error gives you more information about the problem
+* `{{link p=="foaf:nick" l="Seebi" t="my page"}}`
+  * result: {{link p="foaf:nick" l="Seebi" t="my page"}}
+  * comment: Example with short parameters, qname and given link text
 
 ## Style Elements
 There are specific style elements as two column sections or tables which you can add to your documents by using HTML markup.
