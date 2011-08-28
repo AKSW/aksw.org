@@ -18,7 +18,7 @@
 @prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-projects:AKSWorg a foaf:Project;
+projects:AKSWorg a foaf:Project, aksw:IncubatorProject;
     aksw:hookline "a linked data driven web page rendered by OntoWiki site extension";
     dcterms:abstract "The semantic data wiki OntoWiki can be used as a Content Management System to render and manage content of certain types. According to 'eat you own dog food', the aksw.org web page is an example for this approach.";
     rdfs:label "aksw.org".
