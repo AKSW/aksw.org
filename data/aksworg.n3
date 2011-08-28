@@ -19,7 +19,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 projects:AKSWorg a foaf:Project;
-    aksw:hookline "a linked data driven web page rendered by OntoWiki site extension.";
+    aksw:hookline "a linked data driven web page rendered by OntoWiki site extension";
     dcterms:abstract "The semantic data wiki OntoWiki can be used as a Content Management System to render and manage content of certain types. According to 'eat you own dog food', the aksw.org web page is an example for this approach.";
     rdfs:label "aksw.org".
 
@@ -43,31 +43,31 @@ The following attributes and classes are used by the templates.
 ## Classes
 Currently, there are templates for the following classes of resources:
 
-* foaf:Document: a basic web page without specific lists and queries
-* foaf:Group: a sub group with lists of member, research areas and projects
-* foaf:Person: a person with lists of projects and research areas
-* foaf:Project: an AKSW project.
+* [[foaf:Document]]: a basic web page without specific lists and queries
+* [[foaf:Group]]: a sub group with lists of member, research areas and projects
+* [[foaf:Person]]: a person with lists of projects and research areas
+* [[foaf:Project]]: an AKSW project.
 Can be a funded, a community or an open-source project.
 
 ## Properties
 These properties can be applied to all resources:
 
-* rdfs:label: This is the overall headline, name or title of a resource.
-* aksw:menuLabel: If the resource title is too long for the menu, use this property in addition to rdfs:label.
-* aksw:content: The main content property.
-The literal value should be of datatype sysont:Markdown.
-* dcterms:abstract: This is a plain text attribute (no markup).
+* [[rdfs:label]]: This is the overall headline, name or title of a resource.
+* [[aksw:menuLabel]]: If the resource title is too long for the menu, use this property in addition to [[rdfs:label]].
+* [[aksw:content]]: The main content property.
+The literal value should be of datatype [[sysont:Markdown]].
+* [[dcterms:abstract]]: This is a plain text attribute (no markup).
 The content of this attribute is used in extended lists and in the header of the resource as a first summary paragraph.
-* aksw:hookline: This a less than 100 character description of the resource.
+* [[aksw:hookline]]: This a less than 100 character description of the resource.
 Hooklines are especially important for projects to advertise them in lists and on top of the project page.
-* sioc:feed: Use this object property to relate a RSS or Atom feed to this resource.
+* [[sioc:feed]]: Use this object property to relate a RSS or Atom feed to this resource.
 The content of this feed is shown in the right side content column.
 
 In addition to the general properties, these class specific properties can be used:
 
-* for Projects: doap:homepage
-* for Groups: aksw:researchAreas, foaf:member
-* for Person: foaf:name, foaf:currentProject, foaf:pastProject, foaf:mbox, aksw:room, aksw:publicationTag (for the publication list)
+* for Projects: [[doap:homepage]]
+* for Groups: [[aksw:researchAreas]], [[foaf:member]]
+* for Person: [[foaf:name]], [[foaf:currentProject]], [[foaf:pastProject]], [[foaf:mbox]], [[aksw:room]], [[aksw:publicationTag]] (for the publication list)
 
 # Main Content
 The suggested markup language to write pages is [Markdown](http://daringfireball.net/projects/markdown/).
@@ -79,7 +79,7 @@ Besides its readability, one main advantage of Markdown is its integration with 
 Wherever you need HTML markup, you can use it without any quote or special syntax as [inline HTML](http://daringfireball.net/projects/markdown/syntax#html).
 Have a look at the sources of this document to copy/paste specific style elements which you want to reuse, or add new stuff and share it.
 
-The main content of each resource is saved as a Literal object with the attribute `aksw:content`.
+The main content of each resource is saved as a Literal object with the attribute [[aksw:content]].
 See the description of this property for details about its usage.
 In general: All attributes and classes have a proper documentation, so you just need to click on them inside of OntoWiki for more details.
 
@@ -178,7 +178,7 @@ Use standard HTML tables with table head and cell tags to achieve a look like th
 
 # Navigation Structures
 
-Menus are `rdf:Seq` resources of type aksw:Navigation.
+Menus are [[rdf:Seq]] resources of type [[aksw:Navigation]].
 The rdf properties `rdf:_1` till `rdf:_x` are used to arrange an ordererd list of resources which a used to render a navigation menu.
 Currently, we have these navigation resources:
 

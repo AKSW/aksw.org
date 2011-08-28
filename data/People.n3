@@ -19,7 +19,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 people:SebastianTramp a foaf:Person;
-    foaf:currentProject projects:OntoWiki, projects:LOD2, projects:RDFauthor, projects:DistributedSemanticSocialNetworks, projects:MobileSocialSemanticWeb, projects:Triplify;
+    foaf:currentProject projects:AKSWorg, projects:OntoWiki, projects:LOD2, projects:RDFauthor, projects:DistributedSemanticSocialNetworks, projects:MobileSocialSemanticWeb, projects:Triplify;
     foaf:pastProject projects:LE4SW, projects:OntoWikiEU, projects:SoftWiki, projects:xOperator, projects:SemanticLDAP;
     foaf:mbox <mailto:tramp@informatik.uni-leipzig.de>;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=tramp>;

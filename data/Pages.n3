@@ -58,47 +58,36 @@
 
 :Publications a foaf:Document;
     lod2:exhibitData <http://docs.aksw.org/BibsonomyProxy/exhibit-proxy.php?suffix=user/aksw/group_aksw&callback=cb>;
-    lod2:contentRaw """
-    <table width="100%">
-        <tr valign="top">
-            <td ex:role="view" ex:grouped="false" ex:orders=".year,.label" ex:directions="descending,ascending" ex:showSummary="false" " ex:showDuplicates="false">
-<p ex:role="lens" ex:itemTypes="Publication" style="display: none">
-<strong ex:if-exists=".author">
-<span class="author" ex:content=".author"></span>:
-</strong>
-<i ex:content=".label"></i>
-<span ex:content="if(exists(.booktitle), concat('In: ', .booktitle), '')"></span>
-<span ex:if-exists=".editor">(Editors:
-<span class="editor" ex:content=".editor"></span>
-)</span>
-<span class="journal" ex:content="if(exists(.journal), concat('In: ', .journal), '')"></span>
-<span class="note" ex:content="if(exists(.note), concat(', Note: ', .note), '')"></span>
-<span ex:content="if(exists(.url), .url, ''), '')"></span>
-<!--span class="abstract" style="display:none" ex:content="if(exists(.abstract), .abstract, '')"></span-->
-</p>
-            </td>
-            <td width="25%">
-<p style="float:right width:200px">
-<span ex:role="facet" ex:facetClass="TextSearch"></span>
-<span ex:role="facet" ex:expression=".year" ex:facetLabel="Year" ex:sortDirection="reverse"></span>
-<span ex:role="facet" ex:expression=".pub-type" ex:facetLabel="Type" ex:sortMode="count"></span>
-<span ex:role="facet" ex:expression=".author" ex:facetLabel="Author" ex:sortMode="count"></span>
-</p>
-            </td>
-        </tr>
-</table>
-""";
     rdfs:label "Publications".
 
 :Projects a foaf:Document;
+    aksw:content """
+{{toc depth="1"}}
+# Funded Projects
+ASKW is funded by regional, national and European research funding programmes.
+{{query where="?resourceUri a aksw:FundedProject." template="abstract"}}
+
+# Community Projects
+AKSW has launched a number of high-impact R&D Community projects.
+{{query where="?resourceUri a aksw:CommunityProject." template="abstract"}}
+
+# OpenSource Projects
+AKSW has launched a number of high-impact R&D Open Source projects.
+{{query where="?resourceUri a aksw:OpenSourceProject." template="abstract"}}
+
+# Incubator Projects
+{{query where="?resourceUri a aksw:IncubatorProject."}}
+
+# Project Alumni
+Some projects have reached a stable state, but are currently not actively maintained and further developed.
+{{query where="?resourceUri a aksw:AlumniProject."}}
+"""^^sysont:Markdown;
     rdfs:label "Projects".
 
 :Groups a foaf:Document;
     aksw:content """
-The following subgroups belong to {{link literal="AKSW"}}:
-
-* {{link literal="SIMBA" property="aksw:abbrevation"}}
-* {{link literal="MOLE"}}
+The following subgroups belong to AKSW:
+{{query where="?resourceUri a foaf:Group." template="abstract"}}
 """^^sysont:Markdown;
     rdfs:label "Groups".
 
@@ -113,14 +102,14 @@ It consists of the three subgroups
 [Machine Learning and Ontology Engineering](http://aksw.org/Groups/MOLE), and
 [Semantic Abstraction](http://aksw.org/Groups/SIMBA).
 
-## Goals
+# Goals
 * Development of methods, tools and applications for adaptive Knowledge Engineering in the context of the Semantic Web
 * Research of underlying Semantic Web technologies and development of fundamental Semantic Web tools and applications
 * Maturation of strategies for fruitfully combining the Social Web paradigms with semantic knowledge representation techniques
 
 AKSW is committed to the [free software](http://en.wikipedia.org/wiki/Free_software_movement), [open source](http://www.opensource.org), [open access](http://www.soros.org/openaccess) and [open knowledge](http://okfn.org) movements.
 
-## Projects
+# Projects
 AKSW has launched a number of high-impact R&D projects:
 
 * [Triplify](http://aksw.org/Projects/Triplify) tackles the chicken-and-egg problem of the Semantic Web by providing a building block for the "semantification" of Web applications.
@@ -131,7 +120,7 @@ AKSW has launched a number of high-impact R&D projects:
 
 Please look at the [projects page](http://aksw.org/Projects) for a comprehensive description of AKSW's funded as well as community and open source projects.
 
-## Demos
+# Demos
 Please have a look at our demos:
 
 <div style="float:left; width:250px; height:200px; padding:0.5em;">

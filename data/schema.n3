@@ -30,6 +30,12 @@ aksw:OpenSourceProject a owl:Class;
 aksw:FundedProject a owl:Class;
     rdfs:subClassOf foaf:Project;
     rdfs:label "Funded Project".
+aksw:AlumniProject a owl:Class;
+    rdfs:subClassOf foaf:Project;
+    rdfs:label "Alumni Project".
+aksw:IncubatorProject a owl:Class;
+    rdfs:subClassOf foaf:Project;
+    rdfs:label "Incubator Project".
 
 foaf:Group a owl:Class;
     rdfs:label "Group".

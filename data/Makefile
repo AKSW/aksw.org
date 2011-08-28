@@ -18,6 +18,8 @@ create:
 install-projects:
 	${OWCLIDATA} -e model:add -i FundedProjects.n3 
 	${OWCLIDATA} -e model:add -i OpenSourceProjects.n3
+	${OWCLIDATA} -e model:add -i AlumniProjects.n3
+	${OWCLIDATA} -e model:add -i IncubatorProjects.n3
 
 install-pages:
 	${OWCLIDATA} -e model:add -i Pages.n3
