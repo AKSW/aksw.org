@@ -1,0 +1,62 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * querylist abstract element template (site independent)
+ *
+ * this template is used in combination with the querylist helper to render
+ * lists of resources which match a given SPARQL query
+ * mentioned options:
+ * - heading (default: h2)
+ *
+ * TODO: make more independend from the query (e.g. take the first)
+ * TODO: include depiction / logo
+ */
+
+// prepare vars from the querylist helper
+$resourceUri = $this->resourceUri;
+$title       = $this->title;
+$oddclass    = $this->oddclass;
+$heading     = (isset($this->heading)) ? $this->heading : 'h2';
+
+if ($this->listhint == 'first') {
+    echo "<div class='query-list-abstract'>" . PHP_EOL;
+}
+
+// if we have a literal item, do not do anything but a html comment
+if (!Erfurt_Uri::check($resourceUri)) {
+    echo "<!-- $title is not a resource -->";
+} else {
+    // prepare resource description
+    $resource    = new OntoWiki_Resource($resourceUri, OntoWiki::getInstance()->selectedModel);
+    $description = $resource->getDescription();
+    $description = $description[$resourceUri];
+
+    // prepare the link url
+    $url = $resourceUri;
+    //$url = new OntoWiki_Url(array('route' => 'properties'), array('r'));
+    //$url->setParam('r', $resourceUri, true);
+
+    // prepare the abstract
+    $more = " [<a href='$url'>read more</a>]";
+    $abstract = $this->literalTag(
+        $description,
+        'http://purl.org/dc/terms/abstract',
+        array('tag' => 'p', 'class' => 'abstract', 'isuffix' => $more)
+    );
+?>
+    <div about="<?php echo $url ?>">
+    <?php echo "<$heading><a href='$url'>$title</a></$heading>" ?>
+    <?php echo $abstract ?>
+    </div>
+<?php
+}
+
+if ($this->listhint == 'last') {
+    echo "</div>" . PHP_EOL;
+}
