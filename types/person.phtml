@@ -20,12 +20,5 @@ $templateData = array(
     'options'           => $this->options
 );
 ?>
-
-<h3><?php echo $this->description['http://xmlns.com/foaf/0.1/name'][0]['value'] ?></h3>
-<?php if (isset($this->description['http://xmlns.com/foaf/0.1/depiction'][0]['value'])): ?>
-    <img rel="foaf:depiction"
-         src="<?php echo $this->description['http://xmlns.com/foaf/0.1/depiction'][0]['value'] ?>"
-         alt="depiction of <?php echo $this->title ?>"
-    />
-<?php endif; ?>
+<?php echo $this->partial('aksw2011/content.phtml', $templateData) ?>
 

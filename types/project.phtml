@@ -21,26 +21,4 @@ $templateData = array(
                 'options'           => $this->options
             );
 ?>
-
-<h1><?php echo $this->title ?></h1>
-<nav class="nav-sidelinks">
-    <ul>
-        <li><a href="#">SoftWiki</a></li>
-        <li><a href="#">OntoWiki</a></li>
-        <li><a href="#">DBpedia</a></li>
-        <li><a href="#">LinkedGeoData</a></li>
-        <li><a href="#">Triplify</a></li>
-        <li><a href="#">DL-Learner</a></li>
-    </ul>
-</nav>
-<header class="intro">
-<?php echo $this->literalTag($this->description,
-    'http://aksw.org/schema/hookline', array('tag' => 'p', 'class' => 'hookline'));
-?>
-<?php echo $this->literalTag($this->description,
-    'http://purl.org/dc/terms/abstract', array('tag' => 'p', 'class' => 'abstract'));
-?>
-</header> <!-- /.intro -->
-<?php echo $this->literalTag($this->description,
-    'http://aksw.org/schema/content', array('tag' => 'div', 'class' => 'content'));
-?>
+<?php echo $this->partial('aksw2011/content.phtml', $templateData) ?>

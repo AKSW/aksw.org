@@ -20,15 +20,7 @@ $templateData = array(
                 'descriptionHelper' => $this->descriptionHelper,
                 'options'           => $this->options
             );
-?>
-<h1><?php echo $this->title ?></h1>
-<header class="intro">
-<?php echo $this->literalTag($this->description,
-    'http://purl.org/dc/terms/abstract', array('tag' => 'p', 'class' => 'abstract'));
-?>
-</header> <!-- /.intro -->
-<?php echo $this->literalTag($this->description,
-    'http://aksw.org/schema/content', array('tag' => 'p', 'class' => 'abstract'));
+echo $this->partial('aksw2011/content.phtml', $templateData);
 ?>
 <div class="subcolumns">
 <?php // RESEARCH AREAS
@@ -43,7 +35,7 @@ WHERE {
 if ($areas = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
     <div class="c50r">
         <div class="subc">
-            <h2>Research Areas</h2>
+            <h1>Research Areas</h1>
             <ul>
             <?php echo $areas ?>
             </ul>
@@ -63,7 +55,7 @@ WHERE {
 if ($member = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
     <div class="c50r">
         <div class="subc">
-            <h2>Member</h2>
+            <h1>Member</h1>
             <ul>
             <?php echo $member ?>
             </ul>
@@ -83,7 +75,7 @@ WHERE {
 }
 ';
 if ($projects = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
-    <h2>Projects</h2>
+    <h1>Projects</h1>
     <ul>
     <?php echo $projects ?>
     </ul>

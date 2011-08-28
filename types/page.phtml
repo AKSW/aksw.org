@@ -22,21 +22,4 @@ $templateData = array(
             );
 ?>
 
-<h1><?php echo $this->title ?></h1>
-<header class="intro">
-<?php echo $this->literalTag($this->description,
-    'http://purl.org/dc/terms/abstract', array('tag' => 'p', 'class' => 'abstract'));
-?>
-</header> <!-- /.intro -->
-<?php echo $this->literalTag($this->description,
-    'http://aksw.org/schema/content', array('tag' => 'p', 'class' => 'abstract'));
-?>
-<?php
-// raw content is added in addition to sioc or formatted content
-$rawContent = 'http://lod2.eu/schema/contentRaw';
-if (isset($this->description[$rawContent])) {
-    echo '<div property="' . $this->curie($rawContent) . '">' . PHP_EOL;
-    echo $this->description[$rawContent][0]['value'];
-    echo '</div>';
-}
-?>
+<?php echo $this->partial('aksw2011/content.phtml', $templateData) ?>
