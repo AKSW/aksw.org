@@ -19,16 +19,13 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 people:SebastianTramp a foaf:Person;
-    foaf:currentProject projects:AKSWorg, projects:OntoWiki, projects:LOD2, projects:RDFauthor, projects:DistributedSemanticSocialNetworks, projects:MobileSocialSemanticWeb, projects:Triplify;
-    foaf:pastProject projects:LE4SW, projects:OntoWikiEU, projects:SoftWiki, projects:xOperator, projects:SemanticLDAP;
+    foaf:currentProject projects:AKSWorg, projects:KeyNodeJS, projects:OntoWiki, projects:LOD2, projects:RDFauthor, projects:DSSN, projects:MobileSocialSemanticWeb;
+    foaf:pastProject projects:OntoWikiMobile, projects:LE4SW,projects:Triplify,projects:OntoWikiEU, projects:SoftWiki, projects:xOperator, projects:LDAP;
     foaf:mbox <mailto:tramp@informatik.uni-leipzig.de>;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=tramp>;
-    foaf:phone <tel:+4934197-32366>;
+    foaf:phone <tel:+49-341-97-32366>;
     foaf:nick "Seebi";
-    aksw:street "Johannisgasse 26";
     aksw:room "5-08";
-    aksw:postalCode "04103";
-    aksw:location "Leipzig";
     aksw:publicationTag "tramp";
     foaf:name "Sebastian Tramp".
 
