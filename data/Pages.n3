@@ -42,6 +42,9 @@
 
 # page resources
 :Contact a foaf:Document;
+    aksw:content """
+{{navigationlist navResource="http://aksw.org/Navigation/Main" titleProperty="http://aksw.org/schema/menuLabel" navClass="nav-sidelinks"}}
+"""^^sysont:Markdown;
     rdfs:label "Contact".
 
 :Imprint a foaf:Document;

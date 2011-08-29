@@ -23,21 +23,23 @@ $templateData = array(
     <h1><a href="#"><img src="<?php echo $this->baseUri; ?>/images/logo-aksw.png" alt="Agile Knowledge Engineering and Semantic Web (AKSW) Research Group" /></a></h1>
 <?php
 $navOptions = array(
+    'navResource' => 'http://aksw.org/Navigation/Main',
     'prefix'    => '<nav id="nav-main">',
     'suffix'    => '</nav> <!-- /#nav-main -->',
     'titleProperty' => 'http://aksw.org/schema/menuLabel',
     'activeUrl' => $this->resourceUri
 );
-echo $this->navigationList('http://aksw.org/Navigation/Main', $navOptions);
+echo $this->navigationList($navOptions);
 ?>
 <?php
 $navOptions = array(
+    'navResource' => 'http://aksw.org/Navigation/Top',
     'prefix'    => '<nav id="nav-top">',
     'suffix'    => '</nav> <!-- /#nav-top -->',
     'titleProperty' => 'http://aksw.org/schema/menuLabel',
     'activeUrl' => $this->resourceUri
 );
-echo $this->navigationList('http://aksw.org/Navigation/Top', $navOptions);
+echo $this->navigationList($navOptions);
 ?>
     <aside id="associations">
         <h2 class="hideme">Associated with</h2>
