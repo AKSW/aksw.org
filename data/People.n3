@@ -19,6 +19,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 people:SebastianTramp a foaf:Person;
+    owl:sameAs <http://sebastian.tramp.name>;
     foaf:currentProject projects:AKSWorg, projects:KeyNodeJS, projects:OntoWiki, projects:LOD2, projects:RDFauthor, projects:DSSN, projects:MobileSocialSemanticWeb;
     foaf:pastProject projects:OntoWikiMobile, projects:LE4SW,projects:Triplify,projects:OntoWikiEU, projects:SoftWiki, projects:xOperator, projects:LDAP;
     foaf:mbox <mailto:tramp@informatik.uni-leipzig.de>;
@@ -29,4 +30,149 @@ people:SebastianTramp a foaf:Person;
     aksw:publicationTag "tramp";
     foaf:name "Sebastian Tramp".
 
+people:SoerenAuer a foaf:Person;
+    foaf:mbox <mailto:auer@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=auer>;
+    foaf:phone <tel:+49-341-97-32367>;
+    aksw:room "5-09";
+    aksw:publicationTag "auer";
+    skos:prefLabel "Dr. Sören Auer";
+    foaf:name "Sören Auer".
+
+people:LorenzBuehmann a foaf:Person;
+    foaf:mbox <mailto:buehmann@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=buehmann>;
+    foaf:phone <tel:+49-341-97-32273>;
+    aksw:room "5-10";
+    aksw:publicationTag "buehmann";
+    foaf:name "Lorenz Bühmann".
+
+people:TimofeyErmilov a foaf:Person;
+    foaf:mbox <mailto:ermilov@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=ermilov>;
+    foaf:phone <tel:+49-341-97-32322>;
+    aksw:room "5-20";
+    aksw:publicationTag "ermilov";
+    foaf:name "Timofey Ermilov".
+
+people:PhilippFrischmuth a foaf:Person;
+    foaf:mbox <mailto:frischmuth@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=frischmuth>;
+    foaf:phone <tel:+49-341-97-32368>;
+    aksw:room "5-08";
+    aksw:publicationTag "frischmuth";
+    foaf:name "Philipp Frischmuth".
+
+people:DanielGerber a foaf:Person;
+    foaf:mbox <mailto:gerber@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=gerber>;
+    foaf:phone <tel:+49-341-97-32322>;
+    aksw:room "5-20";
+    aksw:publicationTag "gerber";
+    foaf:name "Daniel Gerber".
+
+people:NormanHeino a foaf:Person;
+    foaf:mbox <mailto:heino@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=heino>;
+    foaf:phone <tel:+49-341-97-32368>;
+    aksw:room "5-08";
+    aksw:publicationTag "heino";
+    foaf:name "Norman Heino".
+
+people:SebastianHellmann a foaf:Person;
+    foaf:mbox <mailto:hellmann@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=hellmann>;
+    foaf:phone <tel:+49-341-97-32273>;
+    aksw:room "5-10";
+    aksw:publicationTag "hellmann";
+    foaf:name "Sebastian Hellmann".
+
+people:NadineJaenicke a foaf:Person;
+    foaf:mbox <mailto:jaenicke@uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=gn&value=Nadine>;
+    foaf:phone <tel:+49-341-97-32310>;
+    aksw:room "5-17";
+    foaf:name "Nadine Jänicke".
+
+people:JensLehmann a foaf:Person;
+    foaf:mbox <mailto:lehmann@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=lehmann>;
+    foaf:phone <tel:+49-341-97-32260>;
+    aksw:room "5-10";
+    aksw:publicationTag "lehmann";
+    skos:prefLabel "Dr. Jens Lehmann";
+    foaf:name "Jens Lehmann".
+
+people:AliKhalili a foaf:Person;
+    foaf:mbox <mailto:khalili@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=khalili>;
+    foaf:phone <tel:+49-341-97-32320>;
+    aksw:room "5-21";
+    foaf:name "Ali Khalili".
+
+people:MichaelMartin a foaf:Person;
+    foaf:mbox <mailto:martin@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=martin>;
+    foaf:phone <tel:+49-341-97-32322>;
+    aksw:room "5-10";
+    aksw:publicationTag "martin";
+    foaf:name "Michael Martin".
+
+people:MohamedMorsey a foaf:Person;
+    foaf:mbox <mailto:morsey@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=morsey>;
+    foaf:phone <tel:+49-341-97-32273>;
+    aksw:room "5-10";
+    aksw:publicationTag "morsey";
+    foaf:name "Mohamed Morsey".
+
+people:AxelNgonga a foaf:Person;
+    foaf:mbox <mailto:ngonga@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=ngonga>;
+    foaf:phone <tel:+49-341-97-32341>;
+    aksw:room "5-22";
+    aksw:publicationTag "ngonga";
+    skos:prefLabel "Dr. Axel-C. Ngonga Ngomo";
+    foaf:name "Axel Ngonga".
+
+people:ThomasRiechert a foaf:Person;
+    foaf:mbox <mailto:riechert@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=riechert>;
+    foaf:phone <tel:+49-341-97-32323>;
+    aksw:room "5-09";
+    aksw:publicationTag "riechert";
+    foaf:name "Thomas Riechert".
+
+people:SaeedehShekarpour a foaf:Person;
+    foaf:mbox <mailto:shekarpour@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=shekarpour>;
+    foaf:phone <tel:+49-341-97-32341>;
+    aksw:room "5-22";
+    aksw:publicationTag "shekarpour";
+    foaf:name "Saeedeh Shekarpour".
+
+people:ClasStadler a foaf:Person;
+    foaf:mbox <mailto:cstadler@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=stadler>;
+    foaf:phone <tel:+49-341-97-32273>;
+    aksw:room "5-10";
+    aksw:publicationTag "stadler";
+    foaf:name "Clas Stadler".
+
+people:JoergUnbehauen a foaf:Person;
+    foaf:mbox <mailto:unbehauen@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=unbehauen>;
+    foaf:phone <tel:+49-341-97-32322>;
+    aksw:room "5-20";
+    aksw:publicationTag "unbehauen";
+    foaf:name "Jörg Unbehauen".
+
+people:AmrapaliZaveri a foaf:Person;
+    foaf:mbox <mailto:zaveri@informatik.uni-leipzig.de>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=zaveri>;
+    foaf:phone <tel:+49-341-97-32273>;
+    aksw:room "5-10";
+    aksw:publicationTag "zaveri";
+    skos:prefLabel "Amrapali J. Zaveri";
+    foaf:name "Amrapali Zaveri".
 
