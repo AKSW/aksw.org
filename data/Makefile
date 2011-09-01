@@ -1,6 +1,6 @@
 options=--inputOptions="-i turtle"
-OWCLIDATA=owcli -w aksw.org -m http://aksw.org ${options}
-OWCLISCHEMA=owcli -w aksw.org -m http://aksw.org ${options}
+OWCLIDATA=owcli -w aksw.org -m http://aksw.org/ ${options}
+OWCLISCHEMA=owcli -w aksw.org -m http://aksw.org/ ${options}
 OWCLICONFIG=owcli -w aksw.org -m http://localhost/OntoWiki/Config/ ${options}
 
 default:
