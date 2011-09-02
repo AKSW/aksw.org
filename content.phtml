@@ -27,16 +27,6 @@ if (isset($this->description[$depiction])) {
 }
 ?>
 <h1><?php echo $this->title ?></h1>
-<!--nav class="nav-sidelinks">
-    <ul>
-        <li><a href="#">SoftWiki</a></li>
-        <li><a href="#">OntoWiki</a></li>
-        <li><a href="#">DBpedia</a></li>
-        <li><a href="#">LinkedGeoData</a></li>
-        <li><a href="#">Triplify</a></li>
-        <li><a href="#">DL-Learner</a></li>
-    </ul>
-</nav-->
 <header class="intro">
 <?php
 echo $this->literalTag($this->description,
@@ -46,8 +36,7 @@ echo $this->literalTag($this->description,
 ?>
 </header> <!-- /.intro -->
 <?php
-echo $this->literalTag($this->description,
-    'http://aksw.org/schema/content', array('tag' => 'div', 'class' => 'content'));
+echo $this->literalTag($this->description, null, array('tag' => 'div', 'class' => 'content'));
 
 // raw content is added in addition to sioc or formatted content
 $rawContent = 'http://lod2.eu/schema/contentRaw';

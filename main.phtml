@@ -38,14 +38,14 @@ if (isset($this->description['http://www.w3.org/1999/02/22-rdf-syntax-ns#type'])
             echo $this->partial('aksw2011/types/group.phtml', $templateData);
             break;
         case (isset($types['http://xmlns.com/foaf/0.1/Document'])):
-            echo $this->partial('aksw2011/types/page.phtml', $templateData);
+            echo $this->partial('aksw2011/types/document.phtml', $templateData);
             break;
         case (isset($types['http://xmlns.com/foaf/0.1/Person'])):
             echo $this->partial('aksw2011/types/person.phtml', $templateData);
             break;
         default:
             // no specific template found
-            echo $this->partial( 'aksw2011/default.phtml', $templateData);
+            echo $this->partial( 'aksw2011/types/document.phtml', $templateData);
             break;
     }
 }
