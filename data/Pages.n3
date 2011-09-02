@@ -14,6 +14,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sioc: <http://rdfs.org/sioc/ns#>.
 @prefix sioct: <http://rdfs.org/sioc/types#>.
+@prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -42,8 +43,8 @@
 
 # page resources
 :Contact a foaf:Document;
-    aksw:content """
-{{navigationlist navResource="http://aksw.org/Navigation/Main" titleProperty="http://aksw.org/schema/menuLabel" navClass="nav-sidelinks"}}
+    site:content """
+{{navigationlist navResource="http://aksw.org/Navigation/Main" titleProperty="http://ns.ontowiki.net/SysOnt/Site/menuLabel" navClass="nav-sidelinks"}}
 """^^sysont:Markdown;
     rdfs:label "Contact".
 
@@ -64,7 +65,7 @@
     rdfs:label "Publications".
 
 :Projects a foaf:Document;
-    aksw:content """
+    site:content """
 {{toc depth="1"}}
 # Funded Projects
 ASKW is funded by regional, national and European research funding programmes.
@@ -88,14 +89,14 @@ Some projects have reached a stable state, but are currently not actively mainta
     rdfs:label "Projects".
 
 :Groups a foaf:Document;
-    aksw:content """
+    site:content """
 The following subgroups belong to AKSW:
 {{query where="?resourceUri a foaf:Group." template="abstract"}}
 """^^sysont:Markdown;
     rdfs:label "Groups".
 
 :About a foaf:Document;
-    aksw:content """
+    site:content """
 <a href="/LSWT"><img style="float:right; width:200px; height:200px;" src="http://wiki.aksw.org/Events/2011/LeipzigerSemanticWebDay/files?get=lswd2011aufkleberfinal.png" /></a>
 
 The Research Group **Agile Knowledge Engineering and Semantic Web (AKSW)** is hosted by the Chair of
@@ -172,5 +173,5 @@ Please have a look at our demos:
 """^^sysont:Markdown;
     sioc:feed <http://blog.aksw.org/feed/>;
     rdfs:label "Agile Knowledge Engineering and Semantic Web (AKSW)";
-    aksw:menuLabel "About".
+    site:menuLabel "About".
 

@@ -14,6 +14,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sioc: <http://rdfs.org/sioc/ns#>.
 @prefix sioct: <http://rdfs.org/sioc/types#>.
+@prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -25,7 +26,7 @@ projects:AKSWorg a foaf:Project, aksw:IncubatorProject;
 
 <http://aksw.org/Projects/AKSWorg/Documentation> a foaf:Document;
     dcterms:abstract "This example page demonstrates some features of this linked data enabled web page including features from the OntoWiki site extension, the AKSW site-specific additions as well as Markdown and helper markup in general.";
-    aksw:content """
+    site:content """
 {{toc tag="ul" depth="3"}}
 
 # Big-Picture
@@ -54,7 +55,7 @@ These properties can be applied to all resources:
 
 * [[rdfs:label]]: This is the overall headline, name or title of a resource.
 * [[aksw:menuLabel]]: If the resource title is too long for the menu, use this property in addition to [[rdfs:label]].
-* [[aksw:content]]: The main content property.
+* [[site:content]]: The main content property.
 The literal value should be of datatype [[sysont:Markdown]].
 * [[dcterms:abstract]]: This is a plain text attribute (no markup).
 The content of this attribute is used in extended lists and in the header of the resource as a first summary paragraph.
@@ -79,7 +80,7 @@ Besides its readability, one main advantage of Markdown is its integration with 
 Wherever you need HTML markup, you can use it without any quote or special syntax as [inline HTML](http://daringfireball.net/projects/markdown/syntax#html).
 Have a look at the sources of this document to copy/paste specific style elements which you want to reuse, or add new stuff and share it.
 
-The main content of each resource is saved as a Literal object with the attribute [[aksw:content]].
+The main content of each resource is saved as a Literal object with the attribute [[site:content]].
 See the description of this property for details about its usage.
 In general: All attributes and classes have a proper documentation, so you just need to click on them inside of OntoWiki for more details.
 

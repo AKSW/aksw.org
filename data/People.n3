@@ -14,6 +14,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sioc: <http://rdfs.org/sioc/ns#>.
 @prefix sioct: <http://rdfs.org/sioc/types#>.
+@prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -41,7 +42,7 @@ people:SoerenAuer a foaf:Person;
 
 people:LorenzBuehmann a foaf:Person;
     foaf:mbox <mailto:buehmann@informatik.uni-leipzig.de>;
-    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=buehmann>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=gn&value=lorenz>;
     foaf:phone <tel:+49-341-97-32273>;
     aksw:room "5-10";
     aksw:publicationTag "buehmann";
@@ -96,7 +97,7 @@ people:NadineJaenicke a foaf:Person;
 
 people:JensLehmann a foaf:Person;
     foaf:mbox <mailto:lehmann@informatik.uni-leipzig.de>;
-    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=lehmann>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=cn&value=Jens+Lehmann>;
     foaf:phone <tel:+49-341-97-32260>;
     aksw:room "5-10";
     aksw:publicationTag "lehmann";
@@ -128,7 +129,7 @@ people:MohamedMorsey a foaf:Person;
 
 people:AxelNgonga a foaf:Person;
     foaf:mbox <mailto:ngonga@informatik.uni-leipzig.de>;
-    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=ngonga>;
+    foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=ngonga+ngomo>;
     foaf:phone <tel:+49-341-97-32341>;
     aksw:room "5-22";
     aksw:publicationTag "ngonga";
@@ -151,13 +152,13 @@ people:SaeedehShekarpour a foaf:Person;
     aksw:publicationTag "shekarpour";
     foaf:name "Saeedeh Shekarpour".
 
-people:ClasStadler a foaf:Person;
+people:ClausStadler a foaf:Person;
     foaf:mbox <mailto:cstadler@informatik.uni-leipzig.de>;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=stadler>;
     foaf:phone <tel:+49-341-97-32273>;
     aksw:room "5-10";
     aksw:publicationTag "stadler";
-    foaf:name "Clas Stadler".
+    foaf:name "Claus Stadler".
 
 people:JoergUnbehauen a foaf:Person;
     foaf:mbox <mailto:unbehauen@informatik.uni-leipzig.de>;

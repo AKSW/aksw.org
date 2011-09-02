@@ -14,6 +14,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sioc: <http://rdfs.org/sioc/ns#>.
 @prefix sioct: <http://rdfs.org/sioc/types#>.
+@prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -35,7 +36,7 @@ projects:R2D2 a foaf:Project, aksw:AlumniProject;
 projects:LDAP a foaf:Project, aksw:AlumniProject;
     aksw:hookline "Bringing together LDAP and the Semantic Web";
     dcterms:abstract "Semantic LDAP consists of a LDAP2SPARQL and a LDAP2OWL module.";
-    aksw:content """
+    site:content """
 * [LDAP2SPARQL](http://aksw.org/Projects/LDAP/Backend) is a backend to the widely used OpenLDAP server. It translates LDAP queries into SPARQL queries, asks a SPARQL endpoint and translates the result back to LDIF.
 * [LDAP2OWL](http://purl.org/net/ldap/ldap2owl.php) converts a directory information tree (DIT) complete with schema information (which will translated into an OWL ontology) and directory objects to an RDF model.
 """^^sysont:Markdown;

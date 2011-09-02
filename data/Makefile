@@ -2,18 +2,25 @@ options=--inputOptions="-i turtle"
 OWCLIDATA=owcli -w aksw.org -m http://aksw.org/ ${options}
 OWCLISCHEMA=owcli -w aksw.org -m http://aksw.org/ ${options}
 OWCLICONFIG=owcli -w aksw.org -m http://localhost/OntoWiki/Config/ ${options}
+ALLTMP="/tmp/aksw.org.n3"
 
 default:
 	@echo "no default target"
 
-install: clean create install-people install-projects install-groups install-pages install-schema
+install: clean create install-all
+
+install-all:
+	rm -rf ${ALLTMP}
+	cp prefixes.n3 ${ALLTMP}
+	cat *.n3 | grep -v "@prefix" >>${ALLTMP}
+	${OWCLIDATA} -e model:add -i ${ALLTMP}
 
 clean:
 	${OWCLIDATA} -e model:drop
 
 create:
 	${OWCLIDATA} -e model:create
-	${OWCLICONFIG} -e model:add -i config.n3
+	${OWCLICONFIG} -e model:add -i config.ttl
 
 install-projects:
 	${OWCLIDATA} -e model:add -i FundedProjects.n3 

@@ -14,21 +14,22 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sioc: <http://rdfs.org/sioc/ns#>.
 @prefix sioct: <http://rdfs.org/sioc/types#>.
+@prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-aksw:Navigation a rdfs:Class;
-    #rdfs:subClassOf rdf:Seq;
-    rdfs:label "Navigation".
 aksw:CommunityProject a owl:Class;
     rdfs:subClassOf foaf:Project;
+    site:classTemplate "project";
     rdfs:label "Community Project".
 aksw:OpenSourceProject a owl:Class;
     rdfs:subClassOf foaf:Project;
+    site:classTemplate "project";
     rdfs:label "OpenSource Project".
 aksw:FundedProject a owl:Class;
     rdfs:subClassOf foaf:Project;
+    site:classTemplate "project";
     rdfs:label "Funded Project".
 aksw:AlumniProject a owl:Class;
     rdfs:subClassOf foaf:Project;
@@ -37,41 +38,29 @@ aksw:IncubatorProject a owl:Class;
     rdfs:subClassOf foaf:Project;
     rdfs:label "Incubator Project".
 
+
+# reused classes
 foaf:Group a owl:Class;
+    site:classTemplate "group";
     rdfs:label "Group".
 foaf:Person a owl:Class;
+    site:classTemplate "person";
     rdfs:label "Person".
 foaf:Document a owl:Class;
+    site:classTemplate "document";
     rdfs:label "Document".
 foaf:Project a owl:Class;
+    site:classTemplate "project";
     rdfs:label "Project".
 
 
-# AKSW properties
-
-aksw:location a owl:DatatypeProperty;
-    rdfs:label "location".
-
-aksw:postalCode a owl:DatatypeProperty;
-    rdfs:label "postal code".
-
+# special aksw.org properties
 aksw:publicationTag a owl:DatatypeProperty;
     rdfs:comment "the tag which is used for this project / agend in the aksw.bib file";
     rdfs:label "publication tag".
 
 aksw:room a owl:DatatypeProperty;
     rdfs:label "room".
-
-aksw:street  a owl:DatatypeProperty;
-    rdfs:label "street".
-
-aksw:abbrevation a owl:DatatypeProperty;
-    rdfs:domain owl:Thing;
-    rdfs:label "abbrevation".
-
-aksw:content a owl:DatatypeProperty;
-    rdfs:domain owl:Thing;
-    rdfs:label "main content".
 
 aksw:hookline a owl:DatatypeProperty;
     rdfs:label "hookline".
@@ -88,7 +77,39 @@ aksw:screenshot a owl:ObjectProperty;
     rdfs:domain foaf:Project;
     rdfs:label "screenshot".
 
-aksw:menuLabel a owl:DatatypeProperty;
+
+# ontowiki site extension properties and classes
+site:Navigation a rdfs:Class;
+    rdfs:subClassOf rdf:Seq;
+    rdfs:comment "an RDF sequence resource which is used by the site extensions menu helper";
+    skos:note "menu items can have a special label with site:menuLabel";
+    rdfs:label "Navigation".
+
+site:abbrevation a owl:DatatypeProperty;
+    rdfs:comment "the abbrevation of a resource is used e.g. as a url naming part as well as can be used for better searching.";
+    rdfs:subPropertyOf skos:altLabel;
+    rdfs:label "abbrevation".
+
+site:content a owl:DatatypeProperty;
+    rdfs:comment "the main content of a resource in an encoded text of a specific encoding datatype, e.g. sysont:Markdown.";
+    rdfs:subPropertyOf <http://purl.org/rss/1.0/modules/content/encoded>;
+    rdfs:label "main content".
+
+site:classTemplate a owl:DatatypeProperty, owl:FunctionalProperty;
+    rdfs:comment "identifies the template which is used to render the HTML representation of the resources of this class";
+    rdfs:domain owl:Class;
+    rdfs:range xsd:string;
+    rdfs:label "class template".
+
+site:template a owl:DatatypeProperty, owl:FunctionalProperty;
+    rdfs:comment "identifies the template which is used to render the HTML representation of this specific resources";
+    rdfs:comment "this attribute overwrites the site:classTemplate property"
+    rdfs:range xsd:string;
+    rdfs:label "template".
+
+site:menuLabel a owl:DatatypeProperty, owl:FunctionalProperty;
+    rdfs:comment "if present, the navigation list helper uses this literal for the display name of the menu item";
+    rdfs:subPropertyOf skos:altLabel;
     rdfs:label "menu label".
 
 # LOD2 properties
@@ -98,22 +119,25 @@ lod2:contentRaw a owl:DatatypeProperty;
 lod2:exhibitData a owl:ObjectProperty;
     rdfs:label "exhibit data".
 
-# other properties
+
+# reused properties
+# dc
+dcterms:abstract a rdf:Property ;
+    rdfs:comment "A summary of the resource.";
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Abstract".
+
+# sioc
 sioc:feed a owl:ObjectProperty;
+    rdfs:comment "A feed (e.g. RSS, Atom, etc.) pertaining to this resource (e.g. for a Forum, Site, UserAccount, etc.).";
+    rdfs:isDefinedBy <http://rdfs.org/sioc/ns#> ;
     rdfs:label "feed".
 
+# doap
 doap:homepage a owl:ObjectProperty;
     rdfs:label "homepage".
 
-rdf:type a owl:ObjectProperty;
-    rdfs:label "type".
-
-rdfs:label a owl:DatatypeProperty;
-    rdfs:label "label".
-
-rdfs:subClassOf a owl:ObjectProperty;
-    rdfs:label "subClassOf".
-
+# foaf
 foaf:depiction a owl:ObjectProperty;
     rdfs:label "depiction".
 
@@ -135,6 +159,15 @@ foaf:pastProject a owl:ObjectProperty;
 foaf:phone a owl:ObjectProperty;
     rdfs:label "phone".
 
+# the basics
+# rdfs
+rdfs:label a owl:DatatypeProperty;
+    rdfs:label "label".
+
+# rdf
+rdf:type a owl:ObjectProperty;
+    rdfs:label "type".
+
 rdf:_1 a rdfs:ContainerMembershipProperty;
     rdfs:label "1.".
 rdf:_2 a rdfs:ContainerMembershipProperty;
@@ -155,14 +188,5 @@ rdf:_9 a rdfs:ContainerMembershipProperty;
     rdfs:label "9.".
 rdf:_10 a rdfs:ContainerMembershipProperty;
     rdfs:label "10.".
-
-dcterms:abstract a rdf:Property ;
-    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#abstract-003> ;
-    dcterms:issued "2000-07-11" ;
-    dcterms:modified "2008-01-14" ;
-    rdfs:comment "A summary of the resource.";
-    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
-    rdfs:label "Abstract";
-    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description>, <http://purl.org/dc/terms/description>.
 
 
