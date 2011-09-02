@@ -103,7 +103,7 @@ site:classTemplate a owl:DatatypeProperty, owl:FunctionalProperty;
 
 site:template a owl:DatatypeProperty, owl:FunctionalProperty;
     rdfs:comment "identifies the template which is used to render the HTML representation of this specific resources";
-    rdfs:comment "this attribute overwrites the site:classTemplate property"
+    rdfs:comment "this attribute overwrites the site:classTemplate property";
     rdfs:range xsd:string;
     rdfs:label "template".
 
