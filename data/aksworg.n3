@@ -1,6 +1,7 @@
 @prefix aksw: <http://aksw.org/schema/> .
 @prefix content: <http://purl.org/rss/1.0/modules/content/>.
 @prefix data: <http://aksw.org/> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
 @prefix dcterms: <http://purl.org/dc/terms/>.
 @prefix doap: <http://usefulinc.com/ns/doap#>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -17,7 +18,28 @@
 @prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+@prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://aksw.org/> a void:Dataset;
+    foaf:homepage <http://aksw.org>;
+    foaf:page projects:AKSWorg;
+    dcterms:title "aksw.org Website";
+    dcterms:creator people:SebastianTramp;
+    dcterms:contributor groups:AKSW;
+    dcterms:publisher groups:AKSW;
+    dcterms:source <http://wiki.aksw.org>;
+    dcterms:license <http://creativecommons.org/licenses/by-sa/3.0/>;
+    dcterms:subject groups:AKSW, dbpedia:Semantic_Web, dbpedia:Natural_language_processing, dbpedia:Machine_learning;
+    void:feature <http://www.w3.org/ns/formats/RDF_XML>, <http://www.w3.org/ns/formats/Turtle>;
+    void:sparqlEndpoint :sparql;
+    void:dataDump <http://aksw.org/model/export/?m=http%3A%2F%2Faksw.org%2F&f=rdfxml>, <http://aksw.org/model/export/?m=http%3A%2F%2Faksw.org%2F&f=turtle>;
+    void:rootResource <http://aksw.org/Navigation/Main>;
+    void:vocabulary <http://xmlns.com/foaf/0.1/>,  <http://purl.org/dc/terms/>,  <http://usefulinc.com/ns/doap#>,  <http://rdfs.org/sioc/ns#>,  <http://www.w3.org/2004/02/skos/core#>,  <http://rdfs.org/ns/void#>;
+    void:triples "700";
+    void:entities "80";
+    void:classes "10";
+    void:properties "40".
 
 projects:AKSWorg a foaf:Project, aksw:IncubatorProject;
     aksw:hookline "a linked data driven web page rendered by OntoWiki site extension";

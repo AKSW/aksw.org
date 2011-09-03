@@ -1,6 +1,7 @@
 @prefix aksw: <http://aksw.org/schema/> .
 @prefix content: <http://purl.org/rss/1.0/modules/content/>.
 @prefix data: <http://aksw.org/> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
 @prefix dcterms: <http://purl.org/dc/terms/>.
 @prefix doap: <http://usefulinc.com/ns/doap#>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -17,6 +18,7 @@
 @prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+@prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 aksw:CommunityProject a owl:Class;
@@ -122,6 +124,34 @@ lod2:exhibitData a owl:ObjectProperty;
 
 # reused properties
 # dc
+dcterms:contributor a rdf:Property ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "contributor".
+
+dcterms:creator a rdf:Property ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "creator".
+
+dcterms:subject a rdf:Property ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "subject".
+
+dcterms:license a rdf:Property ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "license".
+
+dcterms:publisher a rdf:Property ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "publisher".
+
+dcterms:title a rdf:Property ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "title".
+
+dcterms:source a rdf:Property ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "source".
+
 dcterms:abstract a rdf:Property ;
     rdfs:comment "A summary of the resource.";
     rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
@@ -138,6 +168,12 @@ doap:homepage a owl:ObjectProperty;
     rdfs:label "homepage".
 
 # foaf
+foaf:page a owl:ObjectProperty;
+    rdfs:label "page".
+
+foaf:homepage a owl:ObjectProperty;
+    rdfs:label "homepage".
+
 foaf:depiction a owl:ObjectProperty;
     rdfs:label "depiction".
 

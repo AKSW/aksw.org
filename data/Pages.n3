@@ -1,6 +1,7 @@
 @prefix aksw: <http://aksw.org/schema/> .
 @prefix content: <http://purl.org/rss/1.0/modules/content/>.
 @prefix data: <http://aksw.org/> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
 @prefix dcterms: <http://purl.org/dc/terms/>.
 @prefix doap: <http://usefulinc.com/ns/doap#>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -17,11 +18,12 @@
 @prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+@prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 
 # navigation resources and external pages
-<http://aksw.org/Navigation/Main> a aksw:Navigation;
+<http://aksw.org/Navigation/Main> a site:Navigation;
     rdf:_1 :About;
     rdf:_2 :Groups;
     rdf:_3 :Projects;
@@ -31,7 +33,7 @@
     rdf:_7 :Partners;
     rdfs:label "Main Navigation".
 
-<http://aksw.org/Navigation/Top> a aksw:Navigation;
+<http://aksw.org/Navigation/Top> a site:Navigation;
     rdf:_1 :Contact;
     rdf:_2 <http://blog.aksw.org>;
     rdf:_3 <http://wiki.aksw.org/Internal>;
