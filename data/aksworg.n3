@@ -26,11 +26,11 @@
     foaf:page projects:AKSWorg;
     dcterms:title "aksw.org Website";
     dcterms:creator people:SebastianTramp;
-    dcterms:contributor groups:AKSW;
-    dcterms:publisher groups:AKSW;
+    dcterms:contributor groups:ES, groups:MOLE, groups:SIMBA;
+    dcterms:publisher groups:ES, groups:MOLE, groups:SIMBA;
     dcterms:source <http://wiki.aksw.org>;
     dcterms:license <http://creativecommons.org/licenses/by-sa/3.0/>;
-    dcterms:subject groups:AKSW, dbpedia:Semantic_Web, dbpedia:Natural_language_processing, dbpedia:Machine_learning;
+    dcterms:subject dbpedia:Semantic_Web, dbpedia:Natural_language_processing, dbpedia:Machine_learning;
     void:feature <http://www.w3.org/ns/formats/RDF_XML>, <http://www.w3.org/ns/formats/Turtle>;
     void:sparqlEndpoint :sparql;
     void:dataDump <http://aksw.org/model/export/?m=http%3A%2F%2Faksw.org%2F&f=rdfxml>, <http://aksw.org/model/export/?m=http%3A%2F%2Faksw.org%2F&f=turtle>;
