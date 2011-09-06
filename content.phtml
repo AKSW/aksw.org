@@ -26,14 +26,23 @@ if (isset($this->description[$depiction])) {
     echo "<img rel='$imgRel' src='$imgSrc' alt='$imgSrc' class='$imgClass' />";
 }
 ?>
-<h1><?php echo $this->title ?></h1>
+<h1><?php
+    echo $this->title;
+    echo ($hookline = $this->literalTag($this->description,
+        'http://aksw.org/schema/hookline',
+        array('tag' => 'span', 'class' => 'hookline')))? '<span class="hideme">:</span> '.$hookline:'' ;
+?></h1>
+
 <header class="intro">
 <?php
 echo $this->literalTag($this->description,
-    'http://aksw.org/schema/hookline', array('tag' => 'p', 'class' => 'hookline'));
-echo $this->literalTag($this->description,
     'http://purl.org/dc/terms/abstract', array('tag' => 'p', 'class' => 'abstract'));
 ?>
+    <p class="button-row">
+        <a class="button" href="#">Download</a>
+        <a class="button" href="#">Fork it!</a>
+        <a class="button" href="#">Documentation</a>
+    </p>
 </header> <!-- /.intro -->
 <?php
 echo $this->literalTag($this->description, null, array('tag' => 'div', 'class' => 'content'));

@@ -518,9 +518,9 @@
     }
     #footer .subc
     {
-        border-top: solid 1px #575757;
+        border-top: solid 1px #333333;
         background: #e6e6e6;
-        color: #3d3d3d;
+        color: #1a1a1a;
         min-height: 10.769em;
     }
 
@@ -577,7 +577,7 @@
     {
         width: 73.341%;
         float: left;
-        border-top: solid 1px #575757;
+        border-top: solid 1px #585858;
     }
 
     #nav-main ul
@@ -609,12 +609,12 @@
     #nav-main a:focus, #nav-main a:hover, #nav-main a:active
     {
         color: white;
-        background-color: #575757;
+        background-color: #333333;
     }
     #nav-main strong, #nav-main .active a
     {
         color: white;
-        background-color: #575757;
+        background-color: #333333;
     }
 
     /* -- Top menu --------------------------------------------------------- */
@@ -649,27 +649,27 @@
 
     #nav-top a, #nav-top strong
     {
-        color: #575757;
+        color: #585858;
     }
     #nav-top a:focus, #nav-top a:hover, #nav-top a:active
     {
         color: white;
-        background-color: #575757;
+        background-color: #333333;
     }
     #nav-top strong, #nav-top .active a
     {
         color: white;
-        background-color: #575757;
+        background-color: #333333;
     }
 
     /* -- Breadcrumbs ------------------------------------------------------ */
     #nav-breadcrumbs
     {
-        border-bottom: solid 1px #575757;
+        border-bottom: solid 1px #333333;
     }
     #nav-breadcrumbs a
     {
-        color: #575757;
+        color: #333333;
         font-weight: normal;
     }
     #nav-breadcrumbs strong
@@ -714,7 +714,7 @@
     }
     .nav-sidelinks a, .nav-sidelinks strong
     {
-        color: #575757;
+        color: #333333;
         text-transform: none;
     }
     .nav-sidelinks strong, .nav-sidelinks .active a
@@ -726,7 +726,7 @@
     body
     {
         font-family: 'Droid Sans', 'Verdana', 'Arial' , sans-serif;
-        color: #575757;
+        color: #333333;
         background-color: white;
     }
 
@@ -736,12 +736,12 @@
         line-height: 1.538;
     }
 
-    h1, h2, h3
+    h1, h2, h3, h4, h5, h6
     {
         font-weight: normal;
         color: black;
     }
-    h1 a, h2 a, h3 a
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
     {
         color: black !important;
     }
@@ -754,30 +754,45 @@
         margin-bottom: 0.5em;
         text-transform: uppercase;
     }
+    h1 .hookline
+    {
+        display: block;
+        color: #585858;
+        font-size: 0.5em;
+        line-height: 1.5;
+        width: 90%;
+    }
 
     #sidecontent h1
     {
-        font-size: 1.222em;
-        line-height: 0.818;
+        font-size: 1.88em;
+        line-height: 1.227;
         text-transform: uppercase;
-        padding: 0.611em 0;
+        padding: 0.917em 0;
         border-style: solid none;
-        border-color: #575757;
+        border-color: #333333;
         border-width: 1px;
         margin-bottom: 1.538em;
     }
 
     h2
     {
-        font-size: 1em;
-        line-height: 1;
+        font-size: 1.538em;
+        line-height: 1.5;
         text-transform: uppercase;
     }
 
     h3
     {
+        font-size: 1.154em;
+        line-height: 1.333;
+    }
+
+    h4, h5, h6
+    {
         font-size: 1em;
         line-height: 1.538;
+        font-weight: bold;
     }
 
     p, ul, ol, dl, pre, h2, table
@@ -796,6 +811,10 @@
     {
         margin-left: 1.5em;
         margin-right: 0;
+    }
+    ul ul, ul ol, ol ul, ol ol
+    {
+        margin-bottom: 0;
     }
 
     li
@@ -819,14 +838,10 @@
     {
         margin-top: 0;
     }
-    .intro :last-child, .supercontent :last-child
-    {
-        margin-bottom: 0;
-    }
 
     .intro
     {
-        border-bottom: solid 1px #575757;
+        border-bottom: solid 1px #333333;
     }
 
     a
@@ -851,7 +866,7 @@
 
     #sidecontent a
     {
-        color: #575757;
+        color: #333333;
     }
 
     /* -- Tables ----------------------------------------------------------- */
@@ -869,7 +884,7 @@
     th, td
     {
         padding: 0.125em 0.313em;
-        color: #3d3d3d;
+        color: #1a1a1a;
         background: #e6e6e6;
         border-bottom: solid 2px white;
         border-left: solid 2px white;
@@ -890,6 +905,33 @@
         color: black;
         background-color: #d9d9d9;
         white-space: nowrap;
+    }
+
+    /* == Forms ============================================================ */
+    button, .button
+    {
+        color: white;
+        background: #4c78a4;
+        border-width: 1px;
+        border-color: white;
+        font-weight: normal;
+        text-decoration: none;
+        padding: 0.385em;
+        -webkit-border-radius: 0.154em 0.462em;
+        -moz-border-radius: 0.154em / 0.462em;
+        -o-border-radius: 0.154em / 0.462em;
+        -ms-border-radius: 0.154em / 0.462em;
+        -khtml-border-radius: 0.154em / 0.462em;
+        border-radius: 0.154em / 0.462em;
+        cursor: pointer;
+    }
+    button:focus, button:hover, .button:focus, .button:hover
+    {
+        background: #333333;
+    }
+    button:active, .button:active
+    {
+        background: black;
     }
 
     /* == Content Types ==================================================== */
