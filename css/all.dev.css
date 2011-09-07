@@ -829,6 +829,7 @@
         font-size: 1.154em;
         line-height: 1.467;
         margin-bottom: 1.333em;
+        overflow: hidden;
     }
     .intro p, .intro ul, .intro ol, .intro dl, .intro pre, .intro table, .supercontent p, .supercontent ul, .supercontent ol, .supercontent dl, .supercontent pre, .supercontent table
     {
@@ -837,6 +838,16 @@
     .intro :first-child, .supercontent :first-child
     {
         margin-top: 0;
+    }
+    .intro .depictions, .supercontent .depictions
+    {
+        float: right;
+        width: 33%;
+    }
+    .intro .depictions .depiction, .supercontent .depictions .depiction
+    {
+        width: 100%;
+        height: auto;
     }
 
     .intro

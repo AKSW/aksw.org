@@ -12,6 +12,19 @@
  * this template renders the main content (e.g. main textarea) of a resource
  */
 
+// TODO: dummy data for projects
+if (strpos(serialize($this->description['http://www.w3.org/1999/02/22-rdf-syntax-ns#type']), 'Project') !== false)
+{
+    // TODO: buttons @ teaser
+    $buttons = array(array('uri'=>'#', 'label'=>'Download'),
+                     array('uri'=>'#', 'label'=>'Fork it!'),
+                     array('uri'=>'#', 'label'=>'Documentation')
+               );
+    
+    // TODO: screenshots
+    $screenshots = array(array('rel'=>'foaf:depiction', 'uri'=>'http://dummyimage.com/300x200.png&text=screenshot', 'label'=>'###'));
+}
+
 // TODO: move to config?
 $depiction = 'http://xmlns.com/foaf/0.1/depiction';
 
@@ -33,22 +46,19 @@ if (isset($this->description[$depiction])) {
         array('tag' => 'span', 'class' => 'hookline')))? '<span class="hideme">:</span> '.$hookline:'' ;
 ?></h1>
 
-<?php
-    // TODO: dummy data for buttons
-    if (strpos(serialize($this->description['http://www.w3.org/1999/02/22-rdf-syntax-ns#type']), 'Project') !== false)
-    {
-        $buttons = array(array('uri'=>'#', 'label'=>'Download'),
-                         array('uri'=>'#', 'label'=>'Fork it!'),
-                         array('uri'=>'#', 'label'=>'Documentation')
-                   );
-    }
-?>
-
 <?php if (($abstract = $this->literalTag($this->description, 'http://purl.org/dc/terms/abstract', array('tag' => 'p', 'class' => 'abstract'))) ||
           (isset($buttons) && is_array($buttons) && count($buttons) > 0) ||
-          (isset($image))): ?>
+          (isset($screenshots) && is_array($screenshots) && count($screenshots) > 0)): ?>
 <header class="intro">
 <?php
+
+    if (isset($screenshots) && is_array($screenshots))
+    {
+        echo '<div class="depictions">'.PHP_EOL;
+        // TODO: insert first pic big and thumbs for all, javascriptify this lates to enable switching between pics
+        echo '<img rel="'.$screenshots[0]['rel'].'" alt="'.$screenshots[0]['label'].'" src="'.$screenshots[0]['uri'].'" class="depiction" />'.PHP_EOL;
+        echo '</div>'.PHP_EOL;
+    }
 
     echo $abstract?$abstract.PHP_EOL:'';
 
