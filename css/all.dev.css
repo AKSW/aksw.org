@@ -722,6 +722,13 @@
         font-weight: bold;
     }
 
+    /* -- TOC -------------------------------------------------------------- */
+    #toc a
+    {
+        font-weight: normal;
+        color: #333333;
+    }
+
     /* == Typography ======================================================= */
     body
     {
@@ -736,12 +743,12 @@
         line-height: 1.538;
     }
 
-    h1, h2, h3, h4, h5, h6
+    h1, h2, h3, h4, details summary, h5, h6
     {
         font-weight: normal;
         color: black;
     }
-    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
+    h1 a, h2 a, h3 a, h4 a, details summary a, h5 a, h6 a
     {
         color: black !important;
     }
@@ -782,22 +789,25 @@
         font-size: 1.538em;
         line-height: 1.5;
         font-variant: small-caps;
+        margin-bottom: 0.5em;
     }
 
     h3
     {
         font-size: 1.154em;
         line-height: 1.333;
+        margin-bottom: 0.667em;
     }
 
-    h4, h5, h6
+    h4, details summary, h5, h6
     {
         font-size: 1em;
         line-height: 1.538;
         font-weight: bold;
+        margin-bottom: 1.538em;
     }
 
-    p, ul, ol, dl, pre, h2, table
+    p, ul, ol, dl, pre, table
     {
         margin-bottom: 1.538em;
     }
@@ -824,6 +834,26 @@
         line-height: inherit;
         margin-left: 0;
         margin-right: 0;
+    }
+
+    details
+    {
+        display: block;
+    }
+    details :first-child
+    {
+        margin-top: 0;
+    }
+    details :last-child
+    {
+        margin-bottom: 0;
+    }
+    details summary
+    {
+        display: inline-block;
+        color: #585858;
+        cursor: pointer;
+        margin-bottom: 0.769em;
     }
 
     .intro, .supercontent
