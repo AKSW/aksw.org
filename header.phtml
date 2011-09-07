@@ -15,8 +15,8 @@
 <?php
 $navOptions = array(
     'navResource' => 'http://aksw.org/Navigation/Main',
-    'prefix'    => '<nav id="nav-main">',
-    'suffix'    => '</nav> <!-- /#nav-main -->',
+    'navId' => 'nav-main',
+    'suffix'    => '<!-- /#nav-main -->',
     'activeUrl' => $this->resourceUri
 );
 echo $this->navigationList($navOptions);
@@ -24,8 +24,8 @@ echo $this->navigationList($navOptions);
 <?php
 $navOptions = array(
     'navResource' => 'http://aksw.org/Navigation/Top',
-    'prefix'    => '<nav id="nav-top">',
-    'suffix'    => '</nav> <!-- /#nav-top -->',
+    'navId' => 'nav-top',
+    'suffix'    => '<!-- /#nav-top -->',
     'activeUrl' => $this->resourceUri
 );
 echo $this->navigationList($navOptions);
@@ -36,5 +36,5 @@ echo $this->navigationList($navOptions);
         <a href="http://infai.org"><img src="<?php echo $this->baseUri; ?>/images/logo-infai.png" alt="InfAI: Institut für Angewandte Informatik" /></a>
     </aside> <!-- /#associations -->
 </header> <!-- /#header -->
-<hr class="hideme">
+<hr class="hideme" />
 

@@ -722,6 +722,13 @@
         font-weight: bold;
     }
 
+    /* -- TOC -------------------------------------------------------------- */
+    #toc a
+    {
+        font-weight: normal;
+        color: #333333;
+    }
+
     /* == Typography ======================================================= */
     body
     {
@@ -736,12 +743,12 @@
         line-height: 1.538;
     }
 
-    h1, h2, h3, h4, h5, h6
+    h1, h2, h3, h4, details summary, h5, h6
     {
         font-weight: normal;
         color: black;
     }
-    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
+    h1 a, h2 a, h3 a, h4 a, details summary a, h5 a, h6 a
     {
         color: black !important;
     }
@@ -752,7 +759,7 @@
         line-height: 1;
         margin-top: 0.5em;
         margin-bottom: 0.5em;
-        text-transform: uppercase;
+        font-variant: small-caps;
     }
     h1 .hookline
     {
@@ -761,6 +768,8 @@
         font-size: 0.5em;
         line-height: 1.5;
         width: 90%;
+        text-transform: uppercase;
+        font-variant: normal;
     }
 
     #sidecontent h1
@@ -779,23 +788,26 @@
     {
         font-size: 1.538em;
         line-height: 1.5;
-        text-transform: uppercase;
+        font-variant: small-caps;
+        margin-bottom: 0.5em;
     }
 
     h3
     {
         font-size: 1.154em;
         line-height: 1.333;
+        margin-bottom: 0.667em;
     }
 
-    h4, h5, h6
+    h4, details summary, h5, h6
     {
         font-size: 1em;
         line-height: 1.538;
         font-weight: bold;
+        margin-bottom: 1.538em;
     }
 
-    p, ul, ol, dl, pre, h2, table
+    p, ul, ol, dl, pre, table
     {
         margin-bottom: 1.538em;
     }
@@ -824,6 +836,26 @@
         margin-right: 0;
     }
 
+    details
+    {
+        display: block;
+    }
+    details :first-child
+    {
+        margin-top: 0;
+    }
+    details :last-child
+    {
+        margin-bottom: 0;
+    }
+    details summary
+    {
+        display: inline-block;
+        color: #585858;
+        cursor: pointer;
+        margin-bottom: 0.769em;
+    }
+
     .intro, .supercontent
     {
         font-size: 1.154em;
@@ -839,15 +871,50 @@
     {
         margin-top: 0;
     }
-    .intro .depictions, .supercontent .depictions
+    .intro .widget_depictions, .supercontent .widget_depictions
     {
         float: right;
-        width: 33%;
+        width: 40%;
+        margin-bottom: 1.333em;
+        margin-left: 1.333em;
     }
-    .intro .depictions .depiction, .supercontent .depictions .depiction
+    .Person .intro .widget_depictions, .Person .supercontent .widget_depictions
+    {
+        width: 20%;
+    }
+    .intro .widget_depictions_big, .supercontent .widget_depictions_big
+    {
+        position: relative;
+        padding: 0;
+        margin: 0 5px 0 0;
+    }
+    .intro .widget_depictions_big:before, .supercontent .widget_depictions_big:before
+    {
+        content: '';
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        display: block;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        bottom: 5px;
+        left: 0;
+        background: black;
+        -moz-box-shadow: 0px 0px 4px 1px black;
+        -webkit-box-shadow: 0px 0px 4px 1px black;
+        -o-box-shadow: 0px 0px 4px 1px black;
+        box-shadow: 0px 0px 4px 1px black;
+        z-index: 1;
+    }
+    .intro .widget_depictions_big img, .supercontent .widget_depictions_big img
     {
         width: 100%;
         height: auto;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: 2;
     }
 
     .intro
@@ -924,6 +991,7 @@
         color: white;
         background: #4c78a4;
         border-width: 1px;
+        border-style: none;
         border-color: white;
         font-weight: normal;
         text-decoration: none;

@@ -12,6 +12,21 @@
  * this template renders the main content (e.g. main textarea) of a resource
  */
 
+// TODO: move to config?
+$depiction = 'http://xmlns.com/foaf/0.1/depiction';
+
+// add an depiction if one exist
+// TODO: look for foaf:img (and maybe others) too and use the most specific one
+// TODO: use instant picture creator with URI mode here
+$imgRel = null; $imgSrc = null; $imgAlt = null; $imgClass = null;
+if (isset($this->description[$depiction])) {
+    $imgRel   = $this->curie($depiction);
+    $imgSrc   = $this->description[$depiction][0]['value'];
+    $imgAlt   = 'Depiction of ' . htmlentities($this->title);
+    $imgClass = 'depiction';
+    // echo "<img rel='$imgRel' src='$imgSrc' alt='$imgAlt' class='$imgClass' />";
+}
+
 // TODO: dummy data for projects
 if (strpos(serialize($this->description['http://www.w3.org/1999/02/22-rdf-syntax-ns#type']), 'Project') !== false)
 {
@@ -25,19 +40,56 @@ if (strpos(serialize($this->description['http://www.w3.org/1999/02/22-rdf-syntax
     $screenshots = array(array('rel'=>'foaf:depiction', 'uri'=>'http://dummyimage.com/300x200.png&text=screenshot', 'label'=>'###'));
 }
 
-// TODO: move to config?
-$depiction = 'http://xmlns.com/foaf/0.1/depiction';
-
-// add an depiction if one exist
-// TODO: look for foaf:img (and maybe others) too and use the most specific one
-// TODO: use instant picture creator with URI mode here
-if (isset($this->description[$depiction])) {
-    $imgRel   = $this->curie($depiction);
-    $imgSrc   = $this->description[$depiction][0]['value'];
-    $imgalt   = 'Depiction of ' . htmlentities($this->title);
-    $imgClass = 'depiction';
-    echo "<img rel='$imgRel' src='$imgSrc' alt='$imgSrc' class='$imgClass' />";
+// TODO: dummy data for persons
+if (strpos(serialize($this->description['http://www.w3.org/1999/02/22-rdf-syntax-ns#type']), 'Person') !== false)
+{
+    // TODO: buttons @ teaser
+    /*
+    $buttons = array(array('uri'=>'skype:###', 'label'=>'Skype me'),
+                     array('uri'=>'tel://+4934197####', 'label'=>'Call me at +4934197####')
+               );
+    //*/
+    
+    // TODO: screenshots
+    $screenshots = array(array('rel'=>$imgRel?$imgRel:'foaf:depiction', 'uri'=>$imgSrc?$imgSrc:'http://dummyimage.com/100x125.png&text=face', 'label'=>$imgAlt?$imgAlt:'###'));
+    
+    // TODO: contact information
+    $contacts = array(
+        'Address' => array(
+            array(
+                'type'=>'Office',
+                'label'=>'Johannisgasse 26, Zimmer 5-08, 04103 Leipzig'
+            )
+        ),
+        'Email' => array(
+            array(
+                'type'=>'Office',
+                'label'=>'vorname.nachname@informatik.uni-leipzig.de',
+                'uri'=>'mailto:vorname.nachname@informatik.uni-leipzig.de'
+            )
+        ),
+        'Phone' => array(
+            array(
+                'type'=>'Office',
+                'label'=>'+49 341 97-32###',
+                'uri' => 'tel://+493419732###'
+            )
+        ),
+        'Link' => array(
+            array(
+                'type'=>'Workpage',
+                'label'=>'Workpage @ AKSW',
+                'uri' => '#'
+            ),
+            array(
+                'type'=>'Weblog',
+                'label'=>'Personal Techblog',
+                'uri' => '#'
+            )
+        )
+    );
 }
+
 ?>
 <h1><?php
     echo $this->title;
@@ -48,15 +100,16 @@ if (isset($this->description[$depiction])) {
 
 <?php if (($abstract = $this->literalTag($this->description, 'http://purl.org/dc/terms/abstract', array('tag' => 'p', 'class' => 'abstract'))) ||
           (isset($buttons) && is_array($buttons) && count($buttons) > 0) ||
-          (isset($screenshots) && is_array($screenshots) && count($screenshots) > 0)): ?>
+          (isset($screenshots) && is_array($screenshots) && count($screenshots) > 0) ||
+          (isset($contacts) && is_array($contacts))): ?>
 <header class="intro">
 <?php
 
     if (isset($screenshots) && is_array($screenshots))
     {
-        echo '<div class="depictions">'.PHP_EOL;
+        echo '<div class="widget_depictions">'.PHP_EOL;
         // TODO: insert first pic big and thumbs for all, javascriptify this lates to enable switching between pics
-        echo '<img rel="'.$screenshots[0]['rel'].'" alt="'.$screenshots[0]['label'].'" src="'.$screenshots[0]['uri'].'" class="depiction" />'.PHP_EOL;
+        echo '<div class="widget_depictions_big"><img rel="'.$screenshots[0]['rel'].'" alt="'.$screenshots[0]['label'].'" src="'.$screenshots[0]['uri'].'" class="depiction" /></div>'.PHP_EOL;
         echo '</div>'.PHP_EOL;
     }
 
