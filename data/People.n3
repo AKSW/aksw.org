@@ -28,6 +28,7 @@ people:SebastianTramp a foaf:Person;
     foaf:mbox <mailto:tramp@informatik.uni-leipzig.de>;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=tramp>;
     foaf:phone <tel:+49-341-97-32366>;
+    sioc:feed <http://seebi.soup.io/rss>;
     foaf:nick "Seebi";
     aksw:room "5-08";
     aksw:publicationTag "tramp";
