@@ -12,41 +12,67 @@
  * this template renders a person
  */
 
-$templateData = array(
-    'title'             => $this->title,
-    'resourceUri'       => $this->resourceUri,
-    'description'       => $this->description,
+// TODO: contact information
+$contacts = array(
+    'Address' => array(
+        array(
+            'type'=>'Office',
+            'label'=>'Johannisgasse 26, Room 5-08, 04103 Leipzig'
+        )
+    ),
+    'Email' => array(
+        array(
+            'type'=>'Office',
+            'label'=>'vorname.nachname@informatik.uni-leipzig.de',
+            'url'=>'mailto:vorname.nachname@informatik.uni-leipzig.de'
+        )
+    ),
+    'Phone' => array(
+        array(
+            'type'=>'Office',
+            'label'=>'+49 341 97-32###',
+            'url' => 'tel://+493419732###'
+        )
+    ),
+    'Link' => array(
+        array(
+            'type'=>'Workpage',
+            'label'=>'Workpage @ AKSW',
+            'url' => '#'
+        ),
+        array(
+            'type'=>'Weblog',
+            'label'=>'Personal Techblog',
+            'url' => '#'
+        )
+    )
 );
+
+echo $this->renderx( array('template' => 'aksw2011/content.phtml'));
+
 ?>
-<?php echo $this->partial('aksw2011/content.phtml', $templateData) ?>
 <?php // Current Projects
 $query = '
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX aksw: <http://aksw.org/schema/>
 SELECT DISTINCT ?resourceUri
 WHERE {
-<'.$this->resourceUri.'> foaf:currentProject ?resourceUri.
+    <'.$this->resourceUri.'> foaf:currentProject ?resourceUri.
 }
 ';
 if ($currentProjects = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
-<h2>Current Projects</h2>
-<ul>
+<h1>Current Projects</h1>
 <?php echo $currentProjects ?>
-</ul>
 <?php endif; ?>
 <?php // Past Projects
 $query = '
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX aksw: <http://aksw.org/schema/>
 SELECT DISTINCT ?resourceUri
 WHERE {
-<'.$this->resourceUri.'> foaf:pastProject ?resourceUri.
+    <'.$this->resourceUri.'> foaf:pastProject ?resourceUri.
 }
 ';
 if ($pastProjects = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
-<h2>Past Projects</h2>
-<ul>
+<h1>Past Projects</h1>
 <?php echo $pastProjects ?>
-</ul>
 <?php endif; ?>
 

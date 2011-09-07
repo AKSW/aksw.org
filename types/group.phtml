@@ -12,13 +12,8 @@
  * arranges the content for the project class
  */
 
-// this is the standard template data
-$templateData = array(
-                'title' => $this->title,
-                'resourceUri' => $this->resourceUri,
-                'description' => $this->description,
-            );
-echo $this->partial('aksw2011/content.phtml', $templateData);
+echo $this->renderx( array('template' => 'aksw2011/content.phtml'));
+
 ?>
 <div class="subcolumns">
 <?php // RESEARCH AREAS

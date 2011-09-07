@@ -35,7 +35,7 @@ if (strpos(serialize($this->description['http://www.w3.org/1999/02/22-rdf-syntax
                      array('uri'=>'#', 'label'=>'Fork it!'),
                      array('uri'=>'#', 'label'=>'Documentation')
                );
-    
+
     // TODO: screenshots
     $screenshots = array(array('rel'=>'foaf:depiction', 'uri'=>'http://dummyimage.com/300x200.png&text=screenshot', 'label'=>'###'));
 }
@@ -49,10 +49,10 @@ if (strpos(serialize($this->description['http://www.w3.org/1999/02/22-rdf-syntax
                      array('uri'=>'tel://+4934197####', 'label'=>'Call me at +4934197####')
                );
     //*/
-    
+
     // TODO: screenshots
     $screenshots = array(array('rel'=>$imgRel?$imgRel:'foaf:depiction', 'uri'=>$imgSrc?$imgSrc:'http://dummyimage.com/100x125.png&text=face', 'label'=>$imgAlt?$imgAlt:'###'));
-    
+
     // TODO: contact information
     $contacts = array(
         'Address' => array(
