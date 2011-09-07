@@ -13,14 +13,7 @@
  */
 
 // this is the standard template data
-$templateData           = array(
-    'title'             => $this->descriptionHelper->getTitle($this->resourceUri),
-    'resourceUri'       => $this->resourceUri,
-    'description'       => $this->description[$this->resourceUri],
-    'descriptionHelper' => $this->descriptionHelper,
-    'options'           => $this->options,
-    'baseUri'           => $this->baseUri
-);
+$templateData           = $this->templateData;
 ?><!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
     xmlns:dc="http://purl.org/dc/terms/"
@@ -32,7 +25,7 @@ $templateData           = array(
 
     <meta name="generator" content="<?php echo $this->generator ?>" />
     <link rel="alternate" type="application/rdf+xml" href="<?php echo $this->resourceUri ?>.rdf" />
-    <link rel="pingback" href="<?php echo $this->pingbackUri ?>" />
+    <link rel="pingback" href="<?php echo $this->pingbackUrl ?>" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -49,7 +42,7 @@ $templateData           = array(
     <script type="text/javascript" src="<?php echo $this->themeUrlBase ?>scripts/libraries/jquery-ui.js"></script>
     <!--script type="text/javascript" src="<?php echo $this->libraryUrlBase ?>RDFauthor/src/rdfauthor.js"></script-->
 
-    <title><?php echo $templateData['title'] ?> &mdash; <?php echo $this->site['name'] ?></title>
+    <title><?php echo $templateData['title'] ?> &mdash; <?php echo $this->siteConfig['name'] ?></title>
 
 <?php
     // includes the GA header script
@@ -67,7 +60,8 @@ $templateData           = array(
                 <?php echo $this->partial('aksw2011/header.phtml', $templateData) ?>
             <article id="content">
                 <?php //echo $this->partial('aksw2011/breadcrumbs.phtml', $templateData) ?>
-                <?php echo $this->partial('aksw2011/main.phtml', $templateData) ?>
+                <?php echo $this->renderx(); ?>
+                <?php //echo $this->partial('aksw2011/main.phtml', $templateData) ?>
             </article> <!-- /#content -->
             <section id="sidecontent">
                 <?php echo $this->partial('aksw2011/feed.phtml', $templateData) ?>

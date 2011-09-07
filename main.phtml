@@ -18,10 +18,13 @@ $templateData = array(
     'title' => $this->title,
     'resourceUri' => $this->resourceUri,
     'description' => $this->description,
-    'descriptionHelper' => $this->descriptionHelper,
-    'options'           => $this->options
 );
 
+$this->renderx(array(
+    'description' => $this->description
+));
+
+/*
 if (isset($this->description['http://www.w3.org/1999/02/22-rdf-syntax-ns#type'])) {
     $types = array();
     foreach ($this->description['http://www.w3.org/1999/02/22-rdf-syntax-ns#type'] as $property) {
@@ -49,3 +52,4 @@ if (isset($this->description['http://www.w3.org/1999/02/22-rdf-syntax-ns#type'])
             break;
     }
 }
+ */
