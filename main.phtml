@@ -32,20 +32,20 @@ if (isset($this->description['http://www.w3.org/1999/02/22-rdf-syntax-ns#type'])
 
     switch (true) {
         case (isset($types['http://xmlns.com/foaf/0.1/Project'])):
-            echo $this->partial('aksw2011/types/project.phtml', $templateData);
+            echo '<div class="Project">'.$this->partial('aksw2011/types/project.phtml', $templateData).'</div>';
             break;
         case (isset($types['http://xmlns.com/foaf/0.1/Group'])):
-            echo $this->partial('aksw2011/types/group.phtml', $templateData);
+            echo '<div class="Group">'.$this->partial('aksw2011/types/group.phtml', $templateData).'</div>';
             break;
         case (isset($types['http://xmlns.com/foaf/0.1/Document'])):
-            echo $this->partial('aksw2011/types/document.phtml', $templateData);
+            echo '<div class="Document">'.$this->partial('aksw2011/types/document.phtml', $templateData).'</div>';
             break;
         case (isset($types['http://xmlns.com/foaf/0.1/Person'])):
-            echo $this->partial('aksw2011/types/person.phtml', $templateData);
+            echo '<div class="Person">'.$this->partial('aksw2011/types/person.phtml', $templateData).'</div>';
             break;
         default:
             // no specific template found
-            echo $this->partial( 'aksw2011/types/document.phtml', $templateData);
+            echo '<div class="Document">'.$this->partial( 'aksw2011/types/document.phtml', $templateData).'</div>';
             break;
     }
 }

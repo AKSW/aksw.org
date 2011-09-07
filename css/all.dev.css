@@ -878,6 +878,10 @@
         margin-bottom: 1.333em;
         margin-left: 1.333em;
     }
+    .Person .intro .widget_depictions, .Person .supercontent .widget_depictions
+    {
+        width: 20%;
+    }
     .intro .widget_depictions_big, .supercontent .widget_depictions_big
     {
         position: relative;
