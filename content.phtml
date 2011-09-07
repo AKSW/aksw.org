@@ -54,9 +54,9 @@ if (isset($this->description[$depiction])) {
 
     if (isset($screenshots) && is_array($screenshots))
     {
-        echo '<div class="depictions">'.PHP_EOL;
+        echo '<div class="widget_depictions">'.PHP_EOL;
         // TODO: insert first pic big and thumbs for all, javascriptify this lates to enable switching between pics
-        echo '<img rel="'.$screenshots[0]['rel'].'" alt="'.$screenshots[0]['label'].'" src="'.$screenshots[0]['uri'].'" class="depiction" />'.PHP_EOL;
+        echo '<div class="widget_depictions_big"><img rel="'.$screenshots[0]['rel'].'" alt="'.$screenshots[0]['label'].'" src="'.$screenshots[0]['uri'].'" class="depiction" /></div>'.PHP_EOL;
         echo '</div>'.PHP_EOL;
     }
 

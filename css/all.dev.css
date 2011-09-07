@@ -752,7 +752,7 @@
         line-height: 1;
         margin-top: 0.5em;
         margin-bottom: 0.5em;
-        text-transform: uppercase;
+        font-variant: small-caps;
     }
     h1 .hookline
     {
@@ -761,6 +761,8 @@
         font-size: 0.5em;
         line-height: 1.5;
         width: 90%;
+        text-transform: uppercase;
+        font-variant: normal;
     }
 
     #sidecontent h1
@@ -779,7 +781,7 @@
     {
         font-size: 1.538em;
         line-height: 1.5;
-        text-transform: uppercase;
+        font-variant: small-caps;
     }
 
     h3
@@ -839,15 +841,46 @@
     {
         margin-top: 0;
     }
-    .intro .depictions, .supercontent .depictions
+    .intro .widget_depictions, .supercontent .widget_depictions
     {
         float: right;
-        width: 33%;
+        width: 40%;
+        margin-bottom: 1.333em;
+        margin-left: 1.333em;
     }
-    .intro .depictions .depiction, .supercontent .depictions .depiction
+    .intro .widget_depictions_big, .supercontent .widget_depictions_big
+    {
+        position: relative;
+        padding: 0;
+        margin: 0 5px 0 0;
+    }
+    .intro .widget_depictions_big:before, .supercontent .widget_depictions_big:before
+    {
+        content: '';
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        display: block;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        bottom: 5px;
+        left: 0;
+        background: black;
+        -moz-box-shadow: 0px 0px 4px 1px black;
+        -webkit-box-shadow: 0px 0px 4px 1px black;
+        -o-box-shadow: 0px 0px 4px 1px black;
+        box-shadow: 0px 0px 4px 1px black;
+        z-index: 1;
+    }
+    .intro .widget_depictions_big img, .supercontent .widget_depictions_big img
     {
         width: 100%;
         height: auto;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: 2;
     }
 
     .intro
@@ -924,6 +957,7 @@
         color: white;
         background: #4c78a4;
         border-width: 1px;
+        border-style: none;
         border-color: white;
         font-weight: normal;
         text-decoration: none;
