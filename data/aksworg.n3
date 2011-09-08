@@ -24,9 +24,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://aksw.org/> a void:Dataset;
+    dcterms:description "This dataset contains projects, sub groups, people and pages or the Agile Knowledge Management and Semantic Web (AKSW) Research Group @ University of Leipzig.";
     foaf:homepage <http://aksw.org>;
     foaf:page projects:AKSWorg;
-    dcterms:title "aksw.org Website";
+    dcterms:title "aksw.org";
     dcterms:creator people:SebastianTramp;
     dcterms:contributor groups:ES, groups:MOLE, groups:SIMBA;
     dcterms:publisher groups:ES, groups:MOLE, groups:SIMBA;
