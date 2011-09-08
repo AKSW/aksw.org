@@ -40,65 +40,16 @@ if (strpos(serialize($this->description['http://www.w3.org/1999/02/22-rdf-syntax
     $screenshots = array(array('rel'=>'foaf:depiction', 'uri'=>'http://dummyimage.com/300x200.png&text=screenshot', 'label'=>'###'));
 }
 
-// TODO: dummy data for persons
-if (strpos(serialize($this->description['http://www.w3.org/1999/02/22-rdf-syntax-ns#type']), 'Person') !== false)
-{
-    // TODO: buttons @ teaser
-    /*
-    $buttons = array(array('uri'=>'skype:###', 'label'=>'Skype me'),
-                     array('uri'=>'tel://+4934197####', 'label'=>'Call me at +4934197####')
-               );
-    //*/
-
-    // TODO: screenshots
-    $screenshots = array(array('rel'=>$imgRel?$imgRel:'foaf:depiction', 'uri'=>$imgSrc?$imgSrc:'http://dummyimage.com/100x125.png&text=face', 'label'=>$imgAlt?$imgAlt:'###'));
-
-    // TODO: contact information
-    $contacts = array(
-        'Address' => array(
-            array(
-                'type'=>'Office',
-                'label'=>'Johannisgasse 26, Zimmer 5-08, 04103 Leipzig'
-            )
-        ),
-        'Email' => array(
-            array(
-                'type'=>'Office',
-                'label'=>'vorname.nachname@informatik.uni-leipzig.de',
-                'uri'=>'mailto:vorname.nachname@informatik.uni-leipzig.de'
-            )
-        ),
-        'Phone' => array(
-            array(
-                'type'=>'Office',
-                'label'=>'+49 341 97-32###',
-                'uri' => 'tel://+493419732###'
-            )
-        ),
-        'Link' => array(
-            array(
-                'type'=>'Workpage',
-                'label'=>'Workpage @ AKSW',
-                'uri' => '#'
-            ),
-            array(
-                'type'=>'Weblog',
-                'label'=>'Personal Techblog',
-                'uri' => '#'
-            )
-        )
-    );
-}
-
 ?>
 <h1><?php
     echo $this->title;
-    echo ($hookline = $this->literalTag($this->description,
-        'http://aksw.org/schema/hookline',
-        array('tag' => 'span', 'class' => 'hookline')))? '<span class="hideme">:</span> '.$hookline:'' ;
+    echo $this->literal(array(
+        'property' => 'aksw:hookline', 'class' => 'hookline',
+        'prefix' => '<span class="hideme">:</span> '
+        ));
 ?></h1>
 
-<?php if (($abstract = $this->literalTag($this->description, 'http://purl.org/dc/terms/abstract', array('tag' => 'p', 'class' => 'abstract'))) ||
+<?php if (($abstract = $this->literal(array('property' => 'dcterms:abstract', 'tag' => 'p', 'class' => 'abstract'))) ||
           (isset($buttons) && is_array($buttons) && count($buttons) > 0) ||
           (isset($screenshots) && is_array($screenshots) && count($screenshots) > 0) ||
           (isset($contacts) && is_array($contacts))): ?>
@@ -129,13 +80,5 @@ if (strpos(serialize($this->description['http://www.w3.org/1999/02/22-rdf-syntax
 <?php endif; ?>
 
 <?php
-echo $this->literalTag($this->description, null, array('tag' => 'div', 'class' => 'content'));
-
-// raw content is added in addition to sioc or formatted content
-$rawContent = 'http://lod2.eu/schema/contentRaw';
-if (isset($this->description[$rawContent])) {
-    echo '<div property="' . $this->curie($rawContent) . '">' . PHP_EOL;
-    echo $this->description[$rawContent][0]['value'];
-    echo '</div>';
-}
+echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses default content properties
 

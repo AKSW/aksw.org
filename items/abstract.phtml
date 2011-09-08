@@ -32,26 +32,21 @@ if ($this->listhint == 'first') {
 if (!Erfurt_Uri::check($resourceUri)) {
     echo "<!-- $title is not a resource -->";
 } else {
-    // prepare resource description
-    $resource    = new OntoWiki_Resource($resourceUri, OntoWiki::getInstance()->selectedModel);
-    $description = $resource->getDescription();
-    $description = $description[$resourceUri];
-
-    // prepare the link url
-    $url = $resourceUri;
-    //$url = new OntoWiki_Url(array('route' => 'properties'), array('r'));
-    //$url->setParam('r', $resourceUri, true);
-
     // prepare the abstract
-    $more = " [<a href='$url'>read more</a>]";
-    $abstract = $this->literalTag(
-        $description,
-        'http://purl.org/dc/terms/abstract',
-        array('tag' => 'p', 'class' => 'abstract', 'isuffix' => $more)
+    $moreLink = $this->link(array('uri' => $resourceUri, 'text' => '[read more]'));
+    $abstract = $this->literal(array(
+        'uri' => $resourceUri,
+        'property' => 'dcterms:abstract',
+        'tag' => 'p', 'class' => 'abstract',
+        'isuffix' => ' ' . $moreLink)
     );
+    $headingLink = $this->link(array(
+        'uri' => $resourceUri, 'text' => $title,
+        'prefix' => "<$heading>", 'suffix' => "</$heading>"
+    ));
 ?>
-    <div about="<?php echo $url ?>">
-    <?php echo "<$heading><a href='$url'>$title</a></$heading>" ?>
+    <div about="<?php echo $this->curie($resourceUri) ?>">
+    <?php echo $headingLink ?>
     <?php echo $abstract ?>
     </div>
 <?php

@@ -29,27 +29,17 @@ if ($this->listhint == 'first') {
 if (!Erfurt_Uri::check($resourceUri)) {
     echo "<li class='$oddclass'>$title</li>";
 } else {
-    // prepare resource description
-    $resource    = new OntoWiki_Resource($resourceUri, OntoWiki::getInstance()->selectedModel);
-    $description = $resource->getDescription();
-    $description = $description[$resourceUri];
-
-    // prepare the link url
-    $url = $resourceUri;
-    //$url = new OntoWiki_Url(array('route' => 'properties'), array('r'));
-    //$url->setParam('r', $resourceUri, true);
-
     // prepare the optional hookline
-    $hookline = $this->literalTag(
-        $description,
-        'http://aksw.org/schema/hookline',
-        array('tag' => 'span', 'class' => 'hookline', 'prefix' => ' – ')
+    $hookline = $this->literal(array(
+        'uri' => $resourceUri, 'property' => 'aksw:hookline',
+        'tag' => 'span', 'class' => 'hookline', 'prefix' => ' – ')
     );
+    $link = $this->link(array(
+        'uri' => $resourceUri, 'text' => $title
+    ))
 ?>
-    <li class="<?php echo $oddclass ?>" about="<?php echo $url ?>">
-        <a href="<?php echo $url ?>">
-            <span property="rdfs:label"><?php echo $title ?></span>
-        </a><?php echo $hookline ?>
+    <li class="<?php echo $oddclass ?>" about="<?php echo $this->curie($resourceUri) ?>">
+        <?php echo $link , $hookline ?>
     </li>
 <?php
 }
