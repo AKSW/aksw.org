@@ -46,6 +46,13 @@
 <http://wiki.aksw.org/Internal> rdfs:label "Internal Area".
 
 # page resources
+:NotFound a foaf:Document;
+    site:content """
+Either the resource you are trying to reach is not available anymore on this server, or you have tried to access a 'dead' link.
+"""^^sysont:Markdown;
+    aksw:hookline "Resource not found";
+    rdfs:label "404".
+
 :Contact a foaf:Document;
     site:content """
 {{navigationlist navResource="http://aksw.org/Navigation/Main" titleProperty="http://ns.ontowiki.net/SysOnt/Site/menuLabel" navClass="nav-sidelinks"}}
