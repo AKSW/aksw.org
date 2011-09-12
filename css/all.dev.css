@@ -690,6 +690,9 @@
     {
         position: relative;
         top: -4.077em;
+        float: left;
+        width: 10.231em;
+        margin-left: -10.231em;
     }
     .nav-sidelinks ul
     {
@@ -697,13 +700,11 @@
         overflow: hidden;
         list-style: none;
         text-align: right;
-        width: 10.231em;
-        float: left;
-        margin-left: -10.231em;
+        padding-right: 1.538em;
     }
     .nav-sidelinks ul li
     {
-        margin: 0.75em 1.538em;
+        margin: 0.75em 0;
         padding: 0;
     }
     .nav-sidelinks ul a, .nav-sidelinks ul strong
@@ -711,6 +712,10 @@
         display: block;
         margin: 0;
         padding: 0;
+    }
+    .nav-sidelinks ul ul
+    {
+        padding-right: 0;
     }
     .nav-sidelinks a, .nav-sidelinks strong
     {
@@ -720,6 +725,12 @@
     .nav-sidelinks strong, .nav-sidelinks .active a
     {
         font-weight: bold;
+    }
+    .nav-sidelinks strong.headline, .nav-sidelinks a.headline
+    {
+        color: black;
+        font-size: 1.154em;
+        line-height: 1.333;
     }
 
     /* -- TOC -------------------------------------------------------------- */

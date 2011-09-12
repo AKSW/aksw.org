@@ -31,8 +31,49 @@ $name = 'name'; $depictions = array(true); $contacts = array(true);
     echo $this->renderx(array('template'=>'aksw2011/items/vcardperson.phtml'));
 ?>
 </header> <!-- /.intro -->
+<?php elseif ($title = $this->title): ?>
+    <h1><?php echo $title; ?></h1>
 <?php endif; ?>
-
+<!-- TODO: static sidelinks for testing it using 2 levels -->
+<nav class="nav-sidelinks">
+    <ul>
+        <li><a class="headline" href="#">Lorem</a>
+            <ul>
+                <li><a href="#">eiusmod  et dolore</a></li>
+                <li><a href="#">quis nostrud exercitation</a></li>
+                <li><a href="#">laboris nisi</a></li>
+            </ul>
+        </li>
+        <li><a class="headline" href="#">ipsum dolor</a>
+            <ul>
+                <li><a href="#">commodo consequat</a></li>
+                <li><a href="#">dolor in reprehenderit</a></li>
+                <li><a href="#">voluptate velit esse</a></li>
+            </ul>
+        </li>
+        <li><a class="headline" href="#">consectetur adipisicing elit</a>
+            <ul>
+                <li><a href="#">Duis aute irure</a></li>
+                <li><a href="#">cillum dolore eu fugiat</a></li>
+                <li><a href="#">Excepteur sint</a></li>
+            </ul>
+        </li>
+        <li><a class="headline" href="#">tempor incididunt ut labore</a>
+            <ul>
+                <li><a href="#">occaecat cupidatat non proident</a></li>
+                <li><a href="#">nulla pariatur</a></li>
+                <li><a href="#">in culpa</a></li>
+            </ul>
+        </li>
+        <li><a class="headline" href="#">magna aliqua</a>
+            <ul>
+                <li><a href="#">officia deserunt</a></li>
+                <li><a href="#">sunt  qui  mollit anim</a></li>
+                <li><a href="#">enim ad minim</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
 <?php
 echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses default content properties
 
