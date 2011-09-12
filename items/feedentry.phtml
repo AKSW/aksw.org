@@ -1,0 +1,89 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org feedentry template
+ *
+ * used by the feeds module over the template option
+ */
+
+// this is the used heading level tag
+$tag = 'h2';
+
+foreach ($this->entries as $entry) {
+
+    // prepare the heading (link) and more link
+    if ( (isset($entry['link'])) && (isset($entry['title'])) ) {
+        // link and title exists: full header and more link
+        $heading = $this->link(array(
+            'direct' => "yes",
+            'uri'    => $entry['link'],
+            'text'   => $entry['title'],
+            'prefix' => "<$tag>",
+            'suffix' => "</$tag>",
+        ));
+        $more = $this->link(array(
+            'direct' => "yes",
+            'uri'    => $entry['link'],
+            'text'   => "[more]",
+            'prefix' => "... "
+        ));
+    } elseif (isset($entry['title'])) {
+        // only title exist: unlinked header, no more link
+        $heading = "<$tag>" . $entry['title'] . "</$tag>";
+        $more    = '';
+    } elseif (isset($entry['link'])) {
+        // only link exist: no header but more link
+        $heading = '';
+        $more    = $this->link(array(
+            'direct' => "yes",
+            'uri'    => $entry['link'],
+            'text'   => "[more]",
+            'prefix' => "... "
+        ));
+    } else {
+        // either link nor title: no header and no more link
+        $heading = '';
+        $more    = '';
+    }
+
+    // prepare author link: search for author as a resource
+    $author = 'by ' . $this->link(array(
+        'literal' => $entry['authors'][0]['name'],
+        //'property' => 'skos:hiddenLabel'
+    ));
+
+    // prepare timeago link with the Zend_Date object
+    if (isset($entry['dateModified'])) {
+        $timeago = $this->timeago(array(
+            'time' => $entry['dateModified']->toString(Zend_Date::ISO_8601)
+        ));
+    } else {
+        $timeago = '';
+    }
+
+    // prepare the text
+    if ( (isset($entry['description'])) && ($entry['description'] != $entry['title']) ) {
+        $text  = substr(strip_tags($entry['description']), 0, 500);
+        $text  = str_replace('[...]', '', $text);
+        $text .= $more;
+        $text  = '<p>' . $text .'</p>';
+    } else {
+        $text = '';
+    }
+?>
+<!-- feed entry start -->
+<?php echo $heading ?>
+<p class="meta">
+    <?php echo $timeago ?>
+    <?php echo $author ?>
+</p>
+<?php echo $text ?>
+<!-- feed entry end -->
+<?php
+}

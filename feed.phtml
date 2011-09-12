@@ -14,7 +14,10 @@
 
 
 // prepare module options
-$moduleOptions = array('noChrome' => true);
+$moduleOptions = array(
+    'noChrome' => true,
+    'template' => 'aksw2011/items/feedentry'
+);
 $moduleConfig = new Zend_Config($moduleOptions);
 $content = trim($this->module('feeds', $moduleConfig));
 ?>
