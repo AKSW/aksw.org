@@ -1066,4 +1066,19 @@
     {
         font-weight: normal;
     }
+
+    /* -- Query List Abstract ---------------------------------------------- */
+    div.abstract
+    {
+        overflow: hidden;
+    }
+    div.abstract .logo
+    {
+        float: right;
+        margin-bottom: 1.333em;
+        margin-left: 1.333em;
+        height: auto;
+        width: 25%;
+        margin-top: -2em;
+    }
 }
