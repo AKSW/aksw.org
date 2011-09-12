@@ -33,6 +33,7 @@ projects:OntoWiki a foaf:Project, aksw:OpenSourceProject;
     rdfs:label "OntoWiki".
 
 projects:LinkedGeoData a foaf:Project, aksw:CommunityProject;
+    foaf:logo <http://lh5.ggpht.com/-_9gwxkZRP1g/TlzV1epfNLI/AAAAAAAAApQ/xecznFVEWF4/s800/lgdlogo.png>;
     aksw:hookline "adds a spatial dimension to the Web of Data";
     dcterms:abstract "LinkedGeoData is an effort to add a spatial dimension to the Web of Data / Semantic Web. LinkedGeoData uses the information collected by the OpenStreetMap project and makes it available as an RDF knowledge base according to the Linked Data principles. It interlinks this data with other knowledge bases in the Linking Open Data initiative.";
     site:content "..."^^sysont:Markdown;
@@ -41,6 +42,7 @@ projects:LinkedGeoData a foaf:Project, aksw:CommunityProject;
     rdfs:label "LinkedGeoData".
 
 projects:Triplify a foaf:Project, aksw:OpenSourceProject;
+    foaf:logo <http://lh3.ggpht.com/-rvVhwgpYdsw/TlzV2Ik-6cI/AAAAAAAAAps/9zs0HPF7Y1E/s800/logo-triplify.png>;
     aksw:hookline "tackles the chicken-and-egg problem of the Semantic Web by providing a building block for the 'semantification' of Web applications";
     dcterms:abstract "Triplify tackles the chicken-and-egg problem of the Semantic Web by providing a building block for the “semantification” of Web applications. Triplify provides small, light-weight plugins for database-backed Web applications and exposes semantics as RDF, Linked Data and JSON.";
     site:content "..."^^sysont:Markdown;
@@ -57,6 +59,7 @@ projects:Cofundos a foaf:Project, aksw:CommunityProject;
     rdfs:label "Cofundos".
 
 projects:DBpedia a foaf:Project, aksw:OpenSourceProject, aksw:CommunityProject;
+    foaf:logo <http://lh3.ggpht.com/-boPYCFsH6_g/TlzV0n3IoFI/AAAAAAAAApA/vLA-xusLvEU/s800/dbpedia_logo.png>;
     aksw:hookline "Querying Wikipedia like a Semantic Database";
     dcterms:abstract "DBpedia is a community effort to extract structured information from Wikipedia and make this information available on the Web. DBpedia allows you to ask sophisticated queries against Wikipedia and to link other datasets on the Web to Wikipedia data.";
     site:content "..."^^sysont:Markdown;
@@ -65,6 +68,7 @@ projects:DBpedia a foaf:Project, aksw:OpenSourceProject, aksw:CommunityProject;
     rdfs:label "DBpedia".
 
 projects:DL-Learner a foaf:Project, aksw:OpenSourceProject;
+    foaf:logo <http://lh6.ggpht.com/-zlbGRGr3yqQ/TlzV0wfOKNI/AAAAAAAAApE/fy4lmGAAOjk/s800/DL-Learner.gif>;
     aksw:hookline "a tool for supervised Machine Learning in OWL and Description Logics";
     dcterms:abstract "DL-Learner is a tool for learning concepts in Description Logics (DLs) from user-provided examples. Equivalently, it can be used to learn classes in OWL ontologies from selected objects. The goal of DL-Learner is to support knowledge engineers in constructing knowledge and learning about the data they created.";
     site:content "..."^^sysont:Markdown;
@@ -73,12 +77,14 @@ projects:DL-Learner a foaf:Project, aksw:OpenSourceProject;
     rdfs:label "DL-Learner".
 
 projects:GENIA a foaf:Project, aksw:CommunityProject;
+    foaf:logo <http://lh5.ggpht.com/-qFlvAOrCl8U/TlzV1G1QwhI/AAAAAAAAApI/-raYz1zUBHo/s800/genia.jpg>;
     dcterms:abstract "The aim of the GENIA relation ontology is to provide a set of relations which define a detailed and broadly applicable set of relation types based on accepted domain standard concepts for use in corpus annotation and domain information extraction approaches. To ensure that the meaning of the relationships is explicit, the relations are specified in OWL (see download section). We integrate categories and relations from several domain ontologies including IAO, OBI, GO and the GENIA ontology for maximal compatibility.";
     site:content "..."^^sysont:Markdown;
     doap:homepage <http://www-tsujii.is.s.u-tokyo.ac.jp/GENIA/home/wiki.cgi?page=Relation+annotation>;
     rdfs:label "Relation Annotation in GENIA".
 
 projects:BorderFlow a foaf:Project, aksw:OpenSourceProject;
+    foaf:logo <http://lh3.ggpht.com/--AHkXL5BmKQ/TlzV0UzR0EI/AAAAAAAAAo4/dPgtsMN8pd0/s800/borderFlow.png>;
     aksw:hookline "a general-purpose graph clustering tool";
     dcterms:abstract "BorderFlow is a general-purpose graph clustering tool. It uses solely local information for clustering and achieves a soft clustering of the input graph. It maximizes intra-cluster density and inter-cluster sparseness simultaneously. The default setting of BorderFlow implements a fast heuristic for maximal usability. BorderFlow also implements several heuristics, optimal versions and hardening approaches.";
     site:content "..."^^sysont:Markdown;
@@ -86,6 +92,7 @@ projects:BorderFlow a foaf:Project, aksw:OpenSourceProject;
     rdfs:label "Border~Flow".
 
 projects:LIMES a foaf:Project, aksw:OpenSourceProject;
+    foaf:logo <http://lh4.ggpht.com/-u3xaJ9mAcfY/TlzV1f0OluI/AAAAAAAAApU/z0V6VURN_tI/s800/limes.png>;
     aksw:hookline "LInk discovery framework for MEtric Spaces";
     dcterms:abstract "LIMES is a link discovery framework for the Web of Data. It implements time-efficient approaches for large-scale link discovery based on the characteristics of metric spaces. It is easily configurable via a web interface. It can also be downloaded as standalone tool for carrying out link discovery locally.";
     site:content "..."^^sysont:Markdown;
@@ -93,6 +100,7 @@ projects:LIMES a foaf:Project, aksw:OpenSourceProject;
     rdfs:label "LIMES".
 
 projects:FOX a foaf:Project, aksw:OpenSourceProject;
+    foaf:logo <http://lh3.ggpht.com/-d79marTMEUo/TlzV1DPGXZI/AAAAAAAAApY/HOpg8PyJT0o/s800/fox.png>;
     aksw:hookline "Federated knOwledge eXtraction Framework";
     dcterms:abstract "FOX is a framework that integrates the Linked Data Cloud and makes uses of the diversity of NLP algorithms to extract RDF triples of high accuracy out of NL. In its current version, it integrates and merges the results of Named Entity Recognition, Keyword Extraction and Relation Extraction tools.";
     site:content "..."^^sysont:Markdown;
@@ -100,6 +108,7 @@ projects:FOX a foaf:Project, aksw:OpenSourceProject;
     rdfs:label "FOX".
 
 projects:ALOE a foaf:Project, aksw:OpenSourceProject;
+    foaf:logo <http://lh6.ggpht.com/-cKyW9y1LnU4/TlzV0t9TEfI/AAAAAAAAAo8/-YMAKwJgSi0/s800/aloe.png>;
     aksw:hookline "Assisted Linked Data Consumption Engine";
     dcterms:abstract "ALOE is a linked data consumption engine that provides assistance to its user by suggesting class, property and consumption settings automatically.";
     site:content "..."^^sysont:Markdown;

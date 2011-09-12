@@ -74,6 +74,7 @@ projects:LE4SW a foaf:Project, aksw:FundedProject;
     rdfs:label "LE4SW".
 
 projects:SoftWiki a foaf:Project, aksw:FundedProject;
+    foaf:logo <http://lh3.ggpht.com/-O0rHt6DYrHE/TlzV1zEb4sI/AAAAAAAAApo/bg7W55zdiIQ/s800/logo_softwiki-200px.png>;
     doap:homepage <http://softwiki.de>;
     aksw:status "finished";
     aksw:hookline "Semantics- and Community-Based Requirements Engineering";

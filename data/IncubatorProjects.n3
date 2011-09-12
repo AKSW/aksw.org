@@ -160,6 +160,7 @@ projects:QueryCache a foaf:Project, aksw:IncubatorProject;
     rdfs:label "Query Cache".
 
 projects:xOperator a foaf:Project, aksw:IncubatorProject;
+    foaf:logo <http://lh4.ggpht.com/-QkTbfyQlcwc/TlzV28aEmbI/AAAAAAAAAp8/AJk2bBBpJXw/s800/xOperator.png>;
     aksw:hookline "combines advantages of social network websites with instant messaging";
     dcterms:abstract "A semantic agent for xmpp / jabber network which finds and shares content about resources (using RDF/SPARQL) for you and your jabber friends.";
     site:content """
@@ -193,6 +194,7 @@ projects:OpenResearch a foaf:Project, aksw:IncubatorProject;
     rdfs:label "OpenResearch".
 
 projects:RDFauthor a foaf:Project, aksw:IncubatorProject;
+    foaf:logo <http://lh3.ggpht.com/-WmVFVyaDjEM/TlzV2VGNWmI/AAAAAAAAAp0/WGqBhMYkDFI/s800/rdfa.png>;
     aksw:hookline "is an editing solution for distributed and syndicated structured content on the World Wide Web";
     dcterms:abstract "The system is able to extract structured information from RDFa-enhanced websites and to create an edit form based on this data. To this end, we make use of semantics-aware editing widgets that hide most of the RDF data model from the user, thus allowing more people to author semantic content. If the embedded data does not suffice to create a rich user-supporting editing view, the underlying Semantic Web infrastructure is used to retrieve additional schema-related information about the elements used.";
     site:content """
