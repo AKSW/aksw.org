@@ -12,81 +12,48 @@
  * arranges the content for the project class
  */
 
-// TODO: move to config?
-$depiction = 'http://xmlns.com/foaf/0.1/depiction';
+// prepare hookline and abstract (both optional)
+$hookline = $this->literal(array(
+    'property' => 'aksw:hookline',
+    'class' => 'hookline',
+    'prefix' => '<span class="hideme">:</span> '
+));
+$abstract = $this->literal(array(
+    'property' => 'dcterms:abstract',
+    'tag' => 'p',
+    'class' => 'abstract'
+));
 
-// add an depiction if one exist
-// TODO: look for foaf:img (and maybe others) too and use the most specific one
-// TODO: use instant picture creator with URI mode here
-$imgRel = null; $imgSrc = null; $imgAlt = null; $imgClass = null;
-if (isset($this->description[$depiction])) {
-    $imgRel   = $this->curie($depiction);
-    $imgSrc   = $this->description[$depiction][0]['value'];
-    $imgAlt   = 'Depiction of ' . htmlentities($this->title);
-    $imgClass = 'depiction';
-    // echo "<img rel='$imgRel' src='$imgSrc' alt='$imgAlt' class='$imgClass' />";
-}
+// prepare the single image screenshot
+// TODO: insert first pic big and thumbs for all, javascriptify this lates to enable switching between pics
+$singleImage = $this->img(array(
+    //'src'      => 'http://dummyimage.com/1024x768.png',
+    //'uri'      => 'http://aksw.org/Projects/OntoWiki',
+    'property' => 'ov:screenshot',
+    'filter'   => 'Resize-width-300',
+    'alt'      => 'screenshot',
+    'class'    => 'depiction',
+    'prefix'   => '<div class="widget_depictions"><div class="widget_depictions_big">'.PHP_EOL,
+    'suffix'   => '</div></div>'.PHP_EOL
+));
 
-// TODO: dummy data for buttons @ teaser
-$buttons = array(array('uri'=>'#', 'label'=>'Download'),
-                 array('uri'=>'#', 'label'=>'Fork it!'),
-                 array('uri'=>'#', 'label'=>'Documentation')
-           );
-
-// TODO: dummy data for screenshots
-$screenshots = array(array('rel'=>$imgRel?$imgRel:'foaf:depiction', 'uri'=>$imgSrc?$imgSrc:'http://dummyimage.com/300x200.png&text=screenshot', 'label'=>$imgAlt?$imgAlt:'###'));
+// prepare button row
+$query = '
+PREFIX aksw: <http://aksw.org/schema/>
+SELECT DISTINCT ?resourceUri ?label ?propertyUri
+WHERE {
+    <'.$this->resourceUri.'> ?propertyUri ?resourceUri.
+    ?propertyUri aksw:buttonLabel ?label
+}';
+$buttons = $this->querylist($query, 'aksw2011/items/buttons.phtml');
 
 ?>
-
-<?php if (($abstract = $this->literal(array('property' => 'dcterms:abstract', 'tag' => 'p', 'class' => 'abstract'))) |
-          (isset($buttons) && is_array($buttons) && count($buttons) > 0) |
-          (isset($screenshots) && is_array($screenshots) && count($screenshots) > 0) |
-          ($title = $this->title)
-         ): ?>
 <header class="intro">
-<?php
-
-    if ($title |
-        ($hookline = $this->literal(array('property' => 'aksw:hookline', 'class' => 'hookline', 'prefix' => '<span class="hideme">:</span> ')))
-       )
-    {
-        echo '<h1>'.$title;
-        if ($hookline)
-        {
-            echo $hookline;
-        }
-        echo '</h1>'.PHP_EOL;
-    }
-
-    if (isset($screenshots) && is_array($screenshots))
-    {
-        // TODO: insert first pic big and thumbs for all, javascriptify this lates to enable switching between pics
-        echo $this->img(array(
-            //'src'      => 'http://dummyimage.com/1024x768.png',
-            //'uri'      => 'http://aksw.org/Projects/OntoWiki',
-            'property' => 'ov:screenshot',
-            'filter'   => 'Resize-width-300',
-            'alt'      => 'screenshot',
-            'class'    => 'depiction',
-            'prefix'   => '<div class="widget_depictions"><div class="widget_depictions_big">'.PHP_EOL,
-            'suffix'   => '</div></div>'.PHP_EOL
-        ));
-    }
-
-    echo $abstract?$abstract.PHP_EOL:'';
-
-    if (isset($buttons) && is_array($buttons))
-    {
-        echo '<p class="button-row">'.PHP_EOL;
-        foreach ($buttons as $button)
-        {
-            echo '<a class="button" href="'.$button['uri'].'">'.htmlentities($button['label']).'</a>'.PHP_EOL;
-        }
-        echo '</p>'.PHP_EOL;
-    }
-?>
+    <h1><?php echo $this->title . $hookline ?></h1>
+    <?php echo $singleImage ?>
+    <?php echo $abstract ?>
+    <?php echo $buttons ?>
 </header> <!-- /.intro -->
-<?php endif; ?>
-
 <?php
 echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses default content properties
+

@@ -12,28 +12,26 @@
  * arranges the content for the group class
  */
 
-?>
+// prepare hookline and abstract (both optional)
+// yes, hookline also for groups please :-)
+$hookline = $this->literal(array(
+    'property' => 'aksw:hookline',
+    'class' => 'hookline',
+    'prefix' => '<span class="hideme">:</span> '
+));
+$abstract = $this->literal(array(
+    'property' => 'dcterms:abstract',
+    'tag' => 'p',
+    'class' => 'abstract'
+));
 
-<?php if (($abstract = $this->literal(array('property' => 'dcterms:abstract', 'tag' => 'p', 'class' => 'abstract'))) |
-          ($title = $this->title)
-         ): ?>
+?>
 <header class="intro">
-<?php
-
-    if ($title)
-    {
-        echo '<h1>'.$title.'</h1>'.PHP_EOL;
-    }
-
-    echo $abstract?$abstract.PHP_EOL:'';
-
-?>
+    <h1><?php echo $this->title . $hookline ?></h1>
+    <?php echo $abstract ?>
 </header> <!-- /.intro -->
-<?php endif; ?>
-
 <?php
 echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses default content properties
-
 ?>
 <div class="subcolumns">
 <?php // RESEARCH AREAS
