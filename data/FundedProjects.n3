@@ -36,6 +36,7 @@ projects:LOD2 a foaf:Project, aksw:FundedProject;
     rdfs:label "LOD2".
 
 projects:LATC a foaf:Project, aksw:FundedProject;
+    foaf:logo <http://latc-project.eu/sites/default/files/latc-logo.gif>;
     doap:homepage <http://latc-project.eu>;
     aksw:hookline "LOD Around-the-Clock";
     dcterms:abstract "This EU-funded support action aims at making it easier for data owners to publish Linked Data and interlink it with other data sources. A user-friendly 24/7 interlinking engine is developed within the project, allowing to compute and update interlinks as well as to assess their quality.";
@@ -48,6 +49,7 @@ projects:LATC a foaf:Project, aksw:FundedProject;
     rdfs:label "LATC".
 
 projects:SCMS a foaf:Project, aksw:FundedProject;
+    foaf:logo <http://www.scms.eu/wp-content/themes/scms-theme/images/scms-logo.png>;
     doap:homepage <http://scms.eu>;
     aksw:hookline "Semantic Content Management Systems";
     dcterms:abstract "SCMS aims at combining automatic knowledge discovery and participative, end-user-driven knowledge curation and extension techniques through Social Semantic Web approaches so as to create novel applications in Enterprise Knowledge Management and real-time News Mining.";
