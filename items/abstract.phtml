@@ -24,7 +24,7 @@ $title       = $this->title;
 $oddclass    = $this->oddclass;
 $heading     = (isset($this->heading)) ? $this->heading : 'h2';
 
-if ($this->listhint == 'first') {
+if ( ($this->listhint == 'first') || ($this->rowcount == 1) ) {
     echo "<div class='query-list-abstract'>" . PHP_EOL;
 }
 
@@ -72,6 +72,6 @@ if (!Erfurt_Uri::check($resourceUri)) {
 <?php
 }
 
-if ($this->listhint == 'last') {
+if ( ($this->listhint == 'last') || ($this->rowcount == 1) ) {
     echo "</div>" . PHP_EOL;
 }
