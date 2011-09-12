@@ -59,16 +59,15 @@ if (strpos(serialize($this->description['http://www.w3.org/1999/02/22-rdf-syntax
 
     if (isset($screenshots) && is_array($screenshots))
     {
-        echo '<div class="widget_depictions">'.PHP_EOL;
         // TODO: insert first pic big and thumbs for all, javascriptify this lates to enable switching between pics
-        #echo '<div class="widget_depictions_big"><img rel="'.$screenshots[0]['rel'].'" alt="'.$screenshots[0]['label'].'" src="'.$screenshots[0]['uri'].'" class="depiction" /></div>'.PHP_EOL;
         echo $this->img(array(
             'src'    => 'http://dummyimage.com/1024x768.png',
             'filter' => 'Resize-width-300',
             'alt'    => 'screenshot',
-            'class'  => 'depiction'
+            'class'  => 'depiction',
+            'prefix' => '<div class="widget_depictions">'.PHP_EOL,
+            'suffix' => '</div>'.PHP_EOL
         ));
-        echo '</div>'.PHP_EOL;
     }
 
     echo $abstract?$abstract.PHP_EOL:'';
