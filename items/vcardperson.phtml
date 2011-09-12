@@ -1,0 +1,125 @@
+<div class="vcard">
+<?php
+
+    // TODO: move to config?
+    $depiction = 'http://xmlns.com/foaf/0.1/depiction';
+
+    // add an depiction if one exist
+    // TODO: look for foaf:img (and maybe others) too and use the most specific one
+    // TODO: use instant picture creator with URI mode here
+    $imgRel = null; $imgSrc = null; $imgAlt = null; $imgClass = null;
+    if (isset($this->description[$depiction])) {
+        $imgRel   = $this->curie($depiction);
+        $imgSrc   = $this->description[$depiction][0]['value'];
+        $imgAlt   = 'Depiction of ' . htmlentities($this->title);
+        $imgClass = 'depiction';
+        // echo "<img rel='$imgRel' src='$imgSrc' alt='$imgAlt' class='$imgClass' />";
+    }
+
+    // TODO: dummy data for contact information
+    $contacts = array();
+    $contacts = array(
+        'Address' => array(
+            array(
+                'type'=>'Work',
+                'label'=>'Johannisgasse 26, Room 5-08, 04103 Leipzig'
+            ),
+            array(
+                'type'=>'Work',
+                'label'=>'P.O.Box 666, 04001 Leipzig'
+            ),
+            array(
+                'type'=>'Home',
+                'label'=>'Rockefeller Plaza 3'
+            )
+        ),
+        'Email' => array(
+            array(
+                'type'=>'Office',
+                'label'=>'vorname.nachname@informatik.uni-leipzig.de',
+                'url'=>'mailto:vorname.nachname@informatik.uni-leipzig.de'
+            )
+        ),
+        'Phone' => array(
+            array(
+                'type'=>'Work',
+                'label'=>'+49 341 97-32###',
+                'url' => 'tel://+493419732###'
+            ),
+            array(
+                'type'=>'Mobile',
+                'label'=>'+49 177 66-66777',
+                'url' => 'tel://+491776666777'
+            )
+        ),
+        'Fax' => array(
+            array(
+                'type'=>'Work',
+                'label'=>'+49 341 97-32###',
+                'url' => 'tel://+493419732###'
+            )
+        ),
+        'Link' => array(
+            array(
+                'type'=>'Workpage',
+                'label'=>'Workpage @ AKSW',
+                'url' => '#'
+            ),
+            array(
+                'type'=>'Weblog',
+                'label'=>'Personal Techblog',
+                'url' => '#'
+            )
+        ),
+        'Resource' => array(
+            array(
+                'type'=>'WebID',
+                'label'=>'vorname.nachname.info',
+                'url'=>'http://vorname.nachname.info/'
+            )
+        ),
+    );
+
+    // TODO: dummy data for screenshots
+    $depictions = array();
+    $depictions = array(array('rel'=>$imgRel?$imgRel:'foaf:depiction', 'uri'=>$imgSrc?$imgSrc:'http://dummyimage.com/300x200.png&text=screenshot', 'label'=>$imgAlt?$imgAlt:'###'));
+
+    // TODO: dummy data
+    $name = 'Vorname-Beiname Familien-Nachname';
+    
+    echo '<dfn>'.htmlentities($name).'</dfn>';
+
+    if (isset($depictions) && is_array($depictions))
+    {
+        echo '<div class="widget_depictions">'.PHP_EOL;
+        // TODO: insert first pic big and thumbs for all, javascriptify this lates to enable switching between pics
+        echo '<div class="widget_depictions_big"><img rel="'.$depictions[0]['rel'].'" alt="'.$depictions[0]['label'].'" src="'.$depictions[0]['uri'].'" class="depiction" /></div>'.PHP_EOL;
+        echo '</div>'.PHP_EOL;
+    }
+    
+    if ($contacts && count($contacts) > 0)
+    {
+        echo '<dl>' . PHP_EOL;
+        foreach ($contacts as $mediatype => $list_of_contacts)
+        {
+            // $contact_media_type = '';
+            
+            foreach ($list_of_contacts as $contact)
+            {
+                // if ($contact_media_type != $mediatype . ' ' . $contact['type'])
+                // {
+                    echo '<dt class="'.strtolower($mediatype).'"><img class="icon" src="'.$this->baseUri.'/images/icon-type-'.strtolower($mediatype).'.png" alt="' . htmlentities($mediatype . ' ' . $contact['type'], ENT_QUOTES) . '" title="' . htmlentities($mediatype . ' ' . $contact['type'], ENT_QUOTES) . '"/></dt>' . PHP_EOL;
+                    // $contact_media_type = $mediatype . ' ' . $contact['type'];
+                // }
+                echo '<dd class="'.strtolower($mediatype).'">';
+                echo (isset($contact['url']))?'<a href="'.$contact['url'].'">':'';
+                echo htmlentities($contact['label']);
+                echo (isset($contact['url']))?'</a>':'';
+                echo '</dd>' . PHP_EOL;
+            }
+        }
+        echo '</dl>' . PHP_EOL;
+    }
+
+?>
+</div>

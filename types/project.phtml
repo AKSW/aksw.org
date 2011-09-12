@@ -27,35 +27,36 @@ if (isset($this->description[$depiction])) {
     // echo "<img rel='$imgRel' src='$imgSrc' alt='$imgAlt' class='$imgClass' />";
 }
 
-// TODO: dummy data for projects
-if (strpos(serialize($this->description['http://www.w3.org/1999/02/22-rdf-syntax-ns#type']), 'Project') !== false)
-{
-    // TODO: buttons @ teaser
-    $buttons = array(array('uri'=>'#', 'label'=>'Download'),
-                     array('uri'=>'#', 'label'=>'Fork it!'),
-                     array('uri'=>'#', 'label'=>'Documentation')
-               );
+// TODO: dummy data for buttons @ teaser
+$buttons = array(array('uri'=>'#', 'label'=>'Download'),
+                 array('uri'=>'#', 'label'=>'Fork it!'),
+                 array('uri'=>'#', 'label'=>'Documentation')
+           );
 
-    // TODO: screenshots
-    $screenshots = array(array('rel'=>'foaf:depiction', 'uri'=>'http://dummyimage.com/300x200.png&text=screenshot', 'label'=>'###'));
-}
+// TODO: dummy data for screenshots
+$screenshots = array(array('rel'=>$imgRel?$imgRel:'foaf:depiction', 'uri'=>$imgSrc?$imgSrc:'http://dummyimage.com/300x200.png&text=screenshot', 'label'=>$imgAlt?$imgAlt:'###'));
 
 ?>
-<h1><?php
-    echo $this->title;
-    echo $this->literal(array(
-        'property' => 'aksw:hookline', 'class' => 'hookline',
-        'prefix' => '<span class="hideme">:</span> '
-        ));
-?></h1>
 
-
-<?php if (($abstract = $this->literal(array('property' => 'dcterms:abstract', 'tag' => 'p', 'class' => 'abstract'))) ||
-          (isset($buttons) && is_array($buttons) && count($buttons) > 0) ||
-          (isset($screenshots) && is_array($screenshots) && count($screenshots) > 0) ||
-          (isset($contacts) && is_array($contacts))): ?>
+<?php if (($abstract = $this->literal(array('property' => 'dcterms:abstract', 'tag' => 'p', 'class' => 'abstract'))) |
+          (isset($buttons) && is_array($buttons) && count($buttons) > 0) |
+          (isset($screenshots) && is_array($screenshots) && count($screenshots) > 0) |
+          ($title = $this->title)
+         ): ?>
 <header class="intro">
 <?php
+
+    if ($title |
+        ($hookline = $this->literal(array('property' => 'aksw:hookline', 'class' => 'hookline', 'prefix' => '<span class="hideme">:</span> ')))
+       )
+    {
+        echo '<h1>'.$title;
+        if ($hookline)
+        {
+            echo $hookline;
+        }
+        echo '</h1>'.PHP_EOL;
+    }
 
     if (isset($screenshots) && is_array($screenshots))
     {
@@ -67,8 +68,8 @@ if (strpos(serialize($this->description['http://www.w3.org/1999/02/22-rdf-syntax
             'filter'   => 'Resize-width-300',
             'alt'      => 'screenshot',
             'class'    => 'depiction',
-            'prefix'   => '<div class="widget_depictions">'.PHP_EOL,
-            'suffix'   => '</div>'.PHP_EOL
+            'prefix'   => '<div class="widget_depictions"><div class="widget_depictions_big">'.PHP_EOL,
+            'suffix'   => '</div></div>'.PHP_EOL
         ));
     }
 

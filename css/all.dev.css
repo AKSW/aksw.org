@@ -753,15 +753,16 @@
         color: black !important;
     }
 
-    h1
+    .intro h1
     {
         font-size: 3.077em;
         line-height: 1;
         margin-top: 0.5em;
         margin-bottom: 0.5em;
+        text-transform: none;
         font-variant: small-caps;
     }
-    h1 .hookline
+    .intro h1 .hookline
     {
         display: block;
         color: #585858;
@@ -774,9 +775,6 @@
 
     #sidecontent h1
     {
-        font-size: 1.88em;
-        line-height: 1.227;
-        text-transform: uppercase;
         padding: 0.917em 0;
         border-style: solid none;
         border-color: #333333;
@@ -784,22 +782,23 @@
         margin-bottom: 1.538em;
     }
 
-    h2
+    h1
     {
         font-size: 1.538em;
         line-height: 1.5;
-        font-variant: small-caps;
+        text-transform: uppercase;
+        font-variant: normal;
         margin-bottom: 0.5em;
     }
 
-    h3
+    h2
     {
         font-size: 1.154em;
         line-height: 1.333;
         margin-bottom: 0.667em;
     }
 
-    h4, details summary, h5, h6
+    h3, h4, details summary, h5, h6
     {
         font-size: 1em;
         line-height: 1.538;
@@ -870,51 +869,6 @@
     .intro :first-child, .supercontent :first-child
     {
         margin-top: 0;
-    }
-    .intro .widget_depictions, .supercontent .widget_depictions
-    {
-        float: right;
-        width: 40%;
-        margin-bottom: 1.333em;
-        margin-left: 1.333em;
-    }
-    .Person .intro .widget_depictions, .Person .supercontent .widget_depictions
-    {
-        width: 20%;
-    }
-    .intro .widget_depictions_big, .supercontent .widget_depictions_big
-    {
-        position: relative;
-        padding: 0;
-        margin: 0 5px 0 0;
-    }
-    .intro .widget_depictions_big:before, .supercontent .widget_depictions_big:before
-    {
-        content: '';
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-        display: block;
-        position: absolute;
-        height: 1px;
-        width: 100%;
-        bottom: 5px;
-        left: 0;
-        background: black;
-        -moz-box-shadow: 0px 0px 4px 1px black;
-        -webkit-box-shadow: 0px 0px 4px 1px black;
-        -o-box-shadow: 0px 0px 4px 1px black;
-        box-shadow: 0px 0px 4px 1px black;
-        z-index: 1;
-    }
-    .intro .widget_depictions_big img, .supercontent .widget_depictions_big img
-    {
-        width: 100%;
-        height: auto;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        z-index: 2;
     }
 
     .intro
@@ -1013,5 +967,103 @@
         background: black;
     }
 
-    /* == Content Types ==================================================== */
+    /* == Content Types & Widgets ========================================== */
+    /* -- Depictions ------------------------------------------------------- */
+    .widget_depictions
+    {
+        float: right;
+        width: 40%;
+        margin-bottom: 1.333em;
+        margin-left: 1.333em;
+    }
+    .foaf_Person .widget_depictions
+    {
+        width: 20%;
+    }
+
+    .widget_depictions_big
+    {
+        position: relative;
+        padding: 0;
+        margin: 0 5px 0 0;
+    }
+    .widget_depictions_big:before
+    {
+        content: '';
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        display: block;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        bottom: 5px;
+        left: 0;
+        background: black;
+        -moz-box-shadow: 0px 0px 4px 1px black;
+        -webkit-box-shadow: 0px 0px 4px 1px black;
+        -o-box-shadow: 0px 0px 4px 1px black;
+        box-shadow: 0px 0px 4px 1px black;
+        z-index: 1;
+    }
+    .widget_depictions_big img
+    {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    .icon
+    {
+        vertical-align: middle;
+    }
+
+    /* -- VCards ----------------------------------------------------------- */
+    .vcard dfn
+    {
+        display: block;
+        font-weight: normal;
+        color: black;
+        font-size: 1.154em;
+        line-height: 1.333;
+        margin-bottom: 0.667em;
+    }
+    .intro .vcard dfn
+    {
+        font-size: 1.538em;
+        line-height: 1.5;
+        text-transform: uppercase;
+        font-variant: normal;
+        margin-bottom: 0.5em;
+    }
+    .vcard dl
+    {
+        display: block;
+        float: none;
+        padding: 0;
+        margin: 0 25% 0 0;
+        width: 75%;
+        overflow: hidden;
+    }
+    .vcard dt
+    {
+        display: block;
+        float: left;
+        width: 16px;
+        padding: 0;
+        margin: 0 9px 0 0;
+    }
+    .vcard dd
+    {
+        display: block;
+        padding: 0;
+        margin: 0 0 0.5em 25px;
+    }
+    .vcard a
+    {
+        font-weight: normal;
+    }
 }
