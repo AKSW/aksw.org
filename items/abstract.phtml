@@ -32,21 +32,34 @@ if ($this->listhint == 'first') {
 if (!Erfurt_Uri::check($resourceUri)) {
     echo "<!-- $title is not a resource -->";
 } else {
-    // prepare the abstract
-    $moreLink = $this->link(array('uri' => $resourceUri, 'text' => '[read more]'));
-    $abstract = $this->literal(array(
-        'uri' => $resourceUri,
-        'property' => 'dcterms:abstract',
-        'tag' => 'p', 'class' => 'abstract',
-        'isuffix' => ' ' . $moreLink)
-    );
+    // prepare the heading
     $headingLink = $this->link(array(
-        'uri' => $resourceUri, 'text' => $title,
+        'uri'    => $resourceUri, 'text' => $title,
         'prefix' => "<$heading>", 'suffix' => "</$heading>"
     ));
+
+    // prepare the logo (todo: maybe as part of a link?)
+    $logo          = $this->img(array(
+        'property' => 'foaf:logo',
+        'class'    => 'logo',
+        'alt'      => 'logo',
+        'prefix'   => '<!-- project logo start -->',
+        'suffix'   => '<!-- project logo end -->',
+    ));
+
+    // prepare the abstract
+    $moreLink      = $this->link(array('uri' => $resourceUri, 'text' => '[read more]'));
+    $abstract      = $this->literal(array(
+        'uri'      => $resourceUri,
+        'property' => 'dcterms:abstract',
+        'tag'      => 'p',
+        'class'    => 'abstract',
+        'isuffix'  => ' ' . $moreLink)
+    );
 ?>
     <div about="<?php echo $this->curie($resourceUri) ?>">
     <?php echo $headingLink ?>
+    <?php echo $logo ?>
     <?php echo $abstract ?>
     </div>
 <?php
