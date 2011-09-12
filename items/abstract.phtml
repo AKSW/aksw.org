@@ -38,14 +38,21 @@ if (!Erfurt_Uri::check($resourceUri)) {
         'prefix' => "<$heading>", 'suffix' => "</$heading>"
     ));
 
-    // prepare the logo (todo: maybe as part of a link?)
+    // prepare the logo link
     $logo          = $this->img(array(
         'property' => 'foaf:logo',
         'class'    => 'logo',
         'alt'      => 'logo',
-        'prefix'   => '<!-- project logo start -->',
-        'suffix'   => '<!-- project logo end -->',
     ));
+    if ($logo != '') {
+        $logolink = $this->link(array(
+            'uri'    => $resourceUri, 'text' => $logo,
+            'prefix'   => '<!-- project logo start -->',
+            'suffix'   => '<!-- project logo end -->',
+        ));
+    } else {
+        $logolink = '';
+    }
 
     // prepare the abstract
     $moreLink      = $this->link(array('uri' => $resourceUri, 'text' => '[read more]'));
@@ -59,7 +66,7 @@ if (!Erfurt_Uri::check($resourceUri)) {
 ?>
     <div about="<?php echo $this->curie($resourceUri) ?>">
     <?php echo $headingLink ?>
-    <?php echo $logo ?>
+    <?php echo $logolink ?>
     <?php echo $abstract ?>
     </div>
 <?php
