@@ -30,6 +30,8 @@ projects:OntoWiki a foaf:Project, aksw:OpenSourceProject;
     sioc:feed <http://blog.aksw.org/category/projects/ontowiki/feed/>;
     ov:screenshot <http://ontowiki.net/files/ontowiki08screenshot1.png>;
     foaf:homepage <http://ontowiki.net>;
+    doap:browse <http://code.google.com/p/ontowiki/source/list>;
+    doap:download-page <http://code.google.com/p/ontowiki/downloads/list>;
     rdfs:label "OntoWiki".
 
 projects:LinkedGeoData a foaf:Project, aksw:CommunityProject;

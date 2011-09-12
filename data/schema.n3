@@ -161,6 +161,17 @@ sioc:feed a owl:ObjectProperty;
     rdfs:isDefinedBy <http://rdfs.org/sioc/ns#> ;
     rdfs:label "feed".
 
+# doap
+doap:browse a rdf:Property;
+    rdfs:comment "Web browser interface to repository.";
+    aksw:buttonLabel "Fork me!";
+    rdfs:label "Repository (web)".
+
+doap:download-page a rdf:Property;
+    rdfs:comment "Web page from which the project software can be downloaded.";
+    aksw:buttonLabel "Download";
+    rdfs:label "download page".
+
 # foaf
 foaf:page a owl:ObjectProperty;
     rdfs:label "page".
