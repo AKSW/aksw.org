@@ -77,10 +77,6 @@ aksw:status a owl:DatatypeProperty;
     rdfs:domain foaf:Project;
     rdfs:label "status".
 
-aksw:screenshot a owl:ObjectProperty;
-    rdfs:domain foaf:Project;
-    rdfs:label "screenshot".
-
 
 # ontowiki site extension properties and classes
 site:Navigation a rdfs:Class;
@@ -239,4 +235,14 @@ ov:businessCard a rdf:Property ;
     <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "unstable" ;
     <http://www.w3.org/2003/06/sw-vocab-status/ns#userdocs> <http://open.vocab.org/docs/> ;
     skos:note <http://open.vocab.org/changes/0a8d6d27db41d0a297e67d0da3f0c45b>, <http://open.vocab.org/changes/4d316062a929a47b0313fddaa68084b5> .
+
+ov:screenshot a rdf:Property ;
+    <http://purl.org/net/vocab/2004/03/label#plural> "screenshots"@en ;
+    rdfs:comment "A screenshot showing the (software) project in action. Since DOAP only has a property to link a \"web page with screenshots of project\", not a specific screenshot, this property is sometimes more useful."@en ;
+    rdfs:domain> foaf:Project;
+    rdfs:isDefinedBy> <http://open.vocab.org/terms> ;
+    rdfs:label> "screenshot"@en ;
+    rdfs:range> foaf:Image;
+    rdfs:subPropertyOf> foaf:depiction;
+    owl:inverseOf foaf:depicts.
 

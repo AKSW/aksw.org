@@ -28,7 +28,7 @@ projects:OntoWiki a foaf:Project, aksw:OpenSourceProject;
     dcterms:abstract "OntoWiki facilitates the visual presentation of a knowledge base as an information map, with different views on instance data. It enables intuitive authoring of semantic content, with an inline editing mode for editing RDF content, similar to WYSIWIG for text documents.";
     site:content "..."^^sysont:Markdown;
     sioc:feed <http://blog.aksw.org/category/projects/ontowiki/feed/>;
-    aksw:screenshot <http://ontowiki.net/files/ontowiki08screenshot1.png>;
+    ov:screenshot <http://ontowiki.net/files/ontowiki08screenshot1.png>;
     doap:homepage <http://ontowiki.net>;
     rdfs:label "OntoWiki".
 
