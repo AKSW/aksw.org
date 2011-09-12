@@ -45,6 +45,7 @@ people:SebastianTramp a foaf:Person;
     sioc:feed <http://seebi.soup.io/rss>;
     foaf:nick "Seebi";
     aksw:room "5-08";
+    skos:hiddenLabel "SebastianTramp", "Sebastian Dietzold", "SebastianDietzold";
     aksw:publicationTag "tramp";
     foaf:name "Sebastian Tramp".
 
@@ -55,6 +56,7 @@ people:SoerenAuer a foaf:Person;
     foaf:phone <tel:+49-341-97-32367>;
     aksw:room "5-09";
     aksw:publicationTag "auer";
+    skos:hiddenLabel "SoerenAuer";
     skos:prefLabel "Dr. Sören Auer";
     foaf:name "Sören Auer".
 
@@ -73,6 +75,7 @@ people:TimofeyErmilov a foaf:Person;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=ermilov>;
     foaf:phone <tel:+49-341-97-32322>;
     aksw:room "5-20";
+    skos:hiddenLabel "TimofeyErmilov";
     aksw:publicationTag "ermilov";
     foaf:name "Timofey Ermilov".
 
@@ -82,6 +85,7 @@ people:PhilippFrischmuth a foaf:Person;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=frischmuth>;
     foaf:phone <tel:+49-341-97-32368>;
     aksw:room "5-08";
+    skos:hiddenLabel "PhilippFrischmuth";
     aksw:publicationTag "frischmuth";
     foaf:name "Philipp Frischmuth".
 
@@ -100,6 +104,7 @@ people:NormanHeino a foaf:Person;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=heino>;
     foaf:phone <tel:+49-341-97-32368>;
     aksw:room "5-08";
+    skos:hiddenLabel "NormanHeino";
     aksw:publicationTag "heino";
     foaf:name "Norman Heino".
 
@@ -109,6 +114,7 @@ people:SebastianHellmann a foaf:Person;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=hellmann>;
     foaf:phone <tel:+49-341-97-32273>;
     aksw:room "5-10";
+    skos:hiddenLabel "SebastianHellmann";
     aksw:publicationTag "hellmann";
     foaf:name "Sebastian Hellmann".
 
@@ -117,6 +123,7 @@ people:NadineJaenicke a foaf:Person;
     foaf:mbox <mailto:jaenicke@uni-leipzig.de>;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=gn&value=Nadine>;
     foaf:phone <tel:+49-341-97-32310>;
+    skos:hiddenLabel "NadineJaenicke";
     aksw:room "5-17";
     foaf:name "Nadine Jänicke".
 
@@ -127,6 +134,7 @@ people:JensLehmann a foaf:Person;
     foaf:phone <tel:+49-341-97-32260>;
     aksw:room "5-10";
     aksw:publicationTag "lehmann";
+    skos:hiddenLabel "JensLehmann";
     skos:prefLabel "Dr. Jens Lehmann";
     foaf:name "Jens Lehmann".
 
@@ -135,6 +143,7 @@ people:AliKhalili a foaf:Person;
     foaf:mbox <mailto:khalili@informatik.uni-leipzig.de>;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=khalili>;
     foaf:phone <tel:+49-341-97-32320>;
+    skos:hiddenLabel "AliKhalili";
     aksw:room "5-21";
     foaf:name "Ali Khalili".
 
@@ -163,6 +172,7 @@ people:AxelNgonga a foaf:Person;
     foaf:phone <tel:+49-341-97-32341>;
     aksw:room "5-22";
     aksw:publicationTag "ngonga";
+    skos:hiddenLabel "AxelNgonga";
     skos:prefLabel "Dr. Axel-C. Ngonga Ngomo";
     foaf:name "Axel Ngonga".
 
@@ -172,6 +182,7 @@ people:ThomasRiechert a foaf:Person;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=riechert>;
     foaf:phone <tel:+49-341-97-32323>;
     aksw:room "5-09";
+    skos:hiddenLabel "ThomasRiechert", "TRiechert";
     aksw:publicationTag "riechert";
     foaf:name "Thomas Riechert".
 
@@ -208,6 +219,7 @@ people:AmrapaliZaveri a foaf:Person;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=zaveri>;
     foaf:phone <tel:+49-341-97-32273>;
     aksw:room "5-10";
+    skos:hiddenLabel "AmrapaliZaveri";
     aksw:publicationTag "zaveri";
     skos:prefLabel "Amrapali J. Zaveri";
     foaf:name "Amrapali Zaveri".
