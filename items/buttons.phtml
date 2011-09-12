@@ -1,0 +1,36 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * querylist buttonrow template
+ *
+ * this template is used in combination with the querylist helper to render
+ * lists of resources which match a given SPARQL query
+ */
+//var_dump($this);
+
+if ( ($this->listhint == 'first') || ($this->rowcount == 1) ) {
+    echo '<p class="button-row">' . PHP_EOL;
+}
+
+// if we have a literal item, do not do anything but a title
+if (!Erfurt_Uri::check($this->resourceUri)) {
+    echo $this->title;
+} else {
+    echo $this->link(array(
+        'uri'   => $this->resourceUri,
+        'text'  => $this->label,
+        'class' => 'button',
+        'direct'=> 'true',
+        'suffix'=> PHP_EOL
+    ));
+}
+
+if ( ($this->listhint == 'last') || ($this->rowcount == 1) ) {
+    echo "</p>" . PHP_EOL;
+}
