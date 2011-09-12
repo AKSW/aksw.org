@@ -239,10 +239,10 @@ ov:businessCard a rdf:Property ;
 ov:screenshot a rdf:Property ;
     <http://purl.org/net/vocab/2004/03/label#plural> "screenshots"@en ;
     rdfs:comment "A screenshot showing the (software) project in action. Since DOAP only has a property to link a \"web page with screenshots of project\", not a specific screenshot, this property is sometimes more useful."@en ;
-    rdfs:domain> foaf:Project;
-    rdfs:isDefinedBy> <http://open.vocab.org/terms> ;
-    rdfs:label> "screenshot"@en ;
-    rdfs:range> foaf:Image;
-    rdfs:subPropertyOf> foaf:depiction;
+    rdfs:domain foaf:Project;
+    rdfs:isDefinedBy <http://open.vocab.org/terms> ;
+    rdfs:label "screenshot"@en ;
+    rdfs:range foaf:Image;
+    rdfs:subPropertyOf foaf:depiction;
     owl:inverseOf foaf:depicts.
 
