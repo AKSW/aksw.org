@@ -11,6 +11,19 @@
  *
  * renders the last modification section of a resource
  */
+
+// output only of we have a time
+if ( (isset($this->timeIso8601)) && ($this->timeIso8601 != '') ) {
+
+    // author link only, if there is an author uri
+    if ( (isset($this->userHref)) && ($this->userHref != '') ) {
+        $authorlink = $this->link(array(
+            'uri' => $this->userHref,
+            'prefix' => 'by '
+        ));
+    } else {
+        $authorlink = '';
+    }
 ?>
 <p>
 Last modification:
@@ -21,5 +34,8 @@ Last modification:
     >
 <?php echo $this->timeago(array('time' => $this->timeIso8601)); ?>
 </span>
-by <a href="<?php echo $this->userHref;?>"><?php echo $this->userTitle;?></a>
+    <?php echo $authorlink ?>
 </p>
+<?php
+}
+
