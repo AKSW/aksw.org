@@ -49,12 +49,12 @@ projects:LDAP a foaf:Project, aksw:AlumniProject;
 projects:XML2OWL a foaf:Project, aksw:AlumniProject;
     aksw:hookline "Configurable XSLT stylesheet, which transforms XML documents into OWL";
     dcterms:abstract "XML2OWL converts a given XML instance files to an OWL ontology. It can also extract an OWL model only out of an XML Schema file. If there is no XML Schema available, one will be generated from the XML instance document. OWL instances can be combined with their model.";
-    doap:homepage <http://xml2owl.sourceforge.net/>;
+    foaf:homepage <http://xml2owl.sourceforge.net/>;
     rdfs:label "XML2OWL XSLT".
 
 projects:LESS a foaf:Project, aksw:AlumniProject;
     aksw:hookline "Syndicate Linked Data Content";
     dcterms:abstract "LESS is an end-to-end approach for the syndication and use of linked data based on the definition of templates for linked data resources and SPARQL query results. As a result, LESS allows to integrate Linked Data into your website, blog, wiki ...";
-    doap:homepage <http://less.aksw.org>;
+    foaf:homepage <http://less.aksw.org>;
     rdfs:label "LESS".
 

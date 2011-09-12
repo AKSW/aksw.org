@@ -161,15 +161,12 @@ sioc:feed a owl:ObjectProperty;
     rdfs:isDefinedBy <http://rdfs.org/sioc/ns#> ;
     rdfs:label "feed".
 
-# doap
-doap:homepage a owl:ObjectProperty;
-    rdfs:label "homepage".
-
 # foaf
 foaf:page a owl:ObjectProperty;
     rdfs:label "page".
 
 foaf:homepage a owl:ObjectProperty;
+    aksw:buttonLabel "Homepage";
     rdfs:label "homepage".
 
 foaf:depiction a owl:ObjectProperty;

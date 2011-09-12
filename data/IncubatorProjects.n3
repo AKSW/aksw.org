@@ -190,7 +190,7 @@ projects:OpenResearch a foaf:Project, aksw:IncubatorProject;
     site:content """
 ...
 """^^sysont:Markdown;
-    doap:homepage <http://openresearch.org/>;
+    foaf:homepage <http://openresearch.org/>;
     rdfs:label "OpenResearch".
 
 projects:RDFauthor a foaf:Project, aksw:IncubatorProject;

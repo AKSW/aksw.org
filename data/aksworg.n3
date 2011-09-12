@@ -91,7 +91,7 @@ The content of this feed is shown in the right side content column.
 
 In addition to the general properties, these class specific properties can be used:
 
-* for Projects: [[doap:homepage]]
+* for Projects: [[foaf:homepage]]
 * for Groups: [[aksw:researchAreas]], [[foaf:member]]
 * for Person: [[foaf:name]], [[foaf:currentProject]], [[foaf:pastProject]], [[foaf:mbox]], [[aksw:room]], [[aksw:publicationTag]] (for the publication list)
 

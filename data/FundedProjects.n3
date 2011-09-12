@@ -24,7 +24,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 projects:LOD2 a foaf:Project, aksw:FundedProject;
-    doap:homepage <http://lod2.eu>;
+    foaf:homepage <http://lod2.eu>;
     aksw:hookline "Creating Knowledge out of Interlinked Data";
     dcterms:abstract "The goal of the LOD2 project is to develop infrastructure technology and best practices that fill the chasm between structured-linked-data and applied model logic & reasoning, en route redefining the Web as we know it. In doing so, LOD2 will integrate and syndicate linked data with large-scale existing applications and showcase the benefits in three application scenarios including Media & Publishing, Corporate Data Intranets and eGovernment.";
     site:content """
@@ -37,7 +37,7 @@ projects:LOD2 a foaf:Project, aksw:FundedProject;
 
 projects:LATC a foaf:Project, aksw:FundedProject;
     foaf:logo <http://latc-project.eu/sites/default/files/latc-logo.gif>;
-    doap:homepage <http://latc-project.eu>;
+    foaf:homepage <http://latc-project.eu>;
     aksw:hookline "LOD Around-the-Clock";
     dcterms:abstract "This EU-funded support action aims at making it easier for data owners to publish Linked Data and interlink it with other data sources. A user-friendly 24/7 interlinking engine is developed within the project, allowing to compute and update interlinks as well as to assess their quality.";
     site:content """
@@ -50,7 +50,7 @@ projects:LATC a foaf:Project, aksw:FundedProject;
 
 projects:SCMS a foaf:Project, aksw:FundedProject;
     foaf:logo <http://www.scms.eu/wp-content/themes/scms-theme/images/scms-logo.png>;
-    doap:homepage <http://scms.eu>;
+    foaf:homepage <http://scms.eu>;
     aksw:hookline "Semantic Content Management Systems";
     dcterms:abstract "SCMS aims at combining automatic knowledge discovery and participative, end-user-driven knowledge curation and extension techniques through Social Semantic Web approaches so as to create novel applications in Enterprise Knowledge Management and real-time News Mining.";
     site:content """
@@ -62,7 +62,7 @@ projects:SCMS a foaf:Project, aksw:FundedProject;
     rdfs:label "SCMS".
 
 projects:LE4SW a foaf:Project, aksw:FundedProject;
-    doap:homepage <http://le4sw.de>;
+    foaf:homepage <http://le4sw.de>;
     aksw:status "finished";
     aksw:hookline "Regional Technology Platform of Social Semantic Collaboration";
     dcterms:abstract "Aim of the project is to (further) develop AKSW's semantic data wiki technology platform by integrating view maintenance, query subsumption and schema evolution algorithms for the RDF data model and adopt it towards the requirements of business information systems and Web content management.";
@@ -75,7 +75,7 @@ projects:LE4SW a foaf:Project, aksw:FundedProject;
 
 projects:SoftWiki a foaf:Project, aksw:FundedProject;
     foaf:logo <http://lh3.ggpht.com/-O0rHt6DYrHE/TlzV1zEb4sI/AAAAAAAAApo/bg7W55zdiIQ/s800/logo_softwiki-200px.png>;
-    doap:homepage <http://softwiki.de>;
+    foaf:homepage <http://softwiki.de>;
     aksw:status "finished";
     aksw:hookline "Semantics- and Community-Based Requirements Engineering";
     dcterms:abstract "The project delivers fundamental building blocks for early phases of Requirements Engineering by establishing a stakeholder-driven knowledge engineering process for requirements elicitation, organisation and management.";
@@ -89,7 +89,7 @@ projects:SoftWiki a foaf:Project, aksw:FundedProject;
 
 projects:OntoWikiEU a foaf:Project, aksw:FundedProject;
     site:content "..."^^sysont:Markdown;
-    doap:homepage <http://ontowiki.eu>;
+    foaf:homepage <http://ontowiki.eu>;
     aksw:status "finished";
     aksw:hookline "Social Semantic Collaboration for EKM, E-Learning & E-Tourism";
     dcterms:abstract "Aim of the project is to advance and apply adaptive database and knowledge base techniques as well as user interface techniques to enable large-scale, end-user-driven semantic collaboration in the three application domains Enterprise Knowledge Management, E-Learning and E-Tourism.";
