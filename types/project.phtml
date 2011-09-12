@@ -61,12 +61,14 @@ if (strpos(serialize($this->description['http://www.w3.org/1999/02/22-rdf-syntax
     {
         // TODO: insert first pic big and thumbs for all, javascriptify this lates to enable switching between pics
         echo $this->img(array(
-            'src'    => 'http://dummyimage.com/1024x768.png',
-            'filter' => 'Resize-width-300',
-            'alt'    => 'screenshot',
-            'class'  => 'depiction',
-            'prefix' => '<div class="widget_depictions">'.PHP_EOL,
-            'suffix' => '</div>'.PHP_EOL
+            //'src'      => 'http://dummyimage.com/1024x768.png',
+            //'uri'      => 'http://aksw.org/Projects/OntoWiki',
+            'property' => 'ov:screenshot',
+            'filter'   => 'Resize-width-300',
+            'alt'      => 'screenshot',
+            'class'    => 'depiction',
+            'prefix'   => '<div class="widget_depictions">'.PHP_EOL,
+            'suffix'   => '</div>'.PHP_EOL
         ));
     }
 
