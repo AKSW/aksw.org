@@ -23,6 +23,16 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+projects:SlideWiki a foaf:Project, aksw:IncubatorProject;
+    aksw:hookline "a Wiki for Presentations";
+    rdfs:label "SlideWiki".
+
+projects:re-publish a foaf:Project, aksw:IncubatorProject;
+    aksw:hookline "Light-weight linked data publishing with node.js";
+    doap:browse <https://github.com/0xfeedface/re-publish>;
+    dcterms:abstract "re:publish is a light-weight resource publishing server built with node.js. It can be used to publish linked data in various formats for machines as well as HTML for human consumption.";
+    rdfs:label "re:publish".
+
 projects:SINA a foaf:Project, aksw:IncubatorProject;
     aksw:hookline "Semantically INterpreting user query towards question-Answering";
     dcterms:abstract "Knowledge bases published on the Web of Data can be used to answer challenging questions about a wide range of topics. They usually offer a SPARQL endpoint, which can be queried by the user. However, a novice user needs to acquire both knowledge about the underlying ontology and proficiency in formulating SPARQL queries in order to actually formulate a SPARQL query. In this project, we are working on constructing SPARQL queries based on user-supplied keywords. As a result ordinary users are empowered to formulate relatively expressive queries without knowledge of SPARQL and the underlying ontology structure.";
