@@ -53,10 +53,15 @@ foreach ($this->entries as $entry) {
     }
 
     // prepare author link: search for author as a resource
-    $author = 'by ' . $this->link(array(
-        'literal' => $entry['authors'][0]['name'],
-        //'property' => 'skos:hiddenLabel'
-    ));
+    if (isset($entry['authors'][0]['name'])) {
+        $author = $this->link(array(
+            'literal' => $entry['authors'][0]['name'],
+            'prefix'  => 'by '
+            //'property' => 'skos:hiddenLabel'
+        ));
+    } else {
+        $author = '';
+    }
 
     // prepare timeago link with the Zend_Date object
     if (isset($entry['dateModified'])) {
