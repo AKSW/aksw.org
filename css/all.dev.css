@@ -476,10 +476,19 @@
         height: auto;
     }
 
-    #associations img
+    #associations
     {
+        margin-bottom: 1em;
+    }
+    #associations img, #associations a
+    {
+        display: block;
         height: auto;
         max-width: 100%;
+    }
+    #associations a
+    {
+        margin-bottom: 0.5em;
     }
 
     #content
@@ -786,11 +795,24 @@
 
     #sidecontent h1
     {
-        padding: 0.917em 0;
+        font-size: 1.41em;
+        line-height: 1.091;
+        text-transform: uppercase;
+        padding: 0.407em 0;
         border-style: solid none;
         border-color: #333333;
         border-width: 1px;
-        margin-bottom: 1.538em;
+        margin-bottom: 0.667em;
+    }
+    #sidecontent h2, #sidecontent h3, #sidecontent h4, #sidecontent details summary, details #sidecontent summary, #sidecontent h5, #sidecontent h6
+    {
+        font-size: 0.993em;
+        font-variant: normal;
+        text-transform: none;
+    }
+    #sidecontent h2
+    {
+        text-transform: uppercase;
     }
 
     h1
@@ -910,6 +932,15 @@
     #sidecontent a
     {
         color: #333333;
+    }
+
+    abbr
+    {
+        border-bottom: dotted 1px #585858;
+    }
+    abbr.dtstart, abbr.dtend, abbr.timeago
+    {
+        border-bottom: none;
     }
 
     /* -- Tables ----------------------------------------------------------- */

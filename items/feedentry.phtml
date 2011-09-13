@@ -30,8 +30,8 @@ foreach ($this->entries as $entry) {
         $more = $this->link(array(
             'direct' => "yes",
             'uri'    => $entry['link'],
-            'text'   => "[more]",
-            'prefix' => "... "
+            'text'   => 'Read more <span class="hideme">about &quot;'.strip_tags($entry['title']).'&quot;</span>',
+            'prefix' => ' ' // "&hellip; "
         ));
     } elseif (isset($entry['title'])) {
         // only title exist: unlinked header, no more link
@@ -43,8 +43,8 @@ foreach ($this->entries as $entry) {
         $more    = $this->link(array(
             'direct' => "yes",
             'uri'    => $entry['link'],
-            'text'   => "[more]",
-            'prefix' => "... "
+            'text'   => 'Read more <span class="hideme">about &quot;'.strip_tags($entry['title']).'&quot;</span>',
+            'prefix' => ' ' // "&hellip; "
         ));
     } else {
         // either link nor title: no header and no more link
@@ -69,8 +69,14 @@ foreach ($this->entries as $entry) {
 
     // prepare the text
     if ( (isset($entry['description'])) && ($entry['description'] != $entry['title']) ) {
-        $text  = substr(strip_tags($entry['description']), 0, 500);
+        $text  = strip_tags($entry['description']);
         $text  = str_replace('[...]', '', $text);
+        $text  = substr($text, 0, 500); // max 500 chars
+        $end_of_sentence = max(strrpos($text, '.'), strrpos($text, '!'), strrpos($text, '?')); // check for interpunctation, ignore cases like dr., prof.
+        if ($end_of_sentence !== false && $end_of_sentence > 0)
+        {
+            $text  = substr($text, 0, $end_of_sentence+1);
+        }
         $text .= $more;
         $text  = '<p>' . $text .'</p>';
     } else {
@@ -79,7 +85,7 @@ foreach ($this->entries as $entry) {
 ?>
 <!-- feed entry start -->
 <?php echo $heading ?>
-<p class="meta">
+<p class="meta hideme">
     <?php echo $timeago ?>
     <?php echo $author ?>
 </p>
