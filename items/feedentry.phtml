@@ -69,13 +69,13 @@ foreach ($this->entries as $entry) {
 
     // prepare the text
     if ( (isset($entry['description'])) && ($entry['description'] != $entry['title']) ) {
-        $text  = strip_tags($entry['description']);
-        $text  = str_replace('[...]', '', $text);
-        $text  = substr($text, 0, 500); // max 500 chars
-        $end_of_sentence = max(strrpos($text, '.'), strrpos($text, '!'), strrpos($text, '?')); // check for interpunctation, ignore cases like dr., prof.
-        if ($end_of_sentence !== false && $end_of_sentence > 0)
-        {
-            $text  = substr($text, 0, $end_of_sentence+1);
+        $text = strip_tags($entry['description']);
+        $text = str_replace('[...]', '', $text);
+        $text = substr($text, 0, 500); // max 500 chars
+        // check for interpunctation, ignore cases like dr., prof.
+        $endOfSentence = max(strrpos($text, '.'), strrpos($text, '!'), strrpos($text, '?'));
+        if ($endOfSentence !== false && $endOfSentence > 0) {
+            $text = substr($text, 0, $endOfSentence + 1);
         }
         $text .= $more;
         $text  = '<p>' . $text .'</p>';
