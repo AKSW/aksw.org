@@ -24,8 +24,8 @@ foreach ($this->entries as $entry) {
             'direct' => "yes",
             'uri'    => $entry['link'],
             'text'   => $entry['title'],
-            'prefix' => "<$tag>",
-            'suffix' => "</$tag>",
+            'prefix' => '',
+            'suffix' => '',
         ));
         $more = $this->link(array(
             'direct' => "yes",
@@ -35,7 +35,7 @@ foreach ($this->entries as $entry) {
         ));
     } elseif (isset($entry['title'])) {
         // only title exist: unlinked header, no more link
-        $heading = "<$tag>" . $entry['title'] . "</$tag>";
+        $heading = $entry['title'];
         $more    = '';
     } elseif (isset($entry['link'])) {
         // only link exist: no header but more link
@@ -89,7 +89,13 @@ foreach ($this->entries as $entry) {
     }
 ?>
 <!-- feed entry start -->
-<?php echo $heading ?>
+<?php echo "<$tag>" .
+                $heading .
+                ' <span class="meta"><span class="hideme">(</span>' .
+                $timeago . ' ' . $author .
+                '<span class="hideme">)</span></span>' .
+           "</$tag>";
+?>
 <p class="meta hideme">
     <?php echo $timeago ?>
     <?php echo $author ?>

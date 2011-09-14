@@ -793,6 +793,14 @@
         font-variant: normal;
     }
 
+    #sidecontent h1, #sidecontent h2, #sidecontent h3, #sidecontent h4, #sidecontent details summary, details #sidecontent summary, #sidecontent h5, #sidecontent h6
+    {
+        font-size: 0.993em;
+        font-variant: normal;
+        font-weight: bold;
+        text-transform: none;
+        color: black;
+    }
     #sidecontent h1
     {
         font-size: 1.41em;
@@ -803,12 +811,6 @@
         border-color: #333333;
         border-width: 1px;
         margin-bottom: 0.667em;
-    }
-    #sidecontent h2, #sidecontent h3, #sidecontent h4, #sidecontent details summary, details #sidecontent summary, #sidecontent h5, #sidecontent h6
-    {
-        font-size: 0.993em;
-        font-variant: normal;
-        text-transform: none;
     }
     #sidecontent h2
     {
@@ -943,6 +945,14 @@
         border-bottom: none;
     }
 
+    .meta, .meta a
+    {
+        text-transform: none;
+        font-variant: normal;
+        color: #585858;
+        font-weight: 100;
+    }
+
     /* -- Tables ----------------------------------------------------------- */
     table
     {
@@ -1029,7 +1039,7 @@
         padding: 0;
         margin: 0 5px 0 0;
     }
-    .widget_depictions_big:before
+    .widget_depictions_big:before, .widget_depictions_big:after
     {
         content: '';
         padding: 0;
@@ -1037,16 +1047,30 @@
         overflow: hidden;
         display: block;
         position: absolute;
-        height: 1px;
+        height: 0;
         width: 100%;
         bottom: 5px;
         left: 0;
+    }
+    .widget_depictions_big:before
+    {
         background: black;
-        -moz-box-shadow: 0px 0px 4px 1px black;
-        -webkit-box-shadow: 0px 0px 4px 1px black;
-        -o-box-shadow: 0px 0px 4px 1px black;
-        box-shadow: 0px 0px 4px 1px black;
+        -moz-box-shadow: 0px 0px 3px 1px black;
+        -webkit-box-shadow: 0px 0px 3px 1px black;
+        -o-box-shadow: 0px 0px 3px 1px black;
+        box-shadow: 0px 0px 3px 1px black;
         z-index: 1;
+        opacity: 0.75;
+    }
+    .widget_depictions_big:after
+    {
+        background: black;
+        -moz-box-shadow: 0px 0px 3px 1px black;
+        -webkit-box-shadow: 0px 0px 3px 1px black;
+        -o-box-shadow: 0px 0px 3px 1px black;
+        box-shadow: 0px 0px 3px 1px black;
+        z-index: 3;
+        opacity: 0.25;
     }
     .widget_depictions_big img
     {
