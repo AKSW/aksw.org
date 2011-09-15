@@ -43,6 +43,8 @@ if (!Erfurt_Uri::check($resourceUri)) {
         'property' => 'foaf:logo',
         'class'    => 'logo',
         'alt'      => 'logo',
+        'prefix'   => '<div class="logo">',
+        'suffix'   => '</div>'
     ));
     if ($logo != '') {
         $logolink = $this->link(array(
@@ -55,7 +57,7 @@ if (!Erfurt_Uri::check($resourceUri)) {
     }
 
     // prepare the abstract
-    $moreLink      = $this->link(array('uri' => $resourceUri, 'text' => '[read more]'));
+    $moreLink      = $this->link(array('uri' => $resourceUri, 'text' => 'Read more about '.$title));
     $abstract      = $this->literal(array(
         'uri'      => $resourceUri,
         'property' => 'dcterms:abstract',
@@ -64,7 +66,7 @@ if (!Erfurt_Uri::check($resourceUri)) {
         'isuffix'  => ' ' . $moreLink)
     );
 ?>
-    <div about="<?php echo $this->curie($resourceUri) ?>" class="abstract">
+    <div about="<?php echo $this->curie($resourceUri) ?>" class="abstract <?php echo $logolink?'abstract-with-logo':''; ?>">
     <?php echo $headingLink ?>
     <?php echo $logolink ?>
     <?php echo $abstract ?>

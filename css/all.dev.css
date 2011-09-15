@@ -1134,17 +1134,30 @@
     }
 
     /* -- Query List Abstract ---------------------------------------------- */
-    div.abstract
+    div.query-list-abstract div.abstract
     {
+        border-bottom: solid 1px #585858;
+        margin-bottom: 1.538em;
         overflow: hidden;
     }
-    div.abstract .logo
+
+    div.abstract-with-logo div.logo
     {
         float: right;
-        margin-bottom: 1.333em;
-        margin-left: 1.333em;
+        width: 11.538em;
+        overflow: hidden;
+        text-align: left;
+        margin-bottom: 1.538em;
+    }
+    div.abstract-with-logo img.logo
+    {
+        width: auto;
         height: auto;
-        width: 25%;
-        margin-top: -2em;
+        max-width: 11.538em;
+        max-height: 7.692em;
+    }
+    div.abstract-with-logo p.abstract
+    {
+        margin-right: 13.077em;
     }
 }
