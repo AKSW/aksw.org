@@ -1,125 +1,104 @@
 <div class="vcard">
 <?php
+    $mmodel = new Erfurt_Rdf_MemoryModel(array($this->resourceUri => $this->description));
 
-    // TODO: move to config?
-    $depiction = 'http://xmlns.com/foaf/0.1/depiction';
-
-    // add an depiction if one exist
-    // TODO: look for foaf:img (and maybe others) too and use the most specific one
-    // TODO: use instant picture creator with URI mode here
-    $imgRel = null; $imgSrc = null; $imgAlt = null; $imgClass = null;
-    if (isset($this->description[$depiction])) {
-        $imgRel   = $this->curie($depiction);
-        $imgSrc   = $this->description[$depiction][0]['value'];
-        $imgAlt   = 'Depiction of ' . htmlentities($this->title);
-        $imgClass = 'depiction';
-        // echo "<img rel='$imgRel' src='$imgSrc' alt='$imgAlt' class='$imgClass' />";
-    }
-
-    // TODO: dummy data for contact information
-    $contacts = array();
     $contacts = array(
-        'Address' => array(
-            array(
-                'type'=>'Work',
-                'label'=>'Johannisgasse 26, Room 5-08, 04103 Leipzig'
-            ),
-            array(
-                'type'=>'Work',
-                'label'=>'P.O.Box 666, 04001 Leipzig'
-            ),
-            array(
-                'type'=>'Home',
-                'label'=>'Rockefeller Plaza 3'
-            )
-        ),
-        'Email' => array(
-            array(
-                'type'=>'Office',
-                'label'=>'vorname.nachname@informatik.uni-leipzig.de',
-                'url'=>'mailto:vorname.nachname@informatik.uni-leipzig.de'
-            )
-        ),
-        'Phone' => array(
-            array(
-                'type'=>'Work',
-                'label'=>'+49 341 97-32###',
-                'url' => 'tel://+493419732###'
-            ),
-            array(
-                'type'=>'Mobile',
-                'label'=>'+49 177 66-66777',
-                'url' => 'tel://+491776666777'
-            )
-        ),
-        'Fax' => array(
-            array(
-                'type'=>'Work',
-                'label'=>'+49 341 97-32###',
-                'url' => 'tel://+493419732###'
-            )
-        ),
-        'Link' => array(
-            array(
-                'type'=>'Workpage',
-                'label'=>'Workpage @ AKSW',
-                'url' => '#'
-            ),
-            array(
-                'type'=>'Weblog',
-                'label'=>'Personal Techblog',
-                'url' => '#'
-            )
-        ),
-        'Resource' => array(
-            array(
-                'type'=>'WebID',
-                'label'=>'vorname.nachname.info',
-                'url'=>'http://vorname.nachname.info/'
-            )
-        ),
+        'Address'  => array(), // Work and Home
+        'Email'    => array(), // Office
+        'Phone'    => array(), // Work and Mobile
+        'Fax'      => array(), // Work
+        'Link'     => array(), // Workpage and Weblog
+        'Resource' => array(), // WebID
     );
 
-    // TODO: dummy data for screenshots
-    $depictions = array();
-    $depictions = array(array('rel'=>$imgRel?$imgRel:'foaf:depiction', 'uri'=>$imgSrc?$imgSrc:'http://dummyimage.com/300x200.png&text=screenshot', 'label'=>$imgAlt?$imgAlt:'###'));
+    // Address Work
+    $room = $this->literal(array(
+        'property' => 'aksw:room',
+        'prefix' => ', Room '
+    ));
+    // todo: fetch the address from the vcard resource
+    $workaddress = 'Johannisgasse 26'. $room . ', 04103 Leipzig';
+    $contacts['Address'][] = array(
+                'type'  => 'Work',
+                'label' => $workaddress
+            );
 
-    // TODO: dummy data
-    $name = 'Vorname-Beiname Familien-Nachname';
-    
-    echo '<dfn>'.htmlentities($name).'</dfn>';
-
-    if (isset($depictions) && is_array($depictions))
-    {
-        echo '<div class="widget_depictions">'.PHP_EOL;
-        // TODO: insert first pic big and thumbs for all, javascriptify this lates to enable switching between pics
-        echo '<div class="widget_depictions_big"><img rel="'.$depictions[0]['rel'].'" alt="'.$depictions[0]['label'].'" src="'.$depictions[0]['uri'].'" class="depiction" /></div>'.PHP_EOL;
-        echo '</div>'.PHP_EOL;
+    // Email Office
+    if ($mmodel->hasSP($this->resourceUri, 'http://xmlns.com/foaf/0.1/mbox')) {
+        $mboxUri   = $mmodel->getValue($this->resourceUri, 'http://xmlns.com/foaf/0.1/mbox');
+        $mboxLabel = str_replace ('mailto:', '', $mboxUri );
+        $contacts['Email'][] = array(
+            'type'  => 'Office',
+            'label' => $mboxLabel,
+            'url'   => $mboxUri
+        );
     }
-    
-    if ($contacts && count($contacts) > 0)
+
+    // Phone Work
+    if ($mmodel->hasSP($this->resourceUri, 'http://xmlns.com/foaf/0.1/phone')) {
+        $phoneUri   = $mmodel->getValue($this->resourceUri, 'http://xmlns.com/foaf/0.1/phone');
+        $phoneLabel = str_replace ('tel:', '', $phoneUri );
+        $contacts['Phone'][] = array(
+            'type'  => 'Work',
+            'label' => $phoneLabel,
+            'url'   => $phoneUri
+        );
+    }
+
+    // Fax Work
+    $contacts['Fax'][] = array(
+                'type'=>'Work',
+                'label'=>'+49 341 97-32329',
+                'url' => 'tel:+493419732329'
+            );
+
+    // Links
+    //$contacts['Link'][] = array(
+                //'type'=>'Weblog',
+                //'label'=>'Personal Techblog',
+                //'url' => '#'
+            //);
+
+    // Resources
+    //$contacts['Resource'][] = array(
+                //'type'=>'WebID',
+                //'label'=>'vorname.nachname.info',
+                //'url'=>'http://vorname.nachname.info/'
+            //);
+
+
+    $name = $this->title;
+    $depiction = $this->img(array(
+        'class'    => 'depiction',
+        'alt'      => 'Depiction of ' . $name,
+        'prefix'   => '<div class="widget_depictions"><div class="widget_depictions_big">',
+        'suffix'   => '</div></div>'
+    ));
+
+    echo '<dfn>'.$name.'</dfn>';
+    echo $depiction;
+
+    echo '<dl>' . PHP_EOL;
+    foreach ($contacts as $mediatype => $list_of_contacts)
     {
-        echo '<dl>' . PHP_EOL;
-        foreach ($contacts as $mediatype => $list_of_contacts)
+        $lmediatype = strtolower($mediatype);
+        $imgSrc     = $this->baseUri.'/images/icon-type-'.$lmediatype.'.png';
+
+        foreach ($list_of_contacts as $contact)
         {
-            // $contact_media_type = '';
-            
-            foreach ($list_of_contacts as $contact)
-            {
-                // if ($contact_media_type != $mediatype . ' ' . $contact['type'])
-                // {
-                    echo '<dt class="'.strtolower($mediatype).'"><img class="icon" src="'.$this->baseUri.'/images/icon-type-'.strtolower($mediatype).'.png" alt="' . htmlentities($mediatype . ' ' . $contact['type'], ENT_QUOTES) . '" title="' . htmlentities($mediatype . ' ' . $contact['type'], ENT_QUOTES) . '"/></dt>' . PHP_EOL;
-                    // $contact_media_type = $mediatype . ' ' . $contact['type'];
-                // }
-                echo '<dd class="'.strtolower($mediatype).'">';
-                echo (isset($contact['url']))?'<a href="'.$contact['url'].'">':'';
-                echo htmlentities($contact['label']);
-                echo (isset($contact['url']))?'</a>':'';
-                echo '</dd>' . PHP_EOL;
-            }
+            $imgAlt   = htmlentities($mediatype .' ' . $contact['type'], ENT_QUOTES);
+            $imgTitle = $imgAlt;
+
+            echo '<dt class="'.$mediatype.'"><img class="icon" src="'.$imgSrc.'" alt="'.$imgAlt.'" title="'.$imgTitle.'"/></dt>' . PHP_EOL;
+
+            echo '<dd class="'.$lmediatype.'">';
+            echo (isset($contact['url']))?'<a href="'.$contact['url'].'">':'';
+            echo $contact['label'];
+            echo (isset($contact['url']))?'</a>':'';
+            echo '</dd>' . PHP_EOL;
         }
-        echo '</dl>' . PHP_EOL;
     }
+    echo '</dl>' . PHP_EOL;
 
 ?>
 </div>
