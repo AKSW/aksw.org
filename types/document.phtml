@@ -32,4 +32,31 @@ $abstract = $this->literal(array(
 </header> <!-- /.intro -->
 <?php
 echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses default content properties
+?>
+
+<!-- REMOVE THIS AFTER PROPER BIBSONOMY INTEGRATION -->
+<div class="floatbox noprint"><div class="inner">
+  <!--div class="legend">Navigation</div-->
+  <span ex:role="facet" ex:facetClass="TextSearch"></span>
+
+  <span ex:role="facet" ex:expression=".year" ex:facetLabel="Year" ex:sortDirection="reverse"></span>
+  <span ex:facetClass="Cloud" ex:role="facet" ex:expression=".pub-type" ex:facetLabel="Type" ex:sortMode="count"></span>
+  <!--span ex:role="facet" ex:expression=".pub-type" ex:facetLabel="Type" ex:sortMode="count"></span-->
+  <span ex:role="facet" ex:expression=".author" ex:facetLabel="(Co-)Authors" ex:sortMode="count"></span>
+  <!--span ex:facetClass="Cloud" ex:role="facet" ex:expression=".tags" ex:facetLabel="Tags" ex:sortMode="count"></span-->
+</div></div>
+
+<div ex:role="view" ex:grouped="false" ex:orders=".year,.label" ex:directions="descending,ascending" ex:showSummary="true" ex:showDuplicates="false" style="">
+
+<p ex:role="lens" ex:itemTypes="Publication" style="display: none">
+<strong ex:if-exists=".author">
+  <span class="author" ex:content=".author"></span>:
+</strong>
+<a ex:if-exists=".biburl" ex:href-content=".biburl" ><i ex:content=".label"></i></a>
+<span ex:content="if(exists(.booktitle), concat('In: ', .booktitle), '')"></span>
+<span ex:if-exists=".editor">(Editors: <span class="editor" ex:content=".editor"></span>)</span>
+<span class="journal" ex:content="if(exists(.journal), concat('In: ', .journal), '')"></span>
+<span class="note" ex:content="if(exists(.note), concat(', Note: ', .note), '')"></span>
+<span class="abstract" style="display:none" ex:content="if(exists(.abstract), .abstract, '')"></span>
+<a ex:if-exists=".url" ex:href-content=".url" >link</a>
 
