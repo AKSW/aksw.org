@@ -77,7 +77,7 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 SELECT DISTINCT ?resourceUri
 WHERE {
 <'.$this->resourceUri.'> foaf:member ?person.
-?person ?relation ?resourceUri.
+?person foaf:currentProject ?resourceUri.
 ?resourceUri a foaf:Project.
 }
 ';
