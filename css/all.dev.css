@@ -535,7 +535,17 @@
 
     .subc
     {
-        padding: 0.769em;
+        padding: 0 0.769em;
+    }
+
+    .subcl
+    {
+        padding-right: 0.385em;
+    }
+
+    .subcr
+    {
+        padding-left: 0.385em;
     }
 
     .subcolumns .c50l .subc
@@ -1001,7 +1011,9 @@
         border-color: white;
         font-weight: normal;
         text-decoration: none;
-        padding: 0.385em;
+        line-height: 1.538;
+        padding: 0.269em;
+        margin: 0.385em;
         -webkit-border-radius: 0.154em 0.462em;
         -moz-border-radius: 0.154em / 0.462em;
         -o-border-radius: 0.154em / 0.462em;
@@ -1017,6 +1029,28 @@
     button:active, .button:active
     {
         background: black;
+    }
+
+    input, textarea, select
+    {
+        font-family: "Droid Sans", sans-serif;
+        border: solid 1px #585858;
+        color: #585858;
+        background: white;
+        padding: 0.269em;
+        line-height: 1.538;
+    }
+    input:hover, textarea:hover, select:hover
+    {
+        border-color: black;
+        background: #e6e6e6;
+        color: #333333;
+    }
+    input:focus, input:active, textarea:focus, textarea:active, select:focus, select:active
+    {
+        border-color: black;
+        background: white;
+        color: black;
     }
 
     /* == Content Types & Widgets ========================================== */
@@ -1159,5 +1193,125 @@
     div.abstract-with-logo p.abstract
     {
         margin-right: 13.077em;
+    }
+
+    /* -- Exhibit ---------------------------------------------------------- */
+    .exhibit-filter-tools
+    {
+        background-color: #e6e6e6;
+        padding: 0.769em;
+        margin-bottom: 1.538em;
+    }
+    .exhibit-filter-tools .exhibit-facet-body
+    {
+        background-color: white;
+        border-color: #585858;
+    }
+    .nav-sidelinks .exhibit-filter-tools
+    {
+        text-align: right;
+        padding: 0 1.538em 0 0;
+        margin: 0;
+        background: transparent;
+    }
+
+    .nav-sidelinks .exhibit-cloudFacet-body
+    {
+        border: none;
+        padding: 0;
+    }
+    .nav-sidelinks div.exhibit-cloudFacet-header
+    {
+        color: black;
+        font-size: 1.154em;
+        line-height: 1.467;
+        margin-top: 1em;
+    }
+    .nav-sidelinks span.exhibit-cloudFacet-header-title
+    {
+        font-weight: normal;
+    }
+    .nav-sidelinks span.exhibit-cloudFacet-value
+    {
+        display: block;
+        font-size: 1em !important;
+        margin: 0;
+        padding: 0.385em 0;
+        color: #333333;
+        line-height: 1;
+    }
+    .nav-sidelinks span.exhibit-cloudFacet-value:focus, .nav-sidelinks span.exhibit-cloudFacet-value:hover
+    {
+        text-decoration: underline;
+    }
+    .nav-sidelinks span.exhibit-cloudFacet-value-selected
+    {
+        color: #fff;
+        background: #4c78a4;
+    }
+
+    div.exhibit-text-facet input
+    {
+        font-size: 1.154em;
+        width: 98% !important;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+
+    ol.exhibit-tileView-body
+    {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.538em 0;
+        border-top: dotted 1px #585858;
+    }
+    ol.exhibit-tileView-body li
+    {
+        padding: 0.769em 0;
+        margin: 0;
+        border-bottom: dotted 1px #585858;
+    }
+
+    div.exhibit-collectionView-header-sortControls
+    {
+        text-align: left !important;
+        color: #585858;
+        font-size: 0.9em;
+        line-height: 1.538;
+    }
+
+    div.exhibit-collectionView-group-content
+    {
+        margin-left: 0 !important;
+    }
+
+    div.exhibit-collectionView-footer
+    {
+        clear: none !important;
+    }
+
+    div.exhibit-menu-popup
+    {
+        border-color: #333333 !important;
+        background: white !important;
+        font-size: 0.813em;
+        line-height: 1.538;
+        max-height: 20em;
+        overflow: auto;
+    }
+    div.exhibit-menu-popup a
+    {
+        color: #333333 !important;
+        background: white !important;
+        font-weight: normal;
+    }
+    div.exhibit-menu-popup a:focus, div.exhibit-menu-popup a:hover
+    {
+        background: #333333 !important;
+        color: white !important;
+    }
+    div.exhibit-menu-popup a:focus div, div.exhibit-menu-popup a:hover div
+    {
+        background: #333333 !important;
     }
 }

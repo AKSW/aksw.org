@@ -35,28 +35,51 @@ echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses defaul
 ?>
 
 <!-- REMOVE THIS AFTER PROPER BIBSONOMY INTEGRATION -->
-<div class="floatbox noprint"><div class="inner">
-  <!--div class="legend">Navigation</div-->
-  <span ex:role="facet" ex:facetClass="TextSearch"></span>
 
-  <span ex:role="facet" ex:expression=".year" ex:facetLabel="Year" ex:sortDirection="reverse"></span>
-  <span ex:facetClass="Cloud" ex:role="facet" ex:expression=".pub-type" ex:facetLabel="Type" ex:sortMode="count"></span>
-  <!--span ex:role="facet" ex:expression=".pub-type" ex:facetLabel="Type" ex:sortMode="count"></span-->
-  <span ex:role="facet" ex:expression=".author" ex:facetLabel="(Co-)Authors" ex:sortMode="count"></span>
-  <!--span ex:facetClass="Cloud" ex:role="facet" ex:expression=".tags" ex:facetLabel="Tags" ex:sortMode="count"></span-->
-</div></div>
+<nav class="nav-sidelinks">
+    <div class="exhibit-filter-tools">
+        <!-- use this for lists containing only a few publications and authors -->
+        <div ex:facetClass="Cloud" ex:role="facet" ex:showMissing="false" ex:expression=".year" ex:facetLabel="Year" ex:sortDirection="reverse"></div>
+        <div ex:facetClass="Cloud" ex:role="facet" ex:showMissing="false" ex:expression=".pub-type" ex:facetLabel="Type" ex:sortMode="count"></div>
+        <div ex:facetClass="Cloud" ex:role="facet" ex:showMissing="false" ex:expression=".author" ex:facetLabel="(Co-)Authors" ex:sortMode="count"></div>
+    </div>
+</nav>
 
-<div ex:role="view" ex:grouped="false" ex:orders=".year,.label" ex:directions="descending,ascending" ex:showSummary="true" ex:showDuplicates="false" style="">
+<div class="exhibit-filter-tools">
+    <!-- use this for lists cantaining a lot of publication and authors-->
+    <h2 class="hideme">Filters</h2>
+    <div ex:role="facet" ex:facetClass="TextSearch" ex:facetLabel="Keyword"></div>
+    <div class="subcolumns equalize">
+        <div class="c33l"><div class="subcl">
+            <div ex:role="facet" ex:showMissing="false" ex:expression=".year" ex:facetLabel="Year" ex:sortDirection="reverse" ex:height="15em"></div>
+        </div></div>
+        <div class="c33l"><div class="subc">
+            <div ex:role="facet" ex:showMissing="false" ex:expression=".pub-type" ex:facetLabel="Type" ex:sortMode="count" ex:height="15em"></div>
+        </div></div>
+        <div class="c33r"><div class="subcr">
+            <div ex:role="facet" ex:showMissing="false" ex:expression=".author" ex:facetLabel="(Co-)Authors" ex:sortMode="count" ex:height="15em"></div>
+        </div></div>
+    </div>
+</div> <!-- /.exhibit-filter-tools -->
 
-<p ex:role="lens" ex:itemTypes="Publication" style="display: none">
-<strong ex:if-exists=".author">
-  <span class="author" ex:content=".author"></span>:
-</strong>
-<a ex:if-exists=".biburl" ex:href-content=".biburl" ><i ex:content=".label"></i></a>
-<span ex:content="if(exists(.booktitle), concat('In: ', .booktitle), '')"></span>
-<span ex:if-exists=".editor">(Editors: <span class="editor" ex:content=".editor"></span>)</span>
-<span class="journal" ex:content="if(exists(.journal), concat('In: ', .journal), '')"></span>
-<span class="note" ex:content="if(exists(.note), concat(', Note: ', .note), '')"></span>
-<span class="abstract" style="display:none" ex:content="if(exists(.abstract), .abstract, '')"></span>
-<a ex:if-exists=".url" ex:href-content=".url" >link</a>
+<div ex:role="view" ex:grouped="false" ex:orders=".year,.label" ex:directions="descending,ascending" ex:showSummary="true" ex:showDuplicates="false">
 
+    <div ex:role="lens" ex:itemTypes="Publication" style="display: none">
+        <strong>
+            <span ex:content="if(exists(.url), concat('<a href=', .url, '>', .label, '</a>'), .label)"></span>
+            <span ex:if-exists=".author">
+                <span class="meta"><em>by</em> <span class="author" ex:content=".author"></span></span>
+            </span>
+        </strong>
+        <span class="meta">
+            <span ex:content="if(exists(.booktitle), concat('<em>in</em> ', .booktitle), '')"></span>
+            <span class="journal" ex:content="if(exists(.journal), concat('<em>in</em> ', .journal), '')"></span>
+            <span ex:if-exists=".editor">(Editors: <span class="editor" ex:content=".editor"></span>)</span>
+            <a ex:if-exists=".biburl" ex:href-content=".biburl" >[BibTex<span class="hideme"> of <span ex:content=".label"></span></span>]</a>
+        </span>
+        <span class="note" ex:content="if(exists(.note), concat('<br/><em>Note:</em> ', .note), '')"></span>
+        <span class="abstract" ex:content="if(exists(.abstract), concat('<br/><em>Abstract:</em> ', .abstract), '')"></span>
+        
+    </div>
+
+</div>
