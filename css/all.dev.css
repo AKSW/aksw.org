@@ -445,7 +445,7 @@
     {
         font-size: 0.813em;
         margin: 0 auto;
-        width: 78.077em;
+        width: 84.615em;
         max-width: 90%;
         min-width: 800px;
     }
@@ -482,9 +482,10 @@
     }
     #associations img, #associations a
     {
-        display: block;
+        display: inline-block;
         height: auto;
         max-width: 100%;
+        line-height: 1;
     }
     #associations a
     {
@@ -493,7 +494,7 @@
 
     #content
     {
-        width: 73.341%;
+        width: 66.737%;
         float: left;
         clear: left;
         margin-top: -2em;
@@ -505,7 +506,7 @@
     #sidecontent, #associations, #userinfo
     {
         width: auto;
-        margin-left: 73.341%;
+        margin-left: 66.737%;
         padding-left: 2.308em;
     }
 
@@ -522,7 +523,7 @@
     }
     #footer #articleinfo
     {
-        width: 73.341%;
+        width: 66.737%;
         float: left;
     }
     #footer .subc
@@ -594,7 +595,7 @@
     /* -- Main menu -------------------------------------------------------- */
     #nav-main
     {
-        width: 73.341%;
+        width: 66.737%;
         float: left;
         border-top: solid 1px #585858;
     }
