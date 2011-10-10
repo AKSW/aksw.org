@@ -1214,6 +1214,10 @@
         margin: 0;
         background: transparent;
     }
+    .exhibit-filter-tools .exhibit-resizableDivWidget-resizer
+    {
+        display: none;
+    }
 
     .nav-sidelinks .exhibit-cloudFacet-body
     {
