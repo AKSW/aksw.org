@@ -25,17 +25,40 @@ $abstract = $this->literal(array(
 ));
 
 // prepare the single image screenshot
-// TODO: insert first pic big and thumbs for all, javascriptify this lates to enable switching between pics
+/*
 $singleImage = $this->img(array(
-    //'src'      => 'http://dummyimage.com/1024x768.png',
+    'src'      => 'http://dummyimage.com/1024x768.png',
     //'uri'      => 'http://aksw.org/Projects/OntoWiki',
     'property' => 'ov:screenshot',
     'filter'   => 'Resize-width-300',
     'alt'      => 'screenshot',
     'class'    => 'depiction',
-    'prefix'   => '<div class="widget_depictions"><div class="widget_depictions_big">'.PHP_EOL,
-    'suffix'   => '</div></div>'.PHP_EOL
+    'prefix'   => '<ul class="widget_depictions"><li class="widget_depictions_big">'.PHP_EOL,
+    'suffix'   => '</li></ul>'.PHP_EOL
 ));
+//*/
+
+// prepare array with code of dummy images
+// TODO: replace dummy images by real screenshots
+$images = array();
+$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 1" href="http://dummyimage.com/1024x4:3.png/f00/000">' .
+                '<img src="http://dummyimage.com/250x4:3.png/f00/000" alt="Screenshot Description 1" property="ov:screenshot" class="depiction" />' .
+            '</a>' . PHP_EOL;
+$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 2" href="http://dummyimage.com/1024x16:9.png/0f0/000">' .
+                '<img src="http://dummyimage.com/250x16:9.png/0f0/000" alt="Screenshot Description 2" property="ov:screenshot" class="depiction" />' .
+            '</a>' . PHP_EOL;
+$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 3" href="http://dummyimage.com/1024x3:2.png/00f/000">' .
+                '<img src="http://dummyimage.com/300x3:2.png/00f/000" alt="Screenshot Description 3" property="ov:screenshot" class="depiction" />' .
+            '</a>' . PHP_EOL;
+$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 4" href="http://dummyimage.com/1024x4:3.png/f00/fff">' .
+                '<img src="http://dummyimage.com/250x4:3.png/f00/fff" alt="Screenshot Description 4" property="ov:screenshot" class="depiction" />' .
+            '</a>' . PHP_EOL;
+$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 5" href="http://dummyimage.com/1024x16:9.png/0f0/fff">' .
+                '<img src="http://dummyimage.com/250x16:9.png/0f0/fff" alt="Screenshot Description 5" property="ov:screenshot" class="depiction" />' .
+            '</a>' . PHP_EOL;
+$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 6" href="http://dummyimage.com/1024x3:2.png/00f/fff">' .
+                '<img src="http://dummyimage.com/300x3:2.png/00f/fff" alt="Screenshot Description 6" property="ov:screenshot" class="depiction" />' .
+            '</a>' . PHP_EOL;
 
 // prepare button row
 $query = '
@@ -50,7 +73,15 @@ $buttons = $this->querylist($query, 'aksw2011/items/buttons.phtml');
 ?>
 <header class="intro">
     <h1><?php echo $this->title . $hookline ?></h1>
-    <?php echo $singleImage ?>
+    <?php
+    if (isset($images) && is_array($images) && count($images) > 0) {
+        echo '<div class="widget_depictions"><ul>' . PHP_EOL;
+        foreach ($images as $image) {
+            echo '<li class="widget_depictions_big">'.$image.'</li>' . PHP_EOL;
+        }
+        echo '</ul></div>' . PHP_EOL;
+    }
+    ?>
     <?php echo $abstract ?>
     <?php echo $buttons ?>
 </header> <!-- /.intro -->

@@ -1055,6 +1055,55 @@
     }
 
     /* == Content Types & Widgets ========================================== */
+    /* -- Carousel ------------------------------------------------------- */
+    .rs-carousel-runner
+    {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .rs-carousel-item
+    {
+        float: left;
+        display: block !important;
+    }
+
+    .rs-carousel-action-prev,
+    .rs-carousel-action-next
+    {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 25%;
+        left: 5%;
+        text-indent: -1000em;
+        outline: none;
+        cursor: pointer;
+        z-index: 1000;
+        display: block;
+        background-image: url("./../libs/fancybox/fancybox.png");
+        background-position: -40px -30px;
+        opacity: 0.5;
+    }
+    .rs-carousel-action-prev:focus, .rs-carousel-action-prev:hover,
+    .rs-carousel-action-next:focus,
+    .rs-carousel-action-next:hover
+    {
+        opacity: 1;
+    }
+
+    .rs-carousel-action-next
+    {
+        left: auto;
+        right: 5%;
+        background-position: -40px -60px;
+    }
+
+    .rs-carousel-action-disabled
+    {
+        display: none;
+    }
+
     /* -- Depictions ------------------------------------------------------- */
     .widget_depictions
     {
@@ -1063,6 +1112,14 @@
         width: 40%;
         margin-bottom: 1.333em;
         margin-left: 1.333em;
+        overflow: hidden;
+        position: relative;
+    }
+    .widget_depictions ul
+    {
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
     .foaf_Person .widget_depictions
     {
@@ -1073,7 +1130,7 @@
     {
         position: relative;
         padding: 0;
-        margin: 0 5px 0 0;
+        margin: 0 5px 0 5px;
     }
     .widget_depictions_big:before, .widget_depictions_big:after
     {
@@ -1117,10 +1174,27 @@
         position: relative;
         z-index: 2;
     }
+    .js .widget_depictions_big
+    {
+        display: none;
+    }
+    .js .widget_depictions_big:first-child
+    {
+        display: block;
+    }
 
     .icon
     {
         vertical-align: middle;
+    }
+
+    /* -- Fancybox enhancements -------------------------------------------- */
+    .lightbox:focus img, .lightbox:hover img
+    {
+        -moz-box-shadow: 0px 0px 5px #4c78a4;
+        -webkit-box-shadow: 0px 0px 5px #4c78a4;
+        -o-box-shadow: 0px 0px 5px #4c78a4;
+        box-shadow: 0px 0px 5px #4c78a4;
     }
 
     /* -- VCards ----------------------------------------------------------- */
