@@ -41,22 +41,22 @@ $singleImage = $this->img(array(
 // prepare array with code of dummy images
 // TODO: replace dummy images by real screenshots
 $images = array();
-$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 1" href="http://dummyimage.com/1024x4:3.png/f00/000">' .
+$images[] = '<a class="lightbox" title="Screenshot Description 1" href="http://dummyimage.com/1024x4:3.png/f00/000">' .
                 '<img src="http://dummyimage.com/250x4:3.png/f00/000" alt="Screenshot Description 1" property="ov:screenshot" class="depiction" />' .
             '</a>' . PHP_EOL;
-$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 2" href="http://dummyimage.com/1024x16:9.png/0f0/000">' .
+$images[] = '<a class="lightbox" title="Screenshot Description 2" href="http://dummyimage.com/1024x16:9.png/0f0/000">' .
                 '<img src="http://dummyimage.com/250x16:9.png/0f0/000" alt="Screenshot Description 2" property="ov:screenshot" class="depiction" />' .
             '</a>' . PHP_EOL;
-$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 3" href="http://dummyimage.com/1024x3:2.png/00f/000">' .
+$images[] = '<a class="lightbox" title="Screenshot Description 3" href="http://dummyimage.com/1024x3:2.png/00f/000">' .
                 '<img src="http://dummyimage.com/300x3:2.png/00f/000" alt="Screenshot Description 3" property="ov:screenshot" class="depiction" />' .
             '</a>' . PHP_EOL;
-$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 4" href="http://dummyimage.com/1024x4:3.png/f00/fff">' .
+$images[] = '<a class="lightbox" title="Screenshot Description 4" href="http://dummyimage.com/1024x4:3.png/f00/fff">' .
                 '<img src="http://dummyimage.com/250x4:3.png/f00/fff" alt="Screenshot Description 4" property="ov:screenshot" class="depiction" />' .
             '</a>' . PHP_EOL;
-$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 5" href="http://dummyimage.com/1024x16:9.png/0f0/fff">' .
+$images[] = '<a class="lightbox" title="Screenshot Description 5" href="http://dummyimage.com/1024x16:9.png/0f0/fff">' .
                 '<img src="http://dummyimage.com/250x16:9.png/0f0/fff" alt="Screenshot Description 5" property="ov:screenshot" class="depiction" />' .
             '</a>' . PHP_EOL;
-$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 6" href="http://dummyimage.com/1024x3:2.png/00f/fff">' .
+$images[] = '<a class="lightbox" title="Screenshot Description 6" href="http://dummyimage.com/1024x3:2.png/00f/fff">' .
                 '<img src="http://dummyimage.com/300x3:2.png/00f/fff" alt="Screenshot Description 6" property="ov:screenshot" class="depiction" />' .
             '</a>' . PHP_EOL;
 
@@ -87,4 +87,13 @@ $buttons = $this->querylist($query, 'aksw2011/items/buttons.phtml');
 </header> <!-- /.intro -->
 <?php
 echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses default content properties
+
+// example code for media gallery
+$medias = array_merge($images, $images, $images); shuffle($medias);
+?>
+<ul class="mediagallery">
+<?php foreach($medias as $mediaitem): ?>
+    <li><?php echo $mediaitem; ?></li>
+<?php endforeach; ?>
+</ul>
 

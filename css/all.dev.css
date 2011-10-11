@@ -1188,6 +1188,28 @@
         vertical-align: middle;
     }
 
+    /* -- Depictions ------------------------------------------------------- */
+    .mediagallery
+    {
+        list-style: none;
+        margin-left: 0;
+        margin-right: 0;
+        overflow: hidden;
+        padding: 0.385em;
+    }
+    .mediagallery li
+    {
+        float: left;
+        padding: 0;
+        margin: 0 0.385em 0.385em 0;
+    }
+    .mediagallery a, .mediagallery img
+    {
+        height: 5.769em;
+        width: auto;
+        display: block;
+    }
+
     /* -- Fancybox enhancements -------------------------------------------- */
     .lightbox:focus img, .lightbox:hover img
     {
