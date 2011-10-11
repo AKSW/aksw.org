@@ -1058,6 +1058,7 @@
     /* -- Depictions ------------------------------------------------------- */
     .widget_depictions
     {
+        list-style: none;
         float: right;
         width: 40%;
         margin-bottom: 1.333em;
