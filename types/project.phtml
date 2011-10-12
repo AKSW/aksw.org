@@ -41,24 +41,26 @@ $singleImage = $this->img(array(
 // prepare array with code of dummy images
 // TODO: replace dummy images by real screenshots
 $images = array();
-$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 1" href="http://dummyimage.com/1024x4:3.png/f00/000">' .
+$images[] = '<a class="lightbox" title="Screenshot Description 1" href="http://dummyimage.com/1024x4:3.png/f00/000">' .
                 '<img src="http://dummyimage.com/250x4:3.png/f00/000" alt="Screenshot Description 1" property="ov:screenshot" class="depiction" />' .
             '</a>' . PHP_EOL;
-$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 2" href="http://dummyimage.com/1024x16:9.png/0f0/000">' .
+$images[] = '<a class="lightbox" title="Screenshot Description 2" href="http://dummyimage.com/1024x16:9.png/0f0/000">' .
                 '<img src="http://dummyimage.com/250x16:9.png/0f0/000" alt="Screenshot Description 2" property="ov:screenshot" class="depiction" />' .
             '</a>' . PHP_EOL;
-$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 3" href="http://dummyimage.com/1024x3:2.png/00f/000">' .
+$images[] = '<a class="lightbox" title="Screenshot Description 3" href="http://dummyimage.com/1024x3:2.png/00f/000">' .
                 '<img src="http://dummyimage.com/300x3:2.png/00f/000" alt="Screenshot Description 3" property="ov:screenshot" class="depiction" />' .
             '</a>' . PHP_EOL;
-$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 4" href="http://dummyimage.com/1024x4:3.png/f00/fff">' .
+$images[] = '<a class="lightbox" title="Screenshot Description 4" href="http://dummyimage.com/1024x4:3.png/f00/fff">' .
                 '<img src="http://dummyimage.com/250x4:3.png/f00/fff" alt="Screenshot Description 4" property="ov:screenshot" class="depiction" />' .
             '</a>' . PHP_EOL;
-$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 5" href="http://dummyimage.com/1024x16:9.png/0f0/fff">' .
+$images[] = '<a class="lightbox" title="Screenshot Description 5" href="http://dummyimage.com/1024x16:9.png/0f0/fff">' .
                 '<img src="http://dummyimage.com/250x16:9.png/0f0/fff" alt="Screenshot Description 5" property="ov:screenshot" class="depiction" />' .
             '</a>' . PHP_EOL;
-$images[] = '<a class="lightbox" rel="gal_'.md5($this->title).'" title="Screenshot Description 6" href="http://dummyimage.com/1024x3:2.png/00f/fff">' .
+$images[] = '<a class="lightbox" title="Screenshot Description 6" href="http://dummyimage.com/1024x3:2.png/00f/fff">' .
                 '<img src="http://dummyimage.com/300x3:2.png/00f/fff" alt="Screenshot Description 6" property="ov:screenshot" class="depiction" />' .
             '</a>' . PHP_EOL;
+            
+shuffle($images);
 
 // prepare button row
 $query = '
@@ -87,4 +89,135 @@ $buttons = $this->querylist($query, 'aksw2011/items/buttons.phtml');
 </header> <!-- /.intro -->
 <?php
 echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses default content properties
+
+// example markup for media gallery
+$medias = array_merge($images, $images, $images); shuffle($medias);
+?>
+<ul class="mediagallery">
+<?php foreach($medias as $mediaitem): ?>
+    <li><?php echo $mediaitem; ?></li>
+<?php endforeach; ?>
+</ul>
+
+<?php
+
+// example markup for demos
+?>
+
+<div class="demowheel">
+    <ul>
+        <li>
+            <h3 class="demowheel-title"> <!-- only .demowheel-title is important, you can also use h2/h4/strong/... here -->
+                <a class="lightbox" href="#demo-projektinfo1" title="Popup Description">
+                    Projekt Demo Name:
+                </a>
+                Hookline Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </h3>
+            <a class="demowheel-image lightbox" href="#demo-projektinfo1" title="Popup Description"> <!-- if there is no link, use span.demoweel-image here -->
+                <img src="http://wiki.dbpedia.org/images/dbpedia_logo.png" alt="Demoname Screenshot/Logo/..." />
+            </a>
+            <div class="demowheel-description" id="demo-projektinfo1">
+                <p property="dcterms:abstract" class="abstract">OntoWiki facilitates the visual presentation of a knowledge base as an information map, with different views on instance data. It enables intuitive authoring of semantic content, with an inline editing mode for editing RDF content, similar to WYSIWIG for text documents.</p>
+                <p class="button-row">
+                    <a href="http://code.google.com/p/ontowiki/source/list" class="button">Fork me!</a>
+                    <a href="http://code.google.com/p/ontowiki/downloads/list" class="button">Download</a>
+                    <a href="http://ontowiki.net" class="button">Homepage</a>
+                </p>
+            </div>
+        </li>
+
+        <li>
+            <h3 class="demowheel-title">
+                <a class="lightbox" href="http://linkedgeodata.org/">
+                    LinkedGeoData.org:
+                </a>
+                adding the spatial dimension to the Semantic Web
+            </h3>
+            <a class="demowheel-image" href="http://linkedgeodata.org/">
+                <img src="http://linkedgeodata.org/files/lgdlogo.png" alt="Demoname Screenshot/Logo/..." />
+            </a>
+        </li>
+
+        <li>
+            <h3 class="demowheel-title"> <!-- only .demowheel-title is important, you can also use h2/h4/strong/... here -->
+                <a class="lightbox iframe" href="http://player.vimeo.com/video/30014844?portrait=0" title="Popup Description">
+                    DBpedia Relationship Finder:
+                </a>
+                Allows you to explore the DBpedia dataset to find relationships between two things 
+            </h3>
+            <a class="demowheel-image lightbox iframe" href="http://player.vimeo.com/video/30014844?portrait=0" title="Popup Description"> <!-- if there is no link, use span.demoweel-image here -->
+                <img src="http://wiki.aksw.org/images/RelFinder.png" alt="Demoname Screenshot/Logo/..." />
+            </a>
+        </li>
+
+        <li class="first">
+            <h3 class="demowheel-title">
+                <a class="lightbox" href="http://wikipedia.aksw.org/">
+                    Wikipedia Query Builder:
+                </a>
+                Query the over 10M facts extracted from Wikipedia 
+            </h3>
+            <a class="demowheel-image" href="http://wikipedia.aksw.org/">
+                <img src="http://wiki.aksw.org/images/wikipedia.png" alt="Demoname Screenshot/Logo/..." />
+            </a>
+        </li>
+
+        <li>
+            <h3 class="demowheel-title"> <!-- only .demowheel-title is important, you can also use h2/h4/strong/... here -->
+                <a class="lightbox" href="#demo-projektinfo5" title="Popup Description">
+                    Projekt Demo Name:
+                </a>
+                Hookline Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </h3>
+            <a class="demowheel-image lightbox" href="#demo-projektinfo5" title="Popup Description"> <!-- if there is no link, use span.demoweel-image here -->
+                <img src="http://wiki.dbpedia.org/images/dbpedia_logo.png" alt="Demoname Screenshot/Logo/..." />
+            </a>
+            <div class="demowheel-description" id="demo-projektinfo5">
+                <p property="dcterms:abstract" class="abstract">OntoWiki facilitates the visual presentation of a knowledge base as an information map, with different views on instance data. It enables intuitive authoring of semantic content, with an inline editing mode for editing RDF content, similar to WYSIWIG for text documents.</p>
+                <p class="button-row">
+                    <a href="http://code.google.com/p/ontowiki/source/list" class="button">Fork me!</a>
+                    <a href="http://code.google.com/p/ontowiki/downloads/list" class="button">Download</a>
+                    <a href="http://ontowiki.net" class="button">Homepage</a>
+                </p>
+            </div>
+        </li>
+
+        <li>
+            <h3 class="demowheel-title">
+                <a class="lightbox" href="http://linkedgeodata.org/">
+                    LinkedGeoData.org:
+                </a>
+                adding the spatial dimension to the Semantic Web
+            </h3>
+            <a class="demowheel-image" href="http://linkedgeodata.org/">
+                <img src="http://linkedgeodata.org/files/lgdlogo.png" alt="Demoname Screenshot/Logo/..." />
+            </a>
+        </li>
+
+        <li class="first">
+            <h3 class="demowheel-title"> <!-- only .demowheel-title is important, you can also use h2/h4/strong/... here -->
+                <a class="lightbox" href="http://player.vimeo.com/video/30014844?portrait=0&amp;is=iframe" title="Popup Description">
+                    DBpedia Relationship Finder:
+                </a>
+                Allows you to explore the DBpedia dataset to find relationships between two things 
+            </h3>
+            <a class="demowheel-image lightbox" href="http://player.vimeo.com/video/30014844?portrait=0&amp;is=iframe" title="Popup Description"> <!-- if there is no link, use span.demoweel-image here -->
+                <img src="http://wiki.aksw.org/images/RelFinder.png" alt="Demoname Screenshot/Logo/..." />
+            </a>
+        </li>
+
+        <li>
+            <h3 class="demowheel-title">
+                <a class="lightbox" href="http://wikipedia.aksw.org/">
+                    Wikipedia Query Builder:
+                </a>
+                Query the over 10M facts extracted from Wikipedia 
+            </h3>
+            <a class="demowheel-image" href="http://wikipedia.aksw.org/">
+                <img src="http://wiki.aksw.org/images/wikipedia.png" alt="Demoname Screenshot/Logo/..." />
+            </a>
+        </li>
+
+    </ul>
+</div>
 

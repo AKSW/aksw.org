@@ -1005,6 +1005,7 @@
     /* == Forms ============================================================ */
     button, .button
     {
+        display: inline-block;
         color: white;
         background: #4c78a4;
         border-width: 1px;
@@ -1066,6 +1067,7 @@
     {
         float: left;
         display: block !important;
+        position: relative;
     }
 
     .rs-carousel-action-prev,
@@ -1102,6 +1104,54 @@
     .rs-carousel-action-disabled
     {
         display: none;
+    }
+
+    .rs-carousel-pagination
+    {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    .rs-carousel-pagination .rs-carousel-pagination-link
+    {
+        display: inline-block;
+        width: 0.8em;
+        height: 0.8em;
+        border: solid 0.1em #4c78a4;
+        -moz-border-radius: 0.5em 0.5em;
+        -webkit-border-radius: 0.5em 0.5em;
+        -o-border-radius: 0.5em 0.5em;
+        -ms-border-radius: 0.5em 0.5em;
+        -khtml-border-radius: 0.5em 0.5em;
+        border-radius: 0.5em 0.5em;
+        padding: 0;
+        margin: 0.192em;
+    }
+    .rs-carousel-pagination .rs-carousel-pagination-link a
+    {
+        display: inline-block;
+        text-indent: -5000em;
+        outline: none;
+        width: 0.6em;
+        height: 0.6em;
+        border: solid 0.1em white;
+        background: #e6e6e6;
+        -moz-border-radius: 0.4em 0.4em;
+        -webkit-border-radius: 0.4em 0.4em;
+        -o-border-radius: 0.4em 0.4em;
+        -ms-border-radius: 0.4em 0.4em;
+        -khtml-border-radius: 0.4em 0.4em;
+        border-radius: 0.4em 0.4em;
+    }
+    .rs-carousel-pagination .rs-carousel-pagination-link-active
+    {
+        border-color: #333333;
+    }
+    .rs-carousel-pagination .rs-carousel-pagination-link-active a
+    {
+        background: #4c78a4;
+        color: white;
     }
 
     /* -- Depictions ------------------------------------------------------- */
@@ -1188,6 +1238,28 @@
         vertical-align: middle;
     }
 
+    /* -- Depictions ------------------------------------------------------- */
+    .mediagallery
+    {
+        list-style: none;
+        margin-left: 0;
+        margin-right: 0;
+        overflow: hidden;
+        padding: 0.385em;
+    }
+    .mediagallery li
+    {
+        float: left;
+        padding: 0;
+        margin: 0 0.385em 0.385em 0;
+    }
+    .mediagallery a, .mediagallery img
+    {
+        height: 5.769em;
+        width: auto;
+        display: block;
+    }
+
     /* -- Fancybox enhancements -------------------------------------------- */
     .lightbox:focus img, .lightbox:hover img
     {
@@ -1195,6 +1267,126 @@
         -webkit-box-shadow: 0px 0px 5px #4c78a4;
         -o-box-shadow: 0px 0px 5px #4c78a4;
         box-shadow: 0px 0px 5px #4c78a4;
+    }
+
+    /* -- Demowheel -------------------------------------------------------- */
+    .demowheel,
+    .demowheel .rs-carousel-mask
+    {
+        position: relative;
+        width: 100%;
+        margin: 0 0 1.538em -1.538em;
+        padding: 0 1.538em;
+        overflow: hidden;
+    }
+    .demowheel > ul,
+    .demowheel .rs-carousel-mask > ul
+    {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        list-style: none;
+    }
+    .demowheel > ul > li,
+    .demowheel .rs-carousel-mask > ul > li
+    {
+        float: left;
+        width: 30.333%;
+        margin: 0;
+        padding: 0.385em 1.5%;
+        position: relative;
+    }
+    .demowheel > ul > li.first,
+    .demowheel .rs-carousel-mask > ul > li.first
+    {
+        clear: left;
+    }
+    .demowheel .demowheel-title,
+    .demowheel .rs-carousel-mask .demowheel-title
+    {
+        display: block;
+        font-size: 1em;
+        font-weight: normal;
+        margin: 8em 0 0 0;
+        padding: 0;
+    }
+    .demowheel .demowheel-title a,
+    .demowheel .rs-carousel-mask .demowheel-title a
+    {
+        color: #4c78a4;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    .demowheel .demowheel-title a:focus, .demowheel .demowheel-title a:hover,
+    .demowheel .rs-carousel-mask .demowheel-title a:focus,
+    .demowheel .rs-carousel-mask .demowheel-title a:hover
+    {
+        text-decoration: none;
+    }
+    .demowheel .demowheel-image,
+    .demowheel .rs-carousel-mask .demowheel-image
+    {
+        display: block;
+        width: 100%;
+        height: 8em;
+        position: absolute;
+        left: 4.5%;
+        top: 0.385em;
+    }
+    .demowheel .demowheel-image img,
+    .demowheel .rs-carousel-mask .demowheel-image img
+    {
+        display: block;
+        position: absolute;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        bottom: 0;
+        left: 0;
+    }
+    .demowheel a.demowheel-image:focus img, .demowheel a.demowheel-image:hover img,
+    .demowheel .rs-carousel-mask a.demowheel-image:focus img,
+    .demowheel .rs-carousel-mask a.demowheel-image:hover img
+    {
+        -moz-box-shadow: 0px 0px 5px #4c78a4;
+        -webkit-box-shadow: 0px 0px 5px #4c78a4;
+        -o-box-shadow: 0px 0px 5px #4c78a4;
+        box-shadow: 0px 0px 5px #4c78a4;
+    }
+    .demowheel .demowheel-description,
+    .demowheel .rs-carousel-mask .demowheel-description
+    {
+        font-size: 1em;
+    }
+    .js .demowheel .demowheel-description, .js
+    .demowheel .rs-carousel-mask .demowheel-description
+    {
+        display: none;
+    }
+
+    .demowheel-description
+    {
+        font-size: 0.813em;
+    }
+    .js .demowheel-description
+    {
+        width: 40em;
+    }
+
+    .demowheel .rs-carousel-mask
+    {
+        margin: 0;
+        padding: 0;
+        width: auto;
+    }
+    .demowheel .rs-carousel-action-prev
+    {
+        left: 0;
+    }
+    .demowheel .rs-carousel-action-next
+    {
+        right: 0;
     }
 
     /* -- VCards ----------------------------------------------------------- */
