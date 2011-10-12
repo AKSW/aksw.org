@@ -1264,6 +1264,28 @@
         box-shadow: 0px 0px 5px #4c78a4;
     }
 
+    #fancybox-outer
+    {
+        border: solid 10px #585858;
+        border-color: rgba(0, 0, 0, 0.75);
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -o-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -khtml-border-radius: 5px;
+        border-radius: 5px;
+        -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        -o-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        margin-left: -10px;
+        margin-top: -10px;
+    }
+    #fancybox-outer .fancybox-bg
+    {
+        display: none;
+    }
+
     /* -- Demowheel -------------------------------------------------------- */
     .demowheel,
     .demowheel .rs-carousel-mask
