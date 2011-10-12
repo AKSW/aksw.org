@@ -1116,37 +1116,32 @@
     .rs-carousel-pagination .rs-carousel-pagination-link
     {
         display: inline-block;
-        width: 0.8em;
-        height: 0.8em;
-        border: solid 0.1em #4c78a4;
-        -moz-border-radius: 0.5em 0.5em;
-        -webkit-border-radius: 0.5em 0.5em;
-        -o-border-radius: 0.5em 0.5em;
-        -ms-border-radius: 0.5em 0.5em;
-        -khtml-border-radius: 0.5em 0.5em;
-        border-radius: 0.5em 0.5em;
+        width: 1em;
+        height: 1em;
         padding: 0;
         margin: 0.192em;
+        line-height: 1;
     }
     .rs-carousel-pagination .rs-carousel-pagination-link a
     {
         display: inline-block;
         text-indent: -5000em;
         outline: none;
-        width: 0.6em;
-        height: 0.6em;
-        border: solid 0.1em white;
+        width: 0.8em;
+        height: 0.8em;
+        border: solid 0.1em #4c78a4;
         background: #e6e6e6;
-        -moz-border-radius: 0.4em 0.4em;
-        -webkit-border-radius: 0.4em 0.4em;
-        -o-border-radius: 0.4em 0.4em;
-        -ms-border-radius: 0.4em 0.4em;
-        -khtml-border-radius: 0.4em 0.4em;
-        border-radius: 0.4em 0.4em;
+        -moz-border-radius: 0.5em 0.5em;
+        -webkit-border-radius: 0.5em 0.5em;
+        -o-border-radius: 0.5em 0.5em;
+        -ms-border-radius: 0.5em 0.5em;
+        -khtml-border-radius: 0.5em 0.5em;
+        border-radius: 0.5em 0.5em;
     }
-    .rs-carousel-pagination .rs-carousel-pagination-link-active
+    .rs-carousel-pagination .rs-carousel-pagination-link a:focus, .rs-carousel-pagination .rs-carousel-pagination-link a:hover
     {
-        border-color: #333333;
+        background: #585858;
+        color: white;
     }
     .rs-carousel-pagination .rs-carousel-pagination-link-active a
     {
