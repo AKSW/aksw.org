@@ -61,7 +61,11 @@ $templateData           = $this->templateData;
     // includes the GA header script
     $this->headScriptGoogleAnalytics('UA-241023-8');
     // includes the exhibit header links
-    $this->headScriptExhibit();
+    $this->headScriptExhibit( array(
+        array ('uri' => 'http://aksw.org/schema/publicationTag',
+               'sprintf' => 'http://docs.aksw.org/BibsonomyProxy/exhibit-proxy.php?suffix=user/aksw/%s&callback=cb'),
+        array ('uri' => 'http://lod2.eu/schema/exhibitData')
+    ));
     // other head scripts
     $this->headScript();
 ?>
