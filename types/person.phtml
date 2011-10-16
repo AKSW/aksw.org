@@ -11,74 +11,14 @@
  *
  * this template renders a person
  */
-
-
-// TODO: all data available
-
-$name = 'name'; $depictions = array(true); $contacts = array(true);
-
 ?>
-<?php if ($name |
-          (is_array($depictions) && count($depictions) > 0) |
-          (is_array($contacts))
-         ): ?>
 <header class="intro foaf_Person">
-<?php
-    if ($title = $this->title)
-    {
-        echo '<h1 class="hideme">'.$title.'</h1>'.PHP_EOL;
-    }
-
-    echo $this->renderx(array('template'=>'aksw2011/items/vcardperson.phtml'));
-?>
+    <h1 class="hideme"><?php echo $this->title ?></h1>
+    <?php echo $this->renderx(array('template'=>'aksw2011/items/vcardperson.phtml')) ?>
 </header> <!-- /.intro -->
-<?php elseif ($title = $this->title): ?>
-    <h1><?php echo $title; ?></h1>
-<?php endif; ?>
-<!-- TODO: static sidelinks for testing it using 2 levels -->
-<nav class="nav-sidelinks">
-    <ul>
-        <li><a class="headline" href="#">Lorem</a>
-            <ul>
-                <li><a href="#">eiusmod  et dolore</a></li>
-                <li><a href="#">quis nostrud exercitation</a></li>
-                <li><a href="#">laboris nisi</a></li>
-            </ul>
-        </li>
-        <li><a class="headline" href="#">ipsum dolor</a>
-            <ul>
-                <li><a href="#">commodo consequat</a></li>
-                <li><a href="#">dolor in reprehenderit</a></li>
-                <li><a href="#">voluptate velit esse</a></li>
-            </ul>
-        </li>
-        <li><a class="headline" href="#">consectetur adipisicing elit</a>
-            <ul>
-                <li><a href="#">Duis aute irure</a></li>
-                <li><a href="#">cillum dolore eu fugiat</a></li>
-                <li><a href="#">Excepteur sint</a></li>
-            </ul>
-        </li>
-        <li><a class="headline" href="#">tempor incididunt ut labore</a>
-            <ul>
-                <li><a href="#">occaecat cupidatat non proident</a></li>
-                <li><a href="#">nulla pariatur</a></li>
-                <li><a href="#">in culpa</a></li>
-            </ul>
-        </li>
-        <li><a class="headline" href="#">magna aliqua</a>
-            <ul>
-                <li><a href="#">officia deserunt</a></li>
-                <li><a href="#">sunt  qui  mollit anim</a></li>
-                <li><a href="#">enim ad minim</a></li>
-            </ul>
-        </li>
-    </ul>
-</nav>
-<?php
-echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses default content properties
 
-?>
+<?php echo $this->literal(array('tag' => 'div', 'class' => 'content')) ?>
+
 <?php // Current Projects
 $query = '
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -103,3 +43,51 @@ if ($pastProjects = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
 <h1>Past Projects</h1>
 <?php echo $pastProjects ?>
 <?php endif; ?>
+
+
+<h1>Publications</h1>
+
+<div class="exhibit-filter-tools">
+    <!-- use this for lists cantaining a lot of publication and authors-->
+    <h2 class="hideme">Filters</h2>
+    <div ex:role="facet" ex:facetClass="TextSearch" ex:facetLabel="Keyword"></div>
+    <div class="subcolumns equalize">
+        <div class="c33l"><div class="subcl">
+            <div ex:role="facet" ex:showMissing="false" ex:expression=".year" ex:facetLabel="Year" ex:sortDirection="reverse" ex:height="15em"></div>
+        </div></div>
+        <div class="c33l"><div class="subc">
+            <div ex:role="facet" ex:showMissing="false" ex:expression=".pub-type" ex:facetLabel="Type" ex:sortMode="count" ex:height="15em"></div>
+        </div></div>
+        <div class="c33r"><div class="subcr">
+            <div ex:role="facet" ex:showMissing="false" ex:expression=".author" ex:facetLabel="(Co-)Authors" ex:sortMode="count" ex:height="15em"></div>
+        </div></div>
+    </div>
+</div> <!-- /.exhibit-filter-tools -->
+
+<nav class="nav-sidelinks">
+    <div class="exhibit-filter-tools">
+        <!-- use this for lists containing only a few publications and authors -->
+        <div ex:facetClass="Cloud" ex:role="facet" ex:showMissing="false" ex:expression=".year" ex:facetLabel="Year" ex:sortDirection="reverse"></div>
+        <div ex:facetClass="Cloud" ex:role="facet" ex:showMissing="false" ex:expression=".pub-type" ex:facetLabel="Type" ex:sortMode="count"></div>
+        <!--div ex:facetClass="Cloud" ex:role="facet" ex:showMissing="false" ex:expression=".author" ex:facetLabel="(Co-)Authors" ex:sortMode="count"></div-->
+    </div>
+</nav>
+
+<div ex:role="view" ex:grouped="false" ex:orders=".year,.label" ex:directions="descending,ascending" ex:showSummary="true" ex:showDuplicates="false">
+    <div ex:role="lens" ex:itemTypes="Publication" style="display: none">
+        <strong>
+            <span ex:content="if(exists(.url), concat('<a href=', .url, '>', .label, '</a>'), .label)"></span>
+            <span ex:if-exists=".author">
+                <span class="meta"><em>by</em> <span class="author" ex:content=".author"></span></span>
+            </span>
+        </strong>
+        <span class="meta">
+            <span ex:content="if(exists(.booktitle), concat('<em>in</em> ', .booktitle), '')"></span>
+            <span class="journal" ex:content="if(exists(.journal), concat('<em>in</em> ', .journal), '')"></span>
+            <span ex:if-exists=".editor">(Editors: <span class="editor" ex:content=".editor"></span>)</span>
+            <a ex:if-exists=".biburl" ex:href-content=".biburl" >[BibTex<span class="hideme"> of <span ex:content=".label"></span></span>]</a>
+        </span>
+        <span class="note" ex:content="if(exists(.note), concat('<br/><em>Note:</em> ', .note), '')"></span>
+        <span class="abstract" ex:content="if(exists(.abstract), concat('<br/><details><summary>Abstract:</summary> ', .abstract, '</details>'), '')"></span>
+    </div>
+</div>
