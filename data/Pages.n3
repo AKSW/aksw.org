@@ -157,6 +157,16 @@ The following subgroups belong to AKSW:
 
 :About a foaf:Document;
     site:content """
+<nav class="nav-sidelinks">
+<ul>
+<li><strong class="headline">sub groups</strong>
+{{query where="?resourceUri a foaf:Group" template="liplain"}}
+</li>
+<li><strong class="headline">people</strong>
+{{query where="?group foaf:member ?resourceUri" template="liplain"}}
+</li>
+</nav>
+
 <a href="/LSWT"><img style="float:right; width:200px; height:200px;" src="http://wiki.aksw.org/Events/2011/LeipzigerSemanticWebDay/files?get=lswd2011aufkleberfinal.png" /></a>
 
 The Research Group **Agile Knowledge Engineering and Semantic Web (AKSW)** is hosted by the Chair of
