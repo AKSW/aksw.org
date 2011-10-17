@@ -1,0 +1,52 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * querylist li plain element template (site independent)
+ *
+ * this template is used in combination with the querylist helper to render
+ * lists of resources which match a given SPARQL query
+ *
+ * TODO: make more independend from the query (e.g. take the first)
+ */
+
+// prepare vars from the querylist helper
+$resourceUri = $this->resourceUri;
+$title       = $this->title;
+$oddclass    = $this->oddclass;
+$tag         = (isset($this->tag)) ? $this->tag : 'ul';
+
+if ( ($this->listhint == 'first') || ($this->rowcount == 1) ) {
+    echo "<$tag>" . PHP_EOL;
+}
+
+// if we have a literal item, do not do anything but an li item
+if (!Erfurt_Uri::check($resourceUri)) {
+    echo "<li class='$oddclass'>$title</li>";
+} else {
+    $link = $this->link(array(
+        'uri' => $resourceUri, 'text' => $title
+    ));
+
+    // try to prepare an active class
+    $selectedResourceUri = (string) OntoWiki::getInstance()->selectedResource;
+    if ($resourceUri == $selectedResourceUri) {
+        $active = ' active';
+    } else {
+        $active = '';
+    }
+?>
+    <li class="<?php echo $oddclass . $active ?>" about="<?php echo $this->curie($resourceUri) ?>">
+        <?php echo $link ?>
+    </li>
+<?php
+}
+
+if ( ($this->listhint == 'last') || ($this->rowcount == 1) ) {
+    echo "</$tag>" . PHP_EOL;
+}

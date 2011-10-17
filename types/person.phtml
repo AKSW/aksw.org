@@ -11,11 +11,32 @@
  *
  * this template renders a person
  */
+
+$subgroups = $this->query(array(
+    'where' => '?resourceUri a foaf:Group.',
+    'template' => 'liplain'
+));
+$grouproster = $this->query(array(
+    'where' => '?group foaf:member <'.$this->resourceUri.'>. ?group foaf:member ?resourceUri.',
+    'template' => 'liplain'
+));
+
 ?>
 <header class="intro foaf_Person">
     <h1 class="hideme"><?php echo $this->title ?></h1>
     <?php echo $this->renderx(array('template'=>'aksw2011/items/vcardperson.phtml')) ?>
 </header> <!-- /.intro -->
+
+<nav class="nav-sidelinks">
+<ul>
+<li><strong class="headline">sub groups</strong>
+<?php echo $subgroups; ?>
+</li>
+<li><strong class="headline">group roster</strong>
+<?php echo $grouproster; ?>
+</li>
+</ul>
+</nav>
 
 <?php echo $this->literal(array('tag' => 'div', 'class' => 'content')) ?>
 
@@ -44,6 +65,10 @@ if ($pastProjects = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
 <?php echo $pastProjects ?>
 <?php endif; ?>
 
+<?php
+    $publicationTag = $this->literal(array('property' => 'aksw:publicationTag'));
+    if ($publicationTag != "") :
+?>
 
 <h1>Publications</h1>
 
@@ -91,3 +116,5 @@ if ($pastProjects = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
         <span class="abstract" ex:content="if(exists(.abstract), concat('<br/><details><summary>Abstract:</summary> ', .abstract, '</details>'), '')"></span>
     </div>
 </div>
+
+<?php endif; ?>
