@@ -176,11 +176,7 @@ AKSW is committed to the [free software](http://en.wikipedia.org/wiki/Free_softw
 # Projects
 AKSW has launched a number of high-impact R&D projects:
 
-* [Triplify](http://aksw.org/Projects/Triplify) tackles the chicken-and-egg problem of the Semantic Web by providing a building block for the "semantification" of Web applications.
-* [SoftWiki](http://aksw.org/Projects/SoftWiki) - distributed, end-user-centred Requirements Engineering for evolutionary software development
-* [OntoWiki](http://aksw.org/Projects/OntoWiki) is a Semantic Data Wiki as well as an Application Framework providing support for agile, distributed knowledge engineering scenarios.
-* [DBpedia](http://aksw.org/Projects/DBpedia) is a community effort to extract structured information from Wikipedia and make this information available on the Web.
-* [DL-Learner](http://aksw.org/Projects/DL-Learner) tackles the problem of learning concepts / class expressions in Description Logics / OWL from examples.
+{{query where="?resourceUri aksw:promoted 'true'^^xsd:boolean." template="li"}}
 
 Please look at the [projects page](http://aksw.org/Projects) for a comprehensive description of AKSW's funded as well as community and open source projects.
 

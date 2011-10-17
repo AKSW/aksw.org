@@ -59,6 +59,10 @@ foaf:Project a owl:Class;
 
 
 # special aksw.org properties
+aksw:promoted a owl:DatatypeProperty;
+    rdfs:comment "a project which is promoted e.g. on the startpage";
+    rdfs:label "promoted".
+
 aksw:publicationTag a owl:DatatypeProperty;
     rdfs:comment "the tag which is used for this project / agend in the aksw.bib file";
     rdfs:label "publication tag".
