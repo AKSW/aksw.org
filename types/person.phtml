@@ -14,11 +14,15 @@
 
 $subgroups = $this->query(array(
     'where' => '?resourceUri a foaf:Group.',
-    'template' => 'liplain'
+    'template' => 'liplain',
+    'prefix'   => '<li><strong class="headline">sub groups</strong>',
+    'suffix'   => '</li>'
 ));
 $grouproster = $this->query(array(
-    'where' => '?group foaf:member <'.$this->resourceUri.'>. ?group foaf:member ?resourceUri.',
-    'template' => 'liplain'
+    'where'    => '?group foaf:member <'.$this->resourceUri.'>. ?group foaf:member ?resourceUri.',
+    'template' => 'liplain',
+    'prefix'   => '<li><strong class="headline">group roster</strong>',
+    'suffix'   => '</li>'
 ));
 
 ?>
@@ -29,12 +33,8 @@ $grouproster = $this->query(array(
 
 <nav class="nav-sidelinks">
 <ul>
-<li><strong class="headline">sub groups</strong>
-<?php echo $subgroups; ?>
-</li>
-<li><strong class="headline">group roster</strong>
 <?php echo $grouproster; ?>
-</li>
+<?php echo $subgroups; ?>
 </ul>
 </nav>
 
