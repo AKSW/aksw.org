@@ -128,24 +128,39 @@ Either the resource you are trying to reach is not available anymore on this ser
     site:content """
 {{toc depth="1"}}
 # Funded Projects
+<nav class="nav-sidelinks">
+{{query where="?resourceUri a aksw:FundedProject." template="liplain"}}
+</nav>
+
 ASKW is funded by regional, national and European research funding programmes.
 {{query where="?resourceUri a aksw:FundedProject." template="abstract"}}
 
 # Community Projects
+<nav class="nav-sidelinks">
+{{query where="?resourceUri a aksw:CommunityProject." template="liplain"}}
+</nav>
+
 AKSW has launched a number of high-impact R&D Community projects.
 {{query where="?resourceUri a aksw:CommunityProject." template="abstract"}}
 
 # OpenSource Projects
+<nav class="nav-sidelinks">
+{{query where="?resourceUri a aksw:OpenSourceProject." template="liplain"}}
+</nav>
+
 AKSW has launched a number of high-impact R&D Open Source projects.
 {{query where="?resourceUri a aksw:OpenSourceProject." template="abstract"}}
 
 # Incubator Projects
+
 {{query where="?resourceUri a aksw:IncubatorProject."}}
 
 # Project Alumni
+
 Some projects have reached a stable state, but are currently not actively maintained and further developed.
 {{query where="?resourceUri a aksw:AlumniProject."}}
 """^^sysont:Markdown;
+    sioc:feed <http://lod2.eu/BlogPost/feed>, <http://www.scms.eu/feed/>, <http://blog.aksw.org/category/projects/latc/feed/>;
     rdfs:label "Projects".
 
 :Groups a foaf:Document;
