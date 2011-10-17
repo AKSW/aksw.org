@@ -229,3 +229,16 @@ people:AmrapaliZaveri a foaf:Person;
     skos:prefLabel "Amrapali J. Zaveri";
     foaf:name "Amrapali Zaveri".
 
+people:JonasBrekle a foaf:Person;
+    foaf:currentProject projects:AKSWorg, projects:OntoWiki, projects:Erfurt, projects:DSSN;
+    foaf:mbox <mailto:jonas.brekle@gmail.com>;
+    foaf:depiction <https://secure.gravatar.com/avatar/75f3befdea0cf2be035a9558da08cd57?s=140>;
+    skos:hiddenLabel "JonasBrekle", "jbrekle";
+    foaf:name "Jonas Brekle".
+
+people:ClemensHoffmann a foaf:Person;
+    foaf:currentProject projects:RDFauthor, projects:OntoWiki, projects:re-publish;
+    foaf:mbox <mailto:cannelony@gmail.com>;
+    foaf:depiction <https://secure.gravatar.com/avatar/be35f40f610edc7d8218bb866494fcf1?s=140>;
+    skos:hiddenLabel "Cannelony", "ClemensHoffmann";
+    foaf:name "Clemens Hoffmann".
