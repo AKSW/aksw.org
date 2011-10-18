@@ -23,6 +23,10 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+aksw:Demo a owl:Class;
+    rdfs:subClassOf foaf:Project;
+    site:classTemplate "project";
+    rdfs:label "Demo".
 aksw:CommunityProject a owl:Class;
     rdfs:subClassOf foaf:Project;
     site:classTemplate "project";
@@ -56,6 +60,15 @@ foaf:Document a owl:Class;
 foaf:Project a owl:Class;
     site:classTemplate "project";
     rdfs:label "Project".
+void:Dataset a owl:Class;
+    sysont:hidden "true"^^xsd:boolean;
+    rdfs:label "Dataset".
+v:VCard a owl:Class;
+    sysont:hidden "true"^^xsd:boolean;
+    rdfs:label "vCard".
+v:Work a owl:Class;
+    sysont:hidden "true"^^xsd:boolean;
+    rdfs:label "vCard Work part".
 
 
 # special aksw.org properties
