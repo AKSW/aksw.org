@@ -1,0 +1,51 @@
+@prefix aksw: <http://aksw.org/schema/> .
+@prefix content: <http://purl.org/rss/1.0/modules/content/>.
+@prefix data: <http://aksw.org/> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix groups: <http://aksw.org/Groups/> .
+@prefix : <http://aksw.org/> .
+@prefix lod2: <http://lod2.eu/schema/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix people: <http://aksw.org/> .
+@prefix projects: <http://aksw.org/Projects/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sioc: <http://rdfs.org/sioc/ns#>.
+@prefix sioct: <http://rdfs.org/sioc/types#>.
+@prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+@prefix v:  <http://www.w3.org/2006/vcard/ns#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://demo.lod2.eu/lod2demo/> a aksw:Demo;
+    aksw:hookline "an integrated demonstration of some of the tools of the LOD2 project";
+    ov:screenshot <http://lh5.ggpht.com/-qFsSKX-1_dw/Tpx24oHmtEI/AAAAAAAAA9g/XOeQQWjBzCc/s800/lod2demo.png>;
+    rdfs:label "LOD2 Stack Demonstrator".
+
+<http://browser.linkedgeodata.org/> a aksw:Demo;
+    aksw:hookline "a javascript-based fullscreen browser and editor for geo-spatial data";
+    ov:screenshot <http://lh5.ggpht.com/-ctT4LRRBtCw/Tpx42Zv3vhI/AAAAAAAAA9o/3zSf8Mbt7Hc/s800/lgd-browser.png>;
+    rdfs:label "LGD Browser / Editor".
+
+<http://aksw.org/index/news> a aksw:Demo;
+    aksw:hookline "a semantic data wiki providing support for agile, distributed knowledge engineering scenarios";
+    ov:screenshot <http://lh4.ggpht.com/-kXpKMqBBCIU/Tpx45SUaItI/AAAAAAAAA9w/aPYaNQjcpvo/s800/ontowiki.png>;
+    rdfs:label "OntoWiki".
+
+<http://rdface.aksw.org/> a aksw:Demo;
+    aksw:hookline "an RDFa Content Editor based on TinyMCE";
+    ov:screenshot <http://lh3.ggpht.com/-J7t1PfpY-U8/Tpx5iZN1-nI/AAAAAAAAA94/grIaBTK2h_Q/s800/rdface.png>;
+    rdfs:label "RDFaCE - RDF Content Editor".
+
+<http://limes.aksw.org/> a aksw:Demo;
+    aksw:hookline "a tool for discovery links in the Web of data";
+    ov:screenshot <http://lh6.ggpht.com/-a2wAOUd66Mg/Tpx67TgYRZI/AAAAAAAAA-s/WilVdTWuk3s/s800/limes.png>;
+    rdfs:label "LIMES".
+
+
