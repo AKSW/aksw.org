@@ -24,28 +24,36 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://demo.lod2.eu/lod2demo/> a aksw:Demo;
-    aksw:hookline "an integrated demonstration of some of the tools of the LOD2 project";
+    aksw:hookline "is an integrated demonstrator application for the tools of the LOD2 project.";
     ov:screenshot <http://lh5.ggpht.com/-qFsSKX-1_dw/Tpx24oHmtEI/AAAAAAAAA9g/XOeQQWjBzCc/s800/lod2demo.png>;
-    rdfs:label "LOD2 Stack Demonstrator".
+    rdfs:label "LOD2 Stack".
 
 <http://browser.linkedgeodata.org/> a aksw:Demo;
-    aksw:hookline "a javascript-based fullscreen browser and editor for geo-spatial data";
+    aksw:hookline "is a javascript-based fullscreen browser and editor for geo-spatial data.";
     ov:screenshot <http://lh5.ggpht.com/-ctT4LRRBtCw/Tpx42Zv3vhI/AAAAAAAAA9o/3zSf8Mbt7Hc/s800/lgd-browser.png>;
     rdfs:label "LGD Browser / Editor".
 
 <http://aksw.org/index/news> a aksw:Demo;
-    aksw:hookline "a semantic data wiki providing support for agile, distributed knowledge engineering scenarios";
+    aksw:hookline "is a semantic data wiki for publishing and consuming Linked Data in agile, distributed knowledge engineering scenarios.";
     ov:screenshot <http://lh4.ggpht.com/-kXpKMqBBCIU/Tpx45SUaItI/AAAAAAAAA9w/aPYaNQjcpvo/s800/ontowiki.png>;
     rdfs:label "OntoWiki".
 
 <http://rdface.aksw.org/> a aksw:Demo;
-    aksw:hookline "an RDFa Content Editor based on TinyMCE";
+    aksw:hookline "is an RDFa Content Editor based on TinyMCE";
     ov:screenshot <http://lh3.ggpht.com/-J7t1PfpY-U8/Tpx5iZN1-nI/AAAAAAAAA94/grIaBTK2h_Q/s800/rdface.png>;
-    rdfs:label "RDFaCE - RDF Content Editor".
+    rdfs:label "RDFaCE".
 
 <http://limes.aksw.org/> a aksw:Demo;
-    aksw:hookline "a tool for discovery links in the Web of data";
+    aksw:hookline "is a tool for discovering links in the Web of data";
     ov:screenshot <http://lh6.ggpht.com/-a2wAOUd66Mg/Tpx67TgYRZI/AAAAAAAAA-s/WilVdTWuk3s/s800/limes.png>;
     rdfs:label "LIMES".
 
+<http://139.18.2.164:4444/demo/index.html> a aksw:Demo;
+    aksw:hookline "is the Federated Knowledge Extraction Framework to extract RDF triples out of natural language.";
+    ov:screenshot <http://lh5.ggpht.com/-16u4kSZUUKQ/Tp3aB5sMkZI/AAAAAAAAA_U/LKdR5leJkQs/s800/Fox.png>;
+    rdfs:label "Fox".
 
+<http://139.18.2.164:8080/boa> a aksw:Demo;
+    aksw:hookline "is a tool for pattern-based knowledge extraction.";
+    ov:screenshot <http://lh3.ggpht.com/-X7RWicyijZA/Tp3b6mLj-5I/AAAAAAAAA_0/jIzakxQxQwg/s800/Boa.png>;
+    rdfs:label "Boa".
