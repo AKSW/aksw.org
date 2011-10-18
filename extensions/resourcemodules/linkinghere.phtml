@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * OntoWiki linkinghere module template
+ * TODO: use rev (with curie'd property) and resource instead of only about?
+ *
+ * @version $Id: linkinghere.phtml 3396 2009-06-26 15:01:44Z sebastian.dietzold $
+ */
+function buildFilterExp($res, $pred, $label){
+    $allfilter = array(
+        'filter' => array(
+            array (
+                'action' => 'add',
+                'mode' => 'box',
+                'id' => 'linkinghere',
+                'property' => $pred,
+                'isInverse' => false,
+                'propertyLabel' => $label,
+                'filter' => 'equals',
+                'value1' => $res,
+                'value2' => null,
+                'valuetype' => 'uri',
+                'literaltype' => null,
+                'hidden' => false
+            )
+        )
+    );
+    return urlencode(json_encode($allfilter));
+}
+?>
+<?php if (!empty($this->instances)): ?>
+	<ul class="bullets-none separated">
+	    <?php foreach ($this->instances as $property => $instances): ?>
+        <?php $relation = $this->properties[$property] ?>
+	        <li class="has-contextmenu-area">
+                <strong>
+                    <a class="hasMenu"
+                       about="<?php echo $relation['uri'] ?>"
+                       href="<?php echo $relation['url'] ?>"><?php echo $relation['title'] ?></a><sup>-1</sup>
+               </strong>
+	            <ul class="inline separated"  style="padding-left: 0.5em;">
+	                <?php $i = 0; ?>
+	                <?php foreach ($instances as $instance): ?>
+	                    <?php if ((++$i == count($instances)) && ($relation['has_more'] == false)): ?>
+	                        <li class="last-child"><a class="hasMenu" about="<?php echo $instance['uri'] ?>" href="<?php echo $instance['url'] ?>"><?php echo $instance['title'] ?></a></li>
+	                    <?php else: ?>
+	                        <li><a class="hasMenu" about="<?php echo $instance['uri'] ?>" href="<?php echo $instance['url'] ?>"><?php echo $instance['title'] ?></a></li>
+	                    <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php if ($relation['has_more'] == true): ?>
+                            <li>&hellip;</li>
+                    <?php endif; ?>
+	            </ul>
+                  <div class="contextmenu">
+                    <a class="item"
+                       href="<?php echo $this->urlBase; ?>list/?init&instancesconfig=<?php echo buildFilterExp((string)$this->resource, $property, $this->properties[$property]); ?>">
+                        <span class="icon icon-list" title="Show as List">
+                            <span>Show as List</span>
+                        </span>
+                    </a>
+                  </div>
+	        </li>
+	    <?php endforeach; ?>
+	</ul>
+<?php else: ?>
+	<p class="messagebox info"><?php echo $this->_($this->message) ?></p>
+<?php endif; ?>

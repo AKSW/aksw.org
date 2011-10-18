@@ -1,0 +1,43 @@
+# OntoWiki .htaccess file
+
+# WARNING: If you do not use the htaccess at all or your htaccess is
+# ignored, then your config.ini can be loaded over the web !!!
+<Files "*.ini">
+    Deny from all
+</Files>
+
+# OntoWiki does not requires Apache's rewrite engine to work. However,
+# if you would like to have nice (Linked Data) URIs you must enable URL
+# rewriting by enabling mod_rewrite in your apache config.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # This gives ontowiki an easy hint that rewrite is enabled
+    <IfModule mod_env.c>
+        SetEnv ONTOWIKI_APACHE_MOD_REWRITE_ENABLED 1
+    </IfModule>
+
+    RewriteRule ^favicon\.(.*)$ application/favicon.$1
+    RewriteRule !((extensions|libraries).*|\.(js|ico|gif|jpg|png|css|php|swf|json))$ index.php
+
+    # Set RewriteBase only if your OntoWiki folder is not located in your web server's root dir.
+    #RewriteBase /ontowiki
+</IfModule>
+
+# if you allow short open tags, xml templates will crash
+# please refer http://code.google.com/p/ontowiki/wiki/RecommendedPHPSettings
+# for recommended PHP settings
+# maybe php_flag is not allowed in your environment,
+# but if you allow short open tags, xml templates will crash
+#php_flag short_open_tag 0
+
+
+### Additional Auth with external OntoWiki auth-script
+### (more infos at http://code.google.com/p/mod-auth-external/)
+#AuthType Basic
+#AuthName OntoWiki
+#AuthBasicProvider external
+#AuthExternal ontowiki
+#Require valid-user
+### NOTE: This is needed to be included in /etc/apache2/mods-enabled/authnz_external.load or .conf
+#DefineExternalAuth ontowiki pipe /path/to/ontowiki/application/scripts/mod-auth-external/ontowiki.php
