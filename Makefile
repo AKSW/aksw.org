@@ -32,9 +32,13 @@ default:
 	@echo "     'make cs-check-blame' (get blame list)"
 
 
+link:
+	rm -f extensions/site/sites/aksw2011
+	cd extensions/site/sites/ && ln -s ../../../site aksw2011
+
 # top level target
 
-install: directories libraries
+install: directories libraries link
 
 install-dev: directories libraries-dev
 
