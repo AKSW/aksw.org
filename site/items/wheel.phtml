@@ -29,11 +29,18 @@ if (!Erfurt_Uri::check($resourceUri)) {
 } else {
     // prepare the optional hookline
     $hookline = $this->literal(array(
-        'uri' => $resourceUri, 'property' => 'aksw:hookline',
-        'tag' => 'span', 'class' => 'hookline')
+        'uri'      => $resourceUri,
+        'property' => 'aksw:hookline',
+        'tag'      => 'span',
+        'class'    => 'hookline')
     );
+    // prepare the main link
     $link = $this->link(array(
-        'uri' => $resourceUri, 'text' => $title, 'class' => 'lightbox', 'direct' => 'true'
+        'uri'    => $resourceUri, 
+        'text'   => $title,
+        'class'  => 'lightbox',
+        'suffix' => ' ',
+        'direct' => 'true'
     ));
     // prepare the screenshot link
     $screenshot    = $this->img(array(
@@ -45,6 +52,7 @@ if (!Erfurt_Uri::check($resourceUri)) {
         $shotlink = $this->link(array(
             'uri'    => $resourceUri,
             'text'   => $screenshot,
+            'class'  => 'demowheel-image',
             'direct' => 'true',
             'prefix' => '<!-- demo screenshot start -->',
             'suffix' => '<!-- demo screenshot end -->',
