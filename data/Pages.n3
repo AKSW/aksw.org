@@ -208,49 +208,8 @@ Please look at the [projects page](http://aksw.org/Projects) for a comprehensive
 # Demos
 Please have a look at our demos:
 
-<div style="float:left; width:250px; height:200px; padding:0.5em;">
-<a href="http://wiki.dbpedia.org"><img src="http://wiki.dbpedia.org/images/dbpedia_logo.png"/><br />
-<b>DBpedia.org</b></a>: Querying Wikipedia like a knowledge base.
-</div>
+{{query where="?resourceUri a aksw:Demo." template="wheel"}}
 
-<div style="float:left; width:250px; height:200px; padding:0.5em;">
-<a href="http://linkedgeodata.org"><img style="height: 90px; width: 130px;" src="http://linkedgeodata.org/files/lgdlogo.png"/><br />
-<b>LinkedGeoData.org</b></a>: adding the spatial dimension to the Semantic Web.
-</div>
-
-<div style="float:left; width:250px; height:200px; padding:0.5em;">
-<a href="http://triplify.org"><img src="http://triplify.org/themes/triplify2008/layout/logo-triplify.png" astyle="width:250;height:85;" /><br />
-<b>Triplify.org</b></a>: Make Web applications better mashable by exposing semantics.
-</div>
-
-<div style="float:left; width:250px; height:200px; padding:0.5em;">
-<a href="http://aksw.org/Projects/xOperator"><img src="http://wiki.aksw.org/Projects/xOperator/files?get=xoplogo.png" style="margin-top:10px;margin-bottom:10px;" /><br clea/>
-<b>xOperator</b></a>: Interconnecting the Semantic Web with Instant Messaging Networks.
-</div>
-
-<div style="float:left; width:280px; height:200px; padding:0.5em;">
-<a href="http://wikipedia.aksw.org"><img style="height: 150px; width: 250px;" src="http://wiki.aksw.org/images/wikipedia.png"/><br />
-<b>Wikipedia Query Builder</b></a>: Query the over 10M facts extracted from Wikipedia
-</div>
-
-<div style="float:left; width:250px; height:200px; padding: 0.5em;">
-<a href="http://demo.ontowiki.net/"><img style="height:150px; width:250px;" src="http://wiki.aksw.org/images/ontowiki-map-view.jpg" /><br />
-<b>OntoWiki</b></a>: Use social semantic collaboration to build comprehensive knowledge bases</div>
-
-<div style="float:left; width: 250px; height:200px; padding: 0.5em;">
-<a href="http://navigator.dbpedia.org"><img src="http://wiki.aksw.org/images/dl-learner.gif"/><br />
-<b>DL-Learner</b></a>: Earn class descriptions by semantically analysing objects
-</div>
-
-<div style="float:left; width: 250px; height:200px; padding: 0.5em;">
-<a href="http://relfinder.dbpedia.org"><img style="height: 150px; width: 250px;" src="http://wiki.aksw.org/images/RelFinder.png"/><br />
-<b>DBpedia Relationship Finder</b></a>: Allows you to explore the DBpedia dataset to find relationships between two things
-</div>
-
-<div style="float:left; width: 250px; height:200px; padding: 0.5em;">
-<a href="http://navigator.dbpedia.org"><img style="width: 250px;" src="http://wiki.aksw.org/images/dbpedia_navigator.png"/><br />
-<b>DBpedia Navigator</b></a>: Search/browse in DBpedia and get recommendations on what you may be looking for
-</div>
 """^^sysont:Markdown;
     sioc:feed <http://blog.aksw.org/feed/>;
     rdfs:label "Agile Knowledge Engineering and Semantic Web (AKSW)";
