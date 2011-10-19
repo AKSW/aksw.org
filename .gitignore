@@ -1,6 +1,5 @@
 syntax: glob
 
-extensions/*.ini
 local.ini
 ./debian
 .settings
