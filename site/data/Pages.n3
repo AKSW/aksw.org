@@ -171,6 +171,7 @@ The following subgroups belong to AKSW:
     rdfs:label "Groups".
 
 :About a foaf:Document;
+    sioc:feed <http://blogs.aksw.org/feed/>;
     site:content """
 <nav class="nav-sidelinks">
 <ul>
