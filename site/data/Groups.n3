@@ -28,7 +28,7 @@ groups:ES a aiiso:ResearchGroup;
     site:abbrevation "ES";
     dcterms:abstract "Research in Emergent Semantics revolves around supporting semantic collaboration scenarios in an adaptive way. This work includes especially research on engineering and adoption of semantic collaboration software, semantic collaboration protocols as well as research on distributed / federated semantic social networks. To bootstrap semantic collaboration and the semantic web in general, the Emergent Semantics group also investigates basic semantic technologies and semantic web infrastructures.";
     aksw:researchAreas "Linked Data", "Distributed / Federated Social Networks", "Semantic Software Engineering", "Semantic Web Infrastructure", "Agile Knowledge Engineering";
-    foaf:member people:SoerenAuer, people:TimofeyErmilov, people:PhilippFrischmuth, people:MichaelMartin, people:ThomasRiechert, people:SebastianTramp, people:JoergUnbehauen;
+    foaf:member people:SoerenAuer, people:TimofeyErmilov, people:PhilippFrischmuth, people:MichaelMartin, people:ThomasRiechert, people:SebastianTramp, people:JoergUnbehauen, people:AliKhalili, people:IvanErmilov, people:DaryaTarasowa;
     aiiso:part_of groups:AKSW;
     rdfs:label "Emergent Semantics".
 

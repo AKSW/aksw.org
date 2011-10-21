@@ -56,6 +56,7 @@ people:SoerenAuer a foaf:Person;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=auer>;
     foaf:phone <tel:+49-341-97-32367>;
     aksw:room "5-09";
+    foaf:pastProject projects:SoftWiki, projects:OntoWikiEU, projects:LE4SW, projects:Powl, projects:XML2OWL;
     aksw:publicationTag "auer";
     skos:hiddenLabel "SoerenAuer";
     skos:prefLabel "Dr. Sören Auer";
@@ -68,6 +69,7 @@ people:LorenzBuehmann a foaf:Person;
     foaf:phone <tel:+49-341-97-32273>;
     aksw:room "5-10";
     aksw:publicationTag "buehmann";
+    foaf:currentProject projects:ORE;
     foaf:name "Lorenz Bühmann".
 
 people:TimofeyErmilov a foaf:Person;
@@ -77,6 +79,7 @@ people:TimofeyErmilov a foaf:Person;
     foaf:phone <tel:+49-341-97-32322>;
     aksw:room "5-20";
     skos:hiddenLabel "TimofeyErmilov";
+    foaf:currentProject projects:MobileSocialSemanticWeb, projects:DSSN, projects:OntoWiki;
     aksw:publicationTag "ermilov";
     foaf:name "Timofey Ermilov".
 
@@ -98,6 +101,7 @@ people:DanielGerber a foaf:Person;
     foaf:mbox <mailto:gerber@informatik.uni-leipzig.de>;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=gerber>;
     foaf:phone <tel:+49-341-97-32322>;
+    foaf:currentProject projects:BOA;
     aksw:room "5-20";
     aksw:publicationTag "gerber";
     foaf:name "Daniel Gerber".
@@ -121,6 +125,7 @@ people:SebastianHellmann a foaf:Person;
     foaf:phone <tel:+49-341-97-32273>;
     aksw:room "5-10";
     skos:hiddenLabel "SebastianHellmann";
+    foaf:currentProject projects:NIF, projects:NLP2RDF;
     aksw:publicationTag "hellmann";
     foaf:name "Sebastian Hellmann".
 
@@ -129,6 +134,7 @@ people:NadineJaenicke a foaf:Person;
     foaf:mbox <mailto:jaenicke@uni-leipzig.de>;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=gn&value=Nadine>;
     foaf:phone <tel:+49-341-97-32310>;
+    foaf:currentProject projects:LOD2, projects:OntoWikiEU;
     skos:hiddenLabel "NadineJaenicke";
     aksw:room "5-17";
     foaf:name "Nadine Jänicke".
@@ -141,14 +147,34 @@ people:JensLehmann a foaf:Person;
     aksw:room "5-10";
     aksw:publicationTag "lehmann";
     skos:hiddenLabel "JensLehmann";
+    foaf:currentProject projects:DL-Learner;
     skos:prefLabel "Dr. Jens Lehmann";
     foaf:name "Jens Lehmann".
+
+people:DaryaTarasowa a foaf:Person;
+    ov:businessCard <http://aksw.org/vCard/Leipzig>;
+    foaf:mbox <mailto:darya.tarasowa@gmail.com>;
+    foaf:phone <tel:+49-341-97-32320>;
+    foaf:currentProject projects:SlideWiki;
+    skos:hiddenLabel "DaryaTarasowa";
+    aksw:room "5-21";
+    foaf:name "Darya Tarasowa".
+
+people:IvanErmilov a foaf:Person;
+    ov:businessCard <http://aksw.org/vCard/Leipzig>;
+    foaf:mbox <mailto:earthquakesan@gmail.com>;
+    foaf:phone <tel:+49-341-97-32320>;
+    foaf:currentProject projects:SlideWiki;
+    skos:hiddenLabel "IvanErmilov";
+    aksw:room "5-21";
+    foaf:name "Ivan Ermilov".
 
 people:AliKhalili a foaf:Person;
     ov:businessCard <http://aksw.org/vCard/Leipzig>;
     foaf:mbox <mailto:khalili@informatik.uni-leipzig.de>;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=khalili>;
     foaf:phone <tel:+49-341-97-32320>;
+    foaf:currentProject projects:RDFaCE, projects:SlideWiki;
     skos:hiddenLabel "AliKhalili";
     aksw:room "5-21";
     foaf:name "Ali Khalili".
@@ -159,6 +185,7 @@ people:MichaelMartin a foaf:Person;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=martin>;
     foaf:phone <tel:+49-341-97-32322>;
     aksw:room "5-10";
+    foaf:currentProject projects:Erfurt, projects:OntoWiki;
     aksw:publicationTag "martin";
     foaf:name "Michael Martin".
 
@@ -167,6 +194,7 @@ people:MohamedMorsey a foaf:Person;
     foaf:mbox <mailto:morsey@informatik.uni-leipzig.de>;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=morsey>;
     foaf:phone <tel:+49-341-97-32273>;
+    foaf:currentProject projects:DBpedia;
     aksw:room "5-10";
     aksw:publicationTag "morsey";
     foaf:name "Mohamed Morsey".
@@ -179,6 +207,7 @@ people:AxelNgonga a foaf:Person;
     aksw:room "5-22";
     aksw:publicationTag "ngonga";
     skos:hiddenLabel "AxelNgonga";
+    foaf:currentProject projects:LIMES, projects:FOX, projects:BOA ;
     skos:prefLabel "Dr. Axel-C. Ngonga Ngomo";
     foaf:name "Axel Ngonga".
 
@@ -187,6 +216,7 @@ people:ThomasRiechert a foaf:Person;
     foaf:mbox <mailto:riechert@informatik.uni-leipzig.de>;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=riechert>;
     foaf:phone <tel:+49-341-97-32323>;
+    foaf:currentProject projects:SoftWiki;
     aksw:room "5-09";
     skos:hiddenLabel "ThomasRiechert", "TRiechert";
     aksw:publicationTag "riechert";
@@ -197,8 +227,8 @@ people:SaeedehShekarpour a foaf:Person;
     foaf:mbox <mailto:shekarpour@informatik.uni-leipzig.de>;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=shekarpour>;
     foaf:phone <tel:+49-341-97-32341>;
+    foaf:currentProject projects:SINA;
     aksw:room "5-22";
-    aksw:publicationTag "shekarpour";
     foaf:name "Saeedeh Shekarpour".
 
 people:ClausStadler a foaf:Person;
@@ -208,6 +238,7 @@ people:ClausStadler a foaf:Person;
     foaf:phone <tel:+49-341-97-32273>;
     aksw:room "5-10";
     aksw:publicationTag "stadler";
+    foaf:currentProject projects:LinkedGeoData;
     foaf:name "Claus Stadler".
 
 people:JoergUnbehauen a foaf:Person;
@@ -217,6 +248,7 @@ people:JoergUnbehauen a foaf:Person;
     foaf:phone <tel:+49-341-97-32322>;
     aksw:room "5-20";
     aksw:publicationTag "unbehauen";
+    foaf:pastProject projects:xOperator;
     foaf:name "Jörg Unbehauen".
 
 people:AmrapaliZaveri a foaf:Person;
