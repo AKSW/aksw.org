@@ -1,3 +1,4 @@
+@prefix aiiso: <http://purl.org/vocab/aiiso/schema#> .
 @prefix aksw: <http://aksw.org/schema/> .
 @prefix content: <http://purl.org/rss/1.0/modules/content/>.
 @prefix data: <http://aksw.org/> .
@@ -29,16 +30,15 @@
     foaf:page projects:AKSWorg;
     dcterms:title "aksw.org";
     dcterms:creator people:SebastianTramp;
-    dcterms:contributor groups:ES, groups:MOLE, groups:SIMBA;
-    dcterms:publisher groups:ES, groups:MOLE, groups:SIMBA;
-    dcterms:source <http://wiki.aksw.org>;
+    dcterms:contributor groups:AKSW;
+    dcterms:publisher groups:AKSW;
     dcterms:license <http://creativecommons.org/licenses/by-sa/3.0/>;
     dcterms:subject dbpedia:Semantic_Web, dbpedia:Natural_language_processing, dbpedia:Machine_learning;
     void:feature <http://www.w3.org/ns/formats/RDF_XML>, <http://www.w3.org/ns/formats/Turtle>;
     void:sparqlEndpoint :sparql;
     void:dataDump <http://aksw.org/model/export/?m=http%3A%2F%2Faksw.org%2F&f=rdfxml>, <http://aksw.org/model/export/?m=http%3A%2F%2Faksw.org%2F&f=turtle>;
     void:rootResource <http://aksw.org/Navigation/Main>;
-    void:vocabulary <http://xmlns.com/foaf/0.1/>,  <http://purl.org/dc/terms/>,  <http://usefulinc.com/ns/doap#>,  <http://rdfs.org/sioc/ns#>,  <http://www.w3.org/2004/02/skos/core#>,  <http://rdfs.org/ns/void#>;
+    void:vocabulary <http://purl.org/vocab/aiiso/schema#>, <http://xmlns.com/foaf/0.1/>,  <http://purl.org/dc/terms/>,  <http://usefulinc.com/ns/doap#>,  <http://rdfs.org/sioc/ns#>,  <http://www.w3.org/2004/02/skos/core#>,  <http://rdfs.org/ns/void#>;
     void:triples "700";
     void:entities "80";
     void:classes "10";
@@ -70,7 +70,7 @@ The following attributes and classes are used by the templates.
 Currently, there are templates for the following classes of resources:
 
 * [[foaf:Document]]: a basic web page without specific lists and queries
-* [[foaf:Group]]: a sub group with lists of member, research areas and projects
+* [[aiiso:ResearchGroup]]: a (sub) research group with lists of member, research areas and projects
 * [[foaf:Person]]: a person with lists of projects and research areas
 * [[foaf:Project]]: an AKSW project.
 Can be a funded, a community or an open-source project.

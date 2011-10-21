@@ -1,3 +1,4 @@
+@prefix aiiso: <http://purl.org/vocab/aiiso/schema#> .
 @prefix aksw: <http://aksw.org/schema/> .
 @prefix content: <http://purl.org/rss/1.0/modules/content/>.
 @prefix data: <http://aksw.org/> .
@@ -166,7 +167,7 @@ Some projects have reached a stable state, but are currently not actively mainta
 :Groups a foaf:Document;
     site:content """
 The following subgroups belong to AKSW:
-{{query where="?resourceUri a foaf:Group." template="abstract"}}
+{{query where="?resourceUri aiiso:part_of <http://aksw.org/Groups/AKSW>." template="abstract"}}
 """^^sysont:Markdown;
     rdfs:label "Groups".
 
@@ -175,10 +176,10 @@ The following subgroups belong to AKSW:
 <nav class="nav-sidelinks">
 <ul>
 <li><strong class="headline">sub groups</strong>
-{{query where="?resourceUri a foaf:Group" template="liplain"}}
+{{query where="?resourceUri aiiso:part_of groups:AKSW." template="liplain"}}
 </li>
 <li><strong class="headline">people</strong>
-{{query where="?group foaf:member ?resourceUri" template="liplain"}}
+{{query where="?group foaf:member ?resourceUri . ?group aiiso:part_of groups:AKSW ." template="liplain"}}
 </li>
 </nav>
 
