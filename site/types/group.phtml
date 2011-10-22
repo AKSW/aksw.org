@@ -47,59 +47,34 @@ $subgroups = $this->query(array(
 echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses default content properties
 ?>
 <div class="subcolumns">
-<?php // RESEARCH AREAS
-$query = '
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX aksw: <http://aksw.org/schema/>
-SELECT DISTINCT ?resourceUri
-WHERE {
-<'.$this->resourceUri.'> aksw:researchAreas ?resourceUri.
-}
-';
-if ($areas = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
-    <div class="c60l">
-        <div class="subc">
-            <h1>Research Areas</h1>
-            <?php echo $areas ?>
-        </div>
-    </div>
-<?php endif; ?>
-<?php // MEMBER
-$query = '
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-SELECT DISTINCT ?resourceUri
-WHERE {
-<'.$this->resourceUri.'> foaf:member ?resourceUri.
-?resourceUri a foaf:Person.
-?resourceUri foaf:name ?name.
-}
-';
-if ($member = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
-    <div class="c35r">
-        <div class="subc">
-            <h1>Member</h1>
-            <?php echo $member ?>
-        </div>
-    </div>
-<?php endif; ?>
+<?php
+    // research areas
+    echo $this->query(array(
+        'where' => '<'.$this->resourceUri.'> aksw:researchAreas ?resourceUri.',
+        'template' => 'liplain',
+        'prefix' => '<div class="c60l"><div class="subc"><h1>Research Areas</h1>',
+        'suffix' => '</div></div>'
+    ));
+    // members
+    echo $this->query(array(
+        'where' => '<'.$this->resourceUri.'> foaf:member ?resourceUri.',
+        'template' => 'liplain',
+        'prefix' => '<div class="c35r"><div class="subc"><h1>Members</h1>',
+        'suffix' => '</div></div>'
+    ));
+?>
 </div>
 
-<?php // PROJECTS
-$query = '
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-SELECT DISTINCT ?resourceUri
-WHERE {
-<'.$this->resourceUri.'> foaf:member ?person.
-?person foaf:currentProject ?resourceUri.
-?resourceUri a foaf:Project.
-}
-';
-if ($projects = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
-    <h1>Projects</h1>
-    <?php echo $projects ?>
-<?php endif; ?>
-
 <?php
+    // projects
+    echo $this->query(array(
+        'where' => '<'.$this->resourceUri.'> foaf:member ?person . ?person foaf:currentProject ?resourceUri.',
+        'template' => 'li',
+        'prefix' => '<h1>Members</h1>'
+    ));
+?>
+<?php
+    // publications
     $publicationTag = $this->literal(array('property' => 'aksw:publicationTag'));
     if ($publicationTag != "") :
 ?>
