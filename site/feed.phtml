@@ -16,7 +16,8 @@
 // prepare module options
 $moduleOptions = array(
     'noChrome' => true,
-    'template' => 'aksw2011/items/feedentry'
+    'template' => 'aksw2011/items/feedentry',
+    'fallbackFeed' => 'http://blog.aksw.org/feed/'
 );
 $moduleConfig = new Zend_Config($moduleOptions);
 $content = trim($this->module('feeds', $moduleConfig));
