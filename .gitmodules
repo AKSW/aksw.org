@@ -10,3 +10,6 @@
 [submodule "extensions/ipc"]
 	path = extensions/ipc
 	url = git@github.com:AKSW/ipc.ontowiki.git
+[submodule "extensions/feeds"]
+	path = extensions/feeds
+	url = git@github.com:AKSW/feeds.ontowiki.git
