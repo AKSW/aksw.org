@@ -76,20 +76,13 @@ $buttons = $this->querylist($query, 'aksw2011/items/buttons.phtml');
 $promotedProjects = $this->query(array(
     'where'    => '?resourceUri aksw:promoted "true"^^xsd:boolean .',
     'template' => 'liplain',
-    'prefix'   => '<li><strong class="headline">promoted</strong>',
-    'suffix'   => '</li>'
-));
-$otherProjects = $this->query(array(
-    'where'    => '<'.$this->resourceUri.'> a ?class . ?resourceUri a ?class.',
-    'template' => 'liplain',
-    'prefix'   => '<li><strong class="headline">other</strong>',
+    'prefix'   => '<li><strong class="headline">promoted projects</strong>',
     'suffix'   => '</li>'
 ));
 ?>
 <nav class="nav-sidelinks">
 <ul>
 <?php echo $promotedProjects; ?>
-<?php echo $otherProjects; ?>
 </ul>
 </nav>
 <header class="intro">
