@@ -15,12 +15,19 @@ $editUrl = $this->wikiBaseUrl .'view?r=' . urlencode($this->resourceUri);
     <aside id="articleinfo">
         <div class="subc">
             <?php echo $this->partial('aksw2011/lastchange.phtml', $this->lastchange($this->resourceUri)); ?>
-            <a rel="nofollow" href="<?php echo $editUrl ?>">Edit</a>
+            Functions:
+            <ul>
+                <li>download resource as
+                    <a rel="nofollow" href="<?php echo $this->resourceUri ?>.rdf">rdf/xml</a> or
+                    <a rel="nofollow" href="<?php echo $this->resourceUri ?>.tt">n3</a>
+                </li>
+                <li><a rel="nofollow" href="<?php echo $editUrl ?>">view / edit resource</a></li>
+                <li><a rel="nofollow" href="">view / edit template</a></li>
+            </ul>
         </div>
     </aside>
     <aside id="userinfo">
         <div class="subc">
-            <p>User meta data ...</p>
         </div>
     </aside>
 </footer>
