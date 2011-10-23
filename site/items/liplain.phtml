@@ -34,8 +34,12 @@ if (!Erfurt_Uri::check($resourceUri)) {
     ));
 
     // try to prepare an active class
-    $selectedResourceUri = (string) OntoWiki::getInstance()->selectedResource;
-    if ($resourceUri == $selectedResourceUri) {
+    if (isset($this->active)) {
+        $activeResource = $this->active;
+    } else {
+        $activeResource = (string) OntoWiki::getInstance()->selectedResource;
+    }
+    if ($resourceUri == $activeResource) {
         $active = ' active';
     } else {
         $active = '';
@@ -43,6 +47,13 @@ if (!Erfurt_Uri::check($resourceUri)) {
 ?>
     <li class="<?php echo $oddclass . $active ?>" about="<?php echo $this->curie($resourceUri) ?>">
         <?php echo $link ?>
+<?php
+    if (isset($this->activeSuffix)) {
+        if ($resourceUri == $activeResource) {
+            echo $this->activeSuffix;
+        }
+    }
+?>
     </li>
 <?php
 }
