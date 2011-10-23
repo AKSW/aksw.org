@@ -25,6 +25,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 projects:OntoWiki a foaf:Project, aksw:OpenSourceProject;
+    owl:sameAs <http://dbpedia.org/resource/OntoWiki>;
     aksw:promoted "true"^^xsd:boolean;
     aksw:relatedProject projects:Erfurt, projects:RDFauthor, projects:DSSN, projects:SemanticPingback, projects:AKSWorg, projects:odfmi, projects:CatalogusProfessorum, projects:Stats2RDF, projects:OntoWikiMobile;
     doap:maintainer people:SebastianTramp;

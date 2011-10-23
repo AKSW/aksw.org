@@ -25,6 +25,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 projects:LOD2 a foaf:Project, aksw:FundedProject;
+    aksw:relatedProject projects:OntoWiki, projects:DL-Learner, projects:ORE, projects:Triplify, projects:LinkedGeoData, projects:NIF;
     foaf:homepage <http://lod2.eu>;
     aksw:hookline "Creating Knowledge out of Interlinked Data";
     dcterms:abstract "The goal of the LOD2 project is to develop infrastructure technology and best practices that fill the chasm between structured-linked-data and applied model logic & reasoning, en route redefining the Web as we know it. In doing so, LOD2 will integrate and syndicate linked data with large-scale existing applications and showcase the benefits in three application scenarios including Media & Publishing, Corporate Data Intranets and eGovernment.";
@@ -55,6 +56,7 @@ projects:LATC a foaf:Project, aksw:FundedProject;
     rdfs:label "LATC".
 
 projects:SCMS a foaf:Project, aksw:FundedProject;
+    aksw:relatedProject projects:OntoWiki, projects:Fox, projects:LIMES;
     foaf:logo <http://www.scms.eu/wp-content/themes/scms-theme/images/scms-logo.png>;
     foaf:homepage <http://scms.eu>;
     aksw:hookline "Semantic Content Management Systems";
@@ -69,6 +71,7 @@ projects:SCMS a foaf:Project, aksw:FundedProject;
     rdfs:label "SCMS".
 
 projects:LE4SW a foaf:Project, aksw:FundedProject;
+    aksw:relatedProject projects:OntoWiki, projects:QueryCache;
     foaf:homepage <http://le4sw.de>;
     aksw:status "finished";
     aksw:hookline "Regional Technology Platform of Social Semantic Collaboration";
@@ -82,6 +85,7 @@ projects:LE4SW a foaf:Project, aksw:FundedProject;
     rdfs:label "LE4SW".
 
 projects:SoftWiki a foaf:Project, aksw:FundedProject;
+    aksw:relatedProject projects:OntoWiki;
     foaf:logo <http://lh3.ggpht.com/-O0rHt6DYrHE/TlzV1zEb4sI/AAAAAAAAApo/bg7W55zdiIQ/s800/logo_softwiki-200px.png>;
     foaf:homepage <http://softwiki.de>;
     aksw:status "finished";
@@ -97,6 +101,7 @@ projects:SoftWiki a foaf:Project, aksw:FundedProject;
     rdfs:label "SoftWiki".
 
 projects:OntoWikiEU a foaf:Project, aksw:FundedProject;
+    aksw:relatedProject projects:OntoWiki;
     site:content "..."^^sysont:Markdown;
     foaf:homepage <http://ontowiki.eu>;
     aksw:status "finished";
