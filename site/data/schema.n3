@@ -79,6 +79,13 @@ aiiso:ResearchGroup a owl:Class;
     rdfs:label "Research Group".
 
 # special aksw.org properties
+aksw:demonstrates a owl:ObjectProperty;
+    rdfs:comment "which project is demonstrated by this demo";
+    rdfs:domain aksw:Demo;
+    rdfs:range foaf:Project;
+    aksw:buttonLabel "Demo";
+    rdfs:label "demonstrates".
+
 aksw:promoted a owl:DatatypeProperty;
     rdfs:comment "a project which is promoted e.g. on the startpage";
     rdfs:label "promoted".

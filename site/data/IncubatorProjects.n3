@@ -44,6 +44,7 @@ projects:SINA a foaf:Project, aksw:IncubatorProject;
 
 projects:RDFaCE a foaf:Project, aksw:IncubatorProject;
     aksw:hookline "RDFa Content Editor";
+    ov:screenshot <http://lh3.ggpht.com/-J7t1PfpY-U8/Tpx5iZN1-nI/AAAAAAAAA94/grIaBTK2h_Q/s800/rdface.png>;
     dcterms:abstract "RDFaCE is an RDFa Content Editor based on TinyMCE. It supports different views for semantic content authoring and uses existing Semantic Web APIs to facilitate the annotation and editing of RDFa contents.";
     site:content """
 ...
@@ -120,6 +121,7 @@ projects:BOA a foaf:Project, aksw:IncubatorProject;
     site:content """
 ...
 """^^sysont:Markdown;
+    ov:screenshot <http://lh3.ggpht.com/-X7RWicyijZA/Tp3b6mLj-5I/AAAAAAAAA_0/jIzakxQxQwg/s800/Boa.png>;
     rdfs:label "BOA".
 
 projects:MobileSocialSemanticWeb a foaf:Project, aksw:IncubatorProject;

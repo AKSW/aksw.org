@@ -31,14 +31,15 @@ projects:OntoWiki a foaf:Project, aksw:OpenSourceProject;
     dcterms:abstract "OntoWiki facilitates the visual presentation of a knowledge base as an information map, with different views on instance data. It enables intuitive authoring of semantic content, with an inline editing mode for editing RDF content, similar to WYSIWIG for text documents.";
     site:content "..."^^sysont:Markdown;
     sioc:feed <http://blog.aksw.org/category/projects/ontowiki/feed/>;
-    ov:screenshot <http://ontowiki.net/files/ontowiki08screenshot1.png>;
+    ov:screenshot <http://lh4.ggpht.com/-kXpKMqBBCIU/Tpx45SUaItI/AAAAAAAAA9w/aPYaNQjcpvo/s800/ontowiki.png>;
     foaf:homepage <http://ontowiki.net>;
-    doap:browse <http://code.google.com/p/ontowiki/source/list>;
-    doap:download-page <http://code.google.com/p/ontowiki/downloads/list>;
+    doap:browse <https://github.com/AKSW/OntoWiki>;
+    doap:download-page <https://github.com/AKSW/OntoWiki/downloads>;
     rdfs:label "OntoWiki".
 
 projects:LinkedGeoData a foaf:Project, aksw:CommunityProject;
     foaf:logo <http://lh5.ggpht.com/-_9gwxkZRP1g/TlzV1epfNLI/AAAAAAAAApQ/xecznFVEWF4/s800/lgdlogo.png>;
+    ov:screenshot <http://lh5.ggpht.com/-ctT4LRRBtCw/Tpx42Zv3vhI/AAAAAAAAA9o/3zSf8Mbt7Hc/s800/lgd-browser.png>;
     doap:maintainer people:ClausStadler;
     aksw:hookline "adds a spatial dimension to the Web of Data";
     dcterms:abstract "LinkedGeoData is an effort to add a spatial dimension to the Web of Data / Semantic Web. LinkedGeoData uses the information collected by the OpenStreetMap project and makes it available as an RDF knowledge base according to the Linked Data principles. It interlinks this data with other knowledge bases in the Linking Open Data initiative.";
@@ -109,6 +110,7 @@ projects:BorderFlow a foaf:Project, aksw:OpenSourceProject;
 projects:LIMES a foaf:Project, aksw:OpenSourceProject;
     doap:maintainer people:AxelNgonga;
     foaf:logo <http://lh4.ggpht.com/-u3xaJ9mAcfY/TlzV1f0OluI/AAAAAAAAApU/z0V6VURN_tI/s800/limes.png>;
+    ov:screenshot <http://lh6.ggpht.com/-a2wAOUd66Mg/Tpx67TgYRZI/AAAAAAAAA-s/WilVdTWuk3s/s800/limes.png>;
     aksw:hookline "LInk discovery framework for MEtric Spaces";
     dcterms:abstract "LIMES is a link discovery framework for the Web of Data. It implements time-efficient approaches for large-scale link discovery based on the characteristics of metric spaces. It is easily configurable via a web interface. It can also be downloaded as standalone tool for carrying out link discovery locally.";
     site:content "..."^^sysont:Markdown;
@@ -121,6 +123,7 @@ projects:FOX a foaf:Project, aksw:OpenSourceProject;
     aksw:hookline "Federated knOwledge eXtraction Framework";
     dcterms:abstract "FOX is a framework that integrates the Linked Data Cloud and makes uses of the diversity of NLP algorithms to extract RDF triples of high accuracy out of NL. In its current version, it integrates and merges the results of Named Entity Recognition, Keyword Extraction and Relation Extraction tools.";
     site:content "..."^^sysont:Markdown;
+    ov:screenshot <http://lh5.ggpht.com/-16u4kSZUUKQ/Tp3aB5sMkZI/AAAAAAAAA_U/LKdR5leJkQs/s800/Fox.png>;
     sioc:feed <http://blog.aksw.org/category/projects/fox/feed/>;
     rdfs:label "FOX".
 

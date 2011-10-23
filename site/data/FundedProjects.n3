@@ -33,6 +33,7 @@ projects:LOD2 a foaf:Project, aksw:FundedProject;
 * Duration: 2010–2014
 * Funding Programme: FP7-ICT-2009–5 (Collaborative Project)
 """^^sysont:Markdown;
+    ov:screenshot <http://lh5.ggpht.com/-qFsSKX-1_dw/Tpx24oHmtEI/AAAAAAAAA9g/XOeQQWjBzCc/s800/lod2demo.png>;
     sioc:feed <http://lod2.eu/BlogPost/feed>;
     rdfs:label "LOD2".
 

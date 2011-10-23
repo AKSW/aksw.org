@@ -27,34 +27,41 @@
 <http://demo.lod2.eu/lod2demo/> a aksw:Demo;
     aksw:hookline "is an integrated demonstrator application for the tools of the LOD2 project.";
     ov:screenshot <http://lh5.ggpht.com/-qFsSKX-1_dw/Tpx24oHmtEI/AAAAAAAAA9g/XOeQQWjBzCc/s800/lod2demo.png>;
+    aksw:demonstrates projects:LOD2;
     rdfs:label "LOD2 Stack".
 
 <http://browser.linkedgeodata.org/> a aksw:Demo;
     aksw:hookline "is a javascript-based fullscreen browser and editor for geo-spatial data.";
     ov:screenshot <http://lh5.ggpht.com/-ctT4LRRBtCw/Tpx42Zv3vhI/AAAAAAAAA9o/3zSf8Mbt7Hc/s800/lgd-browser.png>;
+    aksw:demonstrates projects:LinkedGeoData;
     rdfs:label "LGD Browser / Editor".
 
-<http://aksw.org/index/news> a aksw:Demo;
+<http://aksw.org/model/info/?m=http%3A%2F%2Faksw.org%2F> a aksw:Demo;
     aksw:hookline "is a semantic data wiki for publishing and consuming Linked Data in agile, distributed knowledge engineering scenarios.";
     ov:screenshot <http://lh4.ggpht.com/-kXpKMqBBCIU/Tpx45SUaItI/AAAAAAAAA9w/aPYaNQjcpvo/s800/ontowiki.png>;
+    aksw:demonstrates projects:OntoWiki;
     rdfs:label "OntoWiki".
 
 <http://rdface.aksw.org/> a aksw:Demo;
     aksw:hookline "is an RDFa Content Editor based on TinyMCE";
     ov:screenshot <http://lh3.ggpht.com/-J7t1PfpY-U8/Tpx5iZN1-nI/AAAAAAAAA94/grIaBTK2h_Q/s800/rdface.png>;
+    aksw:demonstrates projects:RDFaCE;
     rdfs:label "RDFaCE".
 
 <http://limes.aksw.org/> a aksw:Demo;
     aksw:hookline "is a tool for discovering links in the Web of data";
     ov:screenshot <http://lh6.ggpht.com/-a2wAOUd66Mg/Tpx67TgYRZI/AAAAAAAAA-s/WilVdTWuk3s/s800/limes.png>;
+    aksw:demonstrates projects:LIMES;
     rdfs:label "LIMES".
 
 <http://139.18.2.164:4444/demo/index.html> a aksw:Demo;
     aksw:hookline "is the Federated Knowledge Extraction Framework to extract RDF triples out of natural language.";
     ov:screenshot <http://lh5.ggpht.com/-16u4kSZUUKQ/Tp3aB5sMkZI/AAAAAAAAA_U/LKdR5leJkQs/s800/Fox.png>;
+    aksw:demonstrates projects:Fox;
     rdfs:label "Fox".
 
 <http://139.18.2.164:8080/boa> a aksw:Demo;
     aksw:hookline "is a tool for pattern-based knowledge extraction.";
     ov:screenshot <http://lh3.ggpht.com/-X7RWicyijZA/Tp3b6mLj-5I/AAAAAAAAA_0/jIzakxQxQwg/s800/Boa.png>;
+    aksw:demonstrates projects:BOA;
     rdfs:label "Boa".
