@@ -13,7 +13,7 @@
  */
 
 $subgroups = $this->query(array(
-    'where' => '?resourceUri a foaf:Group.',
+    'where' => '?resourceUri aiiso:part_of groups:AKSW. ',
     'template' => 'liplain',
     'prefix'   => '<li><strong class="headline">sub groups</strong>',
     'suffix'   => '</li>'
@@ -27,26 +27,38 @@ $grouproster = $this->query(array(
 $currentProjects = $this->query(array(
     'where'    => '{<'.$this->resourceUri.'> foaf:currentProject ?resourceUri.} UNION'.
         '{?resourceUri doap:maintainer <'.$this->resourceUri.'> .}',
-    'template' => 'liplain',
+    'template' => 'li',
     'prefix'   => '<h1>Current Projects</h1>',
 ));
 $pastProjects = $this->query(array(
     'where'    => '<'.$this->resourceUri.'> foaf:pastProject ?resourceUri.',
-    'template' => 'liplain',
+    'template' => 'li',
     'prefix'   => '<h1>Past Projects</h1>',
 ));
+// prepare button row
+$query = '
+PREFIX aksw: <http://aksw.org/schema/>
+SELECT DISTINCT ?resourceUri ?label ?propertyUri
+WHERE {
+    { <'.$this->resourceUri.'> ?propertyUri ?resourceUri . }
+        UNION
+    { ?resourceUri ?propertyUri <'.$this->resourceUri.'> . }
+    ?propertyUri aksw:buttonLabel ?label
+}';
+$buttons = $this->querylist($query, 'aksw2011/items/buttons.phtml');
 ?>
-<header class="intro foaf_Person">
-    <h1 class="hideme"><?php echo $this->title ?></h1>
-    <?php echo $this->renderx(array('template'=>'aksw2011/items/vcardperson.phtml')) ?>
-</header> <!-- /.intro -->
 
 <nav class="nav-sidelinks">
 <ul>
 <?php echo $grouproster; ?>
-<?php echo $subgroups; ?>
 </ul>
 </nav>
+
+<header class="intro foaf_Person">
+    <h1 class="hideme"><?php echo $this->title ?></h1>
+    <?php echo $this->renderx(array('template'=>'aksw2011/items/vcardperson.phtml')) ?>
+    <?php echo $buttons ?>
+</header> <!-- /.intro -->
 
 <?php echo $this->literal(array('tag' => 'div', 'class' => 'content')) ?>
 <?php echo $currentProjects, $pastProjects; ?>
