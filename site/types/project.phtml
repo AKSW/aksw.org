@@ -96,14 +96,21 @@ $promotedProjects = $this->query(array(
         echo '</ul></div>' . PHP_EOL;
     }
     ?>
-    <?php echo $abstract ?>
-    <?php echo $buttons ?>
+    <?php echo $abstract, $buttons ?>
 </header> <!-- /.intro -->
 <?php
 echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses default content properties
-
+// Team
+echo $this->query(array(
+    'where' => '{?resourceUri foaf:currentProject <'.$this->resourceUri.'> .} UNION '.
+        '{<'.$this->resourceUri.'> doap:maintainer ?resourceUri . }',
+    'template' => 'liplain',
+    'prefix' => '<h1>Current Team</h1>' . PHP_EOL,
+    'activeSuffix' => ' (Principle Contact / Maintainer)',
+    'active' => $this->literal(array('property' => 'doap:maintainer', 'plain' => 'true'))
+));
 // example markup for media gallery
-$medias = array_merge($images, $images, $images); shuffle($medias);
+//$medias = array_merge($images, $images, $images); shuffle($medias);
 ?>
 <ul class="mediagallery">
 <?php foreach($medias as $mediaitem): ?>
