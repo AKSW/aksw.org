@@ -79,6 +79,13 @@ aiiso:ResearchGroup a owl:Class;
     rdfs:label "Research Group".
 
 # special aksw.org properties
+aksw:relatedProject a owl:ObjectProperty;
+    rdfs:subPropertyOf owl:SymmetricProperty;
+    rdfs:comment "a symmetric relation between two projects";
+    rdfs:domain foaf:Project;
+    rdfs:range foaf:Project;
+    rdfs:label "related project".
+
 aksw:demonstrates a owl:ObjectProperty;
     rdfs:comment "which project is demonstrated by this demo";
     rdfs:domain aksw:Demo;

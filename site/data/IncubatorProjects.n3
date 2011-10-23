@@ -25,6 +25,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 projects:SlideWiki a foaf:Project, aksw:IncubatorProject;
+    aksw:relatedProject projects:KeyNodeJS;
     doap:maintainer people:SoerenAuer;
     aksw:hookline "a Wiki for Presentations";
     rdfs:label "SlideWiki".
@@ -114,6 +115,7 @@ projects:KeyNodeJS a foaf:Project, aksw:IncubatorProject;
     rdfs:label "KeyNode.js".
 
 projects:DSSN a foaf:Project, aksw:IncubatorProject;
+    aksw:relatedProject projects:MobileSocialSemanticWeb, projects:SemanticPingback, projects:xOperator;
     doap:maintainer people:SebastianTramp;
     aksw:hookline "An Architecture of a Distributed Semantic Social Network";
     dcterms:abstract "...";
@@ -184,6 +186,7 @@ projects:CatalogusProfessorum a foaf:Project, aksw:IncubatorProject;
     rdfs:label "Catalogus Professorum".
 
 projects:Erfurt a foaf:Project, aksw:IncubatorProject;
+    aksw:relatedProject projects:QueryCache;
     doap:maintainer people:MichaelMartin;
     aksw:hookline "PHP5 / Zend based Semantic Web API for Social Semantic Software";
     dcterms:abstract "Comprises the API underneath OntoWiki, which can be used to build sophisticated Semantic Web applications";

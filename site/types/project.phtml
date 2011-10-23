@@ -43,6 +43,13 @@ $promotedProjects = $this->query(array(
     'prefix'   => '<li><strong class="headline">promoted projects</strong>',
     'suffix'   => '</li>'
 ));
+$relatedProjects = $this->query(array(
+    'where'    => '{ ?resourceUri aksw:relatedProject <'.$this->resourceUri.'> .} UNION' .
+        '{ <'.$this->resourceUri.'> aksw:relatedProject ?resourceUri . }',
+    'template' => 'liplain',
+    'prefix'   => '<li><strong class="headline">related projects</strong>',
+    'suffix'   => '</li>'
+));
 
 // prepare screenshots
 $screenshots = $this->query(array(
@@ -66,7 +73,7 @@ $team = $this->query(array(
 
 <nav class="nav-sidelinks">
     <ul>
-        <?php echo $promotedProjects; ?>
+        <?php echo $promotedProjects, $relatedProjects; ?>
     </ul>
 </nav> <!-- /.nav-sidelinks -->
 <header class="intro">

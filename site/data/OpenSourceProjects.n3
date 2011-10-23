@@ -26,6 +26,7 @@
 
 projects:OntoWiki a foaf:Project, aksw:OpenSourceProject;
     aksw:promoted "true"^^xsd:boolean;
+    aksw:relatedProject projects:Erfurt, projects:RDFauthor, projects:DSSN, projects:SemanticPingback, projects:AKSWorg, projects:odfmi, projects:CatalogusProfessorum, projects:Stats2RDF, projects:OntoWikiMobile;
     doap:maintainer people:SebastianTramp;
     aksw:hookline "a tool providing support for agile, distributed knowledge engineering scenarios";
     dcterms:abstract "OntoWiki facilitates the visual presentation of a knowledge base as an information map, with different views on instance data. It enables intuitive authoring of semantic content, with an inline editing mode for editing RDF content, similar to WYSIWIG for text documents.";
@@ -54,6 +55,7 @@ projects:LinkedGeoData a foaf:Project, aksw:CommunityProject;
     rdfs:label "LinkedGeoData".
 
 projects:Triplify a foaf:Project, aksw:OpenSourceProject;
+    aksw:relatedProject projects:SemanticPingback;
     doap:maintainer people:SoerenAuer;
     aksw:promoted "true"^^xsd:boolean;
     foaf:logo <http://lh3.ggpht.com/-rvVhwgpYdsw/TlzV2Ik-6cI/AAAAAAAAAps/9zs0HPF7Y1E/s800/logo-triplify.png>;
@@ -76,6 +78,7 @@ projects:Cofundos a foaf:Project, aksw:CommunityProject;
     rdfs:label "Cofundos".
 
 projects:DBpedia a foaf:Project, aksw:OpenSourceProject, aksw:CommunityProject;
+    aksw:relatedProject projects:DBPSB;
     doap:maintainer people:SoerenAuer;
     aksw:promoted "true"^^xsd:boolean;
     foaf:logo <http://lh3.ggpht.com/-boPYCFsH6_g/TlzV0n3IoFI/AAAAAAAAApA/vLA-xusLvEU/s800/dbpedia_logo.png>;
@@ -87,6 +90,7 @@ projects:DBpedia a foaf:Project, aksw:OpenSourceProject, aksw:CommunityProject;
     rdfs:label "DBpedia".
 
 projects:DL-Learner a foaf:Project, aksw:OpenSourceProject;
+    aksw:relatedProject projects:ORE;
     doap:maintainer people:JensLehmann;
     aksw:promoted "true"^^xsd:boolean;
     foaf:logo <http://lh6.ggpht.com/-zlbGRGr3yqQ/TlzV0wfOKNI/AAAAAAAAApE/fy4lmGAAOjk/s800/DL-Learner.gif>;
