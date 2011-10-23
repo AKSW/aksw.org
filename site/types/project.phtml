@@ -74,4 +74,6 @@ $team = $this->query(array(
     <?php echo $screenshots, $abstract, $buttons ?>
 </header> <!-- /.intro -->
 <?php echo $content, $team ?>
-
+<?php echo $this->renderx(array(
+    'template' => 'aksw2011/items/publications.phtml'
+));

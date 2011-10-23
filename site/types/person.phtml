@@ -65,56 +65,7 @@ if ($pastProjects = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
 <?php echo $pastProjects ?>
 <?php endif; ?>
 
-<?php
-    $publicationTag = $this->literal(array('property' => 'aksw:publicationTag'));
-    if ($publicationTag != "") :
-?>
+<?php echo $this->renderx(array(
+    'template' => 'aksw2011/items/publications.phtml'
+));
 
-<h1>Publications</h1>
-
-<div class="exhibit-filter-tools">
-    <!-- use this for lists cantaining a lot of publication and authors-->
-    <h2 class="hideme">Filters</h2>
-    <div ex:role="facet" ex:facetClass="TextSearch" ex:facetLabel="Keyword"></div>
-    <div class="subcolumns equalize">
-        <div class="c33l"><div class="subcl">
-            <div ex:role="facet" ex:showMissing="false" ex:expression=".year" ex:facetLabel="Year" ex:sortDirection="reverse" ex:height="15em"></div>
-        </div></div>
-        <div class="c33l"><div class="subc">
-            <div ex:role="facet" ex:showMissing="false" ex:expression=".pub-type" ex:facetLabel="Type" ex:sortMode="count" ex:height="15em"></div>
-        </div></div>
-        <div class="c33r"><div class="subcr">
-            <div ex:role="facet" ex:showMissing="false" ex:expression=".author" ex:facetLabel="(Co-)Authors" ex:sortMode="count" ex:height="15em"></div>
-        </div></div>
-    </div>
-</div> <!-- /.exhibit-filter-tools -->
-
-<nav class="nav-sidelinks">
-    <div class="exhibit-filter-tools">
-        <!-- use this for lists containing only a few publications and authors -->
-        <div ex:facetClass="Cloud" ex:role="facet" ex:showMissing="false" ex:expression=".year" ex:facetLabel="Year" ex:sortDirection="reverse"></div>
-        <div ex:facetClass="Cloud" ex:role="facet" ex:showMissing="false" ex:expression=".pub-type" ex:facetLabel="Type" ex:sortMode="count"></div>
-        <!--div ex:facetClass="Cloud" ex:role="facet" ex:showMissing="false" ex:expression=".author" ex:facetLabel="(Co-)Authors" ex:sortMode="count"></div-->
-    </div>
-</nav>
-
-<div ex:role="view" ex:grouped="false" ex:orders=".year,.label" ex:directions="descending,ascending" ex:showSummary="true" ex:showDuplicates="false">
-    <div ex:role="lens" ex:itemTypes="Publication" style="display: none">
-        <strong>
-            <span ex:content="if(exists(.url), concat('<a href=', .url, '>', .label, '</a>'), .label)"></span>
-            <span ex:if-exists=".author">
-                <span class="meta"><em>by</em> <span class="author" ex:content=".author"></span></span>
-            </span>
-        </strong>
-        <span class="meta">
-            <span ex:content="if(exists(.booktitle), concat('<em>in</em> ', .booktitle), '')"></span>
-            <span class="journal" ex:content="if(exists(.journal), concat('<em>in</em> ', .journal), '')"></span>
-            <span ex:if-exists=".editor">(Editors: <span class="editor" ex:content=".editor"></span>)</span>
-            <a ex:if-exists=".biburl" ex:href-content=".biburl" >[BibTex<span class="hideme"> of <span ex:content=".label"></span></span>]</a>
-        </span>
-        <span class="note" ex:content="if(exists(.note), concat('<br/><em>Note:</em> ', .note), '')"></span>
-        <span class="abstract" ex:content="if(exists(.abstract), concat('<br/><details><summary>Abstract:</summary> ', .abstract, '</details>'), '')"></span>
-    </div>
-</div>
-
-<?php endif; ?>
