@@ -24,50 +24,14 @@ $abstract = $this->literal(array(
     'class' => 'abstract'
 ));
 
-// prepare the single image screenshot
-/*
-$singleImage = $this->img(array(
-    'src'      => 'http://dummyimage.com/1024x768.png',
-    //'uri'      => 'http://aksw.org/Projects/OntoWiki',
-    'property' => 'ov:screenshot',
-    'filter'   => 'Resize-width-300',
-    'alt'      => 'screenshot',
-    'class'    => 'depiction',
-    'prefix'   => '<ul class="widget_depictions"><li class="widget_depictions_big">'.PHP_EOL,
-    'suffix'   => '</li></ul>'.PHP_EOL
-));
-//*/
-
-// prepare array with code of dummy images
-// TODO: replace dummy images by real screenshots
-$images = array();
-$images[] = '<a class="lightbox" title="Screenshot Description 1" href="http://dummyimage.com/1024x4:3.png/f00/000">' .
-                '<img src="http://dummyimage.com/250x4:3.png/f00/000" alt="Screenshot Description 1" property="ov:screenshot" class="depiction" />' .
-            '</a>' . PHP_EOL;
-$images[] = '<a class="lightbox" title="Screenshot Description 2" href="http://dummyimage.com/1024x16:9.png/0f0/000">' .
-                '<img src="http://dummyimage.com/250x16:9.png/0f0/000" alt="Screenshot Description 2" property="ov:screenshot" class="depiction" />' .
-            '</a>' . PHP_EOL;
-$images[] = '<a class="lightbox" title="Screenshot Description 3" href="http://dummyimage.com/1024x3:2.png/00f/000">' .
-                '<img src="http://dummyimage.com/300x3:2.png/00f/000" alt="Screenshot Description 3" property="ov:screenshot" class="depiction" />' .
-            '</a>' . PHP_EOL;
-$images[] = '<a class="lightbox" title="Screenshot Description 4" href="http://dummyimage.com/1024x4:3.png/f00/fff">' .
-                '<img src="http://dummyimage.com/250x4:3.png/f00/fff" alt="Screenshot Description 4" property="ov:screenshot" class="depiction" />' .
-            '</a>' . PHP_EOL;
-$images[] = '<a class="lightbox" title="Screenshot Description 5" href="http://dummyimage.com/1024x16:9.png/0f0/fff">' .
-                '<img src="http://dummyimage.com/250x16:9.png/0f0/fff" alt="Screenshot Description 5" property="ov:screenshot" class="depiction" />' .
-            '</a>' . PHP_EOL;
-$images[] = '<a class="lightbox" title="Screenshot Description 6" href="http://dummyimage.com/1024x3:2.png/00f/fff">' .
-                '<img src="http://dummyimage.com/300x3:2.png/00f/fff" alt="Screenshot Description 6" property="ov:screenshot" class="depiction" />' .
-            '</a>' . PHP_EOL;
-
-shuffle($images);
-
 // prepare button row
 $query = '
 PREFIX aksw: <http://aksw.org/schema/>
 SELECT DISTINCT ?resourceUri ?label ?propertyUri
 WHERE {
-    <'.$this->resourceUri.'> ?propertyUri ?resourceUri.
+    { <'.$this->resourceUri.'> ?propertyUri ?resourceUri . }
+        UNION
+    { ?resourceUri ?propertyUri <'.$this->resourceUri.'> . }
     ?propertyUri aksw:buttonLabel ?label
 }';
 $buttons = $this->querylist($query, 'aksw2011/items/buttons.phtml');
@@ -79,29 +43,18 @@ $promotedProjects = $this->query(array(
     'prefix'   => '<li><strong class="headline">promoted projects</strong>',
     'suffix'   => '</li>'
 ));
-?>
-<nav class="nav-sidelinks">
-<ul>
-<?php echo $promotedProjects; ?>
-</ul>
-</nav>
-<header class="intro">
-    <h1><?php echo $this->title . $hookline ?></h1>
-    <?php
-    if (isset($images) && is_array($images) && count($images) > 0) {
-        echo '<div class="widget_depictions"><ul>' . PHP_EOL;
-        foreach ($images as $image) {
-            echo '<li class="widget_depictions_big">'.$image.'</li>' . PHP_EOL;
-        }
-        echo '</ul></div>' . PHP_EOL;
-    }
-    ?>
-    <?php echo $abstract, $buttons ?>
-</header> <!-- /.intro -->
-<?php
-echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses default content properties
-// Team
-echo $this->query(array(
+
+// prepare screenshots
+$screenshots = $this->query(array(
+    'where'    => '<'.$this->resourceUri.'> ov:screenshot ?resourceUri .',
+    'template' => 'depictions'
+));
+
+// prepare main content (uses default content properties)
+$content = $this->literal(array('tag' => 'div', 'class' => 'content'));
+
+// prepare team list
+$team = $this->query(array(
     'where' => '{?resourceUri foaf:currentProject <'.$this->resourceUri.'> .} UNION '.
         '{<'.$this->resourceUri.'> doap:maintainer ?resourceUri . }',
     'template' => 'liplain',
@@ -109,12 +62,16 @@ echo $this->query(array(
     'activeSuffix' => ' (Principle Contact / Maintainer)',
     'active' => $this->literal(array('property' => 'doap:maintainer', 'plain' => 'true'))
 ));
-// example markup for media gallery
-//$medias = array_merge($images, $images, $images); shuffle($medias);
 ?>
-<ul class="mediagallery">
-<?php foreach($medias as $mediaitem): ?>
-    <li><?php echo $mediaitem; ?></li>
-<?php endforeach; ?>
-</ul>
+
+<nav class="nav-sidelinks">
+    <ul>
+        <?php echo $promotedProjects; ?>
+    </ul>
+</nav> <!-- /.nav-sidelinks -->
+<header class="intro">
+    <h1><?php echo $this->title . $hookline ?></h1>
+    <?php echo $screenshots, $abstract, $buttons ?>
+</header> <!-- /.intro -->
+<?php echo $content, $team ?>
 

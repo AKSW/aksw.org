@@ -1,0 +1,93 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * querylist lightbox enabled depictions template
+ *
+ * this template is used in combination with the querylist helper to render
+ * lists of images which match a given SPARQL query
+ */
+
+// prepare vars from the querylist helper
+$resourceUri = $this->resourceUri;
+$title       = $this->title;
+$oddclass    = $this->oddclass;
+
+if ( ($this->listhint == 'first') || ($this->rowcount == 1) ) {
+    echo '<div class="widget_depictions"><ul>' . PHP_EOL;
+}
+
+$image = $this->img(array(
+    'src'      => $resourceUri,
+    'property' => 'ov:screenshot',
+    'filter'   => 'Resize-width-300',
+    'alt'      => 'screenshot',
+    'class'    => 'depiction'
+));
+
+$link = $this->link(array(
+    'uri'    => $resourceUri,
+    'class'  => 'lightbox',
+    'title'  => 'screenshot',
+    'direct' => 'true',
+    'text'   => $image
+))
+?>
+<li class="widget_depictions_big">
+    <?php echo $link ?>
+</li>
+<?php
+if ( ($this->listhint == 'last') || ($this->rowcount == 1) ) {
+    echo '</ul></div>' . PHP_EOL;
+}
+
+// EXAMPLES
+/*
+<li class="widget_depictions_big">
+    <a class="lightbox"
+        title="Screenshot Description 6"
+        href="http://dummyimage.com/1024x3:2.png/00f/fff">
+            <img src="http://dummyimage.com/300x3:2.png/00f/fff"
+                alt="Screenshot Description 6"
+                property="ov:screenshot"
+                class="depiction" />
+    </a>
+</li>
+
+$images = array();
+$images[] = '<a class="lightbox" title="Screenshot Description 1" href="http://dummyimage.com/1024x4:3.png/f00/000">' .
+                '<img src="http://dummyimage.com/250x4:3.png/f00/000" alt="Screenshot Description 1" property="ov:screenshot" class="depiction" />' .
+            '</a>' . PHP_EOL;
+$images[] = '<a class="lightbox" title="Screenshot Description 2" href="http://dummyimage.com/1024x16:9.png/0f0/000">' .
+                '<img src="http://dummyimage.com/250x16:9.png/0f0/000" alt="Screenshot Description 2" property="ov:screenshot" class="depiction" />' .
+            '</a>' . PHP_EOL;
+$images[] = '<a class="lightbox" title="Screenshot Description 3" href="http://dummyimage.com/1024x3:2.png/00f/000">' .
+                '<img src="http://dummyimage.com/300x3:2.png/00f/000" alt="Screenshot Description 3" property="ov:screenshot" class="depiction" />' .
+            '</a>' . PHP_EOL;
+$images[] = '<a class="lightbox" title="Screenshot Description 4" href="http://dummyimage.com/1024x4:3.png/f00/fff">' .
+                '<img src="http://dummyimage.com/250x4:3.png/f00/fff" alt="Screenshot Description 4" property="ov:screenshot" class="depiction" />' .
+            '</a>' . PHP_EOL;
+$images[] = '<a class="lightbox" title="Screenshot Description 5" href="http://dummyimage.com/1024x16:9.png/0f0/fff">' .
+                '<img src="http://dummyimage.com/250x16:9.png/0f0/fff" alt="Screenshot Description 5" property="ov:screenshot" class="depiction" />' .
+            '</a>' . PHP_EOL;
+$images[] = '<a class="lightbox" title="Screenshot Description 6" href="http://dummyimage.com/1024x3:2.png/00f/fff">' .
+                '<img src="http://dummyimage.com/300x3:2.png/00f/fff" alt="Screenshot Description 6" property="ov:screenshot" class="depiction" />' .
+            '</a>' . PHP_EOL;
+
+shuffle($images);
+
+// example markup for media gallery
+$medias = array_merge($images, $images, $images); shuffle($medias);
+?>
+<ul class="mediagallery">
+<?php foreach($medias as $mediaitem): ?>
+    <li><?php echo $mediaitem; ?></li>
+<?php endforeach; ?>
+</ul>
+
+*/
