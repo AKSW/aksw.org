@@ -34,6 +34,7 @@ groups:ES a aiiso:ResearchGroup;
 
 groups:SIMBA a aiiso:ResearchGroup;
     site:abbrevation "SIMBA";
+    aksw:publicationStyle "extended";
     aksw:publicationTag "simba";
     dcterms:abstract "SIMBA's focus lies on knowledge extraction, integration, linking and consumption for porting the document-oriented web to the Data Web. For this purpose, SIMBA develops novel and scalable approaches for RDF/OWL extraction, link discovery and graph analysis. In addition, SIMBA provides tools and frameworks that implement these approaches and allow for their swift integration into industry projects.";
     aksw:researchAreas "Natural Language Processing", "Extraction of RDF and OWL from unstructured data", "Link Discovery", "Machine Learning";
@@ -43,6 +44,7 @@ groups:SIMBA a aiiso:ResearchGroup;
 
 groups:MOLE a aiiso:ResearchGroup;
     site:abbrevation "MOLE";
+    aksw:publicationStyle "extended";
     aksw:publicationTag "mole";
     dcterms:abstract "The MOLE group focuses on combining Semantic Web and supervised Machine Learning technologies. The goal is to improve both quality and quantity of available knowledge by extracting, analysing, enriching and linking existing data. To make obtained results readily available for use in other applications, the group also provides several established open source tools, frameworks and demonstrators.";
     aksw:researchAreas "Supervised Machine Learning in OWL/RDF knowledge bases",
