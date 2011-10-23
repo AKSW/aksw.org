@@ -39,7 +39,7 @@
 <http://aksw.org/model/info/?m=http%3A%2F%2Faksw.org%2F> a aksw:Demo;
     aksw:hookline "is a semantic data wiki for publishing and consuming Linked Data in agile, distributed knowledge engineering scenarios.";
     ov:screenshot <http://lh4.ggpht.com/-kXpKMqBBCIU/Tpx45SUaItI/AAAAAAAAA9w/aPYaNQjcpvo/s800/ontowiki.png>;
-    aksw:demonstrates projects:OntoWiki;
+    aksw:demonstrates projects:OntoWiki, projects:AKSWorg;
     rdfs:label "OntoWiki".
 
 <http://rdface.aksw.org/> a aksw:Demo;
@@ -57,7 +57,7 @@
 <http://139.18.2.164:4444/demo/index.html> a aksw:Demo;
     aksw:hookline "is the Federated Knowledge Extraction Framework to extract RDF triples out of natural language.";
     ov:screenshot <http://lh5.ggpht.com/-16u4kSZUUKQ/Tp3aB5sMkZI/AAAAAAAAA_U/LKdR5leJkQs/s800/Fox.png>;
-    aksw:demonstrates projects:Fox;
+    aksw:demonstrates projects:FOX;
     rdfs:label "Fox".
 
 <http://139.18.2.164:8080/boa> a aksw:Demo;

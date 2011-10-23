@@ -193,6 +193,20 @@ sioc:feed a owl:ObjectProperty;
     rdfs:label "feed".
 
 # doap
+doap:programming-language a rdf:Property;
+    rdfs:comment "Programming language a project is implemented in or intended for use with.";
+    rdfs:label "programming language".
+
+doap:wiki a rdf:Property;
+    rdfs:comment "URL of Wiki for collaborative discussion of project.";
+    aksw:buttonLabel "Wiki";
+    rdfs:label "Wiki".
+
+doap:bug-database a rdf:Property;
+    rdfs:comment "Bug tracker for a project.";
+    aksw:buttonLabel "Issues";
+    rdfs:label "bug database".
+
 doap:browse a rdf:Property;
     rdfs:comment "Web browser interface to repository.";
     aksw:buttonLabel "Fork me!";

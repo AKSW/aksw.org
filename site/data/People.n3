@@ -82,7 +82,7 @@ people:TimofeyErmilov a foaf:Person;
     foaf:phone <tel:+49-341-97-32322>;
     aksw:room "5-20";
     skos:hiddenLabel "TimofeyErmilov";
-    foaf:currentProject projects:MobileSocialSemanticWeb, projects:DSSN, projects:OntoWiki;
+    foaf:currentProject projects:MobileSocialSemanticWeb, projects:DSSN, projects:OntoWiki, projects:AKSWorg;
     aksw:publicationStyle "minimal";
     aksw:publicationTag "ermilov";
     foaf:name "Timofey Ermilov".
@@ -116,7 +116,7 @@ people:NormanHeino a foaf:Person;
     foaf:mbox <mailto:heino@informatik.uni-leipzig.de>;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=heino>;
     foaf:phone <tel:+49-341-97-32368>;
-    foaf:currentProject projects:SCMS, projects:KeyNodeJS, projects:OntoWiki, projects:Erfurt, projects:LOD2, projects:RDFauthor,projects:re-publish;
+    foaf:currentProject projects:SCMS, projects:KeyNodeJS, projects:OntoWiki, projects:Erfurt, projects:LOD2, projects:RDFauthor,projects:re-publish, projects:AKSWorg;
     foaf:pastProject projects:OntoWikiMobile, projects:OntoWikiEU, projects:SoftWiki, projects:Stats2RDF;
     aksw:room "5-08";
     skos:hiddenLabel "NormanHeino";
@@ -273,6 +273,7 @@ people:AmrapaliZaveri a foaf:Person;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=zaveri>;
     foaf:phone <tel:+49-341-97-32273>;
     aksw:room "5-10";
+    foaf:currentProject projects:AKSWorg;
     skos:hiddenLabel "AmrapaliZaveri";
     aksw:publicationTag "zaveri";
     skos:prefLabel "Amrapali J. Zaveri";
@@ -291,3 +292,13 @@ people:ClemensHoffmann a foaf:Person;
     foaf:depiction <https://secure.gravatar.com/avatar/be35f40f610edc7d8218bb866494fcf1?s=140>;
     skos:hiddenLabel "Cannelony", "ClemensHoffmann";
     foaf:name "Clemens Hoffmann".
+
+people:MichaelHaschke a foaf:Person;
+    owl:sameAs <http://michael.haschke.biz/>;
+    foaf:homepage <http://48augen.de>;
+    foaf:mbox <mailto:michael.haschke@eye48.com>;
+    foaf:depiction <http://gravatar.com/avatar/81060bc45f257e0854ecde403bb4ee5e?size=420>;
+    foaf:phone <tel:+49-371-23970557>;
+    foaf:currentProject projects:OntoWiki, projects:Erfurt, projects:LOD2, projects:AKSWorg;
+    foaf:pastProject projects:Triplify;
+    foaf:name "Michael Haschke".

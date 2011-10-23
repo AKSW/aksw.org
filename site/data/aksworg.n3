@@ -47,6 +47,12 @@
 projects:AKSWorg a foaf:Project, aksw:IncubatorProject;
     aksw:hookline "a linked data driven web page rendered by OntoWiki site extension";
     dcterms:abstract "The semantic data wiki OntoWiki can be used as a Content Management System to render and manage content of certain types. According to 'eat you own dog food', the aksw.org web page is an example for this approach.";
+    doap:maintainer people:SebastianTramp;
+    foaf:homepage <http://aksw.org>;
+    ov:screenshot <http://lh4.ggpht.com/-kXpKMqBBCIU/Tpx45SUaItI/AAAAAAAAA9w/aPYaNQjcpvo/s800/ontowiki.png>;
+    doap:browse <https://github.com/AKSW/aksw.org>;
+    doap:anon-root <git://github.com/AKSW/aksw.org.git>;
+    doap:bug-database <https://github.com/AKSW/aksw.org/issues>;
     rdfs:label "aksw.org".
 
 <http://aksw.org/Projects/AKSWorg/Documentation> a foaf:Document;

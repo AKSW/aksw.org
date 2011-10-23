@@ -25,16 +25,20 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 projects:SlideWiki a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:SoerenAuer;
     aksw:hookline "a Wiki for Presentations";
     rdfs:label "SlideWiki".
 
 projects:re-publish a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:NormanHeino;
     aksw:hookline "Light-weight linked data publishing with node.js";
     doap:browse <https://github.com/0xfeedface/re-publish>;
     dcterms:abstract "re:publish is a light-weight resource publishing server built with node.js. It can be used to publish linked data in various formats for machines as well as HTML for human consumption.";
+    doap:programming-language "JavaScript";
     rdfs:label "re:publish".
 
 projects:SINA a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:SaeedehShekarpour;
     aksw:hookline "Semantically INterpreting user query towards question-Answering";
     dcterms:abstract "Knowledge bases published on the Web of Data can be used to answer challenging questions about a wide range of topics. They usually offer a SPARQL endpoint, which can be queried by the user. However, a novice user needs to acquire both knowledge about the underlying ontology and proficiency in formulating SPARQL queries in order to actually formulate a SPARQL query. In this project, we are working on constructing SPARQL queries based on user-supplied keywords. As a result ordinary users are empowered to formulate relatively expressive queries without knowledge of SPARQL and the underlying ontology structure.";
     site:content """
@@ -43,23 +47,28 @@ projects:SINA a foaf:Project, aksw:IncubatorProject;
     rdfs:label "SINA".
 
 projects:RDFaCE a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:AliKhalili;
     aksw:hookline "RDFa Content Editor";
     ov:screenshot <http://lh3.ggpht.com/-J7t1PfpY-U8/Tpx5iZN1-nI/AAAAAAAAA94/grIaBTK2h_Q/s800/rdface.png>;
     dcterms:abstract "RDFaCE is an RDFa Content Editor based on TinyMCE. It supports different views for semantic content authoring and uses existing Semantic Web APIs to facilitate the annotation and editing of RDFa contents.";
+    doap:programming-language "JavaScript";
     site:content """
 ...
 """^^sysont:Markdown;
     rdfs:label "RDFaCE".
 
 projects:OntoWikiMobile a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:TimofeyErmilov;
     aksw:hookline "Knowledge Management in your Pocket";
     dcterms:abstract "OntoWiki Mobile was developed to address the need for a mobile web application for rapid and simple knowledge acquisition in a collaborative way. It allows users to collect instance data, refine the structure of knowledge bases and browse data using hierarchical or faceted navigation on-the-go even without a present data connection.";
+    doap:programming-language "PHP", "JavaScript";
     site:content """
 ...
 """^^sysont:Markdown;
     rdfs:label "OntoWiki Mobile".
 
 projects:ORE a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:JensLehmann;
     aksw:hookline "a tool for debugging and enriching OWL knowledge bases";
     dcterms:abstract "The ORE (Ontology Repair and Enrichment) tool allows for knowledge engineers to improve an OWL ontology by fixing inconsistencies and making suggestions for adding further axioms to it";
     site:content """
@@ -68,6 +77,7 @@ projects:ORE a foaf:Project, aksw:IncubatorProject;
     rdfs:label "ORE".
 
 projects:NKE a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:SebastianHellmann;
     aksw:hookline "a light-weight methodology for low-cost knowledge engineering by a massive user base";
     dcterms:abstract "Although structured data is becoming widely available, no other methodology – to the best of our knowledge – is currently able to scale up and provide light-weight knowledge engineering for a massive user base. Using NKE, data providers can publish flat data on the Web without extensively engineering structure upfront, but rather observe how structure is created on the fly by interested users, who navigate the knowledge base and at the same time also benefit from using it. The vision of NKE is to produce ontologies as a result of users navigating through a system. This way, NKE reduces the costs for creating expressive knowledge by disguising it as navigation.";
     site:content """
@@ -76,6 +86,7 @@ projects:NKE a foaf:Project, aksw:IncubatorProject;
     rdfs:label "Navigational Knowledge Engineering".
 
 projects:NIF a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:SebastianHellmann;
     aksw:hookline "an RDF/OWL-based format that allows to combine and chain several NLP tools in a flexible, light-weight way";
     dcterms:abstract "The core of NIF consists of a vocabulary, which can represent Strings as RDF resources. A special URI Design is used to pinpoint annotations to a part of a document. These URIs can then be used to attach arbitrary annotations to the respective character sequence. Based on these URIs, annotations can be interchanged between different NLP tools.";
     site:content """
@@ -84,6 +95,7 @@ projects:NIF a foaf:Project, aksw:IncubatorProject;
     rdfs:label "NLP Interchange Format (NIF)".
 
 projects:Mutants a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:SebastianHellmann;
     aksw:hookline "a Multi-Tier Annotation Scheme";
     dcterms:abstract "The expressiveness of OWL combined with the RDFa Format allows to overcome deficiencies of traditional annotations schemes. Advantages include: Multi-tier Annotations are possible, Annotations are Inline and thus stable for change, Overlapping annotations are possible";
     site:content """
@@ -92,14 +104,17 @@ projects:Mutants a foaf:Project, aksw:IncubatorProject;
     rdfs:label "Mutants".
 
 projects:KeyNodeJS a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:SebastianTramp;
     aksw:hookline "Next level web presentations";
     dcterms:abstract "KeyNode.js tries to upgrade existing web-standards based slide show tools (as Slidy or slidedown) with presenter console like features such as personal notes on a different screen/browser, next slide preview and slide overview.";
+    doap:programming-language "JavaScript";
     site:content """
 ...
 """^^sysont:Markdown;
     rdfs:label "KeyNode.js".
 
 projects:DSSN a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:SebastianTramp;
     aksw:hookline "An Architecture of a Distributed Semantic Social Network";
     dcterms:abstract "...";
     site:content """
@@ -108,6 +123,7 @@ projects:DSSN a foaf:Project, aksw:IncubatorProject;
     rdfs:label "DSSN".
 
 projects:DBPSB a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:MohamedMorsey;
     aksw:hookline "a pure RDF benchmark based on actually posed queries";
     dcterms:abstract "DBPSB is a general SPARQL benchmark procedure, which we apply to the DBpedia knowledge base. The benchmark is based on query-log mining, clustering and SPARQL feature analysis. In contrast to other benchmarks, we perform measurements on actually posed queries against existing RDF data. ";
     site:content """
@@ -116,6 +132,7 @@ projects:DBPSB a foaf:Project, aksw:IncubatorProject;
     rdfs:label "DBpedia SPARQL Benchmark".
 
 projects:BOA a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:DanielGerber;
     aksw:hookline "BOotstrapping linked datA";
     dcterms:abstract "Most knowledge sources in the Web of Data were extracted from either structured or semi-structured data. Although they are an invaluable resource for structured knowledge, they consist of less than 20% of the information available on the Web. The idea behind BOA is to use the knowledge available in Linked Data Web to extract even more information from the Web. The potential of the approach is immense, as it could promote the Linked Data Web to the lingua franca for a large number of applications including machine translation, named entity recognition and speech generation.";
     site:content """
@@ -125,6 +142,13 @@ projects:BOA a foaf:Project, aksw:IncubatorProject;
     rdfs:label "BOA".
 
 projects:MobileSocialSemanticWeb a foaf:Project, aksw:IncubatorProject;
+    doap:browse <http://code.google.com/p/mssw/source/browse/>;
+    doap:download-page <http://code.google.com/p/mssw/downloads/list>;
+    doap:bug-database <http://code.google.com/p/mssw/issues/list>;
+    doap:wiki <http://code.google.com/p/mssw/wiki/Welcome>;
+    foaf:logo <http://g1.gstatic.com/android/market/org.aksw.mssw/hi-124-2>;
+    doap:maintainer people:SebastianTramp;
+    doap:programming-language "Java";
     aksw:hookline "weaving a distributed, semantic social network for mobile users";
     dcterms:abstract "An Android-based social web client as well as a contacts provider, which integrates your distributed FOAF/WebID social network into your mobile phone.";
     site:content """
@@ -133,6 +157,7 @@ projects:MobileSocialSemanticWeb a foaf:Project, aksw:IncubatorProject;
     rdfs:label "Mobile Social Semantic Web".
 
 projects:ReDDObservatory a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:AmrapaliZaveri;
     aksw:hookline "Using the Web of Data for Evaluating the Research-Disease Disparity";
     dcterms:abstract "The ReDD-Observatory is a project to evaluate the disparity between active areas of biomedical research and the global burden of disease using Linked Data and data-driven discovery.";
     site:content """
@@ -141,6 +166,7 @@ projects:ReDDObservatory a foaf:Project, aksw:IncubatorProject;
     rdfs:label "ReDD-Observatory".
 
 projects:Stats2RDF a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:AmrapaliZaveri;
     aksw:hookline "Representing multi-dimensional statistical data as RDF using the RDF Data Cube Vocabulary";
     dcterms:abstract "...";
     site:content """
@@ -149,6 +175,7 @@ projects:Stats2RDF a foaf:Project, aksw:IncubatorProject;
     rdfs:label "Stats2RDF".
 
 projects:CatalogusProfessorum a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:ThomasRiechert;
     aksw:hookline "Leipzig Professors Catalog";
     dcterms:abstract "An adapted OntoWiki with accompanying vocabularies for managing historic information related to the professors working at the University of Leipzig in its 600-year history.";
     site:content """
@@ -157,22 +184,28 @@ projects:CatalogusProfessorum a foaf:Project, aksw:IncubatorProject;
     rdfs:label "Catalogus Professorum".
 
 projects:Erfurt a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:MichaelMartin;
     aksw:hookline "PHP5 / Zend based Semantic Web API for Social Semantic Software";
     dcterms:abstract "Comprises the API underneath OntoWiki, which can be used to build sophisticated Semantic Web applications";
+    doap:programming-language "PHP";
     site:content """
 ...
 """^^sysont:Markdown;
     rdfs:label "Erfurt".
 
 projects:QueryCache a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:MichaelMartin;
     aksw:hookline "Adaptive SPARQL Query Cache";
     dcterms:abstract "In order to get closer to the performance of relational database-backed Web applications, we developed an approach for improving the performance of triple stores by caching query results and even complete application objects. The selective invalidation of cache objects, following updates of the underlying knowledge bases, is based on analysing the graph patterns of cached SPARQL queries in order to obtain information about what kind of updates will change the query result.";
+    doap:programming-language "Java", "PHP";
     site:content """
 ...
 """^^sysont:Markdown;
     rdfs:label "Query Cache".
 
 projects:xOperator a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:SebastianTramp;
+    doap:programming-language "Java";
     foaf:logo <http://lh4.ggpht.com/-QkTbfyQlcwc/TlzV28aEmbI/AAAAAAAAAp8/AJk2bBBpJXw/s800/xOperator.png>;
     aksw:hookline "combines advantages of social network websites with instant messaging";
     dcterms:abstract "A semantic agent for xmpp / jabber network which finds and shares content about resources (using RDF/SPARQL) for you and your jabber friends.";
@@ -182,6 +215,7 @@ projects:xOperator a foaf:Project, aksw:IncubatorProject;
     rdfs:label "xOperator".
 
 projects:odfmi a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:ThomasRiechert;
     aksw:hookline "Open Data for the University of Leipzig's Math and Computer Science Faculty";
     dcterms:abstract "The aim of this project is to provide all relevant data about the faculty infrastructure and courses as linked open data.";
     site:content """
@@ -190,6 +224,7 @@ projects:odfmi a foaf:Project, aksw:IncubatorProject;
     rdfs:label "OD@FMI".
 
 projects:NLP2RDF a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:SebastianHellmann;
     aksw:hookline "a natural language processing framework that rocks!";
     dcterms:abstract "NLP2RDF is a framework that integrates multiple NLP tools and linguistic ontologies in order to explicate implicit meaning of natural language by means of RDF/OWL descriptions. Natural language ( a character sequence with implicit knowledge) is converted into a more expressive formalism - in this case OWL-DL - aiming to grasp the underlying meaning. This explicated meaning then serves as input for (high-level) algorithms and applications with a focus on machine learning.";
     site:content """
@@ -198,6 +233,7 @@ projects:NLP2RDF a foaf:Project, aksw:IncubatorProject;
     rdfs:label "NLP2RDF".
 
 projects:OpenResearch a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:SoerenAuer;
     aksw:hookline "Semantic Wiki for the Sciences";
     dcterms:abstract "A semantic Wiki for collecting and sharing scientific meta-data such as CfPs, tool descriptions, research profiles, conference statistics etc.";
     site:content """
@@ -207,7 +243,9 @@ projects:OpenResearch a foaf:Project, aksw:IncubatorProject;
     rdfs:label "OpenResearch".
 
 projects:RDFauthor a foaf:Project, aksw:IncubatorProject;
+    doap:programming-language "JavaScript";
     foaf:logo <http://lh3.ggpht.com/-WmVFVyaDjEM/TlzV2VGNWmI/AAAAAAAAAp0/WGqBhMYkDFI/s800/rdfa.png>;
+    doap:maintainer people:NormanHeino;
     aksw:hookline "is an editing solution for distributed and syndicated structured content on the World Wide Web";
     dcterms:abstract "The system is able to extract structured information from RDFa-enhanced websites and to create an edit form based on this data. To this end, we make use of semantics-aware editing widgets that hide most of the RDF data model from the user, thus allowing more people to author semantic content. If the embedded data does not suffice to create a rich user-supporting editing view, the underlying Semantic Web infrastructure is used to retrieve additional schema-related information about the elements used.";
     site:content """
@@ -216,6 +254,8 @@ projects:RDFauthor a foaf:Project, aksw:IncubatorProject;
     rdfs:label "RDFauthor".
 
 projects:SparqlTrainer a foaf:Project, aksw:IncubatorProject;
+    doap:programming-language "Java";
+    doap:maintainer people:DanielGerber;
     aksw:hookline "learn to query the semantic web";
     dcterms:abstract "The SparqlTrainer is an e-learning tool to practice SPARQL interactively. With the help of self-developed tests, consisting of individual questions, it is possible to train the different query forms (SELECT, CONSTRUCT, ASK and DESCRIBE). After entering a solution the learner will immediately see an evaluation of the request with the corresponding result. Due to different features, like password protection of tests and E-mail notification, an usage in support of courses is also possible.";
     site:content """
@@ -224,6 +264,7 @@ projects:SparqlTrainer a foaf:Project, aksw:IncubatorProject;
     rdfs:label "SPARQL Trainer".
 
 projects:SemanticPingback a foaf:Project, aksw:IncubatorProject;
+    doap:maintainer people:SebastianTramp;
     aksw:hookline "Adding a social dimension to the Linked Data Web";
     dcterms:abstract "The Semantic Pingback mechanism is an extension of the well-known Pingback method, a technological cornerstone of the blogosphere, thus supporting the interlinking within the Data Web.";
     site:content """

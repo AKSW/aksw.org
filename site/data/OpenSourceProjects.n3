@@ -35,6 +35,9 @@ projects:OntoWiki a foaf:Project, aksw:OpenSourceProject;
     foaf:homepage <http://ontowiki.net>;
     doap:browse <https://github.com/AKSW/OntoWiki>;
     doap:download-page <https://github.com/AKSW/OntoWiki/downloads>;
+    doap:anon-root <git://github.com/AKSW/OntoWiki.git>;
+    doap:bug-database <https://github.com/AKSW/OntoWiki/issues>;
+    doap:programming-language "PHP", "JavaScript";
     aksw:publicationTag "ontowiki";
     aksw:publicationStyle "extended";
     rdfs:label "OntoWiki".
@@ -48,6 +51,7 @@ projects:LinkedGeoData a foaf:Project, aksw:CommunityProject;
     site:content "..."^^sysont:Markdown;
     sioc:feed <http://blog.aksw.org/category/projects/linked-geo-data/feed/>;
     foaf:homepage <http://linkedgeodata.org>;
+    doap:programming-language "PHP", "JavaScript";
     rdfs:label "LinkedGeoData".
 
 projects:Triplify a foaf:Project, aksw:OpenSourceProject;
@@ -59,6 +63,7 @@ projects:Triplify a foaf:Project, aksw:OpenSourceProject;
     site:content "..."^^sysont:Markdown;
     sioc:feed <http://blog.aksw.org/category/projects/triplify/feed/>;
     foaf:homepage <http://triplify.org>;
+    doap:programming-language "PHP";
     rdfs:label "Triplify".
 
 projects:Cofundos a foaf:Project, aksw:CommunityProject;
@@ -68,6 +73,7 @@ projects:Cofundos a foaf:Project, aksw:CommunityProject;
     site:content "..."^^sysont:Markdown;
     sioc:feed <http://blog.aksw.org/category/projects/cofundos/feed/>;
     foaf:homepage <http://cofundos.org>;
+    doap:programming-language "PHP";
     rdfs:label "Cofundos".
 
 projects:DBpedia a foaf:Project, aksw:OpenSourceProject, aksw:CommunityProject;
@@ -89,7 +95,8 @@ projects:DL-Learner a foaf:Project, aksw:OpenSourceProject;
     dcterms:abstract "DL-Learner is a tool for learning concepts in Description Logics (DLs) from user-provided examples. Equivalently, it can be used to learn classes in OWL ontologies from selected objects. The goal of DL-Learner is to support knowledge engineers in constructing knowledge and learning about the data they created.";
     site:content "..."^^sysont:Markdown;
     sioc:feed <http://blog.aksw.org/category/projects/dl-learner/feed/>;
-    foaf:homepage <dl-learner.org>;
+    foaf:homepage <http://dl-learner.org>;
+    doap:programming-language "Java";
     rdfs:label "DL-Learner".
 
 projects:GENIA a foaf:Project, aksw:IncubatorProject;

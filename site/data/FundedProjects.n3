@@ -35,6 +35,9 @@ projects:LOD2 a foaf:Project, aksw:FundedProject;
 """^^sysont:Markdown;
     ov:screenshot <http://lh5.ggpht.com/-qFsSKX-1_dw/Tpx24oHmtEI/AAAAAAAAA9g/XOeQQWjBzCc/s800/lod2demo.png>;
     sioc:feed <http://lod2.eu/BlogPost/feed>;
+    doap:maintainer people:SoerenAuer;
+    aksw:publicationTag "lod2page";
+    aksw:publicationStyle "extended";
     rdfs:label "LOD2".
 
 projects:LATC a foaf:Project, aksw:FundedProject;
@@ -47,6 +50,7 @@ projects:LATC a foaf:Project, aksw:FundedProject;
 * Duration: 2010–2012
 * Funding Programme: FP7-ICT-2009.4.3 (Support Action)
 """^^sysont:Markdown;
+    doap:maintainer people:JensLehmann;
     sioc:feed <http://blog.aksw.org/category/projects/latc/feed/>;
     rdfs:label "LATC".
 
@@ -60,6 +64,7 @@ projects:SCMS a foaf:Project, aksw:FundedProject;
 * Duration: 2010–2012
 * Funding Programme: Eurostars
 """^^sysont:Markdown;
+    doap:maintainer people:AxelNgonga;
     sioc:feed <http://www.scms.eu/feed/>;
     rdfs:label "SCMS".
 
@@ -73,6 +78,7 @@ projects:LE4SW a foaf:Project, aksw:FundedProject;
 * Duration: 2009–2011
 * Funding Programme: WK Potential, German Ministry of Education and Research (BMBF)
 """^^sysont:Markdown;
+    doap:maintainer people:SoerenAuer;
     rdfs:label "LE4SW".
 
 projects:SoftWiki a foaf:Project, aksw:FundedProject;
@@ -83,10 +89,11 @@ projects:SoftWiki a foaf:Project, aksw:FundedProject;
     dcterms:abstract "The project delivers fundamental building blocks for early phases of Requirements Engineering by establishing a stakeholder-driven knowledge engineering process for requirements elicitation, organisation and management.";
     site:content """
 * Partners: Universität Duisburg-Essen, T-Systems MMS, ProDV AG, LeCoS GmbH, QA Systems GmbH, ISA Tools GmbH
-* Duration: 2006–209
+* Duration: 2006–2009
 * Funding Programme: [research initiative “Software Engineering 2006”](http://www.softwarefoerderung.de/), German Ministry of Education and Research (BMBF)
 """^^sysont:Markdown;
     sioc:feed <http://softwiki.de/netzwerk/feed/>;
+    doap:maintainer people:ThomasRiechert;
     rdfs:label "SoftWiki".
 
 projects:OntoWikiEU a foaf:Project, aksw:FundedProject;
@@ -100,5 +107,6 @@ projects:OntoWikiEU a foaf:Project, aksw:FundedProject;
 * Duration: 2008–2010
 * Funding Programme: FP7-SME
 """^^sysont:Markdown;
+    doap:maintainer people:SoerenAuer;
     rdfs:label "OntoWiki.eu".
 
