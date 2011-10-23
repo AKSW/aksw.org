@@ -51,7 +51,6 @@ projects:AKSWorg a foaf:Project, aksw:IncubatorProject;
     foaf:homepage <http://aksw.org>;
     ov:screenshot <http://lh4.ggpht.com/-kXpKMqBBCIU/Tpx45SUaItI/AAAAAAAAA9w/aPYaNQjcpvo/s800/ontowiki.png>;
     doap:browse <https://github.com/AKSW/aksw.org>;
-    doap:anon-root <git://github.com/AKSW/aksw.org.git>;
     doap:bug-database <https://github.com/AKSW/aksw.org/issues>;
     rdfs:label "aksw.org".
 

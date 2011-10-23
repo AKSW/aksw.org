@@ -86,6 +86,12 @@ aksw:demonstrates a owl:ObjectProperty;
     aksw:buttonLabel "Demo";
     rdfs:label "demonstrates".
 
+aksw:buttonLabel a owl:DatatypeProperty;
+    rdfs:subPropertyOf rdfs:label;
+    rdfs:domain owl:ObjectProperty;
+    rdfs:comment "this label of a property is used as a link button text where suitable";
+    rdfs:label "button label".
+
 aksw:promoted a owl:DatatypeProperty;
     rdfs:comment "a project which is promoted e.g. on the startpage";
     rdfs:label "promoted".
@@ -93,6 +99,10 @@ aksw:promoted a owl:DatatypeProperty;
 aksw:publicationTag a owl:DatatypeProperty;
     rdfs:comment "the tag which is used for this project / agend in the aksw.bib file";
     rdfs:label "publication tag".
+
+aksw:publicationStyle a owl:DatatypeProperty;
+    rdfs:comment "is used to render the publication list. possible values: minimal, extended";
+    rdfs:label "publication style".
 
 aksw:room a owl:DatatypeProperty;
     rdfs:label "room".
@@ -193,26 +203,36 @@ sioc:feed a owl:ObjectProperty;
     rdfs:label "feed".
 
 # doap
+doap:maintainer a rdf:Property;
+    rdfs:isDefinedBy <http://usefulinc.com/ns/doap#>;
+    rdfs:comment "Maintainer of a project, a project leader.";
+    rdfs:label "maintainer".
+
 doap:programming-language a rdf:Property;
+    rdfs:isDefinedBy <http://usefulinc.com/ns/doap#>;
     rdfs:comment "Programming language a project is implemented in or intended for use with.";
     rdfs:label "programming language".
 
 doap:wiki a rdf:Property;
+    rdfs:isDefinedBy <http://usefulinc.com/ns/doap#>;
     rdfs:comment "URL of Wiki for collaborative discussion of project.";
     aksw:buttonLabel "Wiki";
-    rdfs:label "Wiki".
+    rdfs:label "wiki".
 
 doap:bug-database a rdf:Property;
+    rdfs:isDefinedBy <http://usefulinc.com/ns/doap#>;
     rdfs:comment "Bug tracker for a project.";
     aksw:buttonLabel "Issues";
     rdfs:label "bug database".
 
 doap:browse a rdf:Property;
+    rdfs:isDefinedBy <http://usefulinc.com/ns/doap#>;
     rdfs:comment "Web browser interface to repository.";
     aksw:buttonLabel "Fork me!";
     rdfs:label "Repository (web)".
 
 doap:download-page a rdf:Property;
+    rdfs:isDefinedBy <http://usefulinc.com/ns/doap#>;
     rdfs:comment "Web page from which the project software can be downloaded.";
     aksw:buttonLabel "Download";
     rdfs:label "download page".

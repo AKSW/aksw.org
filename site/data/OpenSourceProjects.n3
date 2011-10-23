@@ -35,7 +35,6 @@ projects:OntoWiki a foaf:Project, aksw:OpenSourceProject;
     foaf:homepage <http://ontowiki.net>;
     doap:browse <https://github.com/AKSW/OntoWiki>;
     doap:download-page <https://github.com/AKSW/OntoWiki/downloads>;
-    doap:anon-root <git://github.com/AKSW/OntoWiki.git>;
     doap:bug-database <https://github.com/AKSW/OntoWiki/issues>;
     doap:programming-language "PHP", "JavaScript";
     aksw:publicationTag "ontowiki";
