@@ -24,7 +24,17 @@ $grouproster = $this->query(array(
     'prefix'   => '<li><strong class="headline">group roster</strong>',
     'suffix'   => '</li>'
 ));
-
+$currentProjects = $this->query(array(
+    'where'    => '{<'.$this->resourceUri.'> foaf:currentProject ?resourceUri.} UNION'.
+        '{?resourceUri doap:maintainer <'.$this->resourceUri.'> .}',
+    'template' => 'liplain',
+    'prefix'   => '<h1>Current Projects</h1>',
+));
+$pastProjects = $this->query(array(
+    'where'    => '<'.$this->resourceUri.'> foaf:pastProject ?resourceUri.',
+    'template' => 'liplain',
+    'prefix'   => '<h1>Past Projects</h1>',
+));
 ?>
 <header class="intro foaf_Person">
     <h1 class="hideme"><?php echo $this->title ?></h1>
@@ -39,32 +49,7 @@ $grouproster = $this->query(array(
 </nav>
 
 <?php echo $this->literal(array('tag' => 'div', 'class' => 'content')) ?>
-
-<?php // Current Projects
-$query = '
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-SELECT DISTINCT ?resourceUri
-WHERE {
-    <'.$this->resourceUri.'> foaf:currentProject ?resourceUri.
-}
-';
-if ($currentProjects = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
-<h1>Current Projects</h1>
-<?php echo $currentProjects ?>
-<?php endif; ?>
-<?php // Past Projects
-$query = '
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-SELECT DISTINCT ?resourceUri
-WHERE {
-    <'.$this->resourceUri.'> foaf:pastProject ?resourceUri.
-}
-';
-if ($pastProjects = $this->querylist($query, 'aksw2011/items/li.phtml')): ?>
-<h1>Past Projects</h1>
-<?php echo $pastProjects ?>
-<?php endif; ?>
-
+<?php echo $currentProjects, $pastProjects; ?>
 <?php echo $this->renderx(array(
     'template' => 'aksw2011/items/publications.phtml'
 ));
