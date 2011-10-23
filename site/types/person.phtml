@@ -24,6 +24,12 @@ $grouproster = $this->query(array(
     'prefix'   => '<li><strong class="headline">group roster</strong>',
     'suffix'   => '</li>'
 ));
+//$worksWith = $this->query(array(
+    //'where'    => '<'.$this->resourceUri.'> foaf:currentProject ?project . ?resourceUri foaf:currentProject ?project .',
+    //'template' => 'liplain',
+    //'prefix'   => '<li><strong class="headline">works with</strong>',
+    //'suffix'   => '</li>'
+//));
 $currentProjects = $this->query(array(
     'where'    => '{<'.$this->resourceUri.'> foaf:currentProject ?resourceUri.} UNION'.
         '{?resourceUri doap:maintainer <'.$this->resourceUri.'> .}',
