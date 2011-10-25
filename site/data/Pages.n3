@@ -11,6 +11,7 @@
 @prefix lod2: <http://lod2.eu/schema/> .
 @prefix ov: <http://open.vocab.org/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix partner: <http://aksw.org/Partner/> .
 @prefix people: <http://aksw.org/> .
 @prefix projects: <http://aksw.org/Projects/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -71,6 +72,9 @@ Either the resource you are trying to reach is not available anymore on this ser
     rdfs:label "Imprint".
 
 :Partners a foaf:Document;
+    site:content """
+{{query where="?project aksw:partner ?resourceUri." template="partner"}}
+"""^^sysont:Markdown;
     rdfs:label "Partners".
 
 :Teaching a foaf:Document;

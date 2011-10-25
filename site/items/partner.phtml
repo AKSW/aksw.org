@@ -1,0 +1,93 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * querylist partner element template
+ *
+ * this template is used in combination with the querylist helper to render
+ * lists of partner
+ * mentioned options:
+ * - heading (default: h2)
+ */
+
+// prepare vars from the querylist helper
+$resourceUri = $this->resourceUri;
+$title       = $this->title;
+$oddclass    = $this->oddclass;
+$heading     = (isset($this->heading)) ? $this->heading : 'h2';
+
+if ( ($this->listhint == 'first') || ($this->rowcount == 1) ) {
+    echo "<div class='query-list-abstract'>" . PHP_EOL;
+}
+
+// if we have a literal item, do not do anything but a html comment
+if (!Erfurt_Uri::check($resourceUri)) {
+    echo "<!-- $title is not a resource -->";
+} else {
+    $homepage = $this->literal(array('property' => 'foaf:homepage', 'plain' => 'true'));
+
+    // prepare the heading
+    if ($homepage != '') {
+        $heading = $this->link(array(
+            'uri'    => $homepage, 'text' => $title,
+            'direct' => true,
+            'prefix' => "<$heading>", 'suffix' => "</$heading>"
+        ));
+    } else {
+        $heading = "<$heading><strong>". $title ."</strong></$heading>" .PHP_EOL;
+    }
+
+    // prepare the logo
+    $logoimg       = $this->img(array(
+        'property' => 'foaf:logo',
+        'class'    => 'logo',
+        'alt'      => 'logo ' . $title,
+        'prefix'   => '<div class="logo">',
+        'suffix'   => '</div>'
+    ));
+    if ($logoimg != '') {
+        if ($homepage != '') {
+            $logo = $this->link(array(
+                'uri'  => $homepage,
+                'direct' => true,
+                'text' => $logoimg
+            ));
+        } else {
+            $logo = $logoimg;
+        }
+    } else {
+        $logo = '';
+    }
+
+    // prepare the abstract (incl. more link)
+    if ($homepage != '') {
+        $moreLink = $this->link(array(
+            'uri' => $homepage,
+            'direct' => true,
+            'text' => 'Read more about '.$title));
+    } else {
+        $morelink = '';
+    }
+    $abstract      = $this->literal(array(
+        'uri'      => $resourceUri,
+        'property' => 'dcterms:abstract',
+        'tag'      => 'p',
+        'class'    => 'abstract',
+        'isuffix'  => ' ' . $moreLink)
+    );
+?>
+    <div about="<?php echo $this->curie($resourceUri) ?>"
+        class="abstract <?php echo $logo?'abstract-with-logo':''; ?>">
+        <?php echo $heading, $logo, $abstract ?>
+    </div>
+<?php
+}
+
+if ( ($this->listhint == 'last') || ($this->rowcount == 1) ) {
+    echo "</div>" . PHP_EOL;
+}

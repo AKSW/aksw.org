@@ -11,6 +11,7 @@
 @prefix lod2: <http://lod2.eu/schema/> .
 @prefix ov: <http://open.vocab.org/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix partner: <http://aksw.org/Partner/> .
 @prefix people: <http://aksw.org/> .
 @prefix projects: <http://aksw.org/Projects/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -38,6 +39,7 @@
         "lod2=http://lod2.eu/schema/",
         "ov=http://open.vocab.org/terms/",
         "owl=http://www.w3.org/2002/07/owl#",
+        "partner=http://aksw.org/Partner/",
         "people=http://aksw.org/",
         "projects=http://aksw.org/Projects/",
         "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#",
