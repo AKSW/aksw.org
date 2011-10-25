@@ -303,3 +303,12 @@ people:MichaelHaschke a foaf:Person;
     foaf:currentProject projects:OntoWiki, projects:Erfurt, projects:LOD2, projects:AKSWorg;
     foaf:pastProject projects:Triplify;
     foaf:name "Michael Haschke".
+
+people:NatanaelArndt a foaf:Person;
+    owl:sameAs <http://people.comiles.eu/natanael>;
+    foaf:homepage <http://natanael.comiles.eu/blog/>;
+    foaf:mbox <mailto:arndt@informatik.uni-leipzig.de>;
+    foaf:depiction <https://secure.gravatar.com/avatar/9bd2fa005d80986390510518f00476e8?s=140>;
+    foaf:currentProject projects:MobileSocialSemanticWeb, projects:OntoWiki;
+    foaf:name "Natanael Arndt".
+
