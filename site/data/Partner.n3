@@ -49,7 +49,7 @@ partner:FUB a foaf:Organization;
 partner:OpenLink a foaf:Organization;
     rdfs:seeAlso <http://dbpedia.org/resource/OpenLink_Software>;
     dcterms:abstract "OpenLink Software is a United Kingdom SME founded in 1992. It operates a business development and sales subsidiary in the United States. Most product development takes place within the EU, across the UK, Netherlands and Bulgaria. The company is a leading provider of high-performance, scalable, and secure technology covering: data access drivers, data virtualization middleware; native database management (RDBMS or RDF based Graph Store), and enterprise collaboration.";
-    foaf:hompepage <http://www.openlinksw.com>;
+    foaf:homepage <http://www.openlinksw.com>;
     foaf:logo <http://wiki.dbpedia.org/files/openlinklogo_wstrap_190x70.png>;
     rdfs:label "OpenLink Software (GB)".
 
