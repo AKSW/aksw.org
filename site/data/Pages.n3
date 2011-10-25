@@ -56,7 +56,14 @@ Either the resource you are trying to reach is not available anymore on this ser
 
 :Contact a foaf:Document;
     site:content """
-{{navigationlist navResource="http://aksw.org/Navigation/Main" titleProperty="http://ns.ontowiki.net/SysOnt/Site/menuLabel" navClass="nav-sidelinks"}}
+<nav class="nav-sidelinks">
+<ul>
+<li><strong class="headline">people</strong>
+{{query where="?group foaf:member ?resourceUri . ?group aiiso:part_of groups:AKSW ." template="liplain"}}
+</li>
+</nav>
+
+...
 """^^sysont:Markdown;
     rdfs:label "Contact".
 
@@ -120,6 +127,13 @@ Some projects have reached a stable state, but are currently not actively mainta
 
 :Groups a foaf:Document;
     site:content """
+<nav class="nav-sidelinks">
+<ul>
+<li><strong class="headline">people</strong>
+{{query where="?group foaf:member ?resourceUri . ?group aiiso:part_of groups:AKSW ." template="liplain"}}
+</li>
+</nav>
+
 The following subgroups belong to AKSW:
 {{query where="?resourceUri aiiso:part_of <http://aksw.org/Groups/AKSW>." template="abstract"}}
 """^^sysont:Markdown;
