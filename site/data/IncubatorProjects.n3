@@ -150,6 +150,7 @@ projects:MobileSocialSemanticWeb a foaf:Project, aksw:IncubatorProject;
     doap:bug-database <http://code.google.com/p/mssw/issues/list>;
     doap:wiki <http://code.google.com/p/mssw/wiki/Welcome>;
     foaf:logo <http://g1.gstatic.com/android/market/org.aksw.mssw/hi-124-2>;
+    ov:screenshot <http://svn.aksw.org/papers/2011/ESWC_MobileSocialSemanticWeb/public/Screenshots.png>;
     doap:maintainer people:SebastianTramp;
     doap:programming-language "Java";
     aksw:hookline "weaving a distributed, semantic social network for mobile users";
