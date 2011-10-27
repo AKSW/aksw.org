@@ -80,11 +80,21 @@ if (!Erfurt_Uri::check($resourceUri)) {
         'class'    => 'abstract',
         'isuffix'  => ' ' . $moreLink)
     );
+
+    // prepare related project(s) query
+    $relatedProject = $this->query(array(
+        'where'    => '?resourceUri aksw:partner <'.$resourceUri.'>.',
+        'template' => 'liplain',
+        'prefix'   => '<nav class="nav-sidelinks">',
+        'suffix'   => '</nav>'
+
+    ));
 ?>
     <div about="<?php echo $this->curie($resourceUri) ?>"
         class="abstract <?php echo $logo?'abstract-with-logo':''; ?>">
         <?php echo $heading, $logo, $abstract ?>
     </div>
+    <?php echo $relatedProject ?>
 <?php
 }
 
