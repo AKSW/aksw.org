@@ -312,3 +312,10 @@ people:NatanaelArndt a foaf:Person;
     foaf:currentProject projects:MobileSocialSemanticWeb, projects:OntoWiki;
     foaf:name "Natanael Arndt".
 
+people:AlrikHausdorf a foaf:Person;
+    foaf:homepage <http://morulia.de>;
+    foaf:mbox <mailto:admin@morulia.de>;
+    foaf:depiction <https://secure.gravatar.com/avatar/8e3eca639961b3b6c16a8669bb7a8785?s=140>;
+    foaf:currentProject projects:KeyNodeJS;
+    foaf:name "Alrik Hausdorf".
+
