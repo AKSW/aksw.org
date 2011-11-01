@@ -172,7 +172,7 @@ projects:ReDDObservatory a foaf:Project, aksw:IncubatorProject;
 projects:Stats2RDF a foaf:Project, aksw:IncubatorProject;
     doap:maintainer people:AmrapaliZaveri;
     aksw:hookline "Representing multi-dimensional statistical data as RDF using the RDF Data Cube Vocabulary";
-    dcterms:abstract "...";
+    dcterms:abstract "This project is about the representation of multi-dimensional statistical data as RDF using the RDF Data Cube vocabulary by importing spreadsheets into the OntoWiki plug-in.";
     site:content """
 ...
 """^^sysont:Markdown;
