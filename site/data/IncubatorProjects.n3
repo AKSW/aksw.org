@@ -69,15 +69,6 @@ projects:OntoWikiMobile a foaf:Project, aksw:IncubatorProject;
 """^^sysont:Markdown;
     rdfs:label "OntoWiki Mobile".
 
-projects:ORE a foaf:Project, aksw:IncubatorProject;
-    doap:maintainer people:JensLehmann;
-    aksw:hookline "a tool for debugging and enriching OWL knowledge bases";
-    dcterms:abstract "The ORE (Ontology Repair and Enrichment) tool allows for knowledge engineers to improve an OWL ontology by fixing inconsistencies and making suggestions for adding further axioms to it";
-    site:content """
-...
-"""^^sysont:Markdown;
-    rdfs:label "ORE".
-
 projects:NKE a foaf:Project, aksw:IncubatorProject;
     doap:maintainer people:SebastianHellmann;
     aksw:hookline "a light-weight methodology for low-cost knowledge engineering by a massive user base";
