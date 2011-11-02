@@ -150,12 +150,12 @@ people:JensLehmann a foaf:Person;
     ov:businessCard <http://aksw.org/vCard/Leipzig>;
     foaf:mbox <mailto:lehmann@informatik.uni-leipzig.de>;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=cn&value=Jens+Lehmann>;
-    foaf:phone <tel:+49-341-97-32260>;
+    foaf:phone <tel:+49-341-97-32273>;
     aksw:room "5-10";
     aksw:publicationTag "lehmann";
     aksw:publicationStyle "extended";
     skos:hiddenLabel "JensLehmann";
-    foaf:currentProject projects:DL-Learner;
+    foaf:currentProject projects:DL-Learner, projects:DBpedia, projects:LinkedGeoData, projects:NLP2RDF, projects:SoftWiki, projects:OntoWikiEU, projects:LE4SW, projects:ORE, projects:LATC, projects:LOD2;
     skos:prefLabel "Dr. Jens Lehmann";
     foaf:name "Jens Lehmann".
 
