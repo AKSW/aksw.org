@@ -155,7 +155,8 @@ people:JensLehmann a foaf:Person;
     aksw:publicationTag "lehmann";
     aksw:publicationStyle "extended";
     skos:hiddenLabel "JensLehmann";
-    foaf:currentProject projects:DL-Learner, projects:DBpedia, projects:LinkedGeoData, projects:NLP2RDF, projects:SoftWiki, projects:OntoWikiEU, projects:LE4SW, projects:ORE, projects:LATC, projects:LOD2;
+    foaf:currentProject projects:DL-Learner, projects:DBpedia, projects:LinkedGeoData, projects:NLP2RDF, projects:LE4SW, projects:ORE, projects:LATC, projects:LOD2;
+    foaf:pastProject projects:SoftWiki, projects:OntoWikiEU;
     skos:prefLabel "Dr. Jens Lehmann";
     foaf:name "Jens Lehmann".
 
