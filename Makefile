@@ -42,13 +42,22 @@ help:
 	@echo "     'make cs-check-blame' (get blame list)"
 
 
-link:
+custom:
+	rm -rf extensions/feeds
+	@echo 'Cloning extensions/feeds'
+	git clone git://github.com/AKSW/feeds.ontowiki.git extensions/feeds
+	rm -rf extensions/ipc
+	@echo 'Cloning extensions/ipc'
+	git clone git://github.com/AKSW/ipc.ontowiki.git extensions/ipc -b ontowiki
+	rm -rf extensions/site
+	@echo 'Cloning extensions/site.'
+	git clone git://github.com/AKSW/site.ontowiki.git extensions/site
 	rm -f extensions/site/sites/aksw2011
 	cd extensions/site/sites/ && ln -s ../../../site aksw2011
 
 # top level target
 
-deploy: directories clean zend
+deploy: directories clean zend custom
 	rm -rf libraries/RDFauthor
 	@echo 'Cloning RDFauthor into libraries/RDFauthor ...'
 	git clone git://github.com/AKSW/RDFauthor.git libraries/RDFauthor
