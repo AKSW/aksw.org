@@ -132,7 +132,9 @@ people:SebastianHellmann a foaf:Person;
     foaf:phone <tel:+49-341-97-32273>;
     aksw:room "5-10";
     skos:hiddenLabel "SebastianHellmann";
-    foaf:currentProject projects:NIF, projects:NLP2RDF;
+    foaf:nick "Wolf";
+    foaf:currentProject projects:NLP2RDF , projects:LOD2, projects:NKE, projects:DL-Learner ;
+    foaf:pastProject projects:Triplify,projects:OntoWikiEU, projects:xOperator ;
     aksw:publicationTag "hellmann";
     foaf:name "Sebastian Hellmann".
 
