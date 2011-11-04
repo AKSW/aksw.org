@@ -66,3 +66,16 @@
     ov:screenshot <http://lh3.ggpht.com/-X7RWicyijZA/Tp3b6mLj-5I/AAAAAAAAA_0/jIzakxQxQwg/s800/Boa.png>;
     aksw:demonstrates projects:BOA;
     rdfs:label "Boa".
+
+<http://nlp2rdf.org/implementations/stanford-corenlp> a aksw:Demo;
+    aksw:demonstrates projects:NLP2RDF;
+    rdfs:label "Stanford Core NIF implementation." .
+
+<http://nlp2rdf.org/implementations/snowballstemmer> a aksw:Demo;
+    aksw:demonstrates projects:NLP2RDF;
+    rdfs:label "Snowball Stemmer NIF implementation." .
+
+<http://hanne.aksw.org> a aksw:Demo;
+    aksw:hookline "HANNE - Holistic Application for Navigational Knowledge Engineering";
+    aksw:demonstrates projects:NKE;
+    rdfs:label "HANNE".
