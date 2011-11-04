@@ -78,24 +78,6 @@ projects:NKE a foaf:Project, aksw:IncubatorProject;
 """^^sysont:Markdown;
     rdfs:label "Navigational Knowledge Engineering".
 
-projects:NIF a foaf:Project, aksw:IncubatorProject;
-    doap:maintainer people:SebastianHellmann;
-    aksw:hookline "an RDF/OWL-based format that allows to combine and chain several NLP tools in a flexible, light-weight way";
-    dcterms:abstract "The core of NIF consists of a vocabulary, which can represent Strings as RDF resources. A special URI Design is used to pinpoint annotations to a part of a document. These URIs can then be used to attach arbitrary annotations to the respective character sequence. Based on these URIs, annotations can be interchanged between different NLP tools.";
-    site:content """
-...
-"""^^sysont:Markdown;
-    rdfs:label "NLP Interchange Format (NIF)".
-
-projects:Mutants a foaf:Project, aksw:IncubatorProject;
-    doap:maintainer people:SebastianHellmann;
-    aksw:hookline "a Multi-Tier Annotation Scheme";
-    dcterms:abstract "The expressiveness of OWL combined with the RDFa Format allows to overcome deficiencies of traditional annotations schemes. Advantages include: Multi-tier Annotations are possible, Annotations are Inline and thus stable for change, Overlapping annotations are possible";
-    site:content """
-...
-"""^^sysont:Markdown;
-    rdfs:label "Mutants".
-
 projects:KeyNodeJS a foaf:Project, aksw:IncubatorProject;
     doap:maintainer people:SebastianTramp;
     aksw:hookline "Next level web presentations";
@@ -219,11 +201,13 @@ projects:odfmi a foaf:Project, aksw:IncubatorProject;
 """^^sysont:Markdown;
     rdfs:label "OD@FMI".
 
-projects:NLP2RDF a foaf:Project, aksw:IncubatorProject;
-    doap:maintainer people:SebastianHellmann;
-    aksw:hookline "a natural language processing framework that rocks!";
-    dcterms:abstract "NLP2RDF is a framework that integrates multiple NLP tools and linguistic ontologies in order to explicate implicit meaning of natural language by means of RDF/OWL descriptions. Natural language ( a character sequence with implicit knowledge) is converted into a more expressive formalism - in this case OWL-DL - aiming to grasp the underlying meaning. This explicated meaning then serves as input for (high-level) algorithms and applications with a focus on machine learning.";
-    site:content """
+projects:NLP2RDF a foaf:Project, aksw:OpenSourceProject, aksw:CommunityProject;
+doap:maintainer people:SebastianHellmann;
+aksw:hookline "Converting NLP tool output to RDF";
+foaf:homepage <http://nlp2rdf.org>;
+dcterms:abstract "NLP2RDF is a LOD2 Community project that is developing the NLP Interchange Format (NIF) . NIF aims to achieve interoperability between Natural Language Processing (NLP) tools, language resources and annotations. . The output of NLP tools can be converted into RDF and used in the LOD2 Stack. Currently a NIF-1.0 Version is created on this website (Go to NIF-1.0 Specification). Implementation of NIF 1.0 is progressing and a draft for NIF 2.0 will be refined based on the experience gained during the field test of NIF-1.0.";
+site:content """..."""^^sysont:Markdown;
+rdfs:label "NLP2RDF".
 ...
 """^^sysont:Markdown;
     rdfs:label "NLP2RDF".
