@@ -76,6 +76,7 @@ projects:NKE a foaf:Project, aksw:IncubatorProject;
     site:content """
 ...
 """^^sysont:Markdown;
+    ov:screenshot <http://lh4.ggpht.com/-sItQHOXs4D4/TrQA07eQk3I/AAAAAAAABBY/6f4u2Q2hYyc/s800/hanne.png>;
     rdfs:label "Navigational Knowledge Engineering".
 
 projects:KeyNodeJS a foaf:Project, aksw:IncubatorProject;
@@ -208,9 +209,6 @@ foaf:homepage <http://nlp2rdf.org>;
 dcterms:abstract "NLP2RDF is a LOD2 Community project that is developing the NLP Interchange Format (NIF) . NIF aims to achieve interoperability between Natural Language Processing (NLP) tools, language resources and annotations. . The output of NLP tools can be converted into RDF and used in the LOD2 Stack. Currently a NIF-1.0 Version is created on this website (Go to NIF-1.0 Specification). Implementation of NIF 1.0 is progressing and a draft for NIF 2.0 will be refined based on the experience gained during the field test of NIF-1.0.";
 site:content """..."""^^sysont:Markdown;
 rdfs:label "NLP2RDF".
-...
-"""^^sysont:Markdown;
-    rdfs:label "NLP2RDF".
 
 projects:OpenResearch a foaf:Project, aksw:IncubatorProject;
     doap:maintainer people:SoerenAuer;
