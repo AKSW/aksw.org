@@ -84,17 +84,17 @@ if (!Erfurt_Uri::check($resourceUri)) {
     // prepare related project(s) query
     $relatedProject = $this->query(array(
         'where'    => '?resourceUri aksw:partner <'.$resourceUri.'>.',
-        'template' => 'liplain',
-        'prefix'   => '<nav class="nav-sidelinks">',
-        'suffix'   => '</nav>'
+        'template' => 'li',
+        'prefix'   => '<p>We are partner in the following project(s) with ' . $title . ':',
+        'suffix'   => '</p>'
 
     ));
 ?>
     <div about="<?php echo $this->curie($resourceUri) ?>"
         class="abstract <?php echo $logo?'abstract-with-logo':''; ?>">
         <?php echo $heading, $logo, $abstract ?>
+        <?php echo $relatedProject ?>
     </div>
-    <?php echo $relatedProject ?>
 <?php
 }
 
