@@ -79,7 +79,7 @@ projects:Cofundos a foaf:Project, aksw:CommunityProject;
     doap:programming-language "PHP";
     rdfs:label "Cofundos".
 
-projects:DBpedia a foaf:Project, aksw:OpenSourceProject, aksw:CommunityProject;
+projects:DBpedia a foaf:Project, aksw:CommunityProject;
     aksw:relatedProject projects:DBPSB;
     doap:maintainer people:SoerenAuer;
     aksw:promoted "true"^^xsd:boolean;

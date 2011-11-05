@@ -25,10 +25,12 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-projects:SlideWiki a foaf:Project, aksw:IncubatorProject;
+projects:SlideWiki a foaf:Project, aksw:CommunityProject;
     aksw:relatedProject projects:KeyNodeJS;
+    ov:screenshot <http://lh4.ggpht.com/-_ucInHOV87c/TrUtqpcwi7I/AAAAAAAABBs/p3bmvtSrHJ0/s800/slidewiki-home.png>, <http://lh6.ggpht.com/-WDej-O6jTZE/TrUtq0wZe2I/AAAAAAAABBw/DrmfWiZgKnY/s800/slidewiki-edit.png>, <http://lh6.ggpht.com/-gtrafeiSUNo/TrUtqrBO2UI/AAAAAAAABBo/FyLTviThwCQ/s800/slidewiki-search.png>, <http://lh3.ggpht.com/-1eEGAM8mIG4/TrUtrFohoMI/AAAAAAAABB0/Ta2QC-rsyMs/s800/slidewiki-view.png>;
     doap:maintainer people:SoerenAuer;
-    aksw:hookline "a Wiki for Presentations";
+    aksw:hookline "helps communities to create great presentations collaboratively";
+    dcterms:abstract "SlideWiki is a collaboration platform which enables communities to build, share and play online presentations. In addition to importing PowerPoint presentations, it supports authoring of interactive online slides using HTML and LateX. Slides and their containers (called Deck), are versioned thereby enabling change tracking. Users can create their own themes on top of existing themes or re-use other's themes.";
     rdfs:label "SlideWiki".
 
 projects:re-publish a foaf:Project, aksw:IncubatorProject;
@@ -202,12 +204,13 @@ projects:odfmi a foaf:Project, aksw:IncubatorProject;
 """^^sysont:Markdown;
     rdfs:label "OD@FMI".
 
-projects:NLP2RDF a foaf:Project, aksw:OpenSourceProject, aksw:CommunityProject;
+projects:NLP2RDF a foaf:Project, aksw:CommunityProject;
+sioc:feed <http://nlp2rdf.org/feed>;
+ov:screenshot <http://nlp2rdf.org/files/2011/09/NIF_architecture.png>;
 doap:maintainer people:SebastianHellmann;
 aksw:hookline "Converting NLP tool output to RDF";
 foaf:homepage <http://nlp2rdf.org>;
 dcterms:abstract "NLP2RDF is a LOD2 Community project that is developing the NLP Interchange Format (NIF) . NIF aims to achieve interoperability between Natural Language Processing (NLP) tools, language resources and annotations. . The output of NLP tools can be converted into RDF and used in the LOD2 Stack. Currently a NIF-1.0 Version is created on this website (Go to NIF-1.0 Specification). Implementation of NIF 1.0 is progressing and a draft for NIF 2.0 will be refined based on the experience gained during the field test of NIF-1.0.";
-site:content """..."""^^sysont:Markdown;
 rdfs:label "NLP2RDF".
 
 projects:OpenResearch a foaf:Project, aksw:IncubatorProject;

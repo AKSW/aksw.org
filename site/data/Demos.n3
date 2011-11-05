@@ -25,6 +25,12 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://slidewiki.aksw.org/> a aksw:Demo;
+    aksw:hookline "is a collaboration platform which enables communities to build, share and play online presentations";
+    ov:screenshot <http://lh4.ggpht.com/-_ucInHOV87c/TrUtqpcwi7I/AAAAAAAABBs/p3bmvtSrHJ0/s800/slidewiki-home.png>;
+    aksw:demonstrates projects:SlideWiki;
+    rdfs:label "SlideWiki".
+
 <http://demo.lod2.eu/lod2demo/> a aksw:Demo;
     aksw:hookline "is an integrated demonstrator application for the tools of the LOD2 project.";
     ov:screenshot <http://lh5.ggpht.com/-qFsSKX-1_dw/Tpx24oHmtEI/AAAAAAAAA9g/XOeQQWjBzCc/s800/lod2demo.png>;
@@ -37,10 +43,10 @@
     aksw:demonstrates projects:LinkedGeoData;
     rdfs:label "LGD Browser / Editor".
 
-<http://aksw.org/model/info/?m=http%3A%2F%2Faksw.org%2F> a aksw:Demo;
+<http://demo.ontowiki.net> a aksw:Demo;
     aksw:hookline "is a semantic data wiki for publishing and consuming Linked Data in agile, distributed knowledge engineering scenarios.";
     ov:screenshot <http://lh4.ggpht.com/-kXpKMqBBCIU/Tpx45SUaItI/AAAAAAAAA9w/aPYaNQjcpvo/s800/ontowiki.png>;
-    aksw:demonstrates projects:OntoWiki, projects:AKSWorg;
+    aksw:demonstrates projects:OntoWiki;
     rdfs:label "OntoWiki".
 
 <http://rdface.aksw.org/> a aksw:Demo;
