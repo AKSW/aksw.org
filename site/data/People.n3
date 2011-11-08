@@ -277,7 +277,7 @@ people:AmrapaliZaveri a foaf:Person;
     foaf:depiction <http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&value=zaveri>;
     foaf:phone <tel:+49-341-97-32273>;
     aksw:room "5-10";
-    foaf:currentProject projects:AKSWorg;
+    foaf:currentProject projects:ReDDObservatory, projects:Stats2RDF;
     skos:hiddenLabel "AmrapaliZaveri";
     aksw:publicationTag "zaveri";
     skos:prefLabel "Amrapali J. Zaveri";
