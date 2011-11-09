@@ -52,14 +52,14 @@ echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses defaul
     echo $this->query(array(
         'where' => '<'.$this->resourceUri.'> aksw:researchAreas ?resourceUri.',
         'template' => 'liplain',
-        'prefix' => '<div class="c60l"><div class="subc"><h1>Research Areas</h1>',
+        'prefix' => '<div class="c60l"><div class="subcl"><h1>Research Areas</h1>',
         'suffix' => '</div></div>'
     ));
     // members
     echo $this->query(array(
         'where' => '<'.$this->resourceUri.'> foaf:member ?resourceUri.',
         'template' => 'liplain',
-        'prefix' => '<div class="c40r"><div class="subc"><h1>Members</h1>',
+        'prefix' => '<div class="c40r"><div class="subcr"><h1>Members</h1>',
         'suffix' => '</div></div>'
     ));
 ?>
