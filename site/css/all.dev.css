@@ -885,11 +885,11 @@
     {
         display: block;
     }
-    details :first-child
+    details > :first-child
     {
         margin-top: 0;
     }
-    details :last-child
+    details > :last-child
     {
         margin-bottom: 0;
     }
@@ -912,7 +912,7 @@
     {
         margin-bottom: 1.333em;
     }
-    .intro :first-child, .supercontent :first-child
+    .intro > :first-child, .supercontent > :first-child
     {
         margin-top: 0;
     }
@@ -1015,7 +1015,7 @@
         text-decoration: none;
         line-height: 1.538;
         padding: 0.269em;
-        margin: 0.385em;
+        margin: 0.385em 0.385em 0 0;
         -webkit-border-radius: 0.154em 0.462em;
         -moz-border-radius: 0.154em / 0.462em;
         -o-border-radius: 0.154em / 0.462em;
@@ -1031,6 +1031,11 @@
     button:active, .button:active
     {
         background: black;
+    }
+
+    .button-row
+    {
+        margin: 0.769em 0;
     }
 
     input, textarea, select
