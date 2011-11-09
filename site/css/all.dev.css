@@ -445,7 +445,7 @@
     {
         font-size: 0.813em;
         margin: 0 auto;
-        width: 84.615em;
+        width: 86.692em;
         max-width: 90%;
         min-width: 800px;
     }
@@ -455,7 +455,7 @@
         padding-top: 1.692em;
         padding-right: 1.769em;
         padding-bottom: 0em;
-        padding-left: 10.231em;
+        padding-left: 12.308em;
     }
 
     #header
@@ -711,8 +711,10 @@
         position: relative;
         top: -1.538em;
         float: left;
-        width: 10.231em;
-        margin-left: -10.231em;
+        width: 12.308em;
+        margin-left: -12.308em;
+        font-size: 95%;
+        letter-spacing: -0.02em;
     }
     .nav-sidelinks ul
     {
@@ -751,6 +753,7 @@
         color: black;
         font-size: 1.154em;
         line-height: 1.333;
+        font-weight: normal;
     }
 
     /* -- TOC -------------------------------------------------------------- */
@@ -1541,8 +1544,14 @@
     }
     .nav-sidelinks span.exhibit-cloudFacet-value-selected
     {
-        color: #fff;
-        background: #4c78a4;
+        font-weight: bold;
+        text-decoration: underline;
+        color: #333333;
+        background-color: transparent;
+    }
+    .nav-sidelinks span.exhibit-cloudFacet-value-selected:focus, .nav-sidelinks span.exhibit-cloudFacet-value-selected:hover
+    {
+        text-decoration: line-through;
     }
 
     div.exhibit-text-facet input
