@@ -15,16 +15,21 @@
 $publicationTag   = $this->literal(array(
     'property' => 'aksw:publicationTag'
 ));
-$publicationStyle = $this->literal(array(
-    'property' => 'aksw:publicationStyle',
-    'plain' => 'true'
+$exhibitData = $this->literal(array(
+    'property' => 'http://lod2.eu/schema/exhibitData'
 ));
-if ($publicationTag != "") :
+$templateOptions = $this->literal(array(
+    'property' => 'site:templateOption',
+    'array' => 'true'
+));
+if (($publicationTag != "") || ($exhibitData != '')) :
 ?>
 
+<?php if (in_array('noheading', $templateOptions) === false) : ?>
 <h1>Publications</h1>
+<?php endif; ?>
 
-<?php if ($publicationStyle == "extended") : ?>
+<?php if (in_array('extended', $templateOptions) === true) : ?>
 <div class="exhibit-filter-tools">
     <!-- use this for lists cantaining a lot of publication and authors-->
     <h2 class="hideme">Filters</h2>
@@ -43,7 +48,7 @@ if ($publicationTag != "") :
 </div> <!-- /.exhibit-filter-tools -->
 <?php endif; ?>
 
-<?php if ($publicationStyle != "minimal") : ?>
+<?php if (in_array('minimal', $templateOptions) === false) : ?>
 <nav class="nav-sidelinks">
     <div class="exhibit-filter-tools">
         <!-- use this for lists containing only a few publications and authors -->
