@@ -108,10 +108,6 @@ aksw:publicationTag a owl:DatatypeProperty;
     rdfs:comment "the tag which is used for this project / agend in the aksw.bib file";
     rdfs:label "publication tag".
 
-aksw:publicationStyle a owl:DatatypeProperty;
-    rdfs:comment "is used to render the publication list. possible values: minimal, extended";
-    rdfs:label "publication style".
-
 aksw:room a owl:DatatypeProperty;
     rdfs:label "room".
 
@@ -133,6 +129,10 @@ site:Navigation a rdfs:Class;
     rdfs:comment "an RDF sequence resource which is used by the site extensions menu helper";
     skos:note "menu items can have a special label with site:menuLabel";
     rdfs:label "Navigation".
+
+site:templateOption a owl:DatatypeProperty;
+    rdfs:comment "this property is used to forward some site specific options to rendering template";
+    rdfs:label "template option".
 
 site:abbrevation a owl:DatatypeProperty;
     rdfs:comment "the abbrevation of a resource is used e.g. as a url naming part as well as can be used for better searching.";

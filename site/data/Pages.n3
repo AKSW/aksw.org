@@ -84,9 +84,10 @@ Either the resource you are trying to reach is not available anymore on this ser
     rdfs:label "Presentations".
 
 :Publications a foaf:Document;
+    site:templateOption "extended", "noheading";
     lod2:exhibitData <http://docs.aksw.org/BibsonomyProxy/exhibit-proxy.php?suffix=user/aksw/group_aksw&callback=cb>;
     site:content """
-...
+BibTeX entries for all AKSW publications can be found at [Bibsonomy](http://www.bibsonomy.org/user/aksw).
 """^^sysont:Markdown;
     rdfs:label "Publications".
 

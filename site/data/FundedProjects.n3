@@ -40,7 +40,7 @@ projects:LOD2 a foaf:Project, aksw:FundedProject;
     sioc:feed <http://lod2.eu/BlogPost/feed>;
     doap:maintainer people:SoerenAuer;
     aksw:publicationTag "lod2page";
-    aksw:publicationStyle "extended";
+    site:templateOption "extended";
     rdfs:label "LOD2".
 
 projects:LATC a foaf:Project, aksw:FundedProject;
