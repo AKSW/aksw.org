@@ -91,4 +91,4 @@
 <http://autosparql.dl-learner.org/app/#home> a aksw:Demo;
     aksw:hookline "AutoSPARQL Demo";
     aksw:demonstrates projects:AutoSPARQL;
-    rdfs:label "HANNE".
+    rdfs:label "AutoSPARQL".
