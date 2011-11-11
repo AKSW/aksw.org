@@ -1275,10 +1275,15 @@
         display: inline-block;
         height: 16px;
         width: 16px;
-        vertical-align: center;
+        vertical-align: middle;
         text-indent: -5000em;
         outline: none;
         background: url(./../images/icon-todo.png) no-repeat center transparent;
+    }
+
+    img.icon
+    {
+        background: transparent;
     }
 
     .icon-resource-download
