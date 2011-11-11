@@ -17,7 +17,7 @@ $editUrl = $this->wikiBaseUrl .'view?r=' . urlencode($this->resourceUri);
             <?php echo $this->partial('aksw2011/lastchange.phtml', $this->lastchange($this->resourceUri)); ?>
             
             <dl class="resourceoptions">
-                <dt class="hideme">Functions</dt>
+                <dt class="hideme">Resource info &amp; options</dt>
                 <dd>
                     <span class="icon icon-resource-download" title="download resource as">download resource as:</span>
                     <a rel="nofollow" href="<?php echo $this->resourceUri ?>.rdf">rdf/xml</a>,
@@ -35,6 +35,21 @@ $editUrl = $this->wikiBaseUrl .'view?r=' . urlencode($this->resourceUri);
     </aside>
     <aside id="userinfo">
         <div class="subc">
+            <dl class="siteoptions">
+                <dt class="hideme">aksw.org site options</dt>
+                <dd>
+                    <span class="icon icon-service-github">Github:</span>
+                    <a rel="nofollow" href="https://github.com/AKSW/aksw.org">aksw.org site repository</a>
+                </dd>
+                <dd>
+                    <span class="icon icon-service-github">Github:</span>
+                    <a rel="nofollow" href="https://github.com/AKSW/aksw.org/issues">project issues</a>
+                </dd>
+                <dd>
+                    <span class="icon icon-service-xxx">Service:</span>
+                    <a rel="nofollow" href="#todo">whatever</a>
+                </dd>
+            </dl>
         </div>
     </aside>
 </footer>

@@ -1307,21 +1307,27 @@
     }
 
     /* -- Footer Options --------------------------------------------------- */
-    dl.resourceoptions
+    dl.resourceoptions, dl.siteoptions
     {
         padding: 0;
         margin: 0 0 1.538em 0;
     }
-    dl.resourceoptions dt, dl.resourceoptions dd
+    dl.resourceoptions dt, dl.siteoptions dt, dl.resourceoptions dd, dl.siteoptions dd
     {
         padding: 0;
         margin: 0;
         display: inline;
     }
-    dl.resourceoptions dd
+    dl.resourceoptions dd, dl.siteoptions dd
     {
         white-space: nowrap;
         margin-right: 0.5em;
+    }
+
+    dl.siteoptions dd
+    {
+        display: block;
+        margin: 0;
     }
 
     /* -- Fancybox enhancements -------------------------------------------- */
