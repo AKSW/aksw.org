@@ -15,15 +15,22 @@ $editUrl = $this->wikiBaseUrl .'view?r=' . urlencode($this->resourceUri);
     <aside id="articleinfo">
         <div class="subc">
             <?php echo $this->partial('aksw2011/lastchange.phtml', $this->lastchange($this->resourceUri)); ?>
-            Functions:
-            <ul>
-                <li>download resource as
-                    <a rel="nofollow" href="<?php echo $this->resourceUri ?>.rdf">rdf/xml</a> or
+            
+            <dl class="resourceoptions">
+                <dt class="hideme">Functions</dt>
+                <dd>
+                    <span class="icon icon-resource-download" title="download resource as">download resource as:</span>
+                    <a rel="nofollow" href="<?php echo $this->resourceUri ?>.rdf">rdf/xml</a>,
                     <a rel="nofollow" href="<?php echo $this->resourceUri ?>.tt">n3</a>
-                </li>
-                <li><a rel="nofollow" href="<?php echo $editUrl ?>">view / edit resource</a></li>
-                <li><a rel="nofollow" href="">view / edit template</a></li>
-            </ul>
+                </dd>
+                <dd><span class="icon icon-resource-edit"></span> <a rel="nofollow" href="<?php echo $editUrl ?>">view/edit resource</a></dd>
+                <dd><span class="icon icon-template-edit"></span> <a rel="nofollow" href="#todo">view/edit template</a></dd>
+                <dd>
+                    <span class="icon icon-browse" title="browse resource using">browse resource using:</span>
+                    <a rel="nofollow" href="http://dataviewer.zitgist.com/?uri=<?php echo urlencode($this->resourceUri); ?>">Zitgist</a>,
+                    <a rel="nofollow" href="http://dig.csail.mit.edu/2005/ajar/release/tabulator/0.8/tab.html?uri=<?php echo urlencode($this->resourceUri); ?>">Tabulator</a>
+                </dd>
+            </dl>
         </div>
     </aside>
     <aside id="userinfo">

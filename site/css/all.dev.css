@@ -532,6 +532,12 @@
         background: #e6e6e6;
         color: #1a1a1a;
         min-height: 10.769em;
+        padding-top: 0.769em;
+    }
+    #footer a
+    {
+        color: #1a1a1a;
+        font-weight: normal;
     }
 
     .subc
@@ -1261,6 +1267,56 @@
         height: 5.769em;
         width: auto;
         display: block;
+    }
+
+    /* -- Icons ------------------------------------------------------------ */
+    .icon
+    {
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        vertical-align: center;
+        text-indent: -5000em;
+        outline: none;
+        background: url(./../images/icon-todo.png) no-repeat center transparent;
+    }
+
+    .icon-resource-download
+    {
+        background-image: url(./../images/icon-action-resource-download.png);
+    }
+
+    .icon-resource-edit
+    {
+        background-image: url(./../images/icon-action-resource-edit.png);
+    }
+
+    .icon-template-edit
+    {
+        background-image: url(./../images/icon-action-template-edit.png);
+    }
+
+    .icon-browse
+    {
+        background-image: url(./../images/icon-todo.png);
+    }
+
+    /* -- Footer Options --------------------------------------------------- */
+    dl.resourceoptions
+    {
+        padding: 0;
+        margin: 0 0 1.538em 0;
+    }
+    dl.resourceoptions dt, dl.resourceoptions dd
+    {
+        padding: 0;
+        margin: 0;
+        display: inline;
+    }
+    dl.resourceoptions dd
+    {
+        white-space: nowrap;
+        margin-right: 0.5em;
     }
 
     /* -- Fancybox enhancements -------------------------------------------- */
