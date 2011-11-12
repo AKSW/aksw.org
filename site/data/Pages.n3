@@ -78,9 +78,43 @@ Either the resource you are trying to reach is not available anymore on this ser
     rdfs:label "Partners".
 
 :Teaching a foaf:Document;
+    site:content """
+# Semantic Web Module
+
+Together with the Intelligent Systems department at Uni Leipzig,  AKSW created the [master module Semanti Web](http://bis.informatik.uni-leipzig.de/de/Lehre/BAMA/SW). The module is usually held in the summer semester and consists of a lecture, a seminar and practical work.
+
+# Student Supervision
+
+AKSW actively supervises internships as well as bachelor and master thesis. Most of the thesis topics are related to Web technologies, Semantic Web, ontologies, information systems and data management. They are usually performed in the context of an AKSW Project. You can also have a look at [BIS Abschlussarbeiten](http://bis.informatik.uni-leipzig.de/de/Abschlussarbeiten).
+
+# Leipzig School of Media
+
+AKSW organizes and performs the master study course [Content- & Media-Engineering](http://www.leipzigschoolofmedia.de/master-content-and-media-engineering/) at Leipzig School of Media.
+"""^^sysont:Markdown;
     rdfs:label "Teaching".
 
 :Presentations a foaf:Document;
+    site:content """
+# Slideshare presentations
+
+<div style="width:540px;"><object style="margin:0px" width="538" height="341"><param name="movie" value="http://static.slidesharecdn.com/swf/egowidget2.swf"/><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/egowidget2.swf" flashVars="feedurl=user/soeren1611&widgettitle=My Slideshows" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="538" height="341"></embed></object><br/><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;text-align:left;"><a title="SlideShare" href="http://www.slideshare.net/?src=egowidget"><img src="http://static.slidesharecdn.com/swf/logo_embd.png" style="border:0px none;margin-bottom:-5px" alt="SlideShare"/></a> | <a href="http://www.slideshare.net/widgets/presentation-pack" title="Get your Presentation Pack">Get your Presentation Pack</a></div></div>
+
+# Videolectures
+
+* Sören Auer: [Triplify - Light-weight Linked Data Publication from Relational Databases](http://videolectures.net/www09_auer_tlwldp/), at World Wide Web 2009 Conference
+* Sören Auer: [DBpedia: A Nucleus for a Web of Open Data](http://videolectures.net/iswc07_soeren_nwo/), at International Semantic Web Conference 2007
+* Sören Auer: [OntoWiki - A Tool for Social, Semantic Collaboration](http://videolectures.net/iswc06_auer_otssc/) at International Semantic Web Conference 2006
+
+# Talks
+
+* Jens Lehmann, Sören Auer: [Semantic Wikis and the Web of Data](http://jens-lehmann.org/files/2009_wod_wikis.odp) (OpenDocument format), invited talk at 1st KYOTO EU project workshop, 2009.
+* Jens Lehmann, Christoph Haase: [Ideal Downward Refinement in the EL Description Logic](http://jens-lehmann.org/files/2009_ilp.pdf), 19th International Conference on Inductive Logic Programming, 2009.
+* Jens Lehmann: [Presentation of AKSW Group and OWL Class Expressions Learning](http://jens-lehmann.org/files/2009_aifb.odp) (OpenDocument format), AIFB Karlsruhe, 2009.
+* [DBpedia.org - Querying Wikipedia like a Database](http://sites.wiwiss.fu-berlin.de/suhl/bizer/pub/Bizer-etal-WWW2007-DBpedia-Talk.pdf) [Developers track](http://www2007.org/prog-Developers.php) at the 16th International World Wide Web Conference (WWW2007), Banff, Canada, May 2007.
+* Jens Lehmann: [Hybrid Learning of Ontology Classes](http://jens-lehmann.org/files/2007_hybrid_learning_presentation.pdf) at the 5th International Conference on Machine Learning and Data Mining, 2007.
+* Jens Lehmann: [ALC Concept Learning with Refinement Operators](http://jens-lehmann.org/files/2007_concept_learning_refop_presentation.pdf) at the 17th International Conference on Inductive Logic Programming, 2007.
+* **SoftWiki - Agiles Requirements-Engineering für Softwareprojekte mit einer großen Anzahl verteilter Stakeholder.** Statuskonferenz Forschungsoffensive "Software Engineering 2006", 26-28 June 2006, Leipzig. [Slides as PDF](http://softwiki.de/files/folien_SOFT-WIKI.pdf)
+"""^^sysont:Markdown;
     rdfs:label "Presentations".
 
 :Publications a foaf:Document;
