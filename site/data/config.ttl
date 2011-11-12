@@ -53,4 +53,40 @@
         "void=http://rdfs.org/ns/void#",
         "xsd=http://www.w3.org/2001/XMLSchema#".
 
+<http://localhost/OntoWiki/Config/AKSW> a sioc:Usergroup;
+    sysont:grantAccess sysont:AnyAction ;
+    sysont:grantModelEdit <http://aksw.org/>;
+    sysont:grantModelView sysont:AnyModel ;
+    sysont:denyModelView <http://localhost/OntoWiki/Config/>, <http://ns.ontowiki.net/SysOnt/>;
+    sioc:has_member
+        people:SebastianTramp,
+        people:JonasBrekle,
+        people:PhilippFrischmuth,
+        people:NormanHeino,
+        people:TimofeyErmilov;
+    rdfs:label "AKSW" .
+
+people:SebastianTramp a sioc:User ;
+    sioc:email <mailto:tramp@informatik.uni-leipzig.de> ;
+    rdfs:label "Sebastian Tramp" ;
+    foaf:accountName "SebastianTramp"^^xsd:string .
+
+people:JonasBrekle a sioc:User ;
+    sioc:email <mailto:jonas.brekle@gmail.com> ;
+    rdfs:label "Jonas Brekle" ;
+
+people:PhilippFrischmuth a sioc:User ;
+    sioc:email <mailto:frischmuth@informatik.uni-leipzig.de> ;
+    rdfs:label "Philipp Frischmuth" ;
+    foaf:accountName "PhilippFrischmuth"^^xsd:string .
+
+people:NormanHeino a sioc:User ;
+    sioc:email <mailto:heino@informatik.uni-leipzig.de> ;
+    rdfs:label "Norman Heino" ;
+    foaf:accountName "NormanHeino"^^xsd:string .
+
+people:TimofeyErmilov a sioc:User ;
+    sioc:email <mailto:ermilov@informatik.uni-leipzig.de> ;
+    rdfs:label "Timofey Ermilov" ;
+    foaf:accountName "TimofeyErmilov"^^xsd:string .
 
