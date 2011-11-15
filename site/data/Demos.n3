@@ -93,5 +93,4 @@
     aksw:hookline "The aim of the AutoSPARQL is to provide robust question answering over RDF data by combining methods from several research areas.";
 	ov:screenshot <http://picasaweb.google.com/lh/view?q=aksw&psc=G&filter=1#5675267788504427426>;
 	aksw:demonstrates projects:AutoSPARQL;
-
 	rdfs:label "AutoSPARQL".
