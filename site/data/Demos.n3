@@ -89,7 +89,8 @@
     rdfs:label "HANNE".
 
 # PLEASE RE-ADD WITH PROPER SCREENSHOT AND HOOKLINE
-#<http://autosparql.dl-learner.org/app/#home> a aksw:Demo;
-#    aksw:hookline "AutoSPARQL Demo";
-#    aksw:demonstrates projects:AutoSPARQL;
-#    rdfs:label "AutoSPARQL".
+<http://autosparql.dl-learner.org/app/#home> a aksw:Demo;
+    aksw:hookline "The aim of the AutoSPARQL is to provide robust question answering over RDF data by combining methods from several research areas.";
+	ov:screenshot <http://picasaweb.google.com/lh/view?q=aksw&psc=G&filter=1#5675267788504427426>;
+	aksw:demonstrates projects:AutoSPARQL;
+	rdfs:label "AutoSPARQL".
