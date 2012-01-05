@@ -73,7 +73,7 @@ people:SebastianTramp a sioc:User ;
 
 people:JonasBrekle a sioc:User ;
     sioc:email <mailto:jonas.brekle@gmail.com> ;
-    rdfs:label "Jonas Brekle" ;
+    rdfs:label "Jonas Brekle" .
 
 people:PhilippFrischmuth a sioc:User ;
     sioc:email <mailto:frischmuth@informatik.uni-leipzig.de> ;
