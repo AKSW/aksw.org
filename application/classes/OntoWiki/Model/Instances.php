@@ -73,6 +73,9 @@ class OntoWiki_Model_Instances extends OntoWiki_Model
      * @var Erfurt_Sparql_Query2 the manged query that selects the resources in the list
      */
     protected $_resourceQuery = null;
+    
+    protected $_sortTriple = null;
+    
     /**
      * @var Erfurt_Sparql_Query2
      */
@@ -1199,7 +1202,6 @@ class OntoWiki_Model_Instances extends OntoWiki_Model
             $query,
             array('result_format' => 'extended')
         );
-        
 
         $properties = array();
         foreach ($results['results']['bindings'] as $row) {
@@ -1302,7 +1304,8 @@ class OntoWiki_Model_Instances extends OntoWiki_Model
 
             $property['title'] = $titleHelper->getTitle($property['uri'], $this->_getLanguage());
 
-            $propertyResults[] = $property;
+            // use URI as key to enforce uniqueness
+            $propertyResults[$property['uri']] = $property;
         }
         
         return $propertyResults;
@@ -1556,21 +1559,40 @@ class OntoWiki_Model_Instances extends OntoWiki_Model
 
         return $this;
     }
-
-    public function setOrderUri($uri, $asc = true) {
-        if(!is_bool($asc)){
-            $asc = true;
+    
+    /**
+     * order by a property (must be set as shown property before)
+     * @param type $uri the property to order by
+     * @param boolean $asc true if ascending, false if descending
+     */ 
+    public function setOrderProperty($uri, $asc = true) {
+        if($this->_sortTriple == null){
+            $orderVar = new Erfurt_Sparql_Query2_Var('order');
+            $this->_sortTriple = new Erfurt_Sparql_Query2_OptionalGraphPattern(
+                    array(
+                        new Erfurt_Sparql_Query2_Triple(
+                            $this->getResourceVar(), 
+                            new Erfurt_Sparql_Query2_IriRef($uri),  
+                            $orderVar
+                        )
+                    )
+                );
+            $this->_resourceQuery->getWhere()->addElement($this->_sortTriple);
+            $this->_resourceQuery->getOrder()->add(
+                $orderVar,
+                $asc ? Erfurt_Sparql_Query2_OrderClause::ASC : Erfurt_Sparql_Query2_OrderClause::DESC
+            );
+        } else {
+            $this->_sortTriple->getElement(0)->setP(new Erfurt_Sparql_Query2_IriRef($uri));
         }
-        foreach($this->_shownProperties as $prop){
-            if($prop['uri'] == $uri){
-               $this->_resourceQuery->getOrder()->setExpression(array('exp'=>$prop['var'],'dir'=> $asc ? Erfurt_Sparql_Query2_OrderClause::ASC : Erfurt_Sparql_Query2_OrderClause::DESC ));
-            }
-        }
-
-        $this->_resourceQuery->getOrder()->setExpression($order);
-
     }
-
+    
+    
+    /**
+     * order by a var, that is used in the resource query
+     * @param Erfurt_Sparql_Query2_Var $var the var to order by
+     * @param boolean $asc true if ascending, false if descending
+     */
     public function setOrderVar($var, $asc = true) {
         if(!is_bool($asc)){
             $asc = true;
@@ -1578,12 +1600,25 @@ class OntoWiki_Model_Instances extends OntoWiki_Model
         if($var instanceof Erfurt_Sparql_Query2_Var){
             $this->_resourceQuery->getOrder()->setExpression(array('exp'=>$var,'dir'=> $asc ? Erfurt_Sparql_Query2_OrderClause::ASC : Erfurt_Sparql_Query2_OrderClause::DESC ));
         } else if(is_string($var)){
-            foreach($this->_shownProperties as $prop){
-            if($prop['varName'] == $var){
-                    $this->_resourceQuery->getOrder()->setExpression(array('exp'=>$prop['var'],'dir'=> $asc ? Erfurt_Sparql_Query2_OrderClause::ASC : Erfurt_Sparql_Query2_OrderClause::DESC ));
-                }
+            if($var == $this->getResourceVar()->getName()){
+                $this->setOrderVar($this->getResourceVar(), $asc);
+            } else {
+                /*foreach($this->_shownProperties as $prop){
+                    if($prop['varName'] == $var){
+                        $this->setOrderVar($prop['var'], $asc);
+                        break;
+                    }
+                }*/
             }
         }
+    }
+    
+    /**
+     * order the resources by their URI
+     * @param type $asc 
+     */
+    public function orderByUri($asc = true){
+        $this->setOrderVar($this->getResourceVar(), $asc);
     }
 
     public static function getSelectedClass()
