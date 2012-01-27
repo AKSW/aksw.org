@@ -15,7 +15,7 @@ $editUrl = $this->wikiBaseUrl .'view?r=' . urlencode($this->resourceUri);
     <aside id="articleinfo">
         <div class="subc">
             <?php echo $this->partial('aksw2011/lastchange.phtml', $this->lastchange($this->resourceUri)); ?>
-            
+
             <dl class="resourceoptions">
                 <dt class="hideme">Resource info &amp; options</dt>
                 <dd>
@@ -24,7 +24,7 @@ $editUrl = $this->wikiBaseUrl .'view?r=' . urlencode($this->resourceUri);
                     <a rel="nofollow" href="<?php echo $this->resourceUri ?>.tt">n3</a>
                 </dd>
                 <dd><span class="icon icon-resource-edit"></span> <a rel="nofollow" href="<?php echo $editUrl ?>">view/edit resource</a></dd>
-                <dd><span class="icon icon-template-edit"></span> <a rel="nofollow" href="#todo">view/edit template</a></dd>
+                <dd><span class="icon icon-template-edit"></span> <a rel="nofollow" href="https://github.com/AKSW/aksw.org/tree/master/site/types">view/edit templates</a></dd>
                 <dd>
                     <span class="icon icon-browse" title="browse resource using">browse resource using:</span>
                     <a rel="nofollow" href="http://dataviewer.zitgist.com/?uri=<?php echo urlencode($this->resourceUri); ?>">Zitgist</a>,
@@ -39,15 +39,15 @@ $editUrl = $this->wikiBaseUrl .'view?r=' . urlencode($this->resourceUri);
                 <dt class="hideme">aksw.org site options</dt>
                 <dd>
                     <span class="icon icon-service-github">Github:</span>
-                    <a rel="nofollow" href="https://github.com/AKSW/aksw.org">aksw.org site repository</a>
+                    <a rel="nofollow" href="https://github.com/AKSW/aksw.org">site repository</a>
                 </dd>
                 <dd>
                     <span class="icon icon-service-github">Github:</span>
-                    <a rel="nofollow" href="https://github.com/AKSW/aksw.org/issues">project issues</a>
+                    <a rel="nofollow" href="https://github.com/AKSW/aksw.org/issues">site issues</a>
                 </dd>
                 <dd>
                     <span class="icon icon-service-xxx">Service:</span>
-                    <a rel="nofollow" href="#todo">whatever</a>
+                    <a rel="nofollow" href="https://github.com/AKSW/aksw.org/wiki/_pages">site documentation</a>
                 </dd>
             </dl>
         </div>
