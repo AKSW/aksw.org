@@ -9,11 +9,14 @@ default:
 
 install: clean create install-all
 
-install-all:
+install-all: merge
+	${OWCLIDATA} -e model:add -i ${ALLTMP}
+
+merge:
+	unset GREP_OPTIONS
 	rm -rf ${ALLTMP}
 	cp prefixes.n3 ${ALLTMP}
 	cat *.n3 | grep -v "@prefix" >>${ALLTMP}
-	${OWCLIDATA} -e model:add -i ${ALLTMP}
 
 clean:
 	${OWCLIDATA} -e model:drop
