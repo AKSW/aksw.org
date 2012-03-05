@@ -1,0 +1,1989 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:aiiso="http://purl.org/vocab/aiiso/schema#"
+   xmlns:aksw="http://aksw.org/schema/"
+   xmlns:content="http://purl.org/rss/1.0/modules/content/"
+   xmlns:data="http://aksw.org/"
+   xmlns:dbpedia="http://dbpedia.org/resource/"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:doap="http://usefulinc.com/ns/doap#"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:groups="http://aksw.org/Groups/"
+   xmlns:lod2="http://lod2.eu/schema/"
+   xmlns:ov="http://open.vocab.org/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:partner="http://aksw.org/Partner/"
+   xmlns:projects="http://aksw.org/Projects/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:sioc="http://rdfs.org/sioc/ns#"
+   xmlns:sioct="http://rdfs.org/sioc/types#"
+   xmlns:site="http://ns.ontowiki.net/SysOnt/Site/"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:sysont="http://ns.ontowiki.net/SysOnt/"
+   xmlns:v="http://www.w3.org/2006/vcard/ns#"
+   xmlns:void="http://rdfs.org/ns/void#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <aksw:Demo rdf:about="http://139.18.2.164:4444/demo/index.html">
+    <aksw:demonstrates rdf:resource="http://aksw.org/Projects/FOX"/>
+    <aksw:hookline>is the Federated Knowledge Extraction Framework to extract RDF triples out of natural language.</aksw:hookline>
+    <ov:screenshot rdf:resource="http://lh5.ggpht.com/-16u4kSZUUKQ/Tp3aB5sMkZI/AAAAAAAAA_U/LKdR5leJkQs/s800/Fox.png"/>
+    <rdfs:label>Fox</rdfs:label>
+  </aksw:Demo>
+  <aksw:Demo rdf:about="http://139.18.2.164:8080/boa">
+    <aksw:demonstrates rdf:resource="http://aksw.org/Projects/BOA"/>
+    <aksw:hookline>is a tool for pattern-based knowledge extraction.</aksw:hookline>
+    <ov:screenshot rdf:resource="http://lh3.ggpht.com/-X7RWicyijZA/Tp3b6mLj-5I/AAAAAAAAA_0/jIzakxQxQwg/s800/Boa.png"/>
+    <rdfs:label>Boa</rdfs:label>
+  </aksw:Demo>
+  <void:Dataset rdf:about="http://aksw.org/">
+    <dcterms:contributor rdf:resource="http://aksw.org/Groups/AKSW"/>
+    <dcterms:creator rdf:resource="http://aksw.org/SebastianTramp"/>
+    <dcterms:description>This dataset contains projects, sub groups, people and pages or the Agile Knowledge Management and Semantic Web (AKSW) Research Group @ University of Leipzig.</dcterms:description>
+    <dcterms:license rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/"/>
+    <dcterms:publisher rdf:resource="http://aksw.org/Groups/AKSW"/>
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Machine_learning"/>
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Natural_language_processing"/>
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Semantic_Web"/>
+    <dcterms:title>aksw.org</dcterms:title>
+    <void:classes>10</void:classes>
+    <void:dataDump rdf:resource="http://aksw.org/model/export/?m=http%3A%2F%2Faksw.org%2F&amp;f=rdfxml"/>
+    <void:dataDump rdf:resource="http://aksw.org/model/export/?m=http%3A%2F%2Faksw.org%2F&amp;f=turtle"/>
+    <void:entities>80</void:entities>
+    <void:feature rdf:resource="http://www.w3.org/ns/formats/RDF_XML"/>
+    <void:feature rdf:resource="http://www.w3.org/ns/formats/Turtle"/>
+    <void:properties>40</void:properties>
+    <void:rootResource rdf:resource="http://aksw.org/Navigation/Main"/>
+    <void:sparqlEndpoint rdf:resource="http://aksw.org/sparql"/>
+    <void:triples>700</void:triples>
+    <void:vocabulary rdf:resource="http://purl.org/dc/terms/"/>
+    <void:vocabulary rdf:resource="http://purl.org/vocab/aiiso/schema#"/>
+    <void:vocabulary rdf:resource="http://rdfs.org/ns/void#"/>
+    <void:vocabulary rdf:resource="http://rdfs.org/sioc/ns#"/>
+    <void:vocabulary rdf:resource="http://usefulinc.com/ns/doap#"/>
+    <void:vocabulary rdf:resource="http://www.w3.org/2004/02/skos/core#"/>
+    <void:vocabulary rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <foaf:homepage rdf:resource="http://aksw.org"/>
+    <foaf:page rdf:resource="http://aksw.org/Projects/AKSWorg"/>
+  </void:Dataset>
+  <foaf:Document rdf:about="http://aksw.org/About">
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+&lt;nav class="nav-sidelinks"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong class="headline"&gt;sub groups&lt;/strong&gt;
+{{query where="?resourceUri aiiso:part_of groups:AKSW." template="liplain"}}
+&lt;/li&gt;
+&lt;li&gt;&lt;strong class="headline"&gt;people&lt;/strong&gt;
+{{query where="?group foaf:member ?resourceUri . ?group aiiso:part_of groups:AKSW ." template="liplain"}}
+&lt;/li&gt;
+&lt;/nav&gt;
+
+The Research Group **Agile Knowledge Engineering and Semantic Web (AKSW)** is hosted by the Chair of
+[Business Information Systems](http://bis.informatik.uni-leipzig.de) (BIS) of the [Institute of Computer Science](http://www.informatik.uni-leipzig.de) (~IfI) / [University of Leipzig](http://www.uni-leipzig.de) as well as the [Institute for Applied Informatics](http://infai.org) (~InfAI).
+It consists of the three subgroups
+[Emergent Semantics](http://aksw.org/Groups/ES),
+[Machine Learning and Ontology Engineering](http://aksw.org/Groups/MOLE), and
+[Semantic Abstraction](http://aksw.org/Groups/SIMBA).
+
+# Goals
+* Development of methods, tools and applications for adaptive Knowledge Engineering in the context of the Semantic Web
+* Research of underlying Semantic Web technologies and development of fundamental Semantic Web tools and applications
+* Maturation of strategies for fruitfully combining the Social Web paradigms with semantic knowledge representation techniques
+
+AKSW is committed to the [free software](http://en.wikipedia.org/wiki/Free_software_movement), [open source](http://www.opensource.org), [open access](http://www.soros.org/openaccess) and [open knowledge](http://okfn.org) movements.
+
+# Projects
+AKSW has launched a number of high-impact R&amp;D projects:
+
+{{query where="?resourceUri aksw:promoted 'true'^^xsd:boolean." template="li"}}
+
+Please look at the [projects page](http://aksw.org/Projects) for a comprehensive description of AKSW's funded as well as community and open source projects.
+
+# Demos
+Please have a look at our demos:
+
+{{query where="?resourceUri a aksw:Demo." template="wheel"}}
+
+</site:content>
+    <site:menuLabel>About</site:menuLabel>
+    <sioc:feed rdf:resource="http://blog.aksw.org/feed/"/>
+    <rdfs:label>Agile Knowledge Engineering and Semantic Web (AKSW)</rdfs:label>
+  </foaf:Document>
+  <foaf:Person rdf:about="http://aksw.org/AliKhalili">
+    <aksw:room>5-21</aksw:room>
+    <site:templateOption>minimal</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <skos:hiddenLabel>AliKhalili</skos:hiddenLabel>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/RDFaCE"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/SlideWiki"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=khalili"/>
+    <foaf:mbox rdf:resource="mailto:khalili@informatik.uni-leipzig.de"/>
+    <foaf:name>Ali Khalili</foaf:name>
+    <foaf:phone rdf:resource="tel:+49-341-97-32320"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/AlrikHausdorf">
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/KeyNodeJS"/>
+    <foaf:depiction rdf:resource="https://secure.gravatar.com/avatar/8e3eca639961b3b6c16a8669bb7a8785?s=140"/>
+    <foaf:homepage rdf:resource="http://morulia.de"/>
+    <foaf:mbox rdf:resource="mailto:admin@morulia.de"/>
+    <foaf:name>Alrik Hausdorf</foaf:name>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/AmrapaliZaveri">
+    <aksw:publicationTag>zaveri</aksw:publicationTag>
+    <aksw:room>5-10</aksw:room>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <skos:hiddenLabel>AmrapaliZaveri</skos:hiddenLabel>
+    <skos:prefLabel>Amrapali J. Zaveri</skos:prefLabel>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/ReDDObservatory"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/Stats2RDF"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=zaveri"/>
+    <foaf:mbox rdf:resource="mailto:zaveri@informatik.uni-leipzig.de"/>
+    <foaf:name>Amrapali Zaveri</foaf:name>
+    <foaf:phone rdf:resource="tel:+49-341-97-32273"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/AxelNgonga">
+    <aksw:publicationTag>ngonga</aksw:publicationTag>
+    <aksw:room>5-22</aksw:room>
+    <site:templateOption>extended</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <skos:hiddenLabel>AxelNgonga</skos:hiddenLabel>
+    <skos:prefLabel>Dr. Axel-C. Ngonga Ngomo</skos:prefLabel>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/BOA"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/FOX"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/LIMES"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=ngonga+ngomo"/>
+    <foaf:mbox rdf:resource="mailto:ngonga@informatik.uni-leipzig.de"/>
+    <foaf:name>Axel Ngonga</foaf:name>
+    <foaf:phone rdf:resource="tel:+49-341-97-32341"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/ClausStadler">
+    <aksw:publicationTag>stadler</aksw:publicationTag>
+    <aksw:room>5-10</aksw:room>
+    <site:templateOption>minimal</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/LinkedGeoData"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=stadler"/>
+    <foaf:mbox rdf:resource="mailto:cstadler@informatik.uni-leipzig.de"/>
+    <foaf:name>Claus Stadler</foaf:name>
+    <foaf:phone rdf:resource="tel:+49-341-97-32273"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/ClemensHoffmann">
+    <skos:hiddenLabel>Cannelony</skos:hiddenLabel>
+    <skos:hiddenLabel>ClemensHoffmann</skos:hiddenLabel>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/OntoWiki"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/RDFauthor"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/re-publish"/>
+    <foaf:depiction rdf:resource="https://secure.gravatar.com/avatar/be35f40f610edc7d8218bb866494fcf1?s=140"/>
+    <foaf:mbox rdf:resource="mailto:cannelony@gmail.com"/>
+    <foaf:name>Clemens Hoffmann</foaf:name>
+  </foaf:Person>
+  <foaf:Document rdf:about="http://aksw.org/Contact">
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+&lt;nav class="nav-sidelinks"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong class="headline"&gt;people&lt;/strong&gt;
+{{query where="?group foaf:member ?resourceUri . ?group aiiso:part_of groups:AKSW ." template="liplain"}}
+&lt;/li&gt;
+&lt;/nav&gt;
+
+...
+</site:content>
+    <rdfs:label>Contact</rdfs:label>
+  </foaf:Document>
+  <foaf:Person rdf:about="http://aksw.org/DanielGerber">
+    <aksw:publicationTag>gerber</aksw:publicationTag>
+    <aksw:room>5-20</aksw:room>
+    <site:templateOption>minimal</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/BOA"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=gerber"/>
+    <foaf:mbox rdf:resource="mailto:gerber@informatik.uni-leipzig.de"/>
+    <foaf:name>Daniel Gerber</foaf:name>
+    <foaf:phone rdf:resource="tel:+49-341-97-32322"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/DaryaTarasowa">
+    <aksw:room>5-21</aksw:room>
+    <site:templateOption>minimal</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <skos:hiddenLabel>DaryaTarasowa</skos:hiddenLabel>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/SlideWiki"/>
+    <foaf:mbox rdf:resource="mailto:darya.tarasowa@gmail.com"/>
+    <foaf:name>Darya Tarasowa</foaf:name>
+    <foaf:phone rdf:resource="tel:+49-341-97-32320"/>
+  </foaf:Person>
+  <foaf:Document rdf:about="http://aksw.org/Groups">
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+&lt;nav class="nav-sidelinks"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong class="headline"&gt;people&lt;/strong&gt;
+{{query where="?group foaf:member ?resourceUri . ?group aiiso:part_of groups:AKSW ." template="liplain"}}
+&lt;/li&gt;
+&lt;/nav&gt;
+
+The following subgroups belong to AKSW:
+{{query where="?resourceUri aiiso:part_of &lt;http://aksw.org/Groups/AKSW&gt;." template="abstract"}}
+</site:content>
+    <rdfs:label>Groups</rdfs:label>
+  </foaf:Document>
+  <aiiso:ResearchGroup rdf:about="http://aksw.org/Groups/AKSW">
+    <site:abbrevation>AKSW</site:abbrevation>
+    <rdfs:label>Agile Knowledge Engineering and Semantic Web</rdfs:label>
+  </aiiso:ResearchGroup>
+  <aiiso:ResearchGroup rdf:about="http://aksw.org/Groups/ES">
+    <aksw:researchAreas>Agile Knowledge Engineering</aksw:researchAreas>
+    <aksw:researchAreas>Distributed / Federated Social Networks</aksw:researchAreas>
+    <aksw:researchAreas>Linked Data</aksw:researchAreas>
+    <aksw:researchAreas>Semantic Software Engineering</aksw:researchAreas>
+    <aksw:researchAreas>Semantic Web Infrastructure</aksw:researchAreas>
+    <site:abbrevation>ES</site:abbrevation>
+    <dcterms:abstract>Research in Emergent Semantics revolves around supporting semantic collaboration scenarios in an adaptive way. This work includes especially research on engineering and adoption of semantic collaboration software, semantic collaboration protocols as well as research on distributed / federated semantic social networks. To bootstrap semantic collaboration and the semantic web in general, the Emergent Semantics group also investigates basic semantic technologies and semantic web infrastructures.</dcterms:abstract>
+    <aiiso:part_of rdf:resource="http://aksw.org/Groups/AKSW"/>
+    <rdfs:label>Emergent Semantics</rdfs:label>
+    <foaf:member rdf:resource="http://aksw.org/AliKhalili"/>
+    <foaf:member rdf:resource="http://aksw.org/DaryaTarasowa"/>
+    <foaf:member rdf:resource="http://aksw.org/IvanErmilov"/>
+    <foaf:member rdf:resource="http://aksw.org/JoergUnbehauen"/>
+    <foaf:member rdf:resource="http://aksw.org/MichaelMartin"/>
+    <foaf:member rdf:resource="http://aksw.org/PhilippFrischmuth"/>
+    <foaf:member rdf:resource="http://aksw.org/SebastianTramp"/>
+    <foaf:member rdf:resource="http://aksw.org/SoerenAuer"/>
+    <foaf:member rdf:resource="http://aksw.org/ThomasRiechert"/>
+    <foaf:member rdf:resource="http://aksw.org/TimofeyErmilov"/>
+  </aiiso:ResearchGroup>
+  <aiiso:ResearchGroup rdf:about="http://aksw.org/Groups/MOLE">
+    <aksw:publicationTag>mole</aksw:publicationTag>
+    <aksw:researchAreas>Creating knowledge bases from weakly structured data</aksw:researchAreas>
+    <aksw:researchAreas>Quality assurance and enhancement in ontologies</aksw:researchAreas>
+    <aksw:researchAreas>Semi-automatic instance matching</aksw:researchAreas>
+    <aksw:researchAreas>Supervised Machine Learning in OWL/RDF knowledge bases</aksw:researchAreas>
+    <site:abbrevation>MOLE</site:abbrevation>
+    <site:templateOption>extended</site:templateOption>
+    <dcterms:abstract>The MOLE group focuses on combining Semantic Web and supervised Machine Learning technologies. The goal is to improve both quality and quantity of available knowledge by extracting, analysing, enriching and linking existing data. To make obtained results readily available for use in other applications, the group also provides several established open source tools, frameworks and demonstrators.</dcterms:abstract>
+    <aiiso:part_of rdf:resource="http://aksw.org/Groups/AKSW"/>
+    <rdfs:label>Machine Learning and Ontology Engineering</rdfs:label>
+    <foaf:member rdf:resource="http://aksw.org/AmrapaliZaveri"/>
+    <foaf:member rdf:resource="http://aksw.org/ClausStadler"/>
+    <foaf:member rdf:resource="http://aksw.org/JensLehmann"/>
+    <foaf:member rdf:resource="http://aksw.org/LorenzBuehmann"/>
+    <foaf:member rdf:resource="http://aksw.org/MohamedMorsey"/>
+    <foaf:member rdf:resource="http://aksw.org/SebastianHellmann"/>
+  </aiiso:ResearchGroup>
+  <aiiso:ResearchGroup rdf:about="http://aksw.org/Groups/SIMBA">
+    <aksw:publicationTag>simba</aksw:publicationTag>
+    <aksw:researchAreas>Extraction of RDF and OWL from unstructured data</aksw:researchAreas>
+    <aksw:researchAreas>Link Discovery</aksw:researchAreas>
+    <aksw:researchAreas>Machine Learning</aksw:researchAreas>
+    <aksw:researchAreas>Natural Language Processing</aksw:researchAreas>
+    <site:abbrevation>SIMBA</site:abbrevation>
+    <site:templateOption>extended</site:templateOption>
+    <dcterms:abstract>SIMBA's focus lies on knowledge extraction, integration, linking and consumption for porting the document-oriented web to the Data Web. For this purpose, SIMBA develops novel and scalable approaches for RDF/OWL extraction, link discovery and graph analysis. In addition, SIMBA provides tools and frameworks that implement these approaches and allow for their swift integration into industry projects.</dcterms:abstract>
+    <aiiso:part_of rdf:resource="http://aksw.org/Groups/AKSW"/>
+    <rdfs:label>Semantic Abstraction</rdfs:label>
+    <foaf:member rdf:resource="http://aksw.org/AxelNgonga"/>
+    <foaf:member rdf:resource="http://aksw.org/DanielGerber"/>
+    <foaf:member rdf:resource="http://aksw.org/NadineJaenicke"/>
+    <foaf:member rdf:resource="http://aksw.org/NormanHeino"/>
+    <foaf:member rdf:resource="http://aksw.org/SaeedehShekarpour"/>
+  </aiiso:ResearchGroup>
+  <foaf:Document rdf:about="http://aksw.org/Imprint">
+    <rdfs:label>Imprint</rdfs:label>
+  </foaf:Document>
+  <foaf:Person rdf:about="http://aksw.org/IvanErmilov">
+    <aksw:room>5-21</aksw:room>
+    <site:templateOption>minimal</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <skos:hiddenLabel>IvanErmilov</skos:hiddenLabel>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/SlideWiki"/>
+    <foaf:mbox rdf:resource="mailto:earthquakesan@gmail.com"/>
+    <foaf:name>Ivan Ermilov</foaf:name>
+    <foaf:phone rdf:resource="tel:+49-341-97-32320"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/JensLehmann">
+    <aksw:publicationTag>lehmann</aksw:publicationTag>
+    <aksw:room>5-10</aksw:room>
+    <site:templateOption>extended</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <skos:hiddenLabel>JensLehmann</skos:hiddenLabel>
+    <skos:prefLabel>Dr. Jens Lehmann</skos:prefLabel>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/DBpedia"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/DL-Learner"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/LATC"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/LE4SW"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/LOD2"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/LinkedGeoData"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/NLP2RDF"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/ORE"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=cn&amp;value=Jens+Lehmann"/>
+    <foaf:mbox rdf:resource="mailto:lehmann@informatik.uni-leipzig.de"/>
+    <foaf:name>Jens Lehmann</foaf:name>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/OntoWikiEU"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/SoftWiki"/>
+    <foaf:phone rdf:resource="tel:+49-341-97-32273"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/JoergUnbehauen">
+    <aksw:publicationTag>unbehauen</aksw:publicationTag>
+    <aksw:room>5-20</aksw:room>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=unbehauen"/>
+    <foaf:mbox rdf:resource="mailto:unbehauen@informatik.uni-leipzig.de"/>
+    <foaf:name>Jörg Unbehauen</foaf:name>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/xOperator"/>
+    <foaf:phone rdf:resource="tel:+49-341-97-32322"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/JonasBrekle">
+    <skos:hiddenLabel>JonasBrekle</skos:hiddenLabel>
+    <skos:hiddenLabel>jbrekle</skos:hiddenLabel>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/AKSWorg"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/DSSN"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/Erfurt"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/OntoWiki"/>
+    <foaf:depiction rdf:resource="https://secure.gravatar.com/avatar/75f3befdea0cf2be035a9558da08cd57?s=140"/>
+    <foaf:mbox rdf:resource="mailto:jonas.brekle@gmail.com"/>
+    <foaf:name>Jonas Brekle</foaf:name>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/LorenzBuehmann">
+    <aksw:publicationTag>buehmann</aksw:publicationTag>
+    <aksw:room>5-10</aksw:room>
+    <site:templateOption>minimal</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/ORE"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=gn&amp;value=lorenz"/>
+    <foaf:mbox rdf:resource="mailto:buehmann@informatik.uni-leipzig.de"/>
+    <foaf:name>Lorenz Bühmann</foaf:name>
+    <foaf:phone rdf:resource="tel:+49-341-97-32273"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/MichaelHaschke">
+    <owl:sameAs rdf:resource="http://michael.haschke.biz/"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/AKSWorg"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/Erfurt"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/LOD2"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/OntoWiki"/>
+    <foaf:depiction rdf:resource="http://gravatar.com/avatar/81060bc45f257e0854ecde403bb4ee5e?size=420"/>
+    <foaf:homepage rdf:resource="http://48augen.de"/>
+    <foaf:mbox rdf:resource="mailto:michael.haschke@eye48.com"/>
+    <foaf:name>Michael Haschke</foaf:name>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/Triplify"/>
+    <foaf:phone rdf:resource="tel:+49-371-23970557"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/MichaelMartin">
+    <aksw:publicationTag>martin</aksw:publicationTag>
+    <aksw:room>5-10</aksw:room>
+    <site:templateOption>extended</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/Erfurt"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/OntoWiki"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=martin"/>
+    <foaf:mbox rdf:resource="mailto:martin@informatik.uni-leipzig.de"/>
+    <foaf:name>Michael Martin</foaf:name>
+    <foaf:phone rdf:resource="tel:+49-341-97-32322"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/MohamedMorsey">
+    <aksw:publicationTag>morsey</aksw:publicationTag>
+    <aksw:room>5-10</aksw:room>
+    <site:templateOption>minimal</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/DBpedia"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=morsey"/>
+    <foaf:mbox rdf:resource="mailto:morsey@informatik.uni-leipzig.de"/>
+    <foaf:name>Mohamed Morsey</foaf:name>
+    <foaf:phone rdf:resource="tel:+49-341-97-32273"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/NadineJaenicke">
+    <aksw:room>5-17</aksw:room>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <skos:hiddenLabel>NadineJaenicke</skos:hiddenLabel>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/LOD2"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/OntoWikiEU"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=gn&amp;value=Nadine"/>
+    <foaf:mbox rdf:resource="mailto:jaenicke@uni-leipzig.de"/>
+    <foaf:name>Nadine Jänicke</foaf:name>
+    <foaf:phone rdf:resource="tel:+49-341-97-32310"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/NatanaelArndt">
+    <owl:sameAs rdf:resource="http://people.comiles.eu/natanael"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/MobileSocialSemanticWeb"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/OntoWiki"/>
+    <foaf:depiction rdf:resource="https://secure.gravatar.com/avatar/9bd2fa005d80986390510518f00476e8?s=140"/>
+    <foaf:homepage rdf:resource="http://natanael.comiles.eu/blog/"/>
+    <foaf:mbox rdf:resource="mailto:arndt@informatik.uni-leipzig.de"/>
+    <foaf:name>Natanael Arndt</foaf:name>
+  </foaf:Person>
+  <site:Navigation rdf:about="http://aksw.org/Navigation/Main">
+    <rdf:_1 rdf:resource="http://aksw.org/About"/>
+    <rdf:_2 rdf:resource="http://aksw.org/Groups"/>
+    <rdf:_3 rdf:resource="http://aksw.org/Projects"/>
+    <rdf:_4 rdf:resource="http://aksw.org/Publications"/>
+    <rdf:_5 rdf:resource="http://aksw.org/Presentations"/>
+    <rdf:_6 rdf:resource="http://aksw.org/Teaching"/>
+    <rdf:_7 rdf:resource="http://aksw.org/Partners"/>
+    <rdfs:label>Main Navigation</rdfs:label>
+  </site:Navigation>
+  <site:Navigation rdf:about="http://aksw.org/Navigation/Top">
+    <rdf:_1 rdf:resource="http://aksw.org/Contact"/>
+    <rdf:_2 rdf:resource="http://blog.aksw.org"/>
+    <rdf:_3 rdf:resource="http://wiki.aksw.org/Internal"/>
+    <rdf:_4 rdf:resource="http://aksw.org/Imprint"/>
+    <rdfs:label>Top Navigation</rdfs:label>
+  </site:Navigation>
+  <foaf:Person rdf:about="http://aksw.org/NormanHeino">
+    <aksw:publicationTag>heino</aksw:publicationTag>
+    <aksw:room>5-08</aksw:room>
+    <site:templateOption>extended</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <skos:hiddenLabel>NormanHeino</skos:hiddenLabel>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/AKSWorg"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/Erfurt"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/KeyNodeJS"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/LOD2"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/OntoWiki"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/RDFauthor"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/SCMS"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/re-publish"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=heino"/>
+    <foaf:mbox rdf:resource="mailto:heino@informatik.uni-leipzig.de"/>
+    <foaf:name>Norman Heino</foaf:name>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/OntoWikiEU"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/OntoWikiMobile"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/SoftWiki"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/Stats2RDF"/>
+    <foaf:phone rdf:resource="tel:+49-341-97-32368"/>
+  </foaf:Person>
+  <foaf:Document rdf:about="http://aksw.org/NotFound">
+    <aksw:hookline>Resource not found</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+Either the resource you are trying to reach is not available anymore on this server, or you have tried to access a 'dead' link.
+</site:content>
+    <rdfs:label>404</rdfs:label>
+  </foaf:Document>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/B2">
+    <dcterms:abstract>B2 d.o.o. is a leading Slovene company in the field of computer trainings, e-learning, software, system solutions and formal education. The company was established in 1989 with the intention of helping people to increase their productivity, competitiveness and satisfaction by means of information and communication technologies (ICT).</dcterms:abstract>
+    <rdfs:label>B2 d.o.o. (SLO)</rdfs:label>
+    <foaf:homepage rdf:resource="http://b2.eu"/>
+    <foaf:logo rdf:resource="http://www.b2.eu/Portals/0/logob2.png"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/BI">
+    <dcterms:abstract>BI Business Intelligence GmbH is a IT service provider based in Leipzig. BI offers solutions in the area of data warehousing, business intelligence and enterprise portals.</dcterms:abstract>
+    <rdfs:label>Business Intelligence GmbH (D)</rdfs:label>
+    <foaf:homepage rdf:resource="http://www.bi-web.de/"/>
+    <foaf:logo rdf:resource="http://www.bi-web.de/images/layout_bi_logo.jpg"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/CUAS">
+    <dcterms:abstract>Since its foundation in 1995, CUAS has developed into a unique educational institution in Carinthia. Through constant further development of the degree programs at CUAS and intensive cooperation with the worlds of business and science, those studying at the university can be certain of a forward-looking education with its finger on the pulse of time</dcterms:abstract>
+    <rdfs:label>Carinthia University of Applied Sciences (A)</rdfs:label>
+    <foaf:homepage rdf:resource="http://www.fh-kaernten.at/"/>
+    <foaf:logo rdf:resource="http://www.fh-kaernten.at/fileadmin/templates/img/logo_fh_kaernten1.gif"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/CWI">
+    <dcterms:abstract>The Centrum Wiskunde &amp; Informatica (abbr. CWI; English: National Research Institute for Mathematics and Computer Science) is one of the leading European research centers in the field of mathematics and theoretical computer science. It is located at the Science Park Amsterdam in the Netherlands.</dcterms:abstract>
+    <rdfs:label>Centrum Wiskunde &amp; Informatica (NL)</rdfs:label>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Centrum_Wiskunde_%26_Informatica"/>
+    <foaf:homepage rdf:resource="http://cwi.nl"/>
+    <foaf:logo rdf:resource="http://www.cwi.nl/sites/all/themes/newSociety/logo.png"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/DigitalTrowel">
+    <dcterms:abstract>Digital Trowel, Israel LTD is an Israeli company specializing in providing sophisticated NLP based solutions to large corporations. Digital Trowel has 27 researchers and programmers that are highly proficient in text mining, information extraction and social network analysis techniques.</dcterms:abstract>
+    <rdfs:label>Digital Trowel Inc. (IL)</rdfs:label>
+    <foaf:homepage rdf:resource="http://www.digitaltrowel.com/"/>
+    <foaf:logo rdf:resource="http://www.digitaltrowel.com/images/logo.jpg"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/Ebrosia">
+    <dcterms:abstract>ebrosia is one of the biggest online shops for wine and viands in germany. It is based in Delitzsch near Leipzig.</dcterms:abstract>
+    <rdfs:label>ebrosia GmbH (D)</rdfs:label>
+    <foaf:homepage rdf:resource="http://www.ebrosia.de/"/>
+    <foaf:logo rdf:resource="http://www.ebrosia.de/pics/kopf/logo.png"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/Exalead">
+    <dcterms:abstract>Founded in 2000 by search engine pioneers, Exalead is a global software provider in the enterprise and Web search markets. Exalead worldwide client base includes leading companies such as Price Waterhouse Cooper, Michelin, American Greetings and Sanofi Pasteur, and more than 100 million unique users a month use Exalead's technology for search.</dcterms:abstract>
+    <rdfs:label>Exalead (F)</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Exalead"/>
+    <foaf:homepage rdf:resource="http://www.exalead.com"/>
+    <foaf:logo rdf:resource="http://www.exalead.com/software/pics/common/logo.gif"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/FUB">
+    <dcterms:abstract>The Web-based Systems Group at Freie Universität Berlin explores technical and economic questions concerning the development of global, decentralized information environments. Its current focus lies on the publication and interlinking of structured data on the Web using Semantic Web technologies.</dcterms:abstract>
+    <rdfs:label>Freie Universität Berlin (D)</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Free_University_of_Berlin"/>
+    <foaf:homepage>http://www.wiwiss.fu-berlin.de/en/institute/pwo/bizer/index.html</foaf:homepage>
+    <foaf:logo rdf:resource="http://upload.wikimedia.org/wikipedia/de/thumb/7/71/Fub-logo.svg/300px-Fub-logo.svg.png"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/ISA">
+    <rdfs:label>ISA Tools GmbH (D)</rdfs:label>
+    <foaf:homepage rdf:resource="http://www.isa.de/"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/Lecos">
+    <dcterms:abstract>Lecos GmbH is a IT service provider based in Leipzig.</dcterms:abstract>
+    <rdfs:label>Lecos GmbH (D)</rdfs:label>
+    <foaf:homepage rdf:resource="http://www.lecos-gmbh.de/"/>
+    <foaf:logo rdf:resource="http://www.lecos-gmbh.de/img/slice_03.gif"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/NUI">
+    <dcterms:abstract>National University of Ireland, Galway (NUI, Galway) - Digital Enterprise Research Institute (DERI) is one of the main actors in research and development of semantic technologies in the world. NUIG performs research in the Semantic Web, social networks, sensor network platforms and applies its research results to solve integration problems in various application-oriented projects in eLearning, eGovernment, eBusiness, and eHealth.</dcterms:abstract>
+    <rdfs:label>National University of Ireland, Galway (IRL)</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/National_University_of_Ireland,_Galway"/>
+    <foaf:homepage rdf:resource="http://deri.ie"/>
+    <foaf:logo rdf:resource="http://www.deri.ie/fileadmin/images/logos/deri_logo_mp.gif"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/Netresearch">
+    <dcterms:abstract>Netresearch is a fast growing, specialised software company which offers expertise in the areas of conception, implementation and maintenance of the open source CMS TYPO3 an PHP based Web applications especially for customers in the eCommerce and tourism branches. Netresearch’s custom-developed TYPO3 based business solutions are used as internet-, intranet- and extranet- applications.</dcterms:abstract>
+    <rdfs:label>Netresearch GmbH &amp; Co. KG (D)</rdfs:label>
+    <foaf:homepage rdf:resource="http://www.netresearch.de/"/>
+    <foaf:logo rdf:resource="http://www.netresearch.de/fileadmin/user_upload/images/logos/logo_netresearch.gif"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/OKFN">
+    <dcterms:abstract>The Open Knowledge Foundation (OKF) is a not-for-profit organization that promotes open knowledge, including open content and open data. It was founded 24 May 2004[2] in Cambridge, UK. The foundation has published the Open Knowledge Definition and runs several projects, such as CKAN, the registry software used by many governments for their open data projects and Where Does My Money Go, a service to monitor government spending.</dcterms:abstract>
+    <rdfs:label>Open Knowledge Foundation (GB)</rdfs:label>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Open_Knowledge_Foundation"/>
+    <foaf:homepage rdf:resource="http://www.okfn.org"/>
+    <foaf:logo rdf:resource="http://assets.okfn.org/images/logo/okf_logo_white_and_green.png"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/OpenLink">
+    <dcterms:abstract>OpenLink Software is a United Kingdom SME founded in 1992. It operates a business development and sales subsidiary in the United States. Most product development takes place within the EU, across the UK, Netherlands and Bulgaria. The company is a leading provider of high-performance, scalable, and secure technology covering: data access drivers, data virtualization middleware; native database management (RDBMS or RDF based Graph Store), and enterprise collaboration.</dcterms:abstract>
+    <rdfs:label>OpenLink Software (GB)</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/OpenLink_Software"/>
+    <foaf:homepage rdf:resource="http://www.openlinksw.com"/>
+    <foaf:logo rdf:resource="http://wiki.dbpedia.org/files/openlinklogo_wstrap_190x70.png"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/ProDV">
+    <dcterms:abstract>PRO DV AG is a IT systems provider for process-optimized business solutions.</dcterms:abstract>
+    <rdfs:label>ProDV AG (D)</rdfs:label>
+    <foaf:homepage rdf:resource="http://www.prodv.de/"/>
+    <foaf:logo rdf:resource="http://www.prodv.de/templates/prodvag/images/prodvag_logo.png"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/QASystems">
+    <rdfs:label>QA Systems GmbH (D)</rdfs:label>
+    <foaf:homepage rdf:resource="http://www.qasystems.de/"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/SemanticWebCompany">
+    <dcterms:abstract>Founded in 2004, Semantic Web Company, is an IT company headquartered in Vienna, Austria. The company is a provider of Semantic Web infrastructure technologies and services used to support semantic information integration and semantic search based on linked data principles at the enterprise level.</dcterms:abstract>
+    <rdfs:label>Semantic Web Company (A)</rdfs:label>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Semantic_Web_Company"/>
+    <foaf:homepage rdf:resource="http://www.semantic-web.at"/>
+    <foaf:logo rdf:resource="http://www.semantic-web.at/sites/default/files/swc_logo.png"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/TSystemsMMS">
+    <rdfs:label>T-Systems MMS (D)</rdfs:label>
+    <foaf:homepage rdf:resource="http://www.t-systems-mms.com/"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/Talis">
+    <dcterms:abstract>Talis Consulting provide world class expert advice to organisations who know that Linked Data and the Semantic Web are the next big thing, but aren’t sure how to get started.</dcterms:abstract>
+    <rdfs:label>Talis Ltd. (GB)</rdfs:label>
+    <foaf:homepage rdf:resource="http://www.talis.com/"/>
+    <foaf:logo rdf:resource="http://www.talis.com/images/logo.gif"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/TenForce">
+    <dcterms:abstract>TenForce is a Belgian software company specialized in delivering pragmatic solutions for complex problems. TenForce has years of international experience in knowledge management combined with an in-depth expertise in emerging technologies. Besides designing, marketing and supporting their in-house product - a web-based management environment for project and operational activities - , they conduct several projects on European scale focusing on modelling complex systems.</dcterms:abstract>
+    <rdfs:label>TenForce (B)</rdfs:label>
+    <foaf:homepage rdf:resource="http://www.tenforce.com/"/>
+    <foaf:logo rdf:resource="http://www.tenforce.com/sites/default/files/tenforce-logo.gif"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/UniDuisburgEssen">
+    <dcterms:abstract>The research group Interaktive Systems of the University of Duisburg-Essen (Campus Duisburg) is active in the research areas of human computer interaction, engineering of interactive systems and context adaptive web applications.</dcterms:abstract>
+    <rdfs:label>Universität Duisburg-Essen (D)</rdfs:label>
+    <foaf:homepage rdf:resource="http://www.interactivesystems.info/"/>
+    <foaf:logo rdf:resource="http://www.interactivesystems.info/assets/templates/is/images/header/IS-Logo.png"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/VUA">
+    <dcterms:abstract>The KR&amp;R group at the Free Vrije Universiteit Amsterdam investigates  modelling and representation of different forms of knowledge and reasoning, as found in a large variety of AI systems.</dcterms:abstract>
+    <rdfs:label>Vrije Universiteit Amsterdam (NL)</rdfs:label>
+    <foaf:homepage rdf:resource="http://www.cs.vu.nl/en/sec/ai/kr/"/>
+    <foaf:logo rdf:resource="http://krr.cs.vu.nl/wp-content/themes/delicate/images/logo/logo.gif"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/Vakantieland">
+    <dcterms:abstract>Vakantieland is a portal which publishes comprehensive information about 20,000 touristic points-of-interest (POI) in the Netherlands such as textual descriptions, location information and opening hours.</dcterms:abstract>
+    <rdfs:label>Vakantieland (NL)</rdfs:label>
+    <foaf:homepage rdf:resource="http://www.vakantieland.nl/"/>
+    <foaf:logo rdf:resource="http://www.vakantieland.nl/img/Vakantieland_banner10.gif"/>
+  </foaf:Organization>
+  <foaf:Organization rdf:about="http://aksw.org/Partner/WoltersKluwerDeutschland">
+    <dcterms:abstract>Wolters Kluwer Deutschland GmbH (WKD) is part of Wolters Kluwer n.v., a leading global information services and publishing company. The company provides products and services for professionals in the health, tax, accounting, corporate, financial services, legal and regulatory sectors. Wolters Kluwer has annual revenues (2008) of €3.4 billion, employs approximately 18,400 people worldwide and maintains operations in 20 European countries, North America and Asia Pacific. Wolters Kluwer is headquartered in Amsterdam, the Netherlands.</dcterms:abstract>
+    <rdfs:label>Wolters Kluwer Deutschland (D)</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Wolters_Kluwer"/>
+    <foaf:homepage rdf:resource="http://www.wolterskluwer.de/"/>
+    <foaf:logo rdf:resource="http://www.wolterskluwer.com/Style%20Library/logo.gif"/>
+  </foaf:Organization>
+  <foaf:Document rdf:about="http://aksw.org/Partners">
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+{{query where="?project aksw:partner ?resourceUri." template="partner"}}
+</site:content>
+    <rdfs:label>Partners</rdfs:label>
+  </foaf:Document>
+  <foaf:Person rdf:about="http://aksw.org/PhilippFrischmuth">
+    <aksw:publicationTag>frischmuth</aksw:publicationTag>
+    <aksw:room>5-08</aksw:room>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <owl:sameAs rdf:resource="http://philipp.frischmuth24.de/id/me"/>
+    <skos:hiddenLabel>PhilippFrischmuth</skos:hiddenLabel>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/DSSN"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/Erfurt"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/KeyNodeJS"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/LATC"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/LOD2"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/OntoWiki"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/Triplify"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=frischmuth"/>
+    <foaf:mbox rdf:resource="mailto:frischmuth@informatik.uni-leipzig.de"/>
+    <foaf:name>Philipp Frischmuth</foaf:name>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/OntoWikiEU"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/Powl"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/SoftWiki"/>
+    <foaf:phone rdf:resource="tel:+49-341-97-32368"/>
+  </foaf:Person>
+  <foaf:Document rdf:about="http://aksw.org/Presentations">
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+# Slideshare presentations
+
+&lt;div style="width:540px;"&gt;&lt;object style="margin:0px" width="538" height="341"&gt;&lt;param name="movie" value="http://static.slidesharecdn.com/swf/egowidget2.swf"/&gt;&lt;param name="allowFullScreen" value="true"/&gt;&lt;param name="allowScriptAccess" value="always"/&gt;&lt;embed src="http://static.slidesharecdn.com/swf/egowidget2.swf" flashVars="feedurl=user/soeren1611&amp;widgettitle=My Slideshows" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="538" height="341"&gt;&lt;/embed&gt;&lt;/object&gt;&lt;br/&gt;&lt;div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;text-align:left;"&gt;&lt;a title="SlideShare" href="http://www.slideshare.net/?src=egowidget"&gt;&lt;img src="http://static.slidesharecdn.com/swf/logo_embd.png" style="border:0px none;margin-bottom:-5px" alt="SlideShare"/&gt;&lt;/a&gt; | &lt;a href="http://www.slideshare.net/widgets/presentation-pack" title="Get your Presentation Pack"&gt;Get your Presentation Pack&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+# Videolectures
+
+* Sören Auer: [Triplify - Light-weight Linked Data Publication from Relational Databases](http://videolectures.net/www09_auer_tlwldp/), at World Wide Web 2009 Conference
+* Sören Auer: [DBpedia: A Nucleus for a Web of Open Data](http://videolectures.net/iswc07_soeren_nwo/), at International Semantic Web Conference 2007
+* Sören Auer: [OntoWiki - A Tool for Social, Semantic Collaboration](http://videolectures.net/iswc06_auer_otssc/) at International Semantic Web Conference 2006
+
+# Talks
+
+* Jens Lehmann, Sören Auer: [Semantic Wikis and the Web of Data](http://jens-lehmann.org/files/2009_wod_wikis.odp) (OpenDocument format), invited talk at 1st KYOTO EU project workshop, 2009.
+* Jens Lehmann, Christoph Haase: [Ideal Downward Refinement in the EL Description Logic](http://jens-lehmann.org/files/2009_ilp.pdf), 19th International Conference on Inductive Logic Programming, 2009.
+* Jens Lehmann: [Presentation of AKSW Group and OWL Class Expressions Learning](http://jens-lehmann.org/files/2009_aifb.odp) (OpenDocument format), AIFB Karlsruhe, 2009.
+* [DBpedia.org - Querying Wikipedia like a Database](http://sites.wiwiss.fu-berlin.de/suhl/bizer/pub/Bizer-etal-WWW2007-DBpedia-Talk.pdf) [Developers track](http://www2007.org/prog-Developers.php) at the 16th International World Wide Web Conference (WWW2007), Banff, Canada, May 2007.
+* Jens Lehmann: [Hybrid Learning of Ontology Classes](http://jens-lehmann.org/files/2007_hybrid_learning_presentation.pdf) at the 5th International Conference on Machine Learning and Data Mining, 2007.
+* Jens Lehmann: [ALC Concept Learning with Refinement Operators](http://jens-lehmann.org/files/2007_concept_learning_refop_presentation.pdf) at the 17th International Conference on Inductive Logic Programming, 2007.
+* **SoftWiki - Agiles Requirements-Engineering für Softwareprojekte mit einer großen Anzahl verteilter Stakeholder.** Statuskonferenz Forschungsoffensive "Software Engineering 2006", 26-28 June 2006, Leipzig. [Slides as PDF](http://softwiki.de/files/folien_SOFT-WIKI.pdf)
+</site:content>
+    <rdfs:label>Presentations</rdfs:label>
+  </foaf:Document>
+  <foaf:Document rdf:about="http://aksw.org/Projects">
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+{{toc depth="1"}}
+# Funded Projects
+&lt;nav class="nav-sidelinks"&gt;
+{{query where="?resourceUri a aksw:FundedProject." template="liplain"}}
+&lt;/nav&gt;
+
+ASKW is funded by regional, national and European research funding programmes.
+{{query where="?resourceUri a aksw:FundedProject." template="abstract"}}
+
+# Community Projects
+&lt;nav class="nav-sidelinks"&gt;
+{{query where="?resourceUri a aksw:CommunityProject." template="liplain"}}
+&lt;/nav&gt;
+
+AKSW has launched a number of high-impact R&amp;D Community projects.
+{{query where="?resourceUri a aksw:CommunityProject." template="abstract"}}
+
+# OpenSource Projects
+&lt;nav class="nav-sidelinks"&gt;
+{{query where="?resourceUri a aksw:OpenSourceProject." template="liplain"}}
+&lt;/nav&gt;
+
+AKSW has launched a number of high-impact R&amp;D Open Source projects.
+{{query where="?resourceUri a aksw:OpenSourceProject." template="abstract"}}
+
+# Incubator Projects
+
+{{query where="?resourceUri a aksw:IncubatorProject."}}
+
+# Project Alumni
+
+Some projects have reached a stable state, but are currently not actively maintained and further developed.
+{{query where="?resourceUri a aksw:AlumniProject."}}
+</site:content>
+    <sioc:feed rdf:resource="http://blog.aksw.org/category/projects/latc/feed/"/>
+    <sioc:feed rdf:resource="http://lod2.eu/BlogPost/feed"/>
+    <sioc:feed rdf:resource="http://www.scms.eu/feed/"/>
+    <rdfs:label>Projects</rdfs:label>
+  </foaf:Document>
+  <foaf:Project rdf:about="http://aksw.org/Projects/AKSWorg">
+    <aksw:hookline>a linked data driven web page rendered by OntoWiki site extension</aksw:hookline>
+    <ov:screenshot rdf:resource="http://lh4.ggpht.com/-kXpKMqBBCIU/Tpx45SUaItI/AAAAAAAAA9w/aPYaNQjcpvo/s800/ontowiki.png"/>
+    <dcterms:abstract>The semantic data wiki OntoWiki can be used as a Content Management System to render and manage content of certain types. According to 'eat you own dog food', the aksw.org web page is an example for this approach.</dcterms:abstract>
+    <doap:browse rdf:resource="https://github.com/AKSW/aksw.org"/>
+    <doap:bug-database rdf:resource="https://github.com/AKSW/aksw.org/issues"/>
+    <doap:maintainer rdf:resource="http://aksw.org/SebastianTramp"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>aksw.org</rdfs:label>
+    <foaf:homepage rdf:resource="http://aksw.org"/>
+  </foaf:Project>
+  <foaf:Document rdf:about="http://aksw.org/Projects/AKSWorg/Documentation">
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+{{toc tag="ul" depth="3"}}
+
+# Big-Picture
+This web page consists of linked data enabled resources.
+Each resource has a specific HTML5 representation (besides its RDF representation).
+This HTML representation is rendered by using a template and fill its variable parts with the content from these sources:
+
+* values (Literals) of specific attributes from the resource
+* output of helper markup (see below)
+* content rendered from sub-templates
+
+# Resources and Properties
+The following attributes and classes are used by the templates.
+
+## Classes
+Currently, there are templates for the following classes of resources:
+
+* [[foaf:Document]]: a basic web page without specific lists and queries
+* [[aiiso:ResearchGroup]]: a (sub) research group with lists of member, research areas and projects
+* [[foaf:Person]]: a person with lists of projects and research areas
+* [[foaf:Project]]: an AKSW project.
+Can be a funded, a community or an open-source project.
+
+## Properties
+These properties can be applied to all resources:
+
+* [[rdfs:label]]: This is the overall headline, name or title of a resource.
+* [[site:menuLabel]]: If the resource title is too long for the menu, use this property in addition to [[rdfs:label]].
+* [[site:content]]: The main content property.
+The literal value should be of datatype [[sysont:Markdown]].
+* [[dcterms:abstract]]: This is a plain text attribute (no markup).
+The content of this attribute is used in extended lists and build the header of the resource as a first summary paragraph.
+* [[aksw:hookline]]: This a less than 100 character description of the resource.
+Hooklines are especially important for projects to advertise them in lists and on top of the project page.
+* [[sioc:feed]]: Use this object property to relate a RSS or Atom feed to this resource.
+The content of this feed is shown in the right side content column.
+
+In addition to the general properties, these class specific properties can be used:
+
+* for Projects: [[foaf:homepage]]
+* for Groups: [[aksw:researchAreas]], [[foaf:member]]
+* for Person: [[foaf:name]], [[foaf:currentProject]], [[foaf:pastProject]], [[foaf:mbox]], [[aksw:room]], [[aksw:publicationTag]] (for the publication list)
+
+# Main Content
+The suggested markup language to write pages is [Markdown](http://daringfireball.net/projects/markdown/).
+Markdown is a text-to-HTML conversion language for web writers.
+Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
+
+All details on Markdown syntax are available on the [syntax page](http://daringfireball.net/projects/markdown/syntax).
+Besides its readability, one main advantage of Markdown is its integration with HTML.
+Wherever you need HTML markup, you can use it without any quote or special syntax as [inline HTML](http://daringfireball.net/projects/markdown/syntax#html).
+Have a look at the sources of this document to copy/paste specific style elements which you want to reuse, or add new stuff and share it.
+
+The main content of each resource is saved as a Literal object with the attribute [[site:content]].
+See the description of this property for details about its usage.
+In general: All attributes and classes have a proper documentation, so you just need to click on them inside of OntoWiki for more details.
+
+## Helper Markup
+Helper markup is used in the same way as wiki actions.
+The general syntax of a helper tag is: `{{tagname p1="value1" ... "pX"="valueX"}}`.
+
+The following helper exists so far.
+
+### Table of Content helper
+The `toc` helper creates an javascript generated table of contents at the position where the helper tag was written.
+
+The following options can be used
+
+* `tag`: the toc type can be `ol`, `ul` or `div`, default is `ol`
+* `startlevel`: which heading level to start? default is `1`
+* `depth`: how many TOC levels you want? default is `2`
+
+Examples (use a single `=` instead of `==`):
+
+* `{{toc depth=="2"}}`
+
+### link helper
+The `link` helper creates an internal page link to a specific resource.
+If you need to link to an aksw.org resource, you should use this helper instead of using plain HTML-links or Markdown link syntax.
+
+Possible parameters are:
+
+* `literal`: search for this literal and link to its resource (the first found).
+  * short form: `l`
+* 'uri': instead of searching for a resource, use the given qname or uri string
+  * short form: `r`
+* `property`: search only for literals of the given property.
+  * short form: `p`
+* `text`: instead of using the resource title, use the given string as link text.
+  * short form: `t`
+
+Examples (use a single `=` instead of `==`):
+
+* `{{link uri=="http://aksw.org/About"}}`
+  * result: {{link uri="http://aksw.org/About"}}
+* `{{link r=="foaf:Person"}}`
+  * result: {{link r="foaf:Person"}}
+  * comment: use qnames where possible, use short values
+* `{{link literal=="Projects"}}`
+  * result: {{link literal="Projects"}}
+* `{{link text=="our projects" literal="Projects"}}`
+  * result: {{link text="our projects" literal="Projects"}}
+* `{{link property=="site:menuLabel" literal="About"}}`
+  * result: {{link property="site:menuLabel" literal="About"}}
+* `{{link literal=="MyPage"}}`
+  * result: {{link literal="MyPage"}}
+  * comment: no links to non existing resources
+* `{{link uri=="no/uri"}}`
+  * result: {{link uri="no/uri"}}
+  * comment: wrong usage is indicated in this way, a mouseover tooltip over the error gives you more information about the problem
+* `{{link p=="foaf:nick" l="Seebi" t="my page"}}`
+  * result: {{link p="foaf:nick" l="Seebi" t="my page"}}
+  * comment: Example with short parameters, qname and given link text
+
+## Style Elements
+There are specific style elements as two column sections or tables which you can add to your documents by using HTML markup.
+
+### Multi Columns
+
+&lt;div class="multicolumns2"&gt;
+&lt;strong&gt;first columns&lt;/strong&gt;
+&lt;p&gt;...&lt;/p&gt;
+&lt;p&gt;...&lt;/p&gt;
+&lt;strong&gt;second column&lt;/strong&gt;
+&lt;p&gt;...&lt;/p&gt;
+&lt;p&gt;...&lt;/p&gt;
+&lt;/div&gt;
+
+### Tables
+Use standard HTML tables with table head and cell tags to achieve a look like this
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Tabelle Head&lt;/th&gt;
+&lt;th&gt;Tabelle Head&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Development&lt;/td&gt;
+&lt;td&gt;methods, tools and applications&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;applications&lt;/td&gt;
+&lt;td&gt;adaptive Knowledge Engineering&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+# Navigation Structures
+
+Menus are [[rdf:Seq]] resources of type [[aksw:Navigation]].
+The rdf properties `rdf:_1` till `rdf:_x` are used to arrange an ordererd list of resources which a used to render a navigation menu.
+Currently, we have these navigation resources:
+
+* {{link literal="Main Navigation"}}
+* {{link literal="Top Navigation"}}
+
+</site:content>
+    <dcterms:abstract>This example page demonstrates some features of this linked data enabled web page including features from the OntoWiki site extension, the AKSW site-specific additions as well as Markdown and helper markup in general.</dcterms:abstract>
+    <sioc:feed rdf:resource="http://blog.aksw.org/feed/"/>
+    <rdfs:label>AKSW Web Page Documentation</rdfs:label>
+  </foaf:Document>
+  <foaf:Project rdf:about="http://aksw.org/Projects/ALOE">
+    <aksw:hookline>Assisted Linked Data Consumption Engine</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">...</site:content>
+    <dcterms:abstract>ALOE is a linked data consumption engine that provides assistance to its user by suggesting class, property and consumption settings automatically.</dcterms:abstract>
+    <sioc:feed rdf:resource="http://blog.aksw.org/category/projects/aloe/feed/"/>
+    <doap:maintainer rdf:resource="http://aksw.org/AxelNgonga"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/OpenSourceProject"/>
+    <rdfs:label>ALOE</rdfs:label>
+    <foaf:logo rdf:resource="http://lh6.ggpht.com/-cKyW9y1LnU4/TlzV0t9TEfI/AAAAAAAAAo8/-YMAKwJgSi0/s800/aloe.png"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/AutoSPARQL">
+    <aksw:hookline>Convert a natural language expression to a SPARQL query</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>The underlying idea is to convert a natural language expression to a SPARQL query, which can then retrieve the answer of a question from a given triple store.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/JensLehmann"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>AutoSPARQL</rdfs:label>
+    <foaf:homepage rdf:resource="https://github.com/AKSW/AutoSPARQL"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/BOA">
+    <aksw:hookline>BOotstrapping linked datA</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <ov:screenshot rdf:resource="http://lh3.ggpht.com/-X7RWicyijZA/Tp3b6mLj-5I/AAAAAAAAA_0/jIzakxQxQwg/s800/Boa.png"/>
+    <dcterms:abstract>Most knowledge sources in the Web of Data were extracted from either structured or semi-structured data. Although they are an invaluable resource for structured knowledge, they consist of less than 20% of the information available on the Web. The idea behind BOA is to use the knowledge available in Linked Data Web to extract even more information from the Web. The potential of the approach is immense, as it could promote the Linked Data Web to the lingua franca for a large number of applications including machine translation, named entity recognition and speech generation.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/DanielGerber"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>BOA</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/BorderFlow">
+    <aksw:hookline>a general-purpose graph clustering tool</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">...</site:content>
+    <dcterms:abstract>BorderFlow is a general-purpose graph clustering tool. It uses solely local information for clustering and achieves a soft clustering of the input graph. It maximizes intra-cluster density and inter-cluster sparseness simultaneously. The default setting of BorderFlow implements a fast heuristic for maximal usability. BorderFlow also implements several heuristics, optimal versions and hardening approaches.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/AxelNgonga"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/OpenSourceProject"/>
+    <rdfs:label>Border~Flow</rdfs:label>
+    <foaf:homepage rdf:resource="http://borderflow.sourceforge.net/"/>
+    <foaf:logo rdf:resource="http://lh3.ggpht.com/--AHkXL5BmKQ/TlzV0UzR0EI/AAAAAAAAAo4/dPgtsMN8pd0/s800/borderFlow.png"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/CatalogusProfessorum">
+    <aksw:hookline>Leipzig Professors Catalog</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>An adapted OntoWiki with accompanying vocabularies for managing historic information related to the professors working at the University of Leipzig in its 600-year history.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/ThomasRiechert"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>Catalogus Professorum</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/Cofundos">
+    <aksw:hookline>community innovation &amp; funding</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">...</site:content>
+    <dcterms:abstract>Cofundos helps to realize open-source software ideas, by providing a platform for their discussion &amp; enrichment and by establishing a process for organizing the contributions and interests of different stakeholders in the idea.</dcterms:abstract>
+    <sioc:feed rdf:resource="http://blog.aksw.org/category/projects/cofundos/feed/"/>
+    <doap:maintainer rdf:resource="http://aksw.org/SoerenAuer"/>
+    <doap:programming-language>PHP</doap:programming-language>
+    <rdf:type rdf:resource="http://aksw.org/schema/CommunityProject"/>
+    <rdfs:label>Cofundos</rdfs:label>
+    <foaf:homepage rdf:resource="http://cofundos.org"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/DBPSB">
+    <aksw:hookline>a pure RDF benchmark based on actually posed queries</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>DBPSB is a general SPARQL benchmark procedure, which we apply to the DBpedia knowledge base. The benchmark is based on query-log mining, clustering and SPARQL feature analysis. In contrast to other benchmarks, we perform measurements on actually posed queries against existing RDF data. </dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/MohamedMorsey"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>DBpedia SPARQL Benchmark</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/DBpedia">
+    <aksw:hookline>Querying Wikipedia like a Semantic Database</aksw:hookline>
+    <aksw:promoted rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</aksw:promoted>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/DBPSB"/>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">...</site:content>
+    <dcterms:abstract>DBpedia is a community effort to extract structured information from Wikipedia and make this information available on the Web. DBpedia allows you to ask sophisticated queries against Wikipedia and to link other datasets on the Web to Wikipedia data.</dcterms:abstract>
+    <sioc:feed rdf:resource="http://blog.aksw.org/category/projects/dbpedia/feed/"/>
+    <doap:maintainer rdf:resource="http://aksw.org/SoerenAuer"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/CommunityProject"/>
+    <rdfs:label>DBpedia</rdfs:label>
+    <foaf:homepage rdf:resource="http://dbpedia.org"/>
+    <foaf:logo rdf:resource="http://lh3.ggpht.com/-boPYCFsH6_g/TlzV0n3IoFI/AAAAAAAAApA/vLA-xusLvEU/s800/dbpedia_logo.png"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/DL-Learner">
+    <aksw:hookline>a tool for supervised Machine Learning in OWL and Description Logics</aksw:hookline>
+    <aksw:promoted rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</aksw:promoted>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/ORE"/>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">...</site:content>
+    <dcterms:abstract>DL-Learner is a tool for learning concepts in Description Logics (DLs) from user-provided examples. Equivalently, it can be used to learn classes in OWL ontologies from selected objects. The goal of DL-Learner is to support knowledge engineers in constructing knowledge and learning about the data they created.</dcterms:abstract>
+    <sioc:feed rdf:resource="http://blog.aksw.org/category/projects/dl-learner/feed/"/>
+    <doap:maintainer rdf:resource="http://aksw.org/JensLehmann"/>
+    <doap:programming-language>Java</doap:programming-language>
+    <rdf:type rdf:resource="http://aksw.org/schema/OpenSourceProject"/>
+    <rdfs:label>DL-Learner</rdfs:label>
+    <foaf:homepage rdf:resource="http://dl-learner.org"/>
+    <foaf:logo rdf:resource="http://lh6.ggpht.com/-zlbGRGr3yqQ/TlzV0wfOKNI/AAAAAAAAApE/fy4lmGAAOjk/s800/DL-Learner.gif"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/DSSN">
+    <aksw:hookline>An Architecture of a Distributed Semantic Social Network</aksw:hookline>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/MobileSocialSemanticWeb"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/SemanticPingback"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/xOperator"/>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>...</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/SebastianTramp"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>DSSN</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/Erfurt">
+    <aksw:hookline>PHP5 / Zend based Semantic Web API for Social Semantic Software</aksw:hookline>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/QueryCache"/>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>Comprises the API underneath OntoWiki, which can be used to build sophisticated Semantic Web applications</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/MichaelMartin"/>
+    <doap:programming-language>PHP</doap:programming-language>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>Erfurt</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/FOX">
+    <aksw:hookline>Federated knOwledge eXtraction Framework</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">...</site:content>
+    <ov:screenshot rdf:resource="http://lh5.ggpht.com/-16u4kSZUUKQ/Tp3aB5sMkZI/AAAAAAAAA_U/LKdR5leJkQs/s800/Fox.png"/>
+    <dcterms:abstract>FOX is a framework that integrates the Linked Data Cloud and makes uses of the diversity of NLP algorithms to extract RDF triples of high accuracy out of NL. In its current version, it integrates and merges the results of Named Entity Recognition, Keyword Extraction and Relation Extraction tools.</dcterms:abstract>
+    <sioc:feed rdf:resource="http://blog.aksw.org/category/projects/fox/feed/"/>
+    <doap:maintainer rdf:resource="http://aksw.org/AxelNgonga"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/OpenSourceProject"/>
+    <rdfs:label>FOX</rdfs:label>
+    <foaf:logo rdf:resource="http://lh3.ggpht.com/-d79marTMEUo/TlzV1DPGXZI/AAAAAAAAApY/HOpg8PyJT0o/s800/fox.png"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/GENIA">
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">...</site:content>
+    <dcterms:abstract>The aim of the GENIA relation ontology is to provide a set of relations which define a detailed and broadly applicable set of relation types based on accepted domain standard concepts for use in corpus annotation and domain information extraction approaches. To ensure that the meaning of the relationships is explicit, the relations are specified in OWL (see download section). We integrate categories and relations from several domain ontologies including IAO, OBI, GO and the GENIA ontology for maximal compatibility.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/AxelNgonga"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>Relation Annotation in GENIA</rdfs:label>
+    <foaf:homepage rdf:resource="http://www-tsujii.is.s.u-tokyo.ac.jp/GENIA/home/wiki.cgi?page=Relation+annotation"/>
+    <foaf:logo rdf:resource="http://lh5.ggpht.com/-qFlvAOrCl8U/TlzV1G1QwhI/AAAAAAAAApI/-raYz1zUBHo/s800/genia.jpg"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/KeyNodeJS">
+    <aksw:hookline>Next level web presentations</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>KeyNode.js tries to upgrade existing web-standards based slide show tools (as Slidy or slidedown) with presenter console like features such as personal notes on a different screen/browser, next slide preview and slide overview.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/SebastianTramp"/>
+    <doap:programming-language>JavaScript</doap:programming-language>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>KeyNode.js</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/LATC">
+    <aksw:hookline>LOD Around-the-Clock</aksw:hookline>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/FUB"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/NUI"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/Talis"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/VUA"/>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+* Partners: National University of Ireland, Galway (IRL), Vrije Universiteit Amsterdam (NL), Freie Universität Berlin (D), Talis Ltd. (GB)
+* Duration: 2010–2012
+* Funding Programme: FP7-ICT-2009.4.3 (Support Action)
+</site:content>
+    <dcterms:abstract>This EU-funded support action aims at making it easier for data owners to publish Linked Data and interlink it with other data sources. A user-friendly 24/7 interlinking engine is developed within the project, allowing to compute and update interlinks as well as to assess their quality.</dcterms:abstract>
+    <sioc:feed rdf:resource="http://blog.aksw.org/category/projects/latc/feed/"/>
+    <doap:maintainer rdf:resource="http://aksw.org/JensLehmann"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/FundedProject"/>
+    <rdfs:label>LATC</rdfs:label>
+    <foaf:homepage rdf:resource="http://latc-project.eu"/>
+    <foaf:logo rdf:resource="http://latc-project.eu/sites/default/files/latc-logo.gif"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/LDAP">
+    <aksw:hookline>Bringing together LDAP and the Semantic Web</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+* [LDAP2SPARQL](http://aksw.org/Projects/LDAP/Backend) is a backend to the widely used OpenLDAP server. It translates LDAP queries into SPARQL queries, asks a SPARQL endpoint and translates the result back to LDIF.
+* [LDAP2OWL](http://purl.org/net/ldap/ldap2owl.php) converts a directory information tree (DIT) complete with schema information (which will translated into an OWL ontology) and directory objects to an RDF model.
+</site:content>
+    <dcterms:abstract>Semantic LDAP consists of a LDAP2SPARQL and a LDAP2OWL module.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/SebastianTramp"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/AlumniProject"/>
+    <rdfs:label>Semantic LDAP</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/LE4SW">
+    <aksw:hookline>Regional Technology Platform of Social Semantic Collaboration</aksw:hookline>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/BI"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/Ebrosia"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/Netresearch"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/OntoWiki"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/QueryCache"/>
+    <aksw:status>finished</aksw:status>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+* Partners: Ebrosia GmbH, Business Intelligence GmbH (D), Netresearch GmbH &amp; Co. KG (D)
+* Duration: 2009–2011
+* Funding Programme: WK Potential, German Ministry of Education and Research (BMBF)
+</site:content>
+    <dcterms:abstract>Aim of the project is to (further) develop AKSW's semantic data wiki technology platform by integrating view maintenance, query subsumption and schema evolution algorithms for the RDF data model and adopt it towards the requirements of business information systems and Web content management.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/SoerenAuer"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/FundedProject"/>
+    <rdfs:label>LE4SW</rdfs:label>
+    <foaf:homepage rdf:resource="http://le4sw.de"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/LESS">
+    <aksw:hookline>Syndicate Linked Data Content</aksw:hookline>
+    <dcterms:abstract>LESS is an end-to-end approach for the syndication and use of linked data based on the definition of templates for linked data resources and SPARQL query results. As a result, LESS allows to integrate Linked Data into your website, blog, wiki ...</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/SoerenAuer"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/AlumniProject"/>
+    <rdfs:label>LESS</rdfs:label>
+    <foaf:homepage rdf:resource="http://less.aksw.org"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/LIMES">
+    <aksw:hookline>LInk discovery framework for MEtric Spaces</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">...</site:content>
+    <ov:screenshot rdf:resource="http://lh6.ggpht.com/-a2wAOUd66Mg/Tpx67TgYRZI/AAAAAAAAA-s/WilVdTWuk3s/s800/limes.png"/>
+    <dcterms:abstract>LIMES is a link discovery framework for the Web of Data. It implements time-efficient approaches for large-scale link discovery based on the characteristics of metric spaces. It is easily configurable via a web interface. It can also be downloaded as standalone tool for carrying out link discovery locally.</dcterms:abstract>
+    <sioc:feed rdf:resource="http://blog.aksw.org/category/projects/limes/feed/"/>
+    <doap:maintainer rdf:resource="http://aksw.org/AxelNgonga"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/OpenSourceProject"/>
+    <rdfs:label>LIMES</rdfs:label>
+    <foaf:logo rdf:resource="http://lh4.ggpht.com/-u3xaJ9mAcfY/TlzV1f0OluI/AAAAAAAAApU/z0V6VURN_tI/s800/limes.png"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/LOD2">
+    <aksw:hookline>Creating Knowledge out of Interlinked Data</aksw:hookline>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/CWI"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/Exalead"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/FUB"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/NUI"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/OKFN"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/OpenLink"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/SemanticWebCompany"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/TenForce"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/WoltersKluwerDeutschland"/>
+    <aksw:publicationTag>lod2page</aksw:publicationTag>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/DL-Learner"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/LinkedGeoData"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/NIF"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/ORE"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/OntoWiki"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/Triplify"/>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+* Partners: Centrum Wiskunde &amp; Informatica (NL), National University of Ireland, Galway (IRL), Freie Universität Berlin (D), OpenLink Software (GB), Semantic Web Company (A), TenForce (B), Exalead (F), Wolters Kluwer Deutschland (D), Open Knowledge Foundation (GB)
+* Duration: 2010–2014
+* Funding Programme: FP7-ICT-2009–5 (Collaborative Project)
+</site:content>
+    <site:templateOption>extended</site:templateOption>
+    <ov:screenshot rdf:resource="http://lh5.ggpht.com/-qFsSKX-1_dw/Tpx24oHmtEI/AAAAAAAAA9g/XOeQQWjBzCc/s800/lod2demo.png"/>
+    <dcterms:abstract>The goal of the LOD2 project is to develop infrastructure technology and best practices that fill the chasm between structured-linked-data and applied model logic &amp; reasoning, en route redefining the Web as we know it. In doing so, LOD2 will integrate and syndicate linked data with large-scale existing applications and showcase the benefits in three application scenarios including Media &amp; Publishing, Corporate Data Intranets and eGovernment.</dcterms:abstract>
+    <sioc:feed rdf:resource="http://lod2.eu/BlogPost/feed"/>
+    <doap:maintainer rdf:resource="http://aksw.org/SoerenAuer"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/FundedProject"/>
+    <rdfs:label>LOD2</rdfs:label>
+    <foaf:homepage rdf:resource="http://lod2.eu"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/LinkedGeoData">
+    <aksw:hookline>adds a spatial dimension to the Web of Data</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">...</site:content>
+    <ov:screenshot rdf:resource="http://lh5.ggpht.com/-ctT4LRRBtCw/Tpx42Zv3vhI/AAAAAAAAA9o/3zSf8Mbt7Hc/s800/lgd-browser.png"/>
+    <dcterms:abstract>LinkedGeoData is an effort to add a spatial dimension to the Web of Data / Semantic Web. LinkedGeoData uses the information collected by the OpenStreetMap project and makes it available as an RDF knowledge base according to the Linked Data principles. It interlinks this data with other knowledge bases in the Linking Open Data initiative.</dcterms:abstract>
+    <sioc:feed rdf:resource="http://blog.aksw.org/category/projects/linked-geo-data/feed/"/>
+    <doap:maintainer rdf:resource="http://aksw.org/ClausStadler"/>
+    <doap:programming-language>JavaScript</doap:programming-language>
+    <doap:programming-language>PHP</doap:programming-language>
+    <rdf:type rdf:resource="http://aksw.org/schema/CommunityProject"/>
+    <rdfs:label>LinkedGeoData</rdfs:label>
+    <foaf:homepage rdf:resource="http://linkedgeodata.org"/>
+    <foaf:logo rdf:resource="http://lh5.ggpht.com/-_9gwxkZRP1g/TlzV1epfNLI/AAAAAAAAApQ/xecznFVEWF4/s800/lgdlogo.png"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/MobileSocialSemanticWeb">
+    <aksw:hookline>weaving a distributed, semantic social network for mobile users</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <ov:screenshot rdf:resource="http://svn.aksw.org/papers/2011/ESWC_MobileSocialSemanticWeb/public/Screenshots.png"/>
+    <dcterms:abstract>An Android-based social web client as well as a contacts provider, which integrates your distributed FOAF/WebID social network into your mobile phone.</dcterms:abstract>
+    <doap:browse rdf:resource="http://code.google.com/p/mssw/source/browse/"/>
+    <doap:bug-database rdf:resource="http://code.google.com/p/mssw/issues/list"/>
+    <doap:download-page rdf:resource="http://code.google.com/p/mssw/downloads/list"/>
+    <doap:maintainer rdf:resource="http://aksw.org/SebastianTramp"/>
+    <doap:programming-language>Java</doap:programming-language>
+    <doap:wiki rdf:resource="http://code.google.com/p/mssw/wiki/Welcome"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>Mobile Social Semantic Web</rdfs:label>
+    <foaf:logo rdf:resource="http://g1.gstatic.com/android/market/org.aksw.mssw/hi-124-2"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/NKE">
+    <aksw:hookline>a light-weight methodology for low-cost knowledge engineering by a massive user base</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <ov:screenshot rdf:resource="http://lh4.ggpht.com/-sItQHOXs4D4/TrQA07eQk3I/AAAAAAAABBY/6f4u2Q2hYyc/s800/hanne.png"/>
+    <dcterms:abstract>Although structured data is becoming widely available, no other methodology – to the best of our knowledge – is currently able to scale up and provide light-weight knowledge engineering for a massive user base. Using NKE, data providers can publish flat data on the Web without extensively engineering structure upfront, but rather observe how structure is created on the fly by interested users, who navigate the knowledge base and at the same time also benefit from using it. The vision of NKE is to produce ontologies as a result of users navigating through a system. This way, NKE reduces the costs for creating expressive knowledge by disguising it as navigation.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/SebastianHellmann"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>Navigational Knowledge Engineering</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/NLP2RDF">
+    <aksw:hookline>Converting NLP tool output to RDF</aksw:hookline>
+    <ov:screenshot rdf:resource="http://nlp2rdf.org/files/2011/09/NIF_architecture.png"/>
+    <dcterms:abstract rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">NLP2RDF is a LOD2 Community project that is developing the NLP Interchange Format (NIF) . NIF aims to achieve interoperability between Natural Language Processing (NLP) tools, language resources and annotations. . The output of NLP tools can be converted into RDF and used in the LOD2 Stack. Currently a NIF-1.0 Version is created on this website (Go to NIF-1.0 Specification). Implementation of NIF 1.0 is progressing and a draft for NIF 2.0 will be refined based on the experience gained during the field test of NIF-1.0.
+</dcterms:abstract>
+    <sioc:feed rdf:resource="http://nlp2rdf.org/feed"/>
+    <doap:maintainer rdf:resource="http://aksw.org/SebastianHellmann"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/CommunityProject"/>
+    <rdfs:label>NLP2RDF</rdfs:label>
+    <foaf:homepage rdf:resource="http://nlp2rdf.org"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/ORE">
+    <aksw:hookline>A tool for debugging and enriching OWL knowledge bases</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">...</site:content>
+    <dcterms:abstract>The ORE (Ontology Repair and Enrichment) tool allows for knowledge engineers to improve an OWL ontology by fixing inconsistencies and making suggestions for adding further axioms to it</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/LorenzBuehmann"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>ORE</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/OntoWiki">
+    <aksw:hookline>a tool providing support for agile, distributed knowledge engineering scenarios</aksw:hookline>
+    <aksw:promoted rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</aksw:promoted>
+    <aksw:publicationTag>ontowiki</aksw:publicationTag>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/AKSWorg"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/CatalogusProfessorum"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/DSSN"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/Erfurt"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/OntoWikiMobile"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/RDFauthor"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/SemanticPingback"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/Stats2RDF"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/odfmi"/>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">...</site:content>
+    <site:templateOption>extended</site:templateOption>
+    <ov:screenshot rdf:resource="http://lh4.ggpht.com/-kXpKMqBBCIU/Tpx45SUaItI/AAAAAAAAA9w/aPYaNQjcpvo/s800/ontowiki.png"/>
+    <dcterms:abstract>OntoWiki facilitates the visual presentation of a knowledge base as an information map, with different views on instance data. It enables intuitive authoring of semantic content, with an inline editing mode for editing RDF content, similar to WYSIWIG for text documents.</dcterms:abstract>
+    <sioc:feed rdf:resource="http://blog.aksw.org/category/projects/ontowiki/feed/"/>
+    <doap:browse rdf:resource="https://github.com/AKSW/OntoWiki"/>
+    <doap:bug-database rdf:resource="https://github.com/AKSW/OntoWiki/issues"/>
+    <doap:download-page rdf:resource="https://github.com/AKSW/OntoWiki/downloads"/>
+    <doap:maintainer rdf:resource="http://aksw.org/SebastianTramp"/>
+    <doap:programming-language>JavaScript</doap:programming-language>
+    <doap:programming-language>PHP</doap:programming-language>
+    <rdf:type rdf:resource="http://aksw.org/schema/OpenSourceProject"/>
+    <rdfs:label>OntoWiki</rdfs:label>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/OntoWiki"/>
+    <foaf:homepage rdf:resource="http://ontowiki.net"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/OntoWikiEU">
+    <aksw:hookline>Social Semantic Collaboration for EKM, E-Learning &amp; E-Tourism</aksw:hookline>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/B2"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/CUAS"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/OpenLink"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/Vakantieland"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/OntoWiki"/>
+    <aksw:status>finished</aksw:status>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+* Partners: FH Kärnten (A), OpenLink Software Ltd. (UK), B2 d.o.o. (SLO), Vakantieland (NL)
+* Duration: 2008–2010
+* Funding Programme: FP7-SME
+</site:content>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">...</site:content>
+    <dcterms:abstract>Aim of the project is to advance and apply adaptive database and knowledge base techniques as well as user interface techniques to enable large-scale, end-user-driven semantic collaboration in the three application domains Enterprise Knowledge Management, E-Learning and E-Tourism.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/SoerenAuer"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/FundedProject"/>
+    <rdfs:label>OntoWiki.eu</rdfs:label>
+    <foaf:homepage rdf:resource="http://ontowiki.eu"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/OntoWikiMobile">
+    <aksw:hookline>Knowledge Management in your Pocket</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>OntoWiki Mobile was developed to address the need for a mobile web application for rapid and simple knowledge acquisition in a collaborative way. It allows users to collect instance data, refine the structure of knowledge bases and browse data using hierarchical or faceted navigation on-the-go even without a present data connection.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/TimofeyErmilov"/>
+    <doap:programming-language>JavaScript</doap:programming-language>
+    <doap:programming-language>PHP</doap:programming-language>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>OntoWiki Mobile</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/OpenResearch">
+    <aksw:hookline>Semantic Wiki for the Sciences</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>A semantic Wiki for collecting and sharing scientific meta-data such as CfPs, tool descriptions, research profiles, conference statistics etc.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/SoerenAuer"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>OpenResearch</rdfs:label>
+    <foaf:homepage rdf:resource="http://openresearch.org/"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/Powl">
+    <aksw:hookline>Semantic Web Development Plattform</aksw:hookline>
+    <dcterms:abstract>The aim of the Powl project is to deliver a PHP and web-based ontology editing and management solution to the OpenSoure community.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/SoerenAuer"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/AlumniProject"/>
+    <rdfs:label>Powl</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/QueryCache">
+    <aksw:hookline>Adaptive SPARQL Query Cache</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>In order to get closer to the performance of relational database-backed Web applications, we developed an approach for improving the performance of triple stores by caching query results and even complete application objects. The selective invalidation of cache objects, following updates of the underlying knowledge bases, is based on analysing the graph patterns of cached SPARQL queries in order to obtain information about what kind of updates will change the query result.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/MichaelMartin"/>
+    <doap:programming-language>Java</doap:programming-language>
+    <doap:programming-language>PHP</doap:programming-language>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>Query Cache</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/R2D2">
+    <aksw:hookline>PHP implementation of the D2RQ Mapping Language</aksw:hookline>
+    <rdf:type rdf:resource="http://aksw.org/schema/AlumniProject"/>
+    <rdfs:label>R2D2</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/RDFAPIJS">
+    <aksw:hookline>Use JavaScript RDFa Widgets for Model/View Separation inside Read/Write Websites</aksw:hookline>
+    <dcterms:abstract>As more and more websites start to embed RDFa content in their web application view, the need arises to provide a more extensive way for viewing and editing this semantic content independently from the remainder of the application. We present a JavaScript API that allows the independent creation of editing widgets for embedded RDFa, which adds a new edge to Web development in the context of the Semantic Web. As an addition, the API also provides sound update methods that allow on-the-spot model synchronization between client and server.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/SebastianTramp"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/AlumniProject"/>
+    <rdfs:label>RDFAPI-JS</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/RDFaCE">
+    <aksw:hookline>RDFa Content Editor</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <ov:screenshot rdf:resource="http://lh3.ggpht.com/-J7t1PfpY-U8/Tpx5iZN1-nI/AAAAAAAAA94/grIaBTK2h_Q/s800/rdface.png"/>
+    <dcterms:abstract>RDFaCE is an RDFa Content Editor based on TinyMCE. It supports different views for semantic content authoring and uses existing Semantic Web APIs to facilitate the annotation and editing of RDFa contents.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/AliKhalili"/>
+    <doap:programming-language>JavaScript</doap:programming-language>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>RDFaCE</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/RDFauthor">
+    <aksw:hookline>is an editing solution for distributed and syndicated structured content on the World Wide Web</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>The system is able to extract structured information from RDFa-enhanced websites and to create an edit form based on this data. To this end, we make use of semantics-aware editing widgets that hide most of the RDF data model from the user, thus allowing more people to author semantic content. If the embedded data does not suffice to create a rich user-supporting editing view, the underlying Semantic Web infrastructure is used to retrieve additional schema-related information about the elements used.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/NormanHeino"/>
+    <doap:programming-language>JavaScript</doap:programming-language>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>RDFauthor</rdfs:label>
+    <foaf:logo rdf:resource="http://lh3.ggpht.com/-WmVFVyaDjEM/TlzV2VGNWmI/AAAAAAAAAp0/WGqBhMYkDFI/s800/rdfa.png"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/ReDDObservatory">
+    <aksw:hookline>Using the Web of Data for Evaluating the Research-Disease Disparity</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>The ReDD-Observatory is a project to evaluate the disparity between active areas of biomedical research and the global burden of disease using Linked Data and data-driven discovery.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/AmrapaliZaveri"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>ReDD-Observatory</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/SCMS">
+    <aksw:hookline>Semantic Content Management Systems</aksw:hookline>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/DigitalTrowel"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/Netresearch"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/OpenLink"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/SemanticWebCompany"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/Fox"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/LIMES"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/OntoWiki"/>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+* Partners: Punk.Netservices GmbH (A), OpenLink Software Ltd. (UK), Netresearch GmbH &amp; Co. KG (D), Digital Trowel Inc. (IL)
+* Duration: 2010–2012
+* Funding Programme: Eurostars
+</site:content>
+    <dcterms:abstract>SCMS aims at combining automatic knowledge discovery and participative, end-user-driven knowledge curation and extension techniques through Social Semantic Web approaches so as to create novel applications in Enterprise Knowledge Management and real-time News Mining.</dcterms:abstract>
+    <sioc:feed rdf:resource="http://www.scms.eu/feed/"/>
+    <doap:maintainer rdf:resource="http://aksw.org/AxelNgonga"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/FundedProject"/>
+    <rdfs:label>SCMS</rdfs:label>
+    <foaf:homepage rdf:resource="http://scms.eu"/>
+    <foaf:logo rdf:resource="http://www.scms.eu/wp-content/themes/scms-theme/images/scms-logo.png"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/SINA">
+    <aksw:hookline>Semantically INterpreting user query towards question-Answering</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>Knowledge bases published on the Web of Data can be used to answer challenging questions about a wide range of topics. They usually offer a SPARQL endpoint, which can be queried by the user. However, a novice user needs to acquire both knowledge about the underlying ontology and proficiency in formulating SPARQL queries in order to actually formulate a SPARQL query. In this project, we are working on constructing SPARQL queries based on user-supplied keywords. As a result ordinary users are empowered to formulate relatively expressive queries without knowledge of SPARQL and the underlying ontology structure.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/SaeedehShekarpour"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>SINA</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/SemanticPingback">
+    <aksw:hookline>Adding a social dimension to the Linked Data Web</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>The Semantic Pingback mechanism is an extension of the well-known Pingback method, a technological cornerstone of the blogosphere, thus supporting the interlinking within the Data Web.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/SebastianTramp"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>Semantic Pingback</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/SlideWiki">
+    <aksw:hookline>helps communities to create great presentations collaboratively</aksw:hookline>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/KeyNodeJS"/>
+    <ov:screenshot rdf:resource="http://lh3.ggpht.com/-1eEGAM8mIG4/TrUtrFohoMI/AAAAAAAABB0/Ta2QC-rsyMs/s800/slidewiki-view.png"/>
+    <ov:screenshot rdf:resource="http://lh4.ggpht.com/-_ucInHOV87c/TrUtqpcwi7I/AAAAAAAABBs/p3bmvtSrHJ0/s800/slidewiki-home.png"/>
+    <ov:screenshot rdf:resource="http://lh6.ggpht.com/-WDej-O6jTZE/TrUtq0wZe2I/AAAAAAAABBw/DrmfWiZgKnY/s800/slidewiki-edit.png"/>
+    <ov:screenshot rdf:resource="http://lh6.ggpht.com/-gtrafeiSUNo/TrUtqrBO2UI/AAAAAAAABBo/FyLTviThwCQ/s800/slidewiki-search.png"/>
+    <dcterms:abstract>SlideWiki is a collaboration platform which enables communities to build, share and play online presentations. In addition to importing PowerPoint presentations, it supports authoring of interactive online slides using HTML and LateX. Slides and their containers (called Deck), are versioned thereby enabling change tracking. Users can create their own themes on top of existing themes or re-use other's themes.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/SoerenAuer"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/CommunityProject"/>
+    <rdfs:label>SlideWiki</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/SoftWiki">
+    <aksw:hookline>Semantics- and Community-Based Requirements Engineering</aksw:hookline>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/ISA"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/Lecos"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/ProDV"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/QASystems"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/TSystemsMMS"/>
+    <aksw:partner rdf:resource="http://aksw.org/Partner/UniDuisburgEssen"/>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/OntoWiki"/>
+    <aksw:status>finished</aksw:status>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+* Partners: Universität Duisburg-Essen, T-Systems MMS, ProDV AG, LeCoS GmbH, QA Systems GmbH, ISA Tools GmbH
+* Duration: 2006–2009
+* Funding Programme: [research initiative “Software Engineering 2006”](http://www.softwarefoerderung.de/), German Ministry of Education and Research (BMBF)
+</site:content>
+    <dcterms:abstract>The project delivers fundamental building blocks for early phases of Requirements Engineering by establishing a stakeholder-driven knowledge engineering process for requirements elicitation, organisation and management.</dcterms:abstract>
+    <sioc:feed rdf:resource="http://softwiki.de/netzwerk/feed/"/>
+    <doap:maintainer rdf:resource="http://aksw.org/ThomasRiechert"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/FundedProject"/>
+    <rdfs:label>SoftWiki</rdfs:label>
+    <foaf:homepage rdf:resource="http://softwiki.de"/>
+    <foaf:logo rdf:resource="http://lh3.ggpht.com/-O0rHt6DYrHE/TlzV1zEb4sI/AAAAAAAAApo/bg7W55zdiIQ/s800/logo_softwiki-200px.png"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/SparqlTrainer">
+    <aksw:hookline>learn to query the semantic web</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>The SparqlTrainer is an e-learning tool to practice SPARQL interactively. With the help of self-developed tests, consisting of individual questions, it is possible to train the different query forms (SELECT, CONSTRUCT, ASK and DESCRIBE). After entering a solution the learner will immediately see an evaluation of the request with the corresponding result. Due to different features, like password protection of tests and E-mail notification, an usage in support of courses is also possible.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/DanielGerber"/>
+    <doap:programming-language>Java</doap:programming-language>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>SPARQL Trainer</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/Stats2RDF">
+    <aksw:hookline>Representing multi-dimensional statistical data as RDF using the RDF Data Cube Vocabulary</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>This project is about the representation of multi-dimensional statistical data as RDF using the RDF Data Cube vocabulary by importing spreadsheets into the OntoWiki plug-in.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/AmrapaliZaveri"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>Stats2RDF</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/Triplify">
+    <aksw:hookline>provides a building block for the 'semantification' of Web applications</aksw:hookline>
+    <aksw:promoted rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</aksw:promoted>
+    <aksw:relatedProject rdf:resource="http://aksw.org/Projects/SemanticPingback"/>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">...</site:content>
+    <dcterms:abstract>Triplify tackles the chicken-and-egg problem of the Semantic Web by providing a building block for the “semantification” of Web applications. Triplify provides small, light-weight plugins for database-backed Web applications and exposes semantics as RDF, Linked Data and JSON.</dcterms:abstract>
+    <sioc:feed rdf:resource="http://blog.aksw.org/category/projects/triplify/feed/"/>
+    <doap:maintainer rdf:resource="http://aksw.org/SoerenAuer"/>
+    <doap:programming-language>PHP</doap:programming-language>
+    <rdf:type rdf:resource="http://aksw.org/schema/OpenSourceProject"/>
+    <rdfs:label>Triplify</rdfs:label>
+    <foaf:homepage rdf:resource="http://triplify.org"/>
+    <foaf:logo rdf:resource="http://lh3.ggpht.com/-rvVhwgpYdsw/TlzV2Ik-6cI/AAAAAAAAAps/9zs0HPF7Y1E/s800/logo-triplify.png"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/XML2OWL">
+    <aksw:hookline>Configurable XSLT stylesheet, which transforms XML documents into OWL</aksw:hookline>
+    <dcterms:abstract>XML2OWL converts a given XML instance files to an OWL ontology. It can also extract an OWL model only out of an XML Schema file. If there is no XML Schema available, one will be generated from the XML instance document. OWL instances can be combined with their model.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/SoerenAuer"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/AlumniProject"/>
+    <rdfs:label>XML2OWL XSLT</rdfs:label>
+    <foaf:homepage rdf:resource="http://xml2owl.sourceforge.net/"/>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/odfmi">
+    <aksw:hookline>Open Data for the University of Leipzig's Math and Computer Science Faculty</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>The aim of this project is to provide all relevant data about the faculty infrastructure and courses as linked open data.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/ThomasRiechert"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>OD@FMI</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/re-publish">
+    <aksw:hookline>Light-weight linked data publishing with node.js</aksw:hookline>
+    <dcterms:abstract>re:publish is a light-weight resource publishing server built with node.js. It can be used to publish linked data in various formats for machines as well as HTML for human consumption.</dcterms:abstract>
+    <doap:browse rdf:resource="https://github.com/0xfeedface/re-publish"/>
+    <doap:maintainer rdf:resource="http://aksw.org/NormanHeino"/>
+    <doap:programming-language>JavaScript</doap:programming-language>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>re:publish</rdfs:label>
+  </foaf:Project>
+  <foaf:Project rdf:about="http://aksw.org/Projects/xOperator">
+    <aksw:hookline>combines advantages of social network websites with instant messaging</aksw:hookline>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+...
+</site:content>
+    <dcterms:abstract>A semantic agent for xmpp / jabber network which finds and shares content about resources (using RDF/SPARQL) for you and your jabber friends.</dcterms:abstract>
+    <doap:maintainer rdf:resource="http://aksw.org/SebastianTramp"/>
+    <doap:programming-language>Java</doap:programming-language>
+    <rdf:type rdf:resource="http://aksw.org/schema/IncubatorProject"/>
+    <rdfs:label>xOperator</rdfs:label>
+    <foaf:logo rdf:resource="http://lh4.ggpht.com/-QkTbfyQlcwc/TlzV28aEmbI/AAAAAAAAAp8/AJk2bBBpJXw/s800/xOperator.png"/>
+  </foaf:Project>
+  <foaf:Document rdf:about="http://aksw.org/Publications">
+    <lod2:exhibitData rdf:resource="http://docs.aksw.org/BibsonomyProxy/exhibit-proxy.php?suffix=user/aksw/group_aksw&amp;callback=cb"/>
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+BibTeX entries for all AKSW publications can be found at [Bibsonomy](http://www.bibsonomy.org/user/aksw).
+</site:content>
+    <site:templateOption>extended</site:templateOption>
+    <site:templateOption>noheading</site:templateOption>
+    <rdfs:label>Publications</rdfs:label>
+  </foaf:Document>
+  <foaf:Person rdf:about="http://aksw.org/SaeedehShekarpour">
+    <aksw:room>5-22</aksw:room>
+    <site:templateOption>minimal</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/SINA"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=shekarpour"/>
+    <foaf:mbox rdf:resource="mailto:shekarpour@informatik.uni-leipzig.de"/>
+    <foaf:name>Saeedeh Shekarpour</foaf:name>
+    <foaf:phone rdf:resource="tel:+49-341-97-32341"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/SebastianHellmann">
+    <aksw:publicationTag>hellmann</aksw:publicationTag>
+    <aksw:room>5-10</aksw:room>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <skos:hiddenLabel>SebastianHellmann</skos:hiddenLabel>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/DL-Learner"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/LOD2"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/NKE"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/NLP2RDF"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=hellmann"/>
+    <foaf:mbox rdf:resource="mailto:hellmann@informatik.uni-leipzig.de"/>
+    <foaf:name>Sebastian Hellmann</foaf:name>
+    <foaf:nick>Wolf</foaf:nick>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/OntoWikiEU"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/Triplify"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/xOperator"/>
+    <foaf:phone rdf:resource="tel:+49-341-97-32273"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/SebastianTramp">
+    <aksw:publicationTag>tramp</aksw:publicationTag>
+    <aksw:room>5-08</aksw:room>
+    <site:templateOption>extended</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <sioc:feed rdf:resource="http://seebi.soup.io/rss"/>
+    <owl:sameAs rdf:resource="http://sebastian.tramp.name"/>
+    <skos:hiddenLabel>Sebastian Dietzold</skos:hiddenLabel>
+    <skos:hiddenLabel>SebastianDietzold</skos:hiddenLabel>
+    <skos:hiddenLabel>SebastianTramp</skos:hiddenLabel>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/AKSWorg"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/DSSN"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/Erfurt"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/KeyNodeJS"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/LOD2"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/MobileSocialSemanticWeb"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/OntoWiki"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/RDFauthor"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=tramp"/>
+    <foaf:mbox rdf:resource="mailto:tramp@informatik.uni-leipzig.de"/>
+    <foaf:name>Sebastian Tramp</foaf:name>
+    <foaf:nick>Seebi</foaf:nick>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/LDAP"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/LE4SW"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/OntoWikiEU"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/OntoWikiMobile"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/SoftWiki"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/Triplify"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/xOperator"/>
+    <foaf:phone rdf:resource="tel:+49-341-97-32366"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/SoerenAuer">
+    <aksw:publicationTag>auer</aksw:publicationTag>
+    <aksw:room>5-09</aksw:room>
+    <site:templateOption>extended</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <skos:hiddenLabel>SoerenAuer</skos:hiddenLabel>
+    <skos:prefLabel>Dr. Sören Auer</skos:prefLabel>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=auer"/>
+    <foaf:mbox rdf:resource="mailto:auer@informatik.uni-leipzig.de"/>
+    <foaf:name>Sören Auer</foaf:name>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/LE4SW"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/OntoWikiEU"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/Powl"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/SoftWiki"/>
+    <foaf:pastProject rdf:resource="http://aksw.org/Projects/XML2OWL"/>
+    <foaf:phone rdf:resource="tel:+49-341-97-32367"/>
+  </foaf:Person>
+  <foaf:Document rdf:about="http://aksw.org/Teaching">
+    <site:content rdf:datatype="http://ns.ontowiki.net/SysOnt/Markdown">
+# Semantic Web Module
+
+Together with the Intelligent Systems department at Uni Leipzig,  AKSW created the [master module Semanti Web](http://bis.informatik.uni-leipzig.de/de/Lehre/BAMA/SW). The module is usually held in the summer semester and consists of a lecture, a seminar and practical work.
+
+# Student Supervision
+
+AKSW actively supervises internships as well as bachelor and master thesis. Most of the thesis topics are related to Web technologies, Semantic Web, ontologies, information systems and data management. They are usually performed in the context of an AKSW Project. You can also have a look at [BIS Abschlussarbeiten](http://bis.informatik.uni-leipzig.de/de/Abschlussarbeiten).
+
+# Leipzig School of Media
+
+AKSW organizes and performs the master study course [Content- &amp; Media-Engineering](http://www.leipzigschoolofmedia.de/master-content-and-media-engineering/) at Leipzig School of Media.
+</site:content>
+    <rdfs:label>Teaching</rdfs:label>
+  </foaf:Document>
+  <foaf:Person rdf:about="http://aksw.org/ThomasRiechert">
+    <aksw:publicationTag>riechert</aksw:publicationTag>
+    <aksw:room>5-09</aksw:room>
+    <site:templateOption>extended</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <skos:hiddenLabel>TRiechert</skos:hiddenLabel>
+    <skos:hiddenLabel>ThomasRiechert</skos:hiddenLabel>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/SoftWiki"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=riechert"/>
+    <foaf:mbox rdf:resource="mailto:riechert@informatik.uni-leipzig.de"/>
+    <foaf:name>Thomas Riechert</foaf:name>
+    <foaf:phone rdf:resource="tel:+49-341-97-32323"/>
+  </foaf:Person>
+  <foaf:Person rdf:about="http://aksw.org/TimofeyErmilov">
+    <aksw:publicationTag>ermilov</aksw:publicationTag>
+    <aksw:room>5-20</aksw:room>
+    <site:templateOption>minimal</site:templateOption>
+    <ov:businessCard rdf:resource="http://aksw.org/vCard/Leipzig"/>
+    <skos:hiddenLabel>TimofeyErmilov</skos:hiddenLabel>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/AKSWorg"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/DSSN"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/MobileSocialSemanticWeb"/>
+    <foaf:currentProject rdf:resource="http://aksw.org/Projects/OntoWiki"/>
+    <foaf:depiction rdf:resource="http://bis.informatik.uni-leipzig.de/images/jpegPhoto.php?name=sn&amp;value=ermilov"/>
+    <foaf:mbox rdf:resource="mailto:ermilov@informatik.uni-leipzig.de"/>
+    <foaf:name>Timofey Ermilov</foaf:name>
+    <foaf:phone rdf:resource="tel:+49-341-97-32322"/>
+  </foaf:Person>
+  <owl:Class rdf:about="http://aksw.org/schema/AlumniProject">
+    <rdfs:label>Alumni Project</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://aksw.org/schema/CommunityProject">
+    <site:classTemplate>project</site:classTemplate>
+    <rdfs:label>Community Project</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://aksw.org/schema/Demo">
+    <site:classTemplate>project</site:classTemplate>
+    <rdfs:label>Demo</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://aksw.org/schema/FundedProject">
+    <site:classTemplate>project</site:classTemplate>
+    <rdfs:label>Funded Project</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://aksw.org/schema/IncubatorProject">
+    <rdfs:label>Incubator Project</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://aksw.org/schema/OpenSourceProject">
+    <site:classTemplate>project</site:classTemplate>
+    <rdfs:label>OpenSource Project</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="http://aksw.org/schema/buttonLabel">
+    <rdfs:comment>this label of a property is used as a link button text where suitable</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>button label</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://aksw.org/schema/demonstrates">
+    <aksw:buttonLabel>Demo</aksw:buttonLabel>
+    <rdfs:comment>which project is demonstrated by this demo</rdfs:comment>
+    <rdfs:domain rdf:resource="http://aksw.org/schema/Demo"/>
+    <rdfs:label>demonstrates</rdfs:label>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://aksw.org/schema/hookline">
+    <rdfs:label>hookline</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://aksw.org/schema/promoted">
+    <rdfs:comment>a project which is promoted e.g. on the startpage</rdfs:comment>
+    <rdfs:label>promoted</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://aksw.org/schema/publicationTag">
+    <rdfs:comment>the tag which is used for this project / agend in the aksw.bib file</rdfs:comment>
+    <rdfs:label>publication tag</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://aksw.org/schema/relatedProject">
+    <rdfs:comment>a symmetric relation between two projects</rdfs:comment>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdfs:label>related project</rdfs:label>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://aksw.org/schema/researchAreas">
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:label>research areas</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://aksw.org/schema/room">
+    <rdfs:label>room</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://aksw.org/schema/status">
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdfs:label>status</rdfs:label>
+  </owl:DatatypeProperty>
+  <v:VCard rdf:about="http://aksw.org/vCard/Leipzig">
+    <rdfs:label>[Office Leipzig]</rdfs:label>
+    <v:adr rdf:resource="http://aksw.org/vCard/Leipzig#adr"/>
+  </v:VCard>
+  <v:Work rdf:about="http://aksw.org/vCard/Leipzig#adr">
+    <rdfs:label>[Address Leipzig]</rdfs:label>
+    <v:country-name>Germany</v:country-name>
+    <v:locality>Leipzig</v:locality>
+    <v:postal-code>04103</v:postal-code>
+    <v:street-address>Johannisgasse 26</v:street-address>
+  </v:Work>
+  <aksw:Demo rdf:about="http://autosparql.dl-learner.org/app/#home">
+    <aksw:demonstrates rdf:resource="http://aksw.org/Projects/AutoSPARQL"/>
+    <aksw:hookline>The aim of the AutoSPARQL is to provide robust question answering over RDF data by combining methods from several research areas.</aksw:hookline>
+    <ov:screenshot rdf:resource="http://picasaweb.google.com/lh/view?q=aksw&amp;psc=G&amp;filter=1#5675267788504427426"/>
+    <rdfs:label>AutoSPARQL</rdfs:label>
+  </aksw:Demo>
+  <rdf:Description rdf:about="http://blog.aksw.org">
+    <rdfs:label>Blog</rdfs:label>
+  </rdf:Description>
+  <aksw:Demo rdf:about="http://browser.linkedgeodata.org/">
+    <aksw:demonstrates rdf:resource="http://aksw.org/Projects/LinkedGeoData"/>
+    <aksw:hookline>is a javascript-based fullscreen browser and editor for geo-spatial data.</aksw:hookline>
+    <ov:screenshot rdf:resource="http://lh5.ggpht.com/-ctT4LRRBtCw/Tpx42Zv3vhI/AAAAAAAAA9o/3zSf8Mbt7Hc/s800/lgd-browser.png"/>
+    <rdfs:label>LGD Browser / Editor</rdfs:label>
+  </aksw:Demo>
+  <aksw:Demo rdf:about="http://demo.lod2.eu/lod2demo/">
+    <aksw:demonstrates rdf:resource="http://aksw.org/Projects/LOD2"/>
+    <aksw:hookline>is an integrated demonstrator application for the tools of the LOD2 project.</aksw:hookline>
+    <ov:screenshot rdf:resource="http://lh5.ggpht.com/-qFsSKX-1_dw/Tpx24oHmtEI/AAAAAAAAA9g/XOeQQWjBzCc/s800/lod2demo.png"/>
+    <rdfs:label>LOD2 Stack</rdfs:label>
+  </aksw:Demo>
+  <aksw:Demo rdf:about="http://demo.ontowiki.net">
+    <aksw:demonstrates rdf:resource="http://aksw.org/Projects/OntoWiki"/>
+    <aksw:hookline>is a semantic data wiki for publishing and consuming Linked Data in agile, distributed knowledge engineering scenarios.</aksw:hookline>
+    <ov:screenshot rdf:resource="http://lh4.ggpht.com/-kXpKMqBBCIU/Tpx45SUaItI/AAAAAAAAA9w/aPYaNQjcpvo/s800/ontowiki.png"/>
+    <rdfs:label>OntoWiki</rdfs:label>
+  </aksw:Demo>
+  <aksw:Demo rdf:about="http://hanne.aksw.org">
+    <aksw:demonstrates rdf:resource="http://aksw.org/Projects/NKE"/>
+    <aksw:hookline>Holistic Application for Navigational Knowledge Engineering</aksw:hookline>
+    <ov:screenshot rdf:resource="http://lh4.ggpht.com/-sItQHOXs4D4/TrQA07eQk3I/AAAAAAAABBY/6f4u2Q2hYyc/s800/hanne.png"/>
+    <rdfs:label>HANNE</rdfs:label>
+  </aksw:Demo>
+  <aksw:Demo rdf:about="http://limes.aksw.org/">
+    <aksw:demonstrates rdf:resource="http://aksw.org/Projects/LIMES"/>
+    <aksw:hookline>is a tool for discovering links in the Web of data</aksw:hookline>
+    <ov:screenshot rdf:resource="http://lh6.ggpht.com/-a2wAOUd66Mg/Tpx67TgYRZI/AAAAAAAAA-s/WilVdTWuk3s/s800/limes.png"/>
+    <rdfs:label>LIMES</rdfs:label>
+  </aksw:Demo>
+  <owl:DatatypeProperty rdf:about="http://lod2.eu/schema/contentRaw">
+    <rdfs:label>raw content</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://lod2.eu/schema/exhibitData">
+    <rdfs:label>exhibit data</rdfs:label>
+  </owl:ObjectProperty>
+  <aksw:Demo rdf:about="http://nlp2rdf.lod2.eu/demo.php">
+    <aksw:demonstrates rdf:resource="http://aksw.org/Projects/NLP2RDF"/>
+    <ov:screenshot rdf:resource="http://nlp2rdf.org/files/2011/09/NIF_architecture.png"/>
+    <rdf:type rdf:resource="http://aksw.org/schema/Demo"/>
+    <rdfs:label>Snowball Stemmer NIF implementation.</rdfs:label>
+    <rdfs:label>Stanford Core NIF implementation.</rdfs:label>
+  </aksw:Demo>
+  <rdfs:Class rdf:about="http://ns.ontowiki.net/SysOnt/Site/Navigation">
+    <rdfs:comment>an RDF sequence resource which is used by the site extensions menu helper</rdfs:comment>
+    <rdfs:label>Navigation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+    <skos:note>menu items can have a special label with site:menuLabel</skos:note>
+  </rdfs:Class>
+  <owl:DatatypeProperty rdf:about="http://ns.ontowiki.net/SysOnt/Site/abbrevation">
+    <rdfs:comment>the abbrevation of a resource is used e.g. as a url naming part as well as can be used for better searching.</rdfs:comment>
+    <rdfs:label>abbrevation</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://ns.ontowiki.net/SysOnt/Site/classTemplate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:comment>identifies the template which is used to render the HTML representation of the resources of this class</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>class template</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://ns.ontowiki.net/SysOnt/Site/content">
+    <rdfs:comment>the main content of a resource in an encoded text of a specific encoding datatype, e.g. sysont:Markdown.</rdfs:comment>
+    <rdfs:label>main content</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/rss/1.0/modules/content/encoded"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://ns.ontowiki.net/SysOnt/Site/menuLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:comment>if present, the navigation list helper uses this literal for the display name of the menu item</rdfs:comment>
+    <rdfs:label>menu label</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://ns.ontowiki.net/SysOnt/Site/template">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:comment>identifies the template which is used to render the HTML representation of this specific resources</rdfs:comment>
+    <rdfs:comment>this attribute overwrites the site:classTemplate property</rdfs:comment>
+    <rdfs:label>template</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://ns.ontowiki.net/SysOnt/Site/templateOption">
+    <rdfs:comment>this property is used to forward some site specific options to rendering template</rdfs:comment>
+    <rdfs:label>template option</rdfs:label>
+  </owl:DatatypeProperty>
+  <rdf:Property rdf:about="http://open.vocab.org/terms/businessCard">
+    <ns1:plural xmlns:ns1="http://purl.org/net/vocab/2004/03/label#" xml:lang="en">Business Cards</ns1:plural>
+    <rdfs:comment xml:lang="en">A business card associated with this resource.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://open.vocab.org/terms"/>
+    <rdfs:label xml:lang="en">Business Card</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2006/vcard/ns#VCard"/>
+    <owl:equivalentProperty rdf:resource="http://purl.org/uF/hCard/terms/hasCard"/>
+    <ns2:term_status xmlns:ns2="http://www.w3.org/2003/06/sw-vocab-status/ns#">unstable</ns2:term_status>
+    <ns3:userdocs xmlns:ns3="http://www.w3.org/2003/06/sw-vocab-status/ns#" rdf:resource="http://open.vocab.org/docs/"/>
+    <skos:note rdf:resource="http://open.vocab.org/changes/0a8d6d27db41d0a297e67d0da3f0c45b"/>
+    <skos:note rdf:resource="http://open.vocab.org/changes/4d316062a929a47b0313fddaa68084b5"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://open.vocab.org/terms/screenshot">
+    <ns4:plural xmlns:ns4="http://purl.org/net/vocab/2004/03/label#" xml:lang="en">screenshots</ns4:plural>
+    <rdfs:comment xml:lang="en">A screenshot showing the (software) project in action. Since DOAP only has a property to link a "web page with screenshots of project", not a specific screenshot, this property is sometimes more useful.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <rdfs:isDefinedBy rdf:resource="http://open.vocab.org/terms"/>
+    <rdfs:label xml:lang="en">screenshot</rdfs:label>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Image"/>
+    <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/depiction"/>
+    <owl:inverseOf rdf:resource="http://xmlns.com/foaf/0.1/depicts"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/dc/terms/abstract">
+    <rdfs:comment>A summary of the resource.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    <rdfs:label>Abstract</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/dc/terms/contributor">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    <rdfs:label>contributor</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/dc/terms/creator">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    <rdfs:label>creator</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/dc/terms/license">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    <rdfs:label>license</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/dc/terms/publisher">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    <rdfs:label>publisher</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/dc/terms/source">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    <rdfs:label>source</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/dc/terms/subject">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    <rdfs:label>subject</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/dc/terms/title">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    <rdfs:label>title</rdfs:label>
+  </rdf:Property>
+  <owl:Class rdf:about="http://purl.org/vocab/aiiso/schema#ResearchGroup">
+    <site:classTemplate>group</site:classTemplate>
+    <dcterms:issued>2008-05-14</dcterms:issued>
+    <rdfs:comment>A Research Group is a group of people recognised by an organization as forming a cohesive group referred to by the organization as a research group.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/aiiso/schema#"/>
+    <rdfs:label>Research Group</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </owl:Class>
+  <aksw:Demo rdf:about="http://rdface.aksw.org/">
+    <aksw:demonstrates rdf:resource="http://aksw.org/Projects/RDFaCE"/>
+    <aksw:hookline>is an RDFa Content Editor based on TinyMCE</aksw:hookline>
+    <ov:screenshot rdf:resource="http://lh3.ggpht.com/-J7t1PfpY-U8/Tpx5iZN1-nI/AAAAAAAAA94/grIaBTK2h_Q/s800/rdface.png"/>
+    <rdfs:label>RDFaCE</rdfs:label>
+  </aksw:Demo>
+  <owl:Class rdf:about="http://rdfs.org/ns/void#Dataset">
+    <sysont:hidden rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sysont:hidden>
+    <rdfs:label>Dataset</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#feed">
+    <rdfs:comment>A feed (e.g. RSS, Atom, etc.) pertaining to this resource (e.g. for a Forum, Site, UserAccount, etc.).</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+    <rdfs:label>feed</rdfs:label>
+  </owl:ObjectProperty>
+  <aksw:Demo rdf:about="http://slidewiki.aksw.org/">
+    <aksw:demonstrates rdf:resource="http://aksw.org/Projects/SlideWiki"/>
+    <aksw:hookline>is a collaboration platform which enables communities to build, share and play online presentations</aksw:hookline>
+    <ov:screenshot rdf:resource="http://lh4.ggpht.com/-_ucInHOV87c/TrUtqpcwi7I/AAAAAAAABBs/p3bmvtSrHJ0/s800/slidewiki-home.png"/>
+    <rdfs:label>SlideWiki</rdfs:label>
+  </aksw:Demo>
+  <rdf:Property rdf:about="http://usefulinc.com/ns/doap#browse">
+    <aksw:buttonLabel>Fork me!</aksw:buttonLabel>
+    <rdfs:comment>Web browser interface to repository.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://usefulinc.com/ns/doap#"/>
+    <rdfs:label>Repository (web)</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://usefulinc.com/ns/doap#bug-database">
+    <aksw:buttonLabel>Issues</aksw:buttonLabel>
+    <rdfs:comment>Bug tracker for a project.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://usefulinc.com/ns/doap#"/>
+    <rdfs:label>bug database</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://usefulinc.com/ns/doap#download-page">
+    <aksw:buttonLabel>Download</aksw:buttonLabel>
+    <rdfs:comment>Web page from which the project software can be downloaded.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://usefulinc.com/ns/doap#"/>
+    <rdfs:label>download page</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://usefulinc.com/ns/doap#maintainer">
+    <rdfs:comment>Maintainer of a project, a project leader.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://usefulinc.com/ns/doap#"/>
+    <rdfs:label>maintainer</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://usefulinc.com/ns/doap#programming-language">
+    <rdfs:comment>Programming language a project is implemented in or intended for use with.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://usefulinc.com/ns/doap#"/>
+    <rdfs:label>programming language</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://usefulinc.com/ns/doap#wiki">
+    <aksw:buttonLabel>Wiki</aksw:buttonLabel>
+    <rdfs:comment>URL of Wiki for collaborative discussion of project.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://usefulinc.com/ns/doap#"/>
+    <rdfs:label>wiki</rdfs:label>
+  </rdf:Property>
+  <rdf:Description rdf:about="http://wiki.aksw.org/Internal">
+    <rdfs:label>Internal Area</rdfs:label>
+  </rdf:Description>
+  <rdfs:ContainerMembershipProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1">
+    <rdfs:label>1.</rdfs:label>
+  </rdfs:ContainerMembershipProperty>
+  <rdfs:ContainerMembershipProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_10">
+    <rdfs:label>10.</rdfs:label>
+  </rdfs:ContainerMembershipProperty>
+  <rdfs:ContainerMembershipProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2">
+    <rdfs:label>2.</rdfs:label>
+  </rdfs:ContainerMembershipProperty>
+  <rdfs:ContainerMembershipProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3">
+    <rdfs:label>3.</rdfs:label>
+  </rdfs:ContainerMembershipProperty>
+  <rdfs:ContainerMembershipProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4">
+    <rdfs:label>4.</rdfs:label>
+  </rdfs:ContainerMembershipProperty>
+  <rdfs:ContainerMembershipProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_5">
+    <rdfs:label>5.</rdfs:label>
+  </rdfs:ContainerMembershipProperty>
+  <rdfs:ContainerMembershipProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_6">
+    <rdfs:label>6.</rdfs:label>
+  </rdfs:ContainerMembershipProperty>
+  <rdfs:ContainerMembershipProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_7">
+    <rdfs:label>7.</rdfs:label>
+  </rdfs:ContainerMembershipProperty>
+  <rdfs:ContainerMembershipProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_8">
+    <rdfs:label>8.</rdfs:label>
+  </rdfs:ContainerMembershipProperty>
+  <rdfs:ContainerMembershipProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_9">
+    <rdfs:label>9.</rdfs:label>
+  </rdfs:ContainerMembershipProperty>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">
+    <rdfs:label>type</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+    <rdfs:label>label</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="http://www.w3.org/2006/vcard/ns#VCard">
+    <sysont:hidden rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sysont:hidden>
+    <rdfs:label>vCard</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/2006/vcard/ns#Work">
+    <sysont:hidden rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sysont:hidden>
+    <rdfs:label>vCard Work part</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Document">
+    <site:classTemplate>document</site:classTemplate>
+    <rdfs:label>Document</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Organization">
+    <site:classTemplate>person</site:classTemplate>
+    <rdfs:label>Organization</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+    <site:classTemplate>person</site:classTemplate>
+    <rdfs:label>Person</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Project">
+    <site:classTemplate>project</site:classTemplate>
+    <rdfs:label>Project</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/currentProject">
+    <rdfs:label>current project</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/depiction">
+    <rdfs:label>depiction</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/homepage">
+    <aksw:buttonLabel>Homepage</aksw:buttonLabel>
+    <rdfs:label>homepage</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/mbox">
+    <rdfs:label>email</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/member">
+    <rdfs:label>member</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/name">
+    <rdfs:label>name</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/page">
+    <rdfs:label>page</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/pastProject">
+    <rdfs:label>past project</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/phone">
+    <rdfs:label>phone</rdfs:label>
+  </owl:ObjectProperty>
+</rdf:RDF>
