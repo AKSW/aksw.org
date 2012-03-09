@@ -59,8 +59,8 @@ custom:
 	rm -rf extensions/site
 	@echo 'Cloning extensions/site.'
 	git clone git://github.com/AKSW/site.ontowiki.git extensions/site
-	rm -f extensions/site/sites/aksw2011
-	cd extensions/site/sites/ && ln -s ../../../site aksw2011
+	rm -f extensions/site/sites/local
+	cd extensions/site/sites/ && ln -s ../../../site local
 
 # top level target
 

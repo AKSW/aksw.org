@@ -51,7 +51,7 @@ WHERE {
     { ?resourceUri ?propertyUri <'.$this->resourceUri.'> . }
     ?propertyUri aksw:buttonLabel ?label
 }';
-$buttons = $this->querylist($query, 'aksw2011/items/buttons.phtml');
+$buttons = $this->querylist($query, 'local/items/buttons.phtml');
 ?>
 
 <nav class="nav-sidelinks">
@@ -62,13 +62,13 @@ $buttons = $this->querylist($query, 'aksw2011/items/buttons.phtml');
 
 <header class="intro foaf_Person">
     <h1 class="hideme"><?php echo $this->title ?></h1>
-    <?php echo $this->renderx(array('template'=>'aksw2011/items/vcardperson.phtml')) ?>
+    <?php echo $this->renderx(array('template'=>'local/items/vcardperson.phtml')) ?>
     <?php echo $buttons ?>
 </header> <!-- /.intro -->
 
 <?php echo $this->literal(array('tag' => 'div', 'class' => 'content')) ?>
 <?php echo $currentProjects, $pastProjects; ?>
 <?php echo $this->renderx(array(
-    'template' => 'aksw2011/items/publications.phtml'
+    'template' => 'local/items/publications.phtml'
 ));
 

@@ -14,7 +14,7 @@ $editUrl = $this->wikiBaseUrl .'view?r=' . urlencode($this->resourceUri);
 <footer id="footer">
     <aside id="articleinfo">
         <div class="subc">
-            <?php echo $this->partial('aksw2011/lastchange.phtml', $this->lastchange($this->resourceUri)); ?>
+            <?php echo $this->partial('local/lastchange.phtml', $this->lastchange($this->resourceUri)); ?>
 
             <dl class="resourceoptions">
                 <dt class="hideme">Resource info &amp; options</dt>

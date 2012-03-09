@@ -34,7 +34,7 @@ WHERE {
     { ?resourceUri ?propertyUri <'.$this->resourceUri.'> . }
     ?propertyUri aksw:buttonLabel ?label
 }';
-$buttons = $this->querylist($query, 'aksw2011/items/buttons.phtml');
+$buttons = $this->querylist($query, 'local/items/buttons.phtml');
 
 // prepare projects for sidelinks
 $promotedProjects = $this->query(array(
@@ -82,5 +82,5 @@ $team = $this->query(array(
 </header> <!-- /.intro -->
 <?php echo $content, $team ?>
 <?php echo $this->renderx(array(
-    'template' => 'aksw2011/items/publications.phtml'
+    'template' => 'local/items/publications.phtml'
 ));

@@ -74,15 +74,15 @@ $templateData           = $this->templateData;
     foreach ($this->namespaces as $prefix => $ns): ?><?php echo ' xmlns:' . $prefix . '="' . $ns . '"' ?><?php endforeach; ?>>
     <div class="page_margins">
         <div id="page">
-                <?php echo $this->partial('aksw2011/header.phtml', $templateData) ?>
+                <?php echo $this->partial('local/header.phtml', $templateData) ?>
             <article id="content">
-                <?php //echo $this->partial('aksw2011/breadcrumbs.phtml', $templateData) ?>
+                <?php //echo $this->partial('local/breadcrumbs.phtml', $templateData) ?>
                 <?php echo $this->renderx(); ?>
             </article> <!-- /#content -->
             <section id="sidecontent">
-                <?php echo $this->partial('aksw2011/feed.phtml', $templateData) ?>
+                <?php echo $this->partial('local/feed.phtml', $templateData) ?>
             </section> <!-- /#sidecontent -->
-            <?php echo $this->partial('aksw2011/footer.phtml', $templateData) ?>
+            <?php echo $this->partial('local/footer.phtml', $templateData) ?>
         </div> <!-- /#page -->
     </div> <!-- /.page_margins -->
 </body>
