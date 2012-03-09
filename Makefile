@@ -148,7 +148,7 @@ debianize:
 # cs-script path
 CSSPATH = application/tests/CodeSniffer/
 # ignore pattern
-IGNOREPATTERN = */libraries/*
+IGNOREPATTERN = */libraries/*,pclzip.lib
 
 # Parameter check
 ifndef FPATH
@@ -195,7 +195,7 @@ cs-check:
 cs-check-intensive:
 	$(CSSPATH)cs-scripts.sh -s -c "-s --report=summary $(REQUESTSTR)"
 cs-check-full:
-	$(CSSPATH)cs-scripts.sh -c "-s -v --report=full $(REQUESTSTR)"
+	$(CSSPATH)cs-scripts.sh -c "-s --report=full $(REQUESTSTR)"
 cs-check-emacs:
 	$(CSSPATH)cs-scripts.sh -c "--report=emacs $(REQUESTSTR)"
 cs-check-blame:
