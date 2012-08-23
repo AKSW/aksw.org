@@ -10,7 +10,7 @@
  * The pingback plugin is used on different events
  *
  * @category   OntoWiki
- * @package    OntoWiki_extensions_pingback
+ * @package    Extensions_Pingback
  * @author     Philipp Frischmuth
  * @author     Sebastian Tramp <mail@sebastian.tramp.name>
  */
@@ -156,7 +156,7 @@ class PingbackPlugin extends OntoWiki_Plugin
     {
         // If at least one ping_properties value is set in config, we only ping for matching predicates.
         if (isset($this->_privateConfig->ping_properties)) {
-            $props = $this->_privateConfig->ping_properties->toArray();
+            $props = (array) $this->_privateConfig->ping_properties;
             if (!in_array($predicate, $props)) {
                 return;
             }

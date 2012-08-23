@@ -1,7 +1,19 @@
 <?php
 
-class OntoWiki_Controller_ActionHelper_List extends Zend_Controller_Action_Helper_Abstract
-{
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2012, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * Manage the session variable that stores multiple lists (mostly the current instance list)
+ *
+ * @category OntoWiki
+ * @package  OntoWiki_Classes_Controller_ActionHelper
+ */
+class OntoWiki_Controller_ActionHelper_List extends Zend_Controller_Action_Helper_Abstract{
     protected $_owApp;
 
     public function  __construct()
@@ -59,8 +71,6 @@ class OntoWiki_Controller_ActionHelper_List extends Zend_Controller_Action_Helpe
         $lists = $this->_owApp->session->managedLists;
 
         if (key_exists($name, $lists)) {
-             //after deserialization the store is compromized
-            $lists[$name]->setStore(clone $lists[$name]->getStore());
             return $lists[$name];
         }
 
@@ -133,7 +143,7 @@ class OntoWiki_Controller_ActionHelper_List extends Zend_Controller_Action_Helpe
         if (key_exists($name, $lists)) {
             unset ($lists[$name]);
         }
-
-        throw new InvalidArgumentException('list was not found. check with listExists() first');
+       
+        throw new InvalidArgumentException("list was not found. check with listExists() first");
     }
 }

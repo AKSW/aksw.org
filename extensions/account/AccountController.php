@@ -10,7 +10,7 @@
  * Component controller for user account related stuff
  *
  * @category   OntoWiki
- * @package    OntoWiki_extensions_component_account
+ * @package    Extensions_Account
  * @author     Christoph Rieß <c.riess.dev@googlemail.com>, Norman Heino <norman.heino@gmail.com>
  */
 class AccountController extends OntoWiki_Controller_Component
@@ -20,8 +20,7 @@ class AccountController extends OntoWiki_Controller_Component
      */
     public function recoverAction()
     {
-
-        OntoWiki_Navigation::disableNavigation();
+        OntoWiki::getInstance()->getNavigation()->disableNavigation();
         $config = Erfurt_App::getInstance()->getConfig();
         $translate = $this->_owApp->translate;
 

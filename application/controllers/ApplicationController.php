@@ -2,17 +2,16 @@
 /**
  * This file is part of the {@link http://ontowiki.net OntoWiki} project.
  *
- * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @copyright Copyright (c) 2012, {@link http://aksw.org AKSW}
  * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
  */
 
 /**
  * OntoWiki application controller.
  *
- * @package    application
- * @subpackage mvc
- * @author     Norman Heino <norman.heino@gmail.com>
- * @author     Philipp Frischmuth <pfrischmuth@googlemail.com>
+ * @package OntoWiki_Controller
+ * @author Norman Heino <norman.heino@gmail.com>
+ * @author Philipp Frischmuth <pfrischmuth@googlemail.com>
  */
 class ApplicationController extends OntoWiki_Controller_Base
 {
@@ -21,7 +20,7 @@ class ApplicationController extends OntoWiki_Controller_Base
      */
     public function aboutAction()
     {
-        OntoWiki_Navigation::disableNavigation();
+        OntoWiki::getInstance()->getNavigation()->disableNavigation();
         $this->view->placeholder('main.window.title')->set('About OntoWiki');
 
         $version = $this->_config->version->number;
@@ -171,7 +170,7 @@ class ApplicationController extends OntoWiki_Controller_Base
      */
     public function registerAction()
     {
-        OntoWiki_Navigation::disableNavigation();
+        OntoWiki::getInstance()->getNavigation()->disableNavigation();
         $this->_helper->viewRenderer->setScriptAction('register');
 
         $this->view->placeholder('main.window.title')->set('Register User');
@@ -294,7 +293,7 @@ class ApplicationController extends OntoWiki_Controller_Base
      */
     public function openidregAction()
     {
-        OntoWiki_Navigation::disableNavigation();
+        OntoWiki::getInstance()->getNavigation()->disableNavigation();
 
         // We render a template, that is also used for preferences.
         $this->_helper->viewRenderer->setScriptAction('openid');
@@ -481,7 +480,7 @@ class ApplicationController extends OntoWiki_Controller_Base
 
     public function webidregAction()
     {
-        OntoWiki_Navigation::disableNavigation();
+        OntoWiki::getInstance()->getNavigation()->disableNavigation();
 
         // We render a template, that is also used for preferences.
         $this->_helper->viewRenderer->setScriptAction('webid');
@@ -696,7 +695,7 @@ class ApplicationController extends OntoWiki_Controller_Base
                 ->appendButton(OntoWiki_Toolbar::RESET, array('name' => 'Reset Form'));
         $this->view->placeholder('main.window.toolbar')->set($toolbar);
 
-        OntoWiki_Navigation::disableNavigation();
+        OntoWiki::getInstance()->getNavigation()->disableNavigation();
 
         $this->_helper->viewRenderer->setScriptAction('userdetails');
     }
@@ -779,7 +778,7 @@ class ApplicationController extends OntoWiki_Controller_Base
 
         $title = $this->_owApp->translate->_('Resource Search');
         $this->view->placeholder('main.window.title')->set($title);
-        OntoWiki_Navigation::disableNavigation();
+        OntoWiki::getInstance()->getNavigation()->disableNavigation();
 
         $store = $this->_erfurt->getStore();
 

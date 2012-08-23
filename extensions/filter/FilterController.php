@@ -1,4 +1,10 @@
 <?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2012, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
 
 require_once 'OntoWiki/Controller/Component.php';
 
@@ -8,11 +14,10 @@ require_once 'OntoWiki/Controller/Component.php';
  * this controller is a helper for this module to supply possible values for a property
  *
  * @category   OntoWiki
- * @package    OntoWiki_extensions_components_filter
+ * @package    Extensions_Filter
  * @author     Jonas Brekle <jonas.brekle@gmail.com>
- * @copyright  Copyright (c) 2010, {@link http://aksw.org AKSW}
+ * @copyright  Copyright (c) 2012, {@link http://aksw.org AKSW}
  * @license    http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
- * @version    $$
  */
 class FilterController extends OntoWiki_Controller_Component
 {
@@ -21,7 +26,11 @@ class FilterController extends OntoWiki_Controller_Component
         $listHelper = Zend_Controller_Action_HelperBroker::getStaticHelper('List');
         $listName = $this->_request->getParam('list');
         if ($listHelper->listExists($listName)) {
-            $instances   = $listHelper->getList($listName);
+            $list   = $listHelper->getList($listName);
+            //TODO the store is not serialized anymore. it is missing by default. Controllers have to set it
+            //how to determine here?
+            //use the default store here - but also Sparql-Adapters are possible
+            $list->setStore($this->_erfurt->getStore());
         } else {
             $this->view->values = array();
             return;
@@ -30,7 +39,7 @@ class FilterController extends OntoWiki_Controller_Component
         $predicate = $this->_request->getParam('predicate', '');
         $inverse = $this->_request->getParam('inverse', '');
 
-        $this->view->values = $instances->getPossibleValues($predicate, true, $inverse == "true");
+        $this->view->values = $list->getPossibleValues($predicate, true, $inverse == "true");
 
         require_once 'OntoWiki/Model/TitleHelper.php';
         $titleHelper = new OntoWiki_Model_TitleHelper($this->_owApp->selectedModel);

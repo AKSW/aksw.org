@@ -24,6 +24,32 @@ tempHrefs = new Array();
  * core css assignments
  */
 $(document).ready(function() {
+    // keyboard shortcuts
+    $(document).keydown(function(e) {
+        if (/view\/?|resource\/properties\/?/gi.test(window.document.baseURI)) {
+            if (e.shiftKey && e.altKey) {
+                e.preventDefault();
+                switch(e.which) {
+                    //e - 101 - edit E - 69
+                    case 69 : $('.edit-enable').trigger('click'); break;
+                    //a - 97 - add property - A - 65
+                    case 65 : $('.property-add').trigger('click'); break;
+                    //s - 115 - save S - 83
+                    case 83 : if ($('.edit-enable').hasClass('active')) { 
+                                   $('.edit.save').trigger('click'); 
+                               }; 
+                               break;
+                    //c  - 99 - cancel C - 67
+                    case 67 : if ($('.edit-enable').hasClass('active')) { 
+                                  $('.edit.cancel').trigger('click'); 
+                              }; 
+                              break;
+                    //l - 108 - clone L - 76
+                    case 76 : $('.clone-resource').trigger('click'); break;
+                }
+            }
+        }
+    });
     // Object.keys support in older environments that do not natively support it
     if (!Object.keys) {
         Object.keys = (function () {
@@ -298,16 +324,24 @@ $(document).ready(function() {
     // init new resource based on type
     $('.init-resource').click(function(event) {
         // parse .resource-list and query for all types
-        var types = $('.resource-list').rdf()
-                                       .where('?type a rdfs:Class')
-                                       .where('?type rdfs:label ?value')
-                                       .dump();
+        if ($('.resource-list').length != 0) {
+            var types = $('.resource-list').rdf()
+                                           .where('?type a rdfs:Class')
+                                           .where('?type rdfs:label ?value')
+                                           .dump();
 
-        if (Object.keys(types).length == 1) {
-            createInstanceFromClassURI(Object.keys(types)[0]);
+            if (Object.keys(types).length == 1) {
+                createInstanceFromClassURI(Object.keys(types)[0]);
+            } else {
+                showAddInstanceMenu(event, types);
+            }
         } else {
-            showAddInstanceMenu(event, types);
-        } 
+            // workaround to create instance when number of instances of a class is null
+            // The selected class should be hardcoded by ontowiki in the header as 
+            // javascript variable.
+            createInstanceFromClassURI($('#filterbox a').attr('about'));
+        }
+        
     });
 
     $('.edit.save').click(function() {
@@ -315,6 +349,7 @@ $(document).ready(function() {
     });
     
     $('.edit.cancel').click(function() {
+        $(body).data('editingMode', false);
         // reload page
         window.location.href = window.location.href;
         RDFauthor.cancel();
@@ -332,6 +367,7 @@ $(document).ready(function() {
     
     // edit mode
     $('.edit-enable').click(function() {
+        $(body).data('editingMode', true);
         var button = this;
         if ($(button).hasClass('active')) {
             RDFauthor.cancel();
@@ -445,6 +481,7 @@ $(document).ready(function() {
     
     // add property
     $('.property-add').click(function() {
+        $(body).data('editingMode', true);
         if(typeof(RDFauthor) === 'undefined') {
             loadRDFauthor(function () {
                 RDFauthor.setOptions({

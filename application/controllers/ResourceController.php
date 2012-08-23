@@ -9,8 +9,7 @@
 /**
  * OntoWiki resource controller.
  *
- * @package    application
- * @subpackage mvc
+ * @package OntoWiki_Controller
  */
 class ResourceController extends OntoWiki_Controller_Base
 {
@@ -162,11 +161,12 @@ class ResourceController extends OntoWiki_Controller_Base
                 $this->_owApp->erfurt->getAc()->isModelAllowed('edit', $this->_owApp->selectedModel)
         ) {
             // TODO: check acl
-            $toolbar->appendButton(OntoWiki_Toolbar::EDIT, array('name' => 'Edit Properties'));
+            $toolbar->appendButton(OntoWiki_Toolbar::EDIT, array('name' => 'Edit Properties', 'title' => 'SHIFT + ALT + e'));
             $toolbar->appendButton(
                 OntoWiki_Toolbar::EDITADD, array(
                     'name'  => 'Clone',
-                    'class' => 'clone-resource'
+                    'class' => 'clone-resource',
+                    'title' => 'SHIFT + ALT + l'
                 )
             );
             // ->appendButton(OntoWiki_Toolbar::EDITADD, array('name' => 'Add Property', 'class' => 'property-add'));
@@ -178,11 +178,26 @@ class ResourceController extends OntoWiki_Controller_Base
                     ->appendButton(OntoWiki_Toolbar::DELETE, $params);
 
             $toolbar->prependButton(OntoWiki_Toolbar::SEPARATOR)
-                    ->prependButton(OntoWiki_Toolbar::ADD, array('name' => 'Add Property', '+class' => 'property-add'));
+                    ->prependButton(OntoWiki_Toolbar::ADD, array(
+                        'name' => 'Add Property', 
+                        '+class' => 'property-add', 
+                        'title' => 'SHIFT + ALT + a'
+                    )
+            );
 
             $toolbar->prependButton(OntoWiki_Toolbar::SEPARATOR)
-                    ->prependButton(OntoWiki_Toolbar::CANCEL, array('+class' => 'hidden'))
-                    ->prependButton(OntoWiki_Toolbar::SAVE, array('+class' => 'hidden'));
+                    ->prependButton(OntoWiki_Toolbar::CANCEL, array(
+                        '+class' => 'hidden', 
+                        'title' => 'SHIFT + ALT + c'
+                    )
+            );
+
+            $toolbar->prependButton(
+                OntoWiki_Toolbar::SAVE, array(
+                    '+class' => 'hidden', 
+                    'title' => 'SHIFT + ALT + s'
+                )
+            );
         }
 
         // let plug-ins add buttons
@@ -213,13 +228,14 @@ class ResourceController extends OntoWiki_Controller_Base
         $graph       = $this->_owApp->selectedModel;
 
         // the list is managed by a controller plugin that catches special http-parameters
-        // in Ontowiki/Controller/Plugin/ListSetupHelper.php
+        // @see Ontowiki/Controller/Plugin/ListSetupHelper.php
 
         //here this list is added to the view
         $listHelper = Zend_Controller_Action_HelperBroker::getStaticHelper('List');
         $listName = 'instances';
         if ($listHelper->listExists($listName)) {
             $list = $listHelper->getList($listName);
+            $list->setStore($store);
             $listHelper->addList($listName, $list, $this->view);
         } else {
             if ($this->_owApp->selectedModel == null) {
@@ -315,9 +331,14 @@ class ResourceController extends OntoWiki_Controller_Base
         if ($this->_erfurt->getAc()->isModelAllowed('edit', $modelIri)) {
             foreach ($resources as $resource) {
 
-                # if we have only a nice uri, fill to full uri
+                // if we have only a nice uri, fill to full uri
                 if (Zend_Uri::check($resource) == false) {
-                    $resource = $model->getBaseIri() . $resource;
+                    // check for namespace
+                    if (strstr($resource, ':')) {
+                        $resource = OntoWiki_Utils::expandNamespace($resource);
+                    } else {
+                        $resource = $model->getBaseIri() . $resource;
+                    }
                 }
 
                 // action spec for versioning
@@ -391,7 +412,6 @@ class ResourceController extends OntoWiki_Controller_Base
         } else {
             $response = $this->getResponse();
             $response->setRawHeader('HTTP/1.0 400 Bad Request');
-            $response->sendResponse();
             throw new OntoWiki_Controller_Exception("No model given.");
         }
 
@@ -412,7 +432,6 @@ class ResourceController extends OntoWiki_Controller_Base
         if (!in_array($format, array_keys(Erfurt_Syntax_RdfSerializer::getSupportedFormats()))) {
             $response = $this->getResponse();
             $response->setRawHeader('HTTP/1.0 400 Bad Request');
-            $response->sendResponse();
             throw new OntoWiki_Controller_Exception("Format '$format' not supported.");
         }
 
@@ -420,7 +439,6 @@ class ResourceController extends OntoWiki_Controller_Base
         if (!$store->isModelAvailable($modelUri, false)) {
             $response = $this->getResponse();
             $response->setRawHeader('HTTP/1.0 404 Not Found');
-            $response->sendResponse();
             throw new OntoWiki_Controller_Exception("Model '$modelUri' not found.");
         }
 
@@ -428,7 +446,6 @@ class ResourceController extends OntoWiki_Controller_Base
         if (!$store->isModelAvailable($modelUri)) {
             $response = $this->getResponse();
             $response->setRawHeader('HTTP/1.0 403 Forbidden');
-            $response->sendResponse();
             throw new OntoWiki_Controller_Exception("Model '$modelUri' not available.");
         }
 
@@ -476,7 +493,6 @@ class ResourceController extends OntoWiki_Controller_Base
 
         $serializer = Erfurt_Syntax_RdfSerializer::rdfSerializerWithFormat($format);
         echo $serializer->serializeResourceToString($resource, $modelUri, false, true, $addedStatements);
-        $response->sendResponse();
-        exit;
+        return;
     }
 }
