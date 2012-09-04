@@ -6,12 +6,18 @@ Vagrant::Config.run do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise64"
-  
+  #config.vm.box = "precise64" # use a fresh ubuntu box
+  config.vm.box = "owdev" # use custom owdev box (possibly faster setup)
+
+  config.vm.host_name = "owdev"
+
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
-  
+  #config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  # use make vagrant instead
+  #config.vm.box_url = "http://files.ontowiki.net/owdev.box"
+
+
   config.vm.customize ["modifyvm", :id, "--rtcuseutc", "on", "--memory", "2048", "--cpus", "2"]
   config.vm.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
 
@@ -31,14 +37,14 @@ Vagrant::Config.run do |config|
 
   # Forward a port from the guest to the host, which allows for outside
   # computers to access the VM, whereas host only networking does not.
-  config.vm.forward_port 80, 8081
-  
+  # config.vm.forward_port 80, 8081
+
 
   # Share an additional folder to the guest VM. The first argument is
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
   # config.vm.share_folder "v-data", "/vagrant_data", "../data"
-  #config.vm.share_folder("v-root", "/vagrant", ".", :nfs => true)
+  config.vm.share_folder("v-root", "/vagrant", ".", :nfs => true)
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.

@@ -12,6 +12,8 @@ default:
 	@echo "      make help ................. Show more (developer related) make targets"
 	@echo ""
 	@echo "      make help-cs .............. Show help for code sniffing targets"
+	@echo ""
+	@echo "      make help-test ............ Show help for test related targets"
 
 help:
 	@echo "Please use: (e.g. make deploy)"
@@ -19,36 +21,37 @@ help:
 	@echo "     install .................... Make directories, zend and libraries"
 	@echo "     help ....................... This help screen"
 	@echo "     help-cs .................... Show help for code sniffing targets"
+	@echo "     help-test .................. Show help for test related targets"
 	@echo "     -------------------------------------------------------------------"
 	@echo "     vagrant .................... Prepare environment to run with Vagrant (no zend)"
+	@echo "     vagrant-clean .............. Removes owdev box in order to ensure you have the latest version"
 	@echo "     directories ................ Create cache/log dir and chmod environment"
 	@echo "     zend ....................... Download and install Zend under libraries"
 	@echo "     libraries .................. Zend, Erfurt and RDFauthor submodules (read-write)"
 	@echo "     erfurt ..................... Clone under libraries"
 	@echo "     rdfauthor .................. Clone under libraries"
 	@echo "     pull ....................... 'git pull' for all repos"
+	@echo "     fetch ...................... 'git fetch' for all repos"
+	@echo "     fetch-all .................. 'git fetch --all', i.e. fetch all repos on all remotes"
+	@echo "     add-upstream ............... Adds standard AKSW git repo as remote/upstream"
 	@echo "     status ..................... 'git status' for all repos"
 	@echo "     branch-check ............... 'git rev-parse' for all repos"
 	@echo "     clean ...................... Deletes all log and cache files"
 	@echo "     install-test-environment ... Install neccessary software (PHPUnit,...))"
-	@echo "     test ....................... Executes OntoWiki's TestSuite"
-	@echo "     test-erfurt ................ Executes Erfurts TestSuite"
-	@echo "     test-extension ............. Executes TestSuites of each extension, if available"
-	@echo "     test-all ................... Executes PHPUnit TestSuites (OW, Ext) and CodeSniffer"
 	@echo "     odbctest ................... Executes some tests to check the Virtuoso connection"
-	
+
 help-cs:
 	@echo "Please use: (e.g. make cs-install)"
 	@echo "     cs-install ............................ Install CodeSniffer"
-	@echo "     cs-uninstall .......................... Uninstall CodeSniffer)"
+	@echo "     cs-uninstall .......................... Uninstall CodeSniffer"
 	@echo "     cs-install-submodule MPATH=<path> ..... Install CodeSniffer on a submodule,"
-	@echo "                                             <path> must by the relativ path to the submodule"
+	@echo "                                             <path> must by the relative path to the submodule"
 	@echo "     cs-uninstall-submodule MPATH=<path> ... Uninstall CodeSniffer on a submodule,"
-	@echo "                                             <path> must by the relativ path to the submodule"
+	@echo "                                             <path> must by the relative path to the submodule"
 	@echo "     cs-enable ............................. Enable CodeSniffer to check code before every commit"
 	@echo "     cs-disable ............................ Disable CodeSniffer code checking"
 	@echo "     cs-check-commit ....................... Run pre-commit code checking manually"
-	@echo "     cs-check-commit-emacs ................. Same as cs-check-commit with emacs output)"
+	@echo "     cs-check-commit-emacs ................. Same as cs-check-commit with emacs output"
 	@echo "     cs-check-commit-intensive ............. Run pre-commit code checking"
 	@echo "                                             manually with stricter coding standard"
 	@echo "     cs-check .............................. Run complete code checking"
@@ -64,6 +67,11 @@ help-cs:
 	@echo "     > SNIFFS=<sniff 1>,<sniff 2> ... Run code checking on specific sniffs"
 	@echo "     > OPTIONS=<option> ............. Run code checking with specific CodeSniffer options"
 
+help-test:
+	@echo "     test ....................... Execute unit and integration tests"
+	@echo "     test-unit .................. Run OntoWiki unit tests"
+	@echo "     test-integration ........... Run OntoWiki integration tests"
+	@echo "     test-extensions ............ Run tests for extensions"
 
 custom:
 	rm -rf extensions/feeds
@@ -86,8 +94,16 @@ install: directories libraries
 
 vagrant: directories clean submodules-developer
 	rm -rf libraries/Zend # vagrant has own zend
+	rm -f Vagrantfile
+	!(ls $(PWD)/application/scripts/Vagrantfile > /dev/null 2> /dev/null) || ln -s $(PWD)/application/scripts/Vagrantfile $(PWD)/Vagrantfile
+	(ls $(PWD)/Vagrantfile > /dev/null 2> /dev/null) || ln -s $(PWD)/application/scripts/Vagrantfile-dist $(PWD)/Vagrantfile
+	(ls $(HOME)/.vagrant.d/boxes/owdev > /dev/null 2> /dev/null) || vagrant box add owdev http://files.ontowiki.net/owdev.box
 	@echo ""
 	@echo '=> Now type "vagrant up"'
+
+vagrant-clean:
+	rm -f Vagrantfile
+	vagrant box remove owdev
 
 clean:
 	rm -rf cache/* logs/*
@@ -116,9 +132,18 @@ pull:
 	git pull
 	git submodule foreach git pull
 
-fetch: 
+fetch:
 	git fetch
 	git submodule foreach git fetch
+
+fetch-all:
+	# Remember to add the aprorpriate upstream sources frist
+	# e.g. by using `make add-upstream`
+	git fetch --all
+	git submodule foreach git fetch --all
+
+add-upstream:
+	git remote add upstream git://github.com/AKSW/OntoWiki.git
 
 info:
 	@git --no-pager log -1 --oneline --decorate
@@ -146,22 +171,23 @@ rdfauthor:
 	@echo 'Cloning RDFauthor into libraries/RDFauthor ...'
 	git clone git@github.com:AKSW/RDFauthor.git libraries/RDFauthor
 
-test:
-	phpunit
+# test stuff
+
+test-unit:
+	@cd application/tests/unit && phpunit
+
+test-integration:
+	@cd application/tests/integration && phpunit
 
 test-extensions:
-	phpunit --stderr extensions
+	@phpunit --bootstrap application/tests/Bootstrap.php extensions
 
-test-all: 
-	@make test
+test:
+	@make test-unit
 	@echo ""
 	@echo "-----------------------------------"
 	@echo ""
-	@make test-extensions
-	@echo ""
-	@echo "-----------------------------------"
-	@echo ""
-	@make cs-check
+	@make test-integration
 
 install-test-environment:
 	sudo apt-get install php-pear
@@ -176,9 +202,6 @@ erfurt@:
 	rm -rf libraries/Erfurt
 	@echo 'Cloning Erfurt into libraries/Erfurt ...'
 	git clone git@github.com:AKSW/Erfurt.git libraries/Erfurt
-
-test-erfurt:
-	cd libraries/Erfurt && phpunit && cd ../../..
 
 odbctest:
 	@application/scripts/odbctest.php
@@ -202,7 +225,7 @@ debianize:
 # cs-script path
 CSSPATH = application/tests/CodeSniffer/
 # ignore pattern
-IGNOREPATTERN = */libraries/*,pclzip.lib
+IGNOREPATTERN = libraries,pclzip.lib
 
 # Parameter check
 ifndef FPATH
@@ -218,10 +241,10 @@ REQUESTSTR = --ignore=$(IGNOREPATTERN) $(OPTIONS) $(SNIFFSTR)  $(FPATH)
 
 cs-default:
 	chmod ugo+x "$(CSSPATH)cs-scripts.sh"
-	
+
 cs-install: cs-default
 	$(CSSPATH)cs-scripts.sh -i
-	
+
 cs-install-submodule: cs-submodule-check cs-default
 	$(CSSPATH)cs-scripts.sh -f $(CSSPATH) -m $(MPATH)
 
@@ -261,5 +284,5 @@ cs-submodule-check:
 ifndef MPATH
 	@echo "You must Set a path to the submodule."
 	@echo "Example: MPATH=path/to/the/submodule/"
-	@exit 1 
+	@exit 1
 endif
