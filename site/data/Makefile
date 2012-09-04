@@ -13,7 +13,7 @@ install-all: merge
 	${OWCLIDATA} -e model:add -i ${ALLTMP}
 
 merge:
-	unset GREP_OPTIONS
+	unset GREP_OPTIONS || echo GREP_OPTIONS not set
 	rm -rf ${ALLTMP}
 	cp prefixes.n3 ${ALLTMP}
 	cat *.n3 | grep -v "@prefix" >>${ALLTMP}
