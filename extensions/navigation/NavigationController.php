@@ -220,7 +220,7 @@ class NavigationController extends OntoWiki_Controller_Component
 
             $union = new Erfurt_Sparql_Query2_GroupOrUnionGraphPattern();
 
-            foreach (self::a($setup->config->hierarchyTypes) as $type) {
+            foreach ($setup->config->hierarchyTypes as $type) {
                 $groupPattern = new Erfurt_Sparql_Query2_GroupGraphPattern();
                 $groupPattern->addTriple(
                     $resVar,
@@ -496,7 +496,7 @@ class NavigationController extends OntoWiki_Controller_Component
                 // init union var
                 $unionSub = new Erfurt_Sparql_Query2_GroupOrUnionGraphPattern();
                 // parse config gile
-                foreach (self::a($setup->config->hierarchyRelations->in) as $rel) {
+                foreach ($setup->config->hierarchyRelations->in as $rel) {
                     // sub stuff
                     $groupPattern = new Erfurt_Sparql_Query2_GroupGraphPattern();
                     // add triplen
@@ -525,7 +525,7 @@ class NavigationController extends OntoWiki_Controller_Component
                 // init union var
                 $unionSub = new Erfurt_Sparql_Query2_GroupGraphPattern();
                 // parse config gile
-                foreach (self::a($setup->config->hierarchyRelations->out) as $rel) {
+                foreach ($setup->config->hierarchyRelations->out as $rel) {
                     // sub stuff
                     $optionalPattern = new Erfurt_Sparql_Query2_OptionalGraphPattern();
                     // add triplen
@@ -678,8 +678,38 @@ class NavigationController extends OntoWiki_Controller_Component
         // init union var
         $union = new Erfurt_Sparql_Query2_GroupOrUnionGraphPattern();
         // parse config
+        if (isset($setup->config->hierarchyRelations->out)) {
+            foreach ($setup->config->hierarchyRelations->out as $rel) {
+                // create new graph pattern
+                $groupPattern = new Erfurt_Sparql_Query2_GroupGraphPattern();
+                // add triplen
+                $groupPattern->addTriple(
+                    $searchVar,
+                    new Erfurt_Sparql_Query2_IriRef($rel), //EF_RDF_TYPE),
+                    $subVar
+                );
+                // add triplet to union var
+                $union->addElement($groupPattern);
+            }
+        }
+        // parse config
+        if (isset($setup->config->hierarchyRelations->in)) {
+            foreach ($setup->config->hierarchyRelations->in as $rel) {
+                // create new graph pattern
+                $groupPattern = new Erfurt_Sparql_Query2_GroupGraphPattern();
+                // add triplen
+                $groupPattern->addTriple(
+                    $subVar,
+                    new Erfurt_Sparql_Query2_IriRef($rel), //EF_RDF_TYPE),
+                    $searchVar
+                );
+                // add triplet to union var
+                $union->addElement($groupPattern);
+            }
+        }
+        // parse config
         if (isset($setup->config->instanceRelation->out)) {
-            foreach (self::a($setup->config->instanceRelation->out) as $rel) {
+            foreach ($setup->config->instanceRelation->out as $rel) {
                 // create new graph pattern
                 $groupPattern = new Erfurt_Sparql_Query2_GroupGraphPattern();
                 // add triplen
@@ -695,7 +725,7 @@ class NavigationController extends OntoWiki_Controller_Component
 
         // parse config
         if (isset($setup->config->instanceRelation->in)) {
-            foreach (self::a($setup->config->instanceRelation->in) as $rel) {
+            foreach ($setup->config->instanceRelation->in as $rel) {
                 // create new graph pattern
                 $groupPattern = new Erfurt_Sparql_Query2_GroupGraphPattern();
                 // add triplen
@@ -766,7 +796,7 @@ class NavigationController extends OntoWiki_Controller_Component
                 // init union var
                 $unionSub = new Erfurt_Sparql_Query2_GroupOrUnionGraphPattern();
                 // parse config gile
-                foreach (self::a($setup->config->hierarchyRelations->in) as $rel) {
+                foreach ($setup->config->hierarchyRelations->in as $rel) {
                     // sub stuff
                     $groupPattern = new Erfurt_Sparql_Query2_GroupGraphPattern();
                     // add triplen
@@ -797,7 +827,7 @@ class NavigationController extends OntoWiki_Controller_Component
                 // init union var
                 $unionSub = new Erfurt_Sparql_Query2_GroupGraphPattern();
                 // parse config gile
-                foreach (self::a($setup->config->hierarchyRelations->out) as $rel) {
+                foreach ($setup->config->hierarchyRelations->out as $rel) {
                     // sub stuff
                     $optPattern = new Erfurt_Sparql_Query2_OptionalGraphPattern();
                     // add triple
@@ -904,10 +934,5 @@ class NavigationController extends OntoWiki_Controller_Component
         //$this->_owApp->logger->info("conf: ".print_r($conf,true));
 
         return $return . "&instancesconfig=".urlencode(json_encode($conf));
-    }
-
-    protected static function a($a)
-    {
-        return OntoWiki_Extension_Manager::doapArrayFixer($a);
     }
 }

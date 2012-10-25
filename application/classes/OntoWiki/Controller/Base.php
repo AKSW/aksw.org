@@ -90,6 +90,14 @@ class OntoWiki_Controller_Base extends Zend_Controller_Action
                 );
             }
         }
+        
+        // check config for additional styles
+        if ($styles_extra = $this->_config->themes->styles) {
+            $this->view->themeExtraStyles = $styles_extra->toArray();
+        }
+        else {
+            $this->view->themeExtraStyles = array();
+        }
 
         // disable layout for Ajax requests
         if ($this->_request->isXmlHttpRequest()) {
@@ -123,7 +131,7 @@ class OntoWiki_Controller_Base extends Zend_Controller_Action
             $this->view->jsonVars .= '
             var selectedGraph = {
                 URI: "' . (string)$this->_owApp->selectedModel . '",
-                title: "' . (string)$this->_owApp->selectedModel->getTitle() . '",
+                title: ' . json_encode((string)$this->_owApp->selectedModel->getTitle()) . ',
                 editable: ' . ($this->_owApp->selectedModel->isEditable() ? 'true' : 'false') . '
             };
             var RDFAUTHOR_DEFAULT_GRAPH = "' . (string)$this->_owApp->selectedModel . '";' . PHP_EOL;
