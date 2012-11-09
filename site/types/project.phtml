@@ -53,7 +53,8 @@ $relatedProjects = $this->query(array(
 
 // prepare screenshots
 $screenshots = $this->query(array(
-    'where'    => '<'.$this->resourceUri.'> ov:screenshot ?resourceUri .',
+    'where'    => '{<'.$this->resourceUri.'> ov:screenshot ?resourceUri . } UNION'.
+        '{<'.$this->resourceUri.'> foaf:depiction ?resourceUri . }',
     'template' => 'depictions'
 ));
 
