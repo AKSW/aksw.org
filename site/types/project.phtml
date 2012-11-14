@@ -64,7 +64,9 @@ $content = $this->literal(array('tag' => 'div', 'class' => 'content'));
 // prepare team list
 $team = $this->query(array(
     'where' => '{?resourceUri foaf:currentProject <'.$this->resourceUri.'> .} UNION '.
-        '{<'.$this->resourceUri.'> doap:maintainer ?resourceUri . }',
+        '{<'.$this->resourceUri.'> doap:maintainer ?resourceUri . }'.
+        ' OPTIONAL { ?resourceUri <http://xmlns.com/foaf/0.1/familyName> ?familyName }',
+    'orderby' => 'ASC(?familyName)',
     'template' => 'liplain',
     'prefix' => '<h1>Current Team</h1>' . PHP_EOL,
     'activeSuffix' => ' (Principle Contact / Maintainer)',

@@ -13,13 +13,15 @@
  */
 
 $subgroups = $this->query(array(
-    'where' => '?resourceUri aiiso:part_of groups:AKSW. ',
+    'where'    => '?resourceUri aiiso:part_of groups:AKSW. ',
     'template' => 'liplain',
     'prefix'   => '<li><strong class="headline">sub groups</strong>',
     'suffix'   => '</li>'
 ));
 $grouproster = $this->query(array(
-    'where'    => '?group foaf:member <'.$this->resourceUri.'>. ?group foaf:member ?resourceUri.',
+    'where'    => '?group foaf:member <'.$this->resourceUri.'>. ?group foaf:member ?resourceUri.'.
+        ' OPTIONAL { ?resourceUri <http://xmlns.com/foaf/0.1/familyName> ?familyName }',
+    'orderby'  => 'ASC(?familyName)',
     'template' => 'liplain',
     'prefix'   => '<li><strong class="headline">group roster</strong>',
     'suffix'   => '</li>'
