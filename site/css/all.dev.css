@@ -418,15 +418,21 @@
     display: inline-block;
     max-width: 100%;
     height: auto;
+    vertical-align: middle;
     line-height: 1;
   }
   #associations .small img {
     height: 1em;
   }
   #associations .small a {
-    margin-right: 0.385em;
-    margin-bottom: 0.385em;
-    font-size: 3.077em;
+    margin-right: 0.308em;
+    margin-bottom: 0.308em;
+    font-size: 3.846em;
+  }
+  #associations .small a.small {
+    margin-right: 0.615em;
+    margin-bottom: 0.615em;
+    font-size: 1.923em;
   }
   #associations a {
     margin-bottom: 0.769em;
@@ -447,7 +453,7 @@
     z-index: 100;
     float: left;
     clear: left;
-    margin-top: -23.077em;
+    margin-top: -21.923em;
     margin-bottom: 5.385em;
     width: 66.737%;
   }
@@ -638,9 +644,9 @@
   .nav-sidelinks ul {
     overflow: hidden;
     margin: 0;
+    padding-right: 1.538em;
     list-style: none;
     text-align: right;
-    padding-right: 1.538em;
   }
   .nav-sidelinks ul li {
     margin: 0.75em 0;
@@ -1289,12 +1295,12 @@
   /* -- VCards ----------------------------------------------------------- */
   .vcard dfn {
     display: block;
+    margin-bottom: 0.667em;
     color: black;
     font-weight: normal;
-    margin-bottom: 0.667em;
+    font-style: normal;
     font-size: 1.154em;
     line-height: 1.333;
-    font-style: normal;
   }
   .intro .vcard dfn {
     margin-bottom: 0.5em;
@@ -1413,10 +1419,10 @@
   }
 
   ol.exhibit-tileView-body {
-    list-style: none;
     margin: 0 0 1.538em 0;
     padding: 0;
     border-top: dotted 1px #585858;
+    list-style: none;
   }
   ol.exhibit-tileView-body li {
     margin: 0;

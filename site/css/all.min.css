@@ -59,12 +59,13 @@ blockquote:before,blockquote:after,q:before,q:after{content:""}
 #header h1{margin:0;margin-left:-8.692em;width:10.615em;font-size:1em}
 #header h1 img,#header h1 a{display:block;width:100%;height:auto}
 #associations{margin-bottom:1em}
-#associations img,#associations a{display:inline-block;max-width:100%;height:auto;line-height:1}
+#associations img,#associations a{display:inline-block;max-width:100%;height:auto;vertical-align:middle;line-height:1}
 #associations .small img{height:1em}
-#associations .small a{margin-right:.385em;margin-bottom:.385em;font-size:3.077em}
+#associations .small a{margin-right:.308em;margin-bottom:.308em;font-size:3.846em}
+#associations .small a.small{margin-right:.615em;margin-bottom:.615em;font-size:1.923em}
 #associations a{margin-bottom:.769em}
 #associations h2{margin-bottom:.667em;padding:.407em 0;border-width:1px;border-style:solid none;border-color:#333;text-transform:uppercase;font-size:1.41em;line-height:1.091}
-#content{position:relative;z-index:100;float:left;clear:left;margin-top:-23.077em;margin-bottom:5.385em;width:66.737%}
+#content{position:relative;z-index:100;float:left;clear:left;margin-top:-21.923em;margin-bottom:5.385em;width:66.737%}
 #sidecontent,#associations,#userinfo{margin-left:66.737%;padding-left:2.308em;width:auto}
 #sidecontent{margin-bottom:5.385em}
 #footer{clear:both;overflow:hidden;margin-top:5.385em}
@@ -101,7 +102,7 @@ nav a:focus,nav a:hover,nav a:active{text-decoration:underline}
 #nav-breadcrumbs a,#nav-breadcrumbs strong{text-transform:none}
 #nav-breadcrumbs p{margin:0}
 .nav-sidelinks{position:relative;top:-1.538em;float:left;margin-left:-12.308em;width:12.308em;letter-spacing:-0.02em;font-size:95%}
-.nav-sidelinks ul{overflow:hidden;margin:0;list-style:none;text-align:right;padding-right:1.538em}
+.nav-sidelinks ul{overflow:hidden;margin:0;padding-right:1.538em;list-style:none;text-align:right}
 .nav-sidelinks ul li{margin:.75em 0;padding:0}
 .nav-sidelinks ul a,.nav-sidelinks ul strong{display:block;margin:0;padding:0}
 .nav-sidelinks ul ul{padding-right:0}
@@ -209,7 +210,7 @@ dl.siteoptions dd{display:block;margin:0}
 .demowheel .rs-carousel-mask{margin:0;padding:0;width:auto}
 .demowheel .rs-carousel-action-prev{left:0}
 .demowheel .rs-carousel-action-next{right:0}
-.vcard dfn{display:block;color:black;font-weight:normal;margin-bottom:.667em;font-size:1.154em;line-height:1.333;font-style:normal}
+.vcard dfn{display:block;margin-bottom:.667em;color:black;font-weight:normal;font-style:normal;font-size:1.154em;line-height:1.333}
 .intro .vcard dfn{margin-bottom:.5em;text-transform:uppercase;font-variant:normal;font-size:1.538em;line-height:1.5}
 .vcard dl{display:block;float:none;overflow:hidden;margin:0 25% 0 0;padding:0;width:75%}
 .vcard dt{display:block;float:left;margin:0 9px 0 0;padding:0;width:16px}
@@ -231,7 +232,7 @@ div.abstract-with-logo p.abstract{margin-right:13.077em}
 .nav-sidelinks span.exhibit-cloudFacet-value-selected{background-color:transparent;color:#333;text-decoration:underline;font-weight:bold}
 .nav-sidelinks span.exhibit-cloudFacet-value-selected:focus,.nav-sidelinks span.exhibit-cloudFacet-value-selected:hover{text-decoration:line-through}
 div.exhibit-text-facet input{padding-right:1%;padding-left:1%;width:98%!important;font-size:1.154em}
-ol.exhibit-tileView-body{list-style:none;margin:0 0 1.538em 0;padding:0;border-top:dotted 1px #585858}
+ol.exhibit-tileView-body{margin:0 0 1.538em 0;padding:0;border-top:dotted 1px #585858;list-style:none}
 ol.exhibit-tileView-body li{margin:0;padding:.769em 0;border-bottom:dotted 1px #585858}
 div.exhibit-collectionView-header-sortControls{color:#585858;text-align:left!important;font-size:.9em;line-height:1.538}
 div.exhibit-collectionView-group-content{margin-left:0!important}
