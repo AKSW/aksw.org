@@ -12,6 +12,9 @@
  * the most out template layer
  */
 
+// edit link for the universal edit button
+$editUrl = $this->wikiBaseUrl .'view?r=' . urlencode($this->resourceUri);
+
 // this is the standard template data
 $templateData           = $this->templateData;
 ?><!doctype html>
@@ -42,6 +45,11 @@ $templateData           = $this->templateData;
         rel="icon" 
         type="image/png" 
         href="<?php echo $this->baseUri ?>/images/favicon.png" />
+
+    <link rel="alternate"
+        type="application/wiki" 
+        title="Edit this page!" 
+        href="<?php echo $editUrl ?>" />
 
     <!-- TODO: we should include all the js via a parallel loading script.
          * separates the js logic from templates/html/caches
