@@ -33,11 +33,17 @@ $grouproster = $this->query(array(
     //'suffix'   => '</li>'
 //));
 $currentProjects = $this->query(array(
-    'where'    => '{<'.$this->resourceUri.'> foaf:currentProject ?resourceUri.} UNION'.
-        '{?resourceUri doap:maintainer <'.$this->resourceUri.'> .}',
+    'where'    => '{<'.$this->resourceUri.'> foaf:currentProject ?resourceUri.}' . PHP_EOL
+        . 'UNION {' . PHP_EOL
+        . '?resourceUri doap:maintainer <'.$this->resourceUri.'> .' . PHP_EOL
+        . 'FILTER NOT EXISTS { <'.$this->resourceUri.'> foaf:pastProject ?resourceUri } ' . PHP_EOL
+        . '} ',
     'template' => 'li',
     'prefix'   => '<h1>Current Projects</h1>',
 ));
+    $query = '{<'.$this->resourceUri.'> foaf:currentProject ?resourceUri.} UNION '.
+        '{?resourceUri doap:maintainer <'.$this->resourceUri.'> .} '.
+        'FILTER NOT EXISTS {<'.$this->resourceUri.'> foaf:pastProject ?resourceUri. }';
 $pastProjects = $this->query(array(
     'where'    => '<'.$this->resourceUri.'> foaf:pastProject ?resourceUri.',
     'template' => 'li',
