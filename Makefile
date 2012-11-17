@@ -122,12 +122,18 @@ submodules: # read-only
 	git submodule init
 	git config submodule.libraries/Erfurt.url "git://github.com/AKSW/Erfurt.git"
 	git config submodule.libraries/RDFauthor.url "git://github.com/AKSW/RDFauthor.git"
+	git config submodule.extensions/feeds.url "git://github.com/AKSW/feeds.ontowiki.git"
+	git config submodule.extensions/ipc.url "git://github.com/AKSW/ipc.ontowiki.git"
+	git config submodule.extensions/site.url "git://github.com/AKSW/site.ontowiki.git"
 	git submodule update
 
 submodules-developer: # read-write
 	git submodule init
 	git config submodule.libraries/Erfurt.url "git@github.com:AKSW/Erfurt.git"
 	git config submodule.libraries/RDFauthor.url "git@github.com:AKSW/RDFauthor.git"
+	git config submodule.extensions/feeds.url "git@github.com:AKSW/feeds.ontowiki.git"
+	git config submodule.extensions/ipc.url "git@github.com:AKSW/ipc.ontowiki.git"
+	git config submodule.extensions/site.url "git@github.com:AKSW/site.ontowiki.git"
 	git submodule update
 
 # developer targets
