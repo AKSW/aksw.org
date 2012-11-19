@@ -1,5 +1,5 @@
 <div class="vcard" itemscope itemtype="http://schema.org/Person">
-<meta itemprop="url" content="<?= $this->resourceUri ?>" />
+<meta itemprop="url" content="<?php echo $this->resourceUri; ?>" />
 <?php
     $mmodel = new Erfurt_Rdf_MemoryModel(array($this->resourceUri => $this->description));
 
@@ -74,10 +74,11 @@
 
     $name = $this->title;
     $depiction = $this->img(array(
-        'class'    => 'depiction',
-        'alt'      => 'Depiction of ' . $name,
-        'prefix'   => '<div class="widget_depictions"><div class="widget_depictions_big" itemprop="image">',
-        'suffix'   => '</div></div>'
+        'class'     => 'depiction',
+        'alt'       => 'Depiction of ' . $name,
+        'prefix'    => '<div class="widget_depictions"><div class="widget_depictions_big">',
+        'suffix'    => '</div></div>',
+        'attributes'=> array('itemprop' => 'image')
     ));
 
     echo '<dfn itemprop="name">'.$name.'</dfn>' . PHP_EOL;
