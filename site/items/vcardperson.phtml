@@ -1,36 +1,39 @@
-<div class="vcard">
+<div class="vcard" itemscope itemtype="http://schema.org/Person">
+<meta itemprop="url" content="<?= $this->resourceUri ?>" />
 <?php
     $mmodel = new Erfurt_Rdf_MemoryModel(array($this->resourceUri => $this->description));
 
     $contacts = array(
-        'Address'  => array(), // Work and Home
-        'Email'    => array(), // Office
-        'Phone'    => array(), // Work and Mobile
-        'Fax'      => array(), // Work
-        'Link'     => array(), // Workpage and Weblog
-        'Resource' => array(), // WebID
+        'Address'   => array(), // Work and Home
+        'Email'     => array(), // Office
+        'Phone'     => array(), // Work and Mobile
+        'Fax'       => array(), // Work
+        'Link'      => array(), // Workpage and Weblog
+        'Resource'  => array(), // WebID
     );
 
     // Address Work
     $room = $this->literal(array(
-        'property' => 'aksw:room',
-        'prefix' => ', Room '
+        'property'  => 'aksw:room',
+        'prefix'    => ', Room '
     ));
     // todo: fetch the address from the vcard resource
     $workaddress = 'Augustusplatz 10'. $room . ', 04109 Leipzig';
     $contacts['Address'][] = array(
-                'type'  => 'Work',
-                'label' => $workaddress
-            );
+        'type'      => 'Work',
+        'label'     => $workaddress,
+        'itemprop'  => 'address'
+    );
 
     // Email Office
     if ($mmodel->hasSP($this->resourceUri, 'http://xmlns.com/foaf/0.1/mbox')) {
         $mboxUri   = $mmodel->getValue($this->resourceUri, 'http://xmlns.com/foaf/0.1/mbox');
         $mboxLabel = str_replace ('mailto:', '', $mboxUri );
         $contacts['Email'][] = array(
-            'type'  => 'Office',
-            'label' => $mboxLabel,
-            'url'   => $mboxUri
+            'type'      => 'Office',
+            'label'     => $mboxLabel,
+            'url'       => $mboxUri,
+            'itemprop'  => 'email'
         );
     }
 
@@ -39,18 +42,20 @@
         $phoneUri   = $mmodel->getValue($this->resourceUri, 'http://xmlns.com/foaf/0.1/phone');
         $phoneLabel = str_replace ('tel:', '', $phoneUri );
         $contacts['Phone'][] = array(
-            'type'  => 'Work',
-            'label' => $phoneLabel,
-            'url'   => $phoneUri
+            'type'      => 'Work',
+            'label'     => $phoneLabel,
+            'url'       => $phoneUri,
+            'itemprop'  => 'telephone'
         );
     }
 
     // Fax Work
     $contacts['Fax'][] = array(
-                'type'=>'Work',
-                'label'=>'+49 341 97-32329',
-                'url' => 'tel:+493419732329'
-            );
+        'type'      =>'Work',
+        'label'     =>'+49 341 97-32329',
+        'url'       => 'tel:+493419732329',
+        'itemprop'  => 'faxNumber'
+    );
 
     // Links
     //$contacts['Link'][] = array(
@@ -71,12 +76,12 @@
     $depiction = $this->img(array(
         'class'    => 'depiction',
         'alt'      => 'Depiction of ' . $name,
-        'prefix'   => '<div class="widget_depictions"><div class="widget_depictions_big">',
+        'prefix'   => '<div class="widget_depictions"><div class="widget_depictions_big" itemprop="image">',
         'suffix'   => '</div></div>'
     ));
 
-    echo '<dfn>'.$name.'</dfn>';
-    echo $depiction;
+    echo '<dfn itemprop="name">'.$name.'</dfn>' . PHP_EOL;
+    echo $depiction . PHP_EOL;
 
     echo '<dl>' . PHP_EOL;
     foreach ($contacts as $mediatype => $list_of_contacts)
@@ -91,7 +96,10 @@
 
             echo '<dt class="'.$mediatype.'"><img class="icon" src="'.$imgSrc.'" alt="'.$imgAlt.'" title="'.$imgTitle.'"/></dt>' . PHP_EOL;
 
-            echo '<dd class="'.$lmediatype.'">';
+            echo '<dd ';
+            echo 'class="'.$lmediatype.'"';
+            echo (isset($contact['itemprop']))?' itemprop="'.$contact['itemprop'].'"':'';
+            echo '>';
             echo (isset($contact['url']))?'<a href="'.$contact['url'].'">':'';
             echo $contact['label'];
             echo (isset($contact['url']))?'</a>':'';
