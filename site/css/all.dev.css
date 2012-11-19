@@ -644,9 +644,9 @@
   .nav-sidelinks ul {
     overflow: hidden;
     margin: 0;
-    padding-right: 1.538em;
     list-style: none;
     text-align: right;
+    padding-right: 1.538em;
   }
   .nav-sidelinks ul li {
     margin: 0.75em 0;
@@ -1116,7 +1116,7 @@
     width: 16px;
     height: 16px;
     outline: none;
-    background: url(./../images/icon-todo.png) no-repeat center transparent;
+    background: url(./../images/icon-todo.png) no-repeat center transparent !important;
     vertical-align: middle;
     text-indent: -5000em;
   }
@@ -1126,19 +1126,19 @@
   }
 
   .icon-resource-download {
-    background-image: url(./../images/icon-action-resource-download.png);
+    background-image: url(./../images/icon-action-resource-download.png) !important;
   }
 
   .icon-resource-edit {
-    background-image: url(./../images/icon-action-resource-edit.png);
+    background-image: url(./../images/icon-action-resource-edit.png) !important;
   }
 
   .icon-template-edit {
-    background-image: url(./../images/icon-action-template-edit.png);
+    background-image: url(./../images/icon-action-template-edit.png) !important;
   }
 
   .icon-browse {
-    background-image: url(./../images/icon-todo.png);
+    background-image: url(./../images/icon-todo.png) !important;
   }
 
   /* -- Footer Options --------------------------------------------------- */
@@ -1295,12 +1295,12 @@
   /* -- VCards ----------------------------------------------------------- */
   .vcard dfn {
     display: block;
-    margin-bottom: 0.667em;
     color: black;
     font-weight: normal;
-    font-style: normal;
+    margin-bottom: 0.667em;
     font-size: 1.154em;
     line-height: 1.333;
+    font-style: normal;
   }
   .intro .vcard dfn {
     margin-bottom: 0.5em;
@@ -1419,10 +1419,10 @@
   }
 
   ol.exhibit-tileView-body {
+    list-style: none;
     margin: 0 0 1.538em 0;
     padding: 0;
     border-top: dotted 1px #585858;
-    list-style: none;
   }
   ol.exhibit-tileView-body li {
     margin: 0;
