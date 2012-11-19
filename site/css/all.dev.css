@@ -443,7 +443,6 @@
     border-width: 1px;
     border-style: solid none;
     border-color: #333333;
-    text-transform: uppercase;
     font-size: 1.41em;
     line-height: 1.091;
   }
@@ -704,7 +703,6 @@
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     text-transform: none;
-    font-variant: small-caps;
     font-size: 3.077em;
     line-height: 1;
   }
@@ -712,7 +710,6 @@
     display: block;
     width: 90%;
     color: #585858;
-    text-transform: uppercase;
     font-variant: normal;
     font-size: 0.5em;
     line-height: 1.5;
@@ -731,17 +728,12 @@
     border-width: 1px;
     border-style: solid none;
     border-color: #333333;
-    text-transform: uppercase;
     font-size: 1.41em;
     line-height: 1.091;
-  }
-  #sidecontent h2 {
-    text-transform: uppercase;
   }
 
   h1 {
     margin-bottom: 0.5em;
-    text-transform: uppercase;
     font-variant: normal;
     font-size: 1.538em;
     line-height: 1.5;
@@ -1304,7 +1296,6 @@
   }
   .intro .vcard dfn {
     margin-bottom: 0.5em;
-    text-transform: uppercase;
     font-variant: normal;
     font-size: 1.538em;
     line-height: 1.5;
