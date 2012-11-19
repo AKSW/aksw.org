@@ -643,9 +643,9 @@
   .nav-sidelinks ul {
     overflow: hidden;
     margin: 0;
+    padding-right: 1.538em;
     list-style: none;
     text-align: right;
-    padding-right: 1.538em;
   }
   .nav-sidelinks ul li {
     margin: 0.75em 0;
@@ -1114,7 +1114,7 @@
   }
 
   img.icon {
-    background: transparent;
+    background: transparent !important;
   }
 
   .icon-resource-download {
@@ -1201,6 +1201,7 @@
   .demowheel .rs-carousel-mask > ul > li {
     position: relative;
     float: left;
+    overflow: hidden;
     margin: 0;
     padding: 0.385em 1.5%;
     width: 30.333%;
@@ -1212,8 +1213,11 @@
   .demowheel .demowheel-title,
   .demowheel .rs-carousel-mask .demowheel-title {
     display: block;
+    overflow: hidden;
     margin: 8em 0 0 0;
     padding: 0;
+    height: 2.666em;
+    text-overflow: ellipsis;
     font-weight: normal;
     font-size: 1em;
   }
@@ -1234,6 +1238,7 @@
     top: 0.385em;
     left: 4.5%;
     display: block;
+    overflow: hidden;
     width: 100%;
     height: 8em;
   }
@@ -1287,12 +1292,12 @@
   /* -- VCards ----------------------------------------------------------- */
   .vcard dfn {
     display: block;
+    margin-bottom: 0.667em;
     color: black;
     font-weight: normal;
-    margin-bottom: 0.667em;
+    font-style: normal;
     font-size: 1.154em;
     line-height: 1.333;
-    font-style: normal;
   }
   .intro .vcard dfn {
     margin-bottom: 0.5em;
@@ -1410,10 +1415,10 @@
   }
 
   ol.exhibit-tileView-body {
-    list-style: none;
     margin: 0 0 1.538em 0;
     padding: 0;
     border-top: dotted 1px #585858;
+    list-style: none;
   }
   ol.exhibit-tileView-body li {
     margin: 0;
@@ -1455,5 +1460,91 @@
   }
   div.exhibit-menu-popup a:focus div, div.exhibit-menu-popup a:hover div {
     background: #333333 !important;
+  }
+}
+@media print {
+  #header nav, #header aside,
+  #sidecontent,
+  .nav-sidelinks,
+  .exhibit-filter-tools, .exhibit-collectionView-header, .exhibit-collectionView-footer,
+  #userinfo, #footer .resourceoptions,
+  .rs-carousel-pagination, .rs-carousel-action-prev, .rs-carousel-action-next,
+  #fancybox-tmp, #fancybox-loading, #fancybox-overlay, #fancybox-wrap, #fancybox-outer {
+    display: none !important;
+  }
+
+  .page_margins, #content, #footer, #footer #articleinfo {
+    float: none;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    max-width: none;
+    width: auto;
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+
+  * {
+    background: transparent !important;
+    color: black !important;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: normal;
+  }
+
+  #page {
+    padding: 0;
+  }
+
+  #header h1 {
+    margin: 0 0 2em 0;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  .demowheel, .rs-carousel-mask, .rs-carousel-runner {
+    position: static !important;
+    margin: 0 0 1.4em 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  .demowheel li {
+    overflow: hidden !important;
+    margin: 0 1% 0.5em 0 !important;
+    padding: 0 !important;
+    width: 24% !important;
+    height: 10em !important;
+  }
+  .demowheel li .demowheel-title {
+    overflow: hidden !important;
+    margin-top: 7.2em !important;
+    height: 2.8em !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.4 !important;
+  }
+  .demowheel li .demowheel-image {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 3em !important;
+    left: 0 !important;
+    overflow: hidden;
+    width: auto !important;
+    height: auto !important;
+    border: solid 1px black !important;
+  }
+  .demowheel li .demowheel-image img {
+    min-width: 100% !important;
+    min-height: 0 !important;
+    max-width: none !important;
+    max-height: none !important;
+    width: auto !important;
+    height: 100% !important;
   }
 }
