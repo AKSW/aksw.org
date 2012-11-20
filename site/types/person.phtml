@@ -33,17 +33,19 @@ $grouproster = $this->query(array(
     //'suffix'   => '</li>'
 //));
 $currentProjects = $this->query(array(
-    'where'    => '{<'.$this->resourceUri.'> foaf:currentProject ?resourceUri.}' . PHP_EOL
-        . 'UNION {' . PHP_EOL
-        . '?resourceUri doap:maintainer <'.$this->resourceUri.'> .' . PHP_EOL
-        . 'FILTER NOT EXISTS { <'.$this->resourceUri.'> foaf:pastProject ?resourceUri } ' . PHP_EOL
+    'where'    => '{'. PHP_EOL
+        . '{' . PHP_EOL
+        . '?resourceUri doap:maintainer ?maintainer . ' . PHP_EOL
+        . 'OPTIONAL { ?maintainer ?relation ?resourceUri } ' . PHP_EOL
+        . 'FILTER (?maintainer = <'.$this->resourceUri.'>) ' . PHP_EOL
+        . 'FILTER (!bound(?relation) || ?relation != foaf:pastProject) ' . PHP_EOL
+        . '} UNION {' . PHP_EOL
+        . '<'.$this->resourceUri.'> foaf:currentProject ?resourceUri .' . PHP_EOL
+        . '}' . PHP_EOL
         . '} ',
     'template' => 'li',
     'prefix'   => '<h1>Current Projects</h1>',
 ));
-    $query = '{<'.$this->resourceUri.'> foaf:currentProject ?resourceUri.} UNION '.
-        '{?resourceUri doap:maintainer <'.$this->resourceUri.'> .} '.
-        'FILTER NOT EXISTS {<'.$this->resourceUri.'> foaf:pastProject ?resourceUri. }';
 $pastProjects = $this->query(array(
     'where'    => '<'.$this->resourceUri.'> foaf:pastProject ?resourceUri.',
     'template' => 'li',
