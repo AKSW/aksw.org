@@ -69,10 +69,10 @@ $templateData           = $this->templateData;
         RDFauthor.myEdit = function(){
             RDFauthor.edit({
                 onSubmitSuccess: function() { alert('onSubmitSuccess'); },
-                title: 'Edit Property Title for ' + '<?php echo $this->resourceUri; ?>',
-                targetService: '/sparql',
+                targetSparqlEndpoint: '/sparql',
+                targetUpdateEndpoint: '/update',
                 targetGraph: 'http://aksw.org/',
-                targetResource: '<?php echo $this->resourceUri; ?>',
+                targetResource: '<?php echo $this->resourceUri; ?>'
             });
         };
     </script-->
