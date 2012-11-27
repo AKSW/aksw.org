@@ -54,6 +54,7 @@ class ModelController extends OntoWiki_Controller_Base
                     OntoWiki_Message::WARNING
                 )
             );
+            return;
         }
 
         if (!$this->_request->isPost()) {
@@ -186,6 +187,7 @@ class ModelController extends OntoWiki_Controller_Base
             $this->_owApp->appendMessage(
                 new OntoWiki_Message("No write permissions on model '{$graphUri}'", OntoWiki_Message::WARNING)
             );
+            return;
         } else {
             $toolbar = $this->_owApp->toolbar;
             $toolbar->appendButton(OntoWiki_Toolbar::SUBMIT, array('name' => 'Save Model Configuration'))
@@ -821,7 +823,8 @@ class ModelController extends OntoWiki_Controller_Base
             $this->_owApp->appendMessage(
                 new OntoWiki_Message('Error deleting model: Not allowed.', OntoWiki_Message::ERROR)
             );
-
+            $this->_redirect($_SERVER['HTTP_REFERER'], array('code' => 302));
+            return;
         }
         $this->view->clearModuleCache(); //deletes selected model - always needed?
         $this->_redirect($_SERVER['HTTP_REFERER'], array('code' => 302));
@@ -832,6 +835,14 @@ class ModelController extends OntoWiki_Controller_Base
      */
     public function exportAction()
     {
+        if (!$this->_owApp->erfurt->getAc()->isActionAllowed(Erfurt_Ac_Default::ACTION_MODEL_EXPORT)) {
+            $this->_owApp->appendMessage(
+                new OntoWiki_Message('Model export not allowed.', OntoWiki_Message::ERROR)
+            );
+            $this->_redirect($_SERVER['HTTP_REFERER'], array('code' => 302));
+            return;
+        }
+
         // Check whether the f parameter is given. If not: default to rdf/xml
         if (!isset($this->_request->f)) {
             $format = 'rdfxml';
