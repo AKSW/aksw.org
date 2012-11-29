@@ -52,16 +52,24 @@ $pastProjects = $this->query(array(
     'prefix'   => '<h1>Past Projects</h1>',
 ));
 // prepare button row
-$query = '
+$queryForButtons = '
 PREFIX aksw: <http://aksw.org/schema/>
-SELECT DISTINCT ?resourceUri ?label ?propertyUri
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT DISTINCT ?resourceUri ?label
 WHERE {
-    { <'.$this->resourceUri.'> ?propertyUri ?resourceUri . }
+    { <'.$this->resourceUri.'> ?propertyUri ?resourceUri .
+      ?propertyUri aksw:buttonLabel ?label }
         UNION
-    { ?resourceUri ?propertyUri <'.$this->resourceUri.'> . }
-    ?propertyUri aksw:buttonLabel ?label
+    { ?resourceUri ?propertyUri <'.$this->resourceUri.'> .
+      ?propertyUri aksw:buttonLabel ?label }
+        UNION
+    { ?resourceUri foaf:primaryTopic <'.$this->resourceUri.'> .
+      ?resourceUri aksw:buttonLabel ?label }
+        UNION
+    { <'.$this->resourceUri.'> foaf:isPrimaryTopicOf ?resourceUri .
+      ?resourceUri aksw:buttonLabel ?label }
 }';
-$buttons = $this->querylist($query, 'local/items/buttons.phtml');
+$buttons = $this->querylist($queryForButtons, 'local/items/buttons.phtml');
 ?>
 
 <nav class="nav-sidelinks">
