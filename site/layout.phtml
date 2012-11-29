@@ -32,6 +32,12 @@ $templateData           = $this->templateData;
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript">document.documentElement.className += 'js';</script>
+    <!--[if lte IE 8]>
+        <script type="text/javascript">
+            var html4elements = 'article footer header nav section aside time';
+            html4elements.replace(/\w+/g,function(n){document.createElement(n)})
+        </script>
+    <![endif]-->
 
     <link
         rel="<?php echo $this->curie('http://xmlns.com/foaf/0.1/primaryTopic') ?>"
