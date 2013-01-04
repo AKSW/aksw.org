@@ -7,12 +7,12 @@
  */
 
 /**
- * querylist li plain element template (site independent)
+ * querylist li plain element template
  *
  * this template is used in combination with the querylist helper to render
  * lists of resources which match a given SPARQL query
  *
- * TODO: make more independend from the query (e.g. take the first)
+ * TODO: make more independend from the query (e.g. take the first projection variable)
  */
 
 // prepare vars from the querylist helper
@@ -30,7 +30,9 @@ if (!Erfurt_Uri::check($resourceUri)) {
     echo "<li class='$oddclass'>$title</li>";
 } else {
     $link = $this->link(array(
-        'uri' => $resourceUri, 'text' => $title
+        'uri'    => $resourceUri,
+        'text'   => $title,
+        'direct' => true
     ));
 
     // try to prepare an active class
