@@ -1,0 +1,78 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org partner template
+ */
+
+// prepare hookline and abstract (both optional)
+$hookline = $this->literal(array(
+    'property' => 'aksw:hookline',
+    'class' => 'hookline',
+    'prefix' => '<span class="hideme">:</span> '
+));
+$abstract = $this->literal(array(
+    'property' => 'dcterms:abstract',
+    'tag' => 'p',
+    'class' => 'abstract'
+));
+
+// prepare button row
+$queryForButtons = '
+PREFIX aksw: <http://aksw.org/schema/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT DISTINCT ?resourceUri ?label
+WHERE {
+    { <'.$this->resourceUri.'> ?propertyUri ?resourceUri .
+      ?propertyUri aksw:buttonLabel ?label }
+        UNION
+    { ?resourceUri ?propertyUri <'.$this->resourceUri.'> .
+      ?propertyUri aksw:buttonLabel ?label }
+        UNION
+    { ?resourceUri foaf:primaryTopic <'.$this->resourceUri.'> .
+      ?resourceUri aksw:buttonLabel ?label }
+        UNION
+    { <'.$this->resourceUri.'> foaf:isPrimaryTopicOf ?resourceUri .
+      ?resourceUri aksw:buttonLabel ?label }
+}';
+$buttons = $this->querylist($queryForButtons, 'local/items/buttons.phtml');
+
+// prepare projects for sidelinks
+$promotedProjects = $this->query(array(
+    'where'    => '?resourceUri aksw:promoted "true"^^xsd:boolean .',
+    'template' => 'liplain',
+    'prefix'   => '<li><strong class="headline">promoted projects</strong>',
+    'suffix'   => '</li>'
+));
+$projects = $this->query(array(
+    'where'    => '{ ?resourceUri aksw:partner <'.$this->resourceUri.'> .} ' ,
+    'template' => 'abstract',
+    'prefix'   => '<h1>Project Collaboration</h1>'
+));
+
+// prepare screenshots
+$screenshots = $this->query(array(
+    'where'    => '{<'.$this->resourceUri.'> foaf:logo ?resourceUri . }',
+    'template' => 'depictions'
+));
+
+// prepare main content (uses default content properties)
+$content = $this->literal(array('tag' => 'div', 'class' => 'content'));
+?>
+
+<nav class="nav-sidelinks">
+    <ul>
+        <?php echo $promotedProjects ?>
+    </ul>
+</nav> <!-- /.nav-sidelinks -->
+<header class="intro">
+    <h1><?php echo $this->title . $hookline ?></h1>
+    <?php echo $screenshots, $abstract, $buttons ?>
+</header> <!-- /.intro -->
+<?php echo $content ?>
+<?php echo $projects ?>
