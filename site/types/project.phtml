@@ -76,9 +76,18 @@ $team = $this->query(array(
         ' OPTIONAL { ?resourceUri <http://xmlns.com/foaf/0.1/familyName> ?familyName }',
     'orderby' => 'ASC(?familyName)',
     'template' => 'liplain',
-    'prefix' => '<h1>Current Team</h1>' . PHP_EOL,
     'activeSuffix' => ' (Principle Contact / Maintainer)',
-    'active' => $this->literal(array('property' => 'doap:maintainer', 'plain' => 'true'))
+    'active' => $this->literal(array('property' => 'doap:maintainer', 'plain' => 'true')),
+    'prefix' => '<div class="c50l"><div class="subcl"><h1>Current Team</h1>',
+    'suffix' => '</div></div>'
+));
+
+// prepare partner list
+$partner = $this->query(array(
+    'where' => '{<'.$this->resourceUri.'> aksw:partner ?resourceUri.}',
+    'template' => 'liplain',
+    'prefix' => '<div class="c50r"><div class="subcl"><h1>Partner</h1>' . PHP_EOL,
+    'suffix' => '</div></div>'
 ));
 ?>
 
@@ -91,7 +100,10 @@ $team = $this->query(array(
     <h1><?php echo $this->title . $hookline ?></h1>
     <?php echo $screenshots, $abstract, $buttons ?>
 </header> <!-- /.intro -->
-<?php echo $content, $team ?>
+<?php echo $content ?>
+<div class="subcolumns">
+<?php echo $team, $partner ?>
+</div>
 <?php echo $this->renderx(array(
     'template' => 'local/items/publications.phtml'
 ));
