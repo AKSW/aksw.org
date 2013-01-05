@@ -42,11 +42,11 @@ WHERE {
 }';
 $buttons = $this->querylist($queryForButtons, 'local/items/buttons.phtml');
 
-// prepare projects for sidelinks
-$promotedProjects = $this->query(array(
-    'where'    => '?resourceUri aksw:promoted "true"^^xsd:boolean .',
+// prepare partners for sidelinks
+$partners = $this->query(array(
+    'where'    => '{ ?project aksw:partner ?resourceUri .} ' ,
     'template' => 'liplain',
-    'prefix'   => '<li><strong class="headline">promoted projects</strong>',
+    'prefix'   => '<li><strong class="headline">partners</strong>',
     'suffix'   => '</li>'
 ));
 $projects = $this->query(array(
@@ -67,7 +67,7 @@ $content = $this->literal(array('tag' => 'div', 'class' => 'content'));
 
 <nav class="nav-sidelinks">
     <ul>
-        <?php echo $promotedProjects ?>
+        <?php echo $partners ?>
     </ul>
 </nav> <!-- /.nav-sidelinks -->
 <header class="intro">
