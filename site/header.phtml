@@ -2,7 +2,7 @@
 /**
  * This file is part of the {@link http://ontowiki.net OntoWiki} project.
  *
- * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @copyright Copyright (c) 2013, {@link http://aksw.org AKSW}
  * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
  */
 
@@ -30,6 +30,10 @@ $navOptions = array(
 );
 echo $this->navigationList($navOptions);
 ?>
+    <aside id="search">
+        <h2>Search</h2>
+        <input id="searchterm" type="text" />
+    </aside>
     <aside id="associations">
         <h2>Hosted by</h2>
         <a href="http://www.uni-leipzig.de"><img src="<?php echo $this->baseUri; ?>/images/logo-unileipzig.png" alt="Universität Leipzig" /></a> <span>,</span>
