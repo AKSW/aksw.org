@@ -1,5 +1,5 @@
 /*jslint browser:true */
-/*global $, jQuery, console*/
+/*global $, jQuery, console, alert*/
 
 /**
  * @copyright Copyright (c) 2013, {@link http://aksw.org AKSW}
@@ -41,14 +41,29 @@ var akswSearchRender = function (data) {
 var akswSearchQuery = function (query, start) {
     'use strict';
     // Google's AJAX search API
-    var apiURL = 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&callback=?';
-    $.getJSON(apiURL, {
-        q   : 'site:aksw.org ' + query,
-        rsz : 8,
-        start : start
-    }, function (data) {
-        akswSearchRender(data.responseData.results);
+    var apiURL = 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&callback=?',
+        requestData = {
+            q   : 'site:aksw.org ' + query,
+            rsz : 8,
+            start : start
+        };
+
+    $.ajax({
+        url: apiURL,
+        dataType: 'json',
+        data: requestData,
+        success: function (data) {
+            akswSearchRender(data.responseData.results);
+        }
     });
+
+    //$.getJSON(apiURL, {
+        //q   : 'site:aksw.org ' + query,
+        //rsz : 8,
+        //start : start
+    //}, function (data) {
+        //akswSearchRender(data.responseData.results);
+    //});
 };
 
 $(document).ready(function () {
