@@ -30,10 +30,15 @@ $navOptions = array(
 );
 echo $this->navigationList($navOptions);
 ?>
-    <aside id="search">
-        <h2>Search</h2>
-        <input id="searchterm" type="text" />
-    </aside>
+    <nav>
+        <form id="search" action="#" method="get" role="search">
+            <fieldset>
+                <legend>Search</legend>
+                <input type="text" id="searchterm" type="text" value="" />
+                <button type="sumbit">Search</button>
+            </fieldset>
+        </form>
+    </nav>
     <aside id="associations">
         <h2>Hosted by</h2>
         <a href="http://www.uni-leipzig.de"><img src="<?php echo $this->baseUri; ?>/images/logo-unileipzig.png" alt="Universität Leipzig" /></a> <span>,</span>
