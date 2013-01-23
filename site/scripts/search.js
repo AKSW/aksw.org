@@ -68,12 +68,11 @@ var akswSearchQuery = function (query, start) {
 
 $(document).ready(function () {
     'use strict';
-    $('#searchterm').keypress(function () {
-        if (event.which === 13) {
-            event.preventDefault();
-            var query = $(event.target).prop('value');
-            akswSearchQuery(query, 0);
-        }
+    $('#search').submit(function () {
+        // event.preventDefault();
+        var query = $('#searchterm').prop('value');
+        akswSearchQuery(query, 0);
+        return false;
     });
 });
 
