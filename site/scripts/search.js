@@ -6,6 +6,9 @@
  * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
  */
 
+/**
+ * returns the html for one single search result
+ */
 var akswSearchRenderItem = function (title, url, content) {
     'use strict';
     var html = '';
@@ -17,6 +20,9 @@ var akswSearchRenderItem = function (title, url, content) {
     return html;
 };
 
+/*
+ * processes the search result data
+ */
 var akswSearchRender = function (data) {
     'use strict';
 
@@ -44,6 +50,9 @@ var akswSearchRender = function (data) {
 };
 
 /*
+ * requests the result for a specific query
+ * adds site: keyword to the query
+ *
  * based on the tutorial from
  * http://tutorialzine.com/2010/09/google-powered-site-search-ajax-jquery/
  *
@@ -72,6 +81,9 @@ var akswSearchQuery = function (query, start) {
     });
 };
 
+/*
+ * adds the submit trigger and starts the query request
+ */
 $(document).ready(function () {
     'use strict';
     $('#search').submit(function () {
