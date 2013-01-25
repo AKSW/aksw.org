@@ -1428,6 +1428,131 @@
     font-weight: normal;
   }
 
+  /* -- Resource Matrix -------------------------------------------------- */
+  .resourcematrix {
+    list-style: none;
+    position: relative;
+    padding: 0;
+    margin: 0 0 1.538em 0;
+    clear: both;
+  }
+  .resourcematrix .item {
+    display: block;
+    position: relative;
+    width: auto;
+    height: 4.615em;
+    margin: 0 0.769em 0.769em 0;
+    padding: 0.385em;
+    padding-left: 5.0em;
+    border: solid 1px #eee;
+    background: white;
+  }
+  .resourcematrix .label {
+    display: block;
+    width: auto;
+    max-height: 3.077em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-style: normal;
+    font-weight: normal;
+  }
+  .resourcematrix .depiction {
+    position: absolute;
+    width: 3.846em;
+    height: 4.615em;
+    padding: 0;
+    margin: 0;
+    top: 0.385em;
+    left: 0.385em;
+    overflow: hidden;
+  }
+  .resourcematrix .depiction img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .resourcematrix .extended {
+    position: absolute;
+    left: -5000em;
+  }
+  .resourcematrix dl {
+    display: block;
+    float: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    overflow: hidden;
+  }
+  .resourcematrix dt {
+    display: block;
+    float: left;
+    width: 16px;
+    padding: 0;
+    margin: 0 9px 0 0;
+  }
+  .resourcematrix dd {
+    display: block;
+    padding: 0;
+    margin: 0 0 0.5em 25px;
+  }
+  .resourcematrix .seealso {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.385em;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  .resourcematrix li {
+    float: left;
+    width: 33.3%;
+    height: 6.154em;
+    min-width: 14.5em;
+    padding: 0;
+    margin: 0;
+    z-index: 99;
+  }
+  .resourcematrix li:hover {
+    z-index: 100;
+  }
+  .resourcematrix li:hover .item {
+    width: 125%;
+    left: -20%;
+    top: -20%;
+    padding: 0.769em;
+    padding-left: 5.385em;
+    margin-top: -0.385em;
+    margin-left: -0.385em;
+    height: auto;
+    z-index: 100;
+    border-color: #4c78a4;
+    color: black;
+    box-shadow: 0px 0px 2em rgba(76, 120, 164, 0.5);
+  }
+  .resourcematrix li:hover .label {
+    max-height: none;
+    font-size: 1.154em;
+    line-height: 1.467;
+  }
+  .resourcematrix li:hover .depiction {
+    top: 0.769em;
+    left: 0.769em;
+  }
+  .resourcematrix li:hover .extended {
+    position: static;
+  }
+  .resourcematrix li:hover .seealso {
+    position: static;
+    display: inline-block;
+    padding: 0;
+    text-align: right;
+    background: transparent;
+    font-weight: bold;
+  }
+  .resourcematrix a {
+    font-weight: normal;
+  }
+
   /* -- Query List Abstract ---------------------------------------------- */
   div.query-list-abstract div.abstract {
     border-bottom: solid 1px #585858;
