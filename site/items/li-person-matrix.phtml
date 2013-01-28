@@ -1,0 +1,88 @@
+<?php
+/**
+ * @copyright Copyright (c) 2013, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * querylist li person matrix template
+ *
+ * this template is used in combination with the querylist helper to render
+ * a matrix of persons
+ *
+ * Example usage:
+ *
+ * {{query where="?group foaf:member ?resourceUri . ?group aiiso:part_of 
+ * groups:AKSW . OPTIONAL { ?resourceUri <http://xmlns.com/foaf/0.1/familyName> 
+ * ?familyName }" template="li-person-matrix" orderby="ASC(?familyName)"}}
+ *
+ */
+
+// prepare vars from the querylist helper
+$resourceUri = $this->resourceUri;
+$title       = $this->title;
+$oddclass    = $this->oddclass;
+$tag         = (isset($this->tag)) ? $this->tag : 'ol';
+
+if ( ($this->listhint == 'first') || ($this->rowcount == 1) ) {
+    echo '<'.$tag.' class="resourcematrix clearfix">' . PHP_EOL;
+}
+
+// if we have a literal item, we output nothing
+if (Erfurt_Uri::check($resourceUri)) {
+    // prepare contacts link
+    $link = $this->link(array(
+        'uri'    => $resourceUri,
+        'class'  => 'seealso',
+        'text'   => 'contact details <span class="hideme">'.$title.'</span>',
+        'direct' => true
+    ));
+
+    // prepare depiction
+    $depiction = $this->img(array(
+        'alt'    => 'Depiction of ' . $title,
+        'prefix' => '<span class="depiction">',
+        'suffix' => '</span>'
+    ));
+
+    // fetch the memory model to check / fetch mbox and phone
+    $resource = new OntoWiki_Resource($this->resourceUri, OntoWiki::getInstance()->selectedModel);
+    $mmodel   = $resource->getMemoryModel();
+
+    // prepare mbox output
+    if ($mmodel->hasSP($resourceUri, 'http://xmlns.com/foaf/0.1/mbox')) {
+        $mboxUri   = $mmodel->getValue($resourceUri, 'http://xmlns.com/foaf/0.1/mbox');
+        $mboxLabel = str_replace ('mailto:', '', $mboxUri );
+        $mbox      = '<dt><span class="icon icon-email">Email</span></dt>'
+            . '<dd><a href="' . $mboxUri . '">' . $mboxLabel . '</a></dd>';
+    } else {
+        $mbox = '';
+    }
+
+    // prepare phone output
+    if ($mmodel->hasSP($resourceUri, 'http://xmlns.com/foaf/0.1/phone')) {
+        $phoneUri   = $mmodel->getValue($resourceUri, 'http://xmlns.com/foaf/0.1/phone');
+        $phoneLabel = str_replace ('tel:', '', $phoneUri );
+        $phone      = '<dt><span class="icon icon-phone">Phone</span></dt>'
+            . '<dd><a href="' . $phoneUri . '">' . $phoneLabel . '</a></dd>';
+    } else {
+        $phone = '';
+    }
+
+?>
+    <li class="<?php echo $oddclass ?>" about="<?php echo $this->curie($resourceUri) ?>">
+        <div class="item">
+            <dfn class="label"><?php echo $title ?></dfn>
+            <?php echo $depiction ?>
+            <dl class="extended">
+                <?php echo $mbox, $phone ?>
+            </dl>
+            <?php echo $link ?>
+        </div>
+    </li>
+<?php
+}
+
+if ( ($this->listhint == 'last') || ($this->rowcount == 1) ) {
+    echo "</$tag>" . PHP_EOL;
+}

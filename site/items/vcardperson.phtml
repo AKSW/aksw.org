@@ -95,7 +95,7 @@
             $imgAlt   = htmlentities($mediatype .' ' . $contact['type'], ENT_QUOTES);
             $imgTitle = $imgAlt;
 
-            echo '<dt class="'.$mediatype.'"><img class="icon" src="'.$imgSrc.'" alt="'.$imgAlt.'" title="'.$imgTitle.'"/></dt>' . PHP_EOL;
+            echo '<dt><span class="icon icon-'.$lmediatype.'">'.$imgTitle.'</span></dt>' . PHP_EOL;
 
             echo '<dd ';
             echo 'class="'.$lmediatype.'"';
