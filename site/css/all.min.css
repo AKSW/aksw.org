@@ -222,7 +222,7 @@ dl.siteoptions dd{display:block;margin:0}
 .vcard dt{display:block;float:left;width:16px;padding:0;margin:0 9px 0 0}
 .vcard dd{display:block;padding:0;margin:0 0 .5em 25px}
 .vcard a{font-weight:normal}
-.resourcematrix{list-style:none;position:relative;padding:0;margin:0 0 1.538em 0;clear:both}
+.resourcematrix{list-style:none;position:relative;padding:0;margin:0 0 1.538em 0}
 .resourcematrix .item{display:block;position:relative;width:auto;height:4.615em;margin:0 .769em .769em 0;padding:.385em;padding-left:5.0em;border:solid 1px #eee;background:white}
 .resourcematrix .label{display:block;width:auto;max-height:3.077em;overflow:hidden;text-overflow:ellipsis;font-style:normal;font-weight:normal}
 .resourcematrix .depiction{position:absolute;width:3.846em;height:4.615em;padding:0;margin:0;top:.385em;left:.385em;overflow:hidden}
