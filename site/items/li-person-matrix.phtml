@@ -53,7 +53,7 @@ if (Erfurt_Uri::check($resourceUri)) {
     if ($mmodel->hasSP($resourceUri, 'http://xmlns.com/foaf/0.1/mbox')) {
         $mboxUri   = $mmodel->getValue($resourceUri, 'http://xmlns.com/foaf/0.1/mbox');
         $mboxLabel = str_replace ('mailto:', '', $mboxUri );
-        $mbox      = '<dt class="Email"></dt>'
+        $mbox      = '<dt><span class="icon icon-email">Email</span></dt>'
             . '<dd><a href="' . $mboxUri . '">' . $mboxLabel . '</a></dd>';
     } else {
         $mbox = '';
@@ -63,7 +63,7 @@ if (Erfurt_Uri::check($resourceUri)) {
     if ($mmodel->hasSP($resourceUri, 'http://xmlns.com/foaf/0.1/phone')) {
         $phoneUri   = $mmodel->getValue($resourceUri, 'http://xmlns.com/foaf/0.1/phone');
         $phoneLabel = str_replace ('tel:', '', $phoneUri );
-        $phone      = '<dt class="Phone"></dt>'
+        $phone      = '<dt><span class="icon icon-phone">Phone</span></dt>'
             . '<dd><a href="' . $phoneUri . '">' . $phoneLabel . '</a></dd>';
     } else {
         $phone = '';

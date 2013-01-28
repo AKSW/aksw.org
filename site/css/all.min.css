@@ -186,12 +186,18 @@ input:focus,input:active,textarea:focus,textarea:active,select:focus,select:acti
 .mediagallery{list-style:none;margin-left:0;margin-right:0;overflow:hidden;padding:.385em}
 .mediagallery li{float:left;padding:0;margin:0 .385em .385em 0}
 .mediagallery a,.mediagallery img{height:5.769em;width:auto;display:block}
-.icon{display:inline-block;height:16px;width:16px;vertical-align:middle;text-indent:-5000em;outline:0;background:url(./../images/icon-todo.png) no-repeat center transparent!important}
+.icon{display:inline-block;height:16px;width:16px;vertical-align:middle;overflow:hidden;white-space:nowrap;text-indent:100%;padding:0;outline:0;background:url(./../images/icon-todo.png) no-repeat center transparent!important}
 img.icon{background:transparent!important}
 .icon-resource-download{background-image:url(./../images/icon-action-resource-download.png)!important}
 .icon-resource-edit{background-image:url(./../images/icon-action-resource-edit.png)!important}
 .icon-template-edit{background-image:url(./../images/icon-action-template-edit.png)!important}
 .icon-browse{background-image:url(./../images/icon-todo.png)!important}
+.icon-address{background-image:url(./../images/icon-type-address.png)!important}
+.icon-email{background-image:url(./../images/icon-type-email.png)!important}
+.icon-fax{background-image:url(./../images/icon-type-fax.png)!important}
+.icon-link{background-image:url(./../images/icon-type-link.png)!important}
+.icon-phone{background-image:url(./../images/icon-type-phone.png)!important}
+.icon-resource{background-image:url(./../images/icon-type-resource.png)!important}
 dl.resourceoptions,dl.siteoptions{padding:0;margin:0 0 1.538em 0}
 dl.resourceoptions dt,dl.siteoptions dt,dl.resourceoptions dd,dl.siteoptions dd{padding:0;margin:0;display:inline}
 dl.resourceoptions dd,dl.siteoptions dd{white-space:nowrap;margin-right:.5em}

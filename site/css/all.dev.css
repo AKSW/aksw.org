@@ -1207,7 +1207,10 @@
     height: 16px;
     width: 16px;
     vertical-align: middle;
-    text-indent: -5000em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 100%;
+    padding: 0;
     outline: none;
     background: url(./../images/icon-todo.png) no-repeat center transparent !important;
   }
@@ -1230,6 +1233,30 @@
 
   .icon-browse {
     background-image: url(./../images/icon-todo.png) !important;
+  }
+
+  .icon-address {
+    background-image: url(./../images/icon-type-address.png) !important;
+  }
+
+  .icon-email {
+    background-image: url(./../images/icon-type-email.png) !important;
+  }
+
+  .icon-fax {
+    background-image: url(./../images/icon-type-fax.png) !important;
+  }
+
+  .icon-link {
+    background-image: url(./../images/icon-type-link.png) !important;
+  }
+
+  .icon-phone {
+    background-image: url(./../images/icon-type-phone.png) !important;
+  }
+
+  .icon-resource {
+    background-image: url(./../images/icon-type-resource.png) !important;
   }
 
   /* -- Footer Options --------------------------------------------------- */
