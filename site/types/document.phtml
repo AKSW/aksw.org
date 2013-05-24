@@ -25,6 +25,16 @@ $abstract = $this->literal(array(
     'class' => 'abstract'
 ));
 
+// create optional side navigation
+$sideNavigation = $this->navigationList(
+    array(
+        'navProperty' => 'http://aksw.org/schema/sideNavigation',
+        'navClass' => 'nav-sidelinks',
+        'suffix'    => '<!-- /#nav-sidelinks -->',
+        'activeUrl' => $this->resourceUri
+    )
+);
+echo $sideNavigation;
 ?>
 <header class="intro">
     <h1><?php echo $this->title . $hookline ?></h1>
