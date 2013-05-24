@@ -1,0 +1,113 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org events template
+ *
+ * arranges the content for the schema:Event class
+ */
+
+// prepare hookline and abstract (both optional)
+$hookline = $this->literal(array(
+    'property' => 'aksw:hookline',
+    'class' => 'hookline',
+    'prefix' => '<span class="hideme">:</span> '
+));
+$abstract = $this->literal(array(
+    'property' => 'schema:description',
+    'tag' => 'p',
+    'class' => 'abstract'
+));
+
+// prepare button row
+$queryForButtons = '
+PREFIX aksw: <http://aksw.org/schema/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT DISTINCT ?resourceUri ?label
+WHERE {
+    { <'.$this->resourceUri.'> ?propertyUri ?resourceUri .
+      ?propertyUri aksw:buttonLabel ?label }
+        UNION
+    { ?resourceUri ?propertyUri <'.$this->resourceUri.'> .
+      ?propertyUri aksw:buttonLabel ?label }
+        UNION
+    { ?resourceUri foaf:primaryTopic <'.$this->resourceUri.'> .
+      ?resourceUri aksw:buttonLabel ?label }
+        UNION
+    { <'.$this->resourceUri.'> foaf:isPrimaryTopicOf ?resourceUri .
+      ?resourceUri aksw:buttonLabel ?label }
+}';
+$buttons = $this->querylist($queryForButtons, 'local/items/buttons.phtml');
+
+// prepare projects for sidelinks
+$promotedProjects = $this->query(array(
+    'where'    => '?resourceUri aksw:promoted "true"^^xsd:boolean .',
+    'template' => 'liplain',
+    'prefix'   => '<li><strong class="headline">promoted projects</strong>',
+    'suffix'   => '</li>'
+));
+$relatedProjects = $this->query(array(
+    'where'    => '{ ?resourceUri aksw:relatedProject <'.$this->resourceUri.'> .} UNION' .
+        '{ <'.$this->resourceUri.'> aksw:relatedProject ?resourceUri . }',
+    'template' => 'liplain',
+    'prefix'   => '<li><strong class="headline">related projects</strong>',
+    'suffix'   => '</li>'
+));
+
+// prepare screenshots
+$screenshots = $this->query(array(
+    'where'    => '{<'.$this->resourceUri.'> schema:image ?resourceUri }',
+    'template' => 'depictions'
+));
+
+// prepare main content (uses default content properties)
+$content = $this->literal(array('tag' => 'div', 'class' => 'content'));
+
+// prepare team list
+$team = $this->query(array(
+    'where' => '{?resourceUri foaf:currentProject <'.$this->resourceUri.'> .} UNION '.
+        '{<'.$this->resourceUri.'> doap:maintainer ?resourceUri . }'.
+        ' OPTIONAL { ?resourceUri <http://xmlns.com/foaf/0.1/familyName> ?familyName }',
+    'orderby' => 'ASC(?familyName)',
+    'template' => 'liplain',
+    'activeSuffix' => ' (Principle Contact / Maintainer)',
+    'active' => $this->literal(array('property' => 'doap:maintainer', 'plain' => 'true')),
+    'prefix' => '<div class="c50l"><div class="subcl"><h1>Current Team</h1>',
+    'suffix' => '</div></div>'
+));
+
+// prepare partner list
+$partner = $this->query(array(
+    'where' => '{<'.$this->resourceUri.'> aksw:partner ?resourceUri.}',
+    'template' => 'liplain',
+    'prefix' => '<div class="c50r"><div class="subcl"><h1>Partner</h1>' . PHP_EOL,
+    'suffix' => '</div></div>'
+));
+
+// create side navigation
+$navOptions = array(
+    'navProperty' => 'http://aksw.org/schema/sideNavigation',
+    'navClass' => 'nav-sidelinks',
+    'suffix'    => '<!-- /#nav-sidelinks -->',
+    'activeUrl' => $this->resourceUri
+);
+
+?>
+
+<?php echo $this->navigationList($navOptions); ?>
+<header class="intro">
+    <h1><?php echo $this->title . $hookline ?></h1>
+    <?php echo $screenshots, $abstract, $buttons ?>
+</header> <!-- /.intro -->
+<?php echo $content ?>
+<div class="subcolumns">
+<?php echo $team, $partner ?>
+</div>
+<?php echo $this->renderx(array(
+    'template' => 'local/items/publications.phtml'
+));
