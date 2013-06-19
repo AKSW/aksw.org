@@ -524,7 +524,7 @@ class ModelController extends OntoWiki_Controller_Base
         $this->view->activeForm    = ini_get('allow_url_fopen') ? 'import' : 'empty';
         $this->view->referer       = '';
 
-        $this->view->modelUri         = '';
+        $this->view->modelUri         = $this->_config->urlBase .'NEWMODEL/';
         $this->view->baseUri          = '';
         $this->view->title            = $this->view->_('Create Knowledge Base');
         $this->view->supportedFormats = $this->_erfurt->getStore()->getSupportedImportFormats();
@@ -805,7 +805,15 @@ class ModelController extends OntoWiki_Controller_Base
                     $this->_owApp->selectedModel = null;
                     //deletes selected model - always needed?
                     $this->view->clearModuleCache();
-                    $this->_redirect($this->_owApp->getUrlBase(), array('code' => 302));
+
+                    $url = new OntoWiki_Url(
+                        array(
+                            'controller' => $this->_config->index->default->controller,
+                            'action' => $this->_config->index->default->action,
+                        ),
+                        array()
+                    );
+                    $this->_redirect($url, array('code' => 302));
                 }
             } catch (Exception $e) {
                 $this->_owApp->appendMessage(
