@@ -132,7 +132,10 @@ $navOptions = array(
 
 <?php echo $this->navigationList($navOptions); ?>
 <header class="intro">
-    <h1><?php echo $this->title . $hookline ?></h1>
+    <h1>
+        <span property="schema:name"><?php echo $this->title ?></span>
+        <?php echo $hookline ?>
+    </h1>
     <?php echo $date, $screenshots, $abstract, $address, $buttons ?>
 </header> <!-- /.intro -->
 <?php echo $content ?>
