@@ -1,0 +1,57 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * querylist schema:PostalAddress template
+ *
+ * this template is used in combination with the querylist helper to render
+ * lists of resources which match a given SPARQL query
+ */
+
+// prepare vars from the querylist helper
+$resourceUri = $this->resourceUri;
+$title       = $this->title;
+
+//if ( ($this->listhint == 'first') || ($this->rowcount == 1) ) {
+    //echo "<$tag>" . PHP_EOL;
+//}
+
+// if we have a literal item, do not do anything
+if (!Erfurt_Uri::check($resourceUri)) {
+    echo "<address>$title</address>";
+} else {
+    //$ns = 'http://schema.org/';
+    // fetch the memory model to check / fetch mbox and phone
+    //$resource = new OntoWiki_Resource($this->resourceUri, OntoWiki::getInstance()->selectedModel);
+    //$model   = $resource->getMemoryModel();
+
+    $output  = '<address rel="schema:location" typeof="schema:PostalAdress" prefix="schema:http://schema.org/">'. PHP_EOL;
+    $output .= $this->literal(array(
+        'tag' => 'span',
+        'property' => 'schema:streetAddress',
+        'suffix' => ',' . PHP_EOL
+    ));
+    $output .= $this->literal(array(
+        'tag' => 'span',
+        'property' => 'schema:postalCode',
+        'prefix' => ' ',
+        'suffix' => PHP_EOL
+    ));
+    $output .= $this->literal(array(
+        'tag' => 'span',
+        'property' => 'schema:addressLocality',
+        'prefix' => ' ',
+        'suffix' => PHP_EOL
+    ));
+    $output .= '</address>';
+    echo $output;
+}
+
+//if ( ($this->listhint == 'last') || ($this->rowcount == 1) ) {
+    //echo "</$tag>" . PHP_EOL;
+//}

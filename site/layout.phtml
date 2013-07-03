@@ -16,11 +16,13 @@
 $editUrl = $this->wikiBaseUrl .'view?r=' . urlencode($this->resourceUri);
 
 // this is the standard template data
-$templateData           = $this->templateData;
+$templateData = $this->templateData;
+
+$memoryModel = new Erfurt_Rdf_MemoryModel($this->description);
+$types = $memoryModel->getValues($this->resourceUri, EF_RDF_TYPE);
+
 ?><!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
-    xmlns:dc="http://purl.org/dc/terms/"
-    xmlns:foaf="http://xmlns.com/foaf/0.1/">
+<html lang="en" prefix="dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -107,8 +109,11 @@ $templateData           = $this->templateData;
     $this->headScript();
 ?>
 </head>
-<body<?php
-    foreach ($this->namespaces as $prefix => $ns): ?><?php echo ' xmlns:' . $prefix . '="' . $ns . '"' ?><?php endforeach; ?>>
+<body
+    prefix="<?php foreach ($this->namespaces as $prefix => $ns): echo $prefix . ':' . $ns . ' '; endforeach; ?>"
+    about="<?php echo $this->resourceUri ?>"
+    typeof="<?php foreach ($types as $type) {echo $type['value'] . ' '; } ?>"
+    >
     <div class="page_margins">
         <div id="page">
                 <?php echo $this->partial('local/header.phtml', $templateData) ?>

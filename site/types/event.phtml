@@ -12,6 +12,37 @@
  * arranges the content for the schema:Event class
  */
 
+/*
+ * prepare date string
+ * <time content="%propertyValue%" property="schema:startDate">for humans</time>
+ */
+$startDate = $this->literal(array(
+    'plain' => true,
+    'property' => 'schema:startDate'
+));
+$humanStartDate = $this->date($startDate, 'd.m.Y');
+if ($startDate != '') {
+    $startDate = "<time property='schema:startDate' datatype='xsd:date' content='$startDate'>$humanStartDate</time>";
+}
+$endDate = $this->literal(array(
+    'plain' => true,
+    'property' => 'schema:endDate'
+));
+$humanEndDate = $this->date($endDate, 'd.m.Y');
+if ($endDate != '') {
+    $endDate = "<time property='schema:endDate' datatype='xsd:date' content='$endDate'>$humanEndDate</time>";
+}
+$date = $startDate;
+if ($endDate != '') {
+    $date .= ' &mdash; ' . $endDate;
+}
+$date = "<h2 class='hookline'>$date</h2>";
+
+$address = $this->query(array(
+    'where'    => '<'.$this->resourceUri.'> schema:location ?resourceUri .',
+    'template' => 'schema-address'
+));
+
 // prepare hookline and abstract (both optional)
 $hookline = $this->literal(array(
     'property' => 'aksw:hookline',
@@ -102,7 +133,7 @@ $navOptions = array(
 <?php echo $this->navigationList($navOptions); ?>
 <header class="intro">
     <h1><?php echo $this->title . $hookline ?></h1>
-    <?php echo $screenshots, $abstract, $buttons ?>
+    <?php echo $date, $screenshots, $abstract, $address, $buttons ?>
 </header> <!-- /.intro -->
 <?php echo $content ?>
 <div class="subcolumns">
