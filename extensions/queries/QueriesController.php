@@ -192,7 +192,11 @@ class QueriesController extends OntoWiki_Controller_Component
             $store = $this->_erfurt->getStore();
 
             foreach ($prefixes as $prefix => $namespace) {
-                $query = 'PREFIX ' . $prefix . ': <' . $namespace . '>' . PHP_EOL . $query;
+                $prefixString = 'PREFIX ' . $prefix . ': <' . $namespace . '>';
+                // only add prefix if it's not there yet
+                if(strpos($query, $prefixString) === false) {
+                    $query = $prefixString . PHP_EOL . $query;
+                }
             }
             if ($format == 'list') {
                 $url = new OntoWiki_Url(array('controller' => 'list'), array());
@@ -320,7 +324,7 @@ class QueriesController extends OntoWiki_Controller_Component
             'var editor;
             $(document).ready(
                 function(){
-                    var editor = CodeMirror.fromTextArea(
+                    editor = CodeMirror.fromTextArea(
                         document.getElementById("inputfield"),
                         {
                             mode: "application/x-sparql-query",
@@ -398,6 +402,8 @@ class QueriesController extends OntoWiki_Controller_Component
      */
     public function savequeryAction()
     {
+        $this->_helper->layout()->disableLayout();
+
         $response = $this->getResponse();
         $response->setHeader('Content-Type', 'text/plain');
 
