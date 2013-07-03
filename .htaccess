@@ -19,10 +19,10 @@
 
     # for deployment purposes, we want to redirect to a maintenance page iff it exists
     # works only if document root is ontowiki folder
-    #RewriteCond %{DOCUMENT_ROOT}/maintenance.html -f
-    #RewriteCond %{REQUEST_FILENAME} !/maintenance.html
-    #RewriteRule ^.*$ /maintenance.html [R=503,L]
-    #ErrorDocument 503 /maintenance.html
+    RewriteCond %{DOCUMENT_ROOT}/maintenance.html -f
+    RewriteCond %{REQUEST_FILENAME} !/maintenance.html
+    RewriteRule ^.*$ /maintenance.html [R=503,L]
+    ErrorDocument 503 /maintenance.html
 
     # favicon files are located under /application
     RewriteRule ^favicon\.(.*)$ application/favicon.$1
