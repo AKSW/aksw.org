@@ -3,6 +3,49 @@
 <?php
     $mmodel = new Erfurt_Rdf_MemoryModel(array($this->resourceUri => $this->description));
 
+    // get URI of VCard
+    if ($mmodel->hasSP($this->resourceUri, 'http://schema.org/location')) {
+        $directVcardUri = $mmodel->getValue($this->resourceUri, 'http://schema.org/location');
+    }
+
+    $defaultVcardUri = $this->literal(
+        array('uri' => 'http://xmlns.com/foaf/0.1/Person', 'property' => 'schema:location', 'plain' => true)
+    );
+
+    $env = array(
+        'mmodel' => $mmodel,
+        'resourceUri' => $this->resourceUri,
+        'this' => $this
+    );
+
+    if (isset($defaultVcardUri)) {
+        $env['defaultVcardUri'] = $defaultVcardUri;
+    }
+
+    if (isset($directVcardUri)) {
+        $env['directVcardUri'] = $directVcardUri;
+    }
+
+    function getFromVCard ($property, $env) {
+        $mmodel = $env['mmodel'];
+        $value = '';
+        if ($mmodel->hasSP($env['resourceUri'], $property)) {
+            // the value can be returned, because is has been checked with hasSP()
+            return $mmodel->getValue($env['resourceUri'], $property);
+        }
+        if (empty($value) && isset($env['directVcardUri'])) {
+            $value = $env['this']->literal(
+                array('uri' => $env['directVcardUri'], 'property' => $property, 'plain' => true)
+            );
+        }
+        if (empty($value) && isset($env['defaultVcardUri'])) {
+            $value = $env['this']->literal(
+                array('uri' => $env['defaultVcardUri'], 'property' => $property, 'plain' => true)
+            );
+        }
+        return $value;
+    }
+
     $contacts = array(
         'Address'   => array(), // Work and Home
         'Email'     => array(), // Office
@@ -12,22 +55,36 @@
         'Resource'  => array(), // WebID
     );
 
-    // Address Work
-    $room = $this->literal(array(
-        'property'  => 'aksw:room',
-        'prefix'    => ', Room '
-    ));
-    // todo: fetch the address from the vcard resource
-    $workaddress = 'Augustusplatz 10'. $room . ', 04109 Leipzig';
-    $contacts['Address'][] = array(
-        'type'      => 'Work',
-        'label'     => $workaddress,
-        'itemprop'  => 'address'
-    );
+    // Work Address
+    if (isset($directVcardUri)) {
+        $workaddress = $this->renderx(
+            array(
+                'template' => 'local/items/schema-address.phtml',
+                'resourceUri' => $directVcardUri,
+                'superResourceUri' => $this->resourceUri
+            )
+        );
+    }
+    if (empty($workaddress) && isset($defaultVcardUri)) {
+        $workaddress = $this->renderx(
+            array(
+                'template' => 'local/items/schema-address.phtml',
+                'resourceUri' => $defaultVcardUri,
+                'superResourceUri' => $this->resourceUri
+            )
+        );
+    }
+    if (!empty($workaddress)) {
+        $contacts['Address'][] = array(
+            'type'      => 'Work',
+            'label'     => $workaddress,
+            'itemprop'  => 'address'
+        );
+    }
 
     // Email Office
-    if ($mmodel->hasSP($this->resourceUri, 'http://xmlns.com/foaf/0.1/mbox')) {
-        $mboxUri   = $mmodel->getValue($this->resourceUri, 'http://xmlns.com/foaf/0.1/mbox');
+    $mboxUri   = getFromVCard('http://xmlns.com/foaf/0.1/mbox', $env);
+    if (!empty($mboxUri)) {
         $mboxLabel = str_replace ('mailto:', '', $mboxUri );
         $contacts['Email'][] = array(
             'type'      => 'Office',
@@ -38,9 +95,9 @@
     }
 
     // Phone Work
-    if ($mmodel->hasSP($this->resourceUri, 'http://xmlns.com/foaf/0.1/phone')) {
-        $phoneUri   = $mmodel->getValue($this->resourceUri, 'http://xmlns.com/foaf/0.1/phone');
-        $phoneLabel = str_replace ('tel:', '', $phoneUri );
+    $phoneUri   = getFromVCard('http://xmlns.com/foaf/0.1/phone', $env);
+    if (!empty($phoneUri)) {
+        $phoneLabel = str_replace ('tel:', '', $phoneUri);
         $contacts['Phone'][] = array(
             'type'      => 'Work',
             'label'     => $phoneLabel,
@@ -50,27 +107,16 @@
     }
 
     // Fax Work
-    $contacts['Fax'][] = array(
-        'type'      =>'Work',
-        'label'     =>'+49 341 97-32329',
-        'url'       => 'tel:+493419732329',
-        'itemprop'  => 'faxNumber'
-    );
-
-    // Links
-    //$contacts['Link'][] = array(
-                //'type'=>'Weblog',
-                //'label'=>'Personal Techblog',
-                //'url' => '#'
-            //);
-
-    // Resources
-    //$contacts['Resource'][] = array(
-                //'type'=>'WebID',
-                //'label'=>'vorname.nachname.info',
-                //'url'=>'http://vorname.nachname.info/'
-            //);
-
+    $faxUri   = getFromVCard('http://schema.org/faxNumber', $env);
+    if (!empty($faxUri)) {
+        $faxLabel = str_replace ('tel:', '', $faxUri);
+        $contacts['Fax'][] = array(
+            'type'      => 'Work',
+            'label'     => $faxLabel,
+            'url'       => $faxUri,
+            'itemprop'  => 'faxNumber'
+        );
+    }
 
     $name = $this->title;
     $depiction = $this->img(array(
