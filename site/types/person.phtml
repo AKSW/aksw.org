@@ -68,6 +68,9 @@ WHERE {
         UNION
     { <'.$this->resourceUri.'> foaf:isPrimaryTopicOf ?resourceUri .
       ?resourceUri aksw:buttonLabel ?label }
+        UNION
+    { ?resourceUri <http://schema.org/isRelatedTo> <'.$this->resourceUri.'> .
+      ?resourceUri aksw:buttonLabel ?label }
 }';
 $buttons = $this->querylist($queryForButtons, 'local/items/buttons.phtml');
 ?>
