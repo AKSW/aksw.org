@@ -30,12 +30,21 @@ if (!Erfurt_Uri::check($resourceUri)) {
     //$resource = new OntoWiki_Resource($this->resourceUri, OntoWiki::getInstance()->selectedModel);
     //$model   = $resource->getMemoryModel();
 
-    $output  = '<address rel="schema:location" typeof="schema:PostalAdress" prefix="schema:http://schema.org/">'. PHP_EOL;
+    $output  = '<address rel="schema:location" typeof="schema:PostalAdress" prefix="schema:http://schema.org/" prefix="aksw:http://aksw.org/schema/">'. PHP_EOL;
     $output .= $this->literal(array(
         'tag' => 'span',
         'property' => 'schema:streetAddress',
         'suffix' => ',' . PHP_EOL
     ));
+    if (isset($this->options['superResourceUri'])) {
+        $output .= $this->literal(array(
+            'uri' => $this->options['superResourceUri'],
+            'tag' => 'span',
+            'property' => 'aksw:room',
+            'prefix' => 'Room ',
+            'suffix' => ', ' . PHP_EOL
+        ));
+    }
     $output .= $this->literal(array(
         'tag' => 'span',
         'property' => 'schema:postalCode',
