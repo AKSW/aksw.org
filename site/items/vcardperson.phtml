@@ -8,9 +8,7 @@
         $directVcardUri = $mmodel->getValue($this->resourceUri, 'http://schema.org/location');
     }
 
-    $defaultVcardUri = $this->literal(
-        array('uri' => 'http://xmlns.com/foaf/0.1/Person', 'property' => 'schema:location', 'plain' => true)
-    );
+    $defaultVcardUri = $this->templateOptions()->getValue('people-default-location');
 
     $env = array(
         'mmodel' => $mmodel,
