@@ -33,6 +33,11 @@ if (!Erfurt_Uri::check($resourceUri)) {
     $output  = '<address rel="schema:location" typeof="schema:PostalAdress" prefix="schema:http://schema.org/" prefix="aksw:http://aksw.org/schema/">'. PHP_EOL;
     $output .= $this->literal(array(
         'tag' => 'span',
+        'property' => 'schema:name',
+        'suffix' => ',' . PHP_EOL
+    ));
+    $output .= $this->literal(array(
+        'tag' => 'span',
         'property' => 'schema:streetAddress',
         'suffix' => ',' . PHP_EOL
     ));
