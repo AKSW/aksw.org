@@ -16,6 +16,9 @@
 // prepare vars from the querylist helper
 $resourceUri = $this->resourceUri;
 $title       = $this->title;
+if (!isset($this->options)) {
+    $this->options = array();
+}
 
 //if ( ($this->listhint == 'first') || ($this->rowcount == 1) ) {
     //echo "<$tag>" . PHP_EOL;
