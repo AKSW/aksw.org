@@ -1,0 +1,8 @@
+img.depiction {
+    border: 3em;
+    float: left;
+    width: auto;
+    height: auto;
+    max-width: 10em;
+    max-height: 5em;
+}
