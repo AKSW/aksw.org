@@ -1,0 +1,88 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org events template
+ *
+ * arranges the content for the schema:Event class
+ */
+
+/*
+ * prepare date string
+ * <time content="%propertyValue%" property="schema:startDate">for humans</time>
+ */
+$startDate = $this->literal(array(
+    'plain' => true,
+    'property' => 'schema:startDate'
+));
+$humanStartDate = $this->date($startDate, 'd.m.Y');
+if ($startDate != '') {
+    $startDate = "<time property='schema:startDate' datatype='xsd:date' content='$startDate'>$humanStartDate</time>";
+}
+$endDate = $this->literal(array(
+    'plain' => true,
+    'property' => 'schema:endDate'
+));
+$humanEndDate = $this->date($endDate, 'd.m.Y');
+if ($endDate != '') {
+    $endDate = "<time property='schema:endDate' datatype='xsd:date' content='$endDate'>$humanEndDate</time>";
+}
+$date = $startDate;
+if ($endDate != '') {
+    $date .= ' &mdash; ' . $endDate;
+}
+$date = "<h2 class='hookline'>$date</h2>";
+
+$address = $this->query(array(
+    'where'    => '<'.$this->resourceUri.'> schema:location ?resourceUri .',
+    'template' => 'schema-address'
+));
+
+// prepare hookline and abstract (both optional)
+$hookline = $this->literal(array(
+    'property' => 'aksw:hookline',
+    'class' => 'hookline',
+    'prefix' => '<span class="hideme">:</span> '
+));
+$description = $this->literal(array(
+    'property' => 'schema:description',
+    'tag' => 'p',
+    'class' => 'abstract'
+));
+
+$depictions = $this->query(array(
+    'where'    => '{<'.$this->resourceUri.'> schema:image ?resourceUri }',
+    'template' => 'depictions'
+));
+
+// prepare performer
+$performer = $this->query(array(
+    'where'    => '{ <' . $this->resourceUri . '> schema:performer ?resourceUri .} ' ,
+    'template' => 'talk-performer'
+));
+
+// create side navigation
+$navOptions = array(
+    'navProperty' => 'http://aksw.org/schema/sideNavigation',
+    'navClass' => 'nav-sidelinks',
+    'suffix'    => '<!-- /#nav-sidelinks -->',
+    'activeUrl' => $this->resourceUri
+);
+
+?>
+
+<?php echo $this->navigationList($navOptions); ?>
+<header class="intro">
+    <h1>
+        <span property="schema:name"><?php echo $this->title ?></span>
+        <?php echo $hookline ?>
+    </h1>
+    <?php echo $date, $description, $address ?>
+</header> <!-- /.intro -->
+<?php echo $performer ?>
+

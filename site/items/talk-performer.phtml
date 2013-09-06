@@ -1,0 +1,63 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2013, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * querylist talk performer element template (site independent)
+ *
+ */
+
+// prepare vars from the querylist helper
+$resourceUri = $this->resourceUri;
+$title       = $this->title;
+$oddclass    = $this->oddclass;
+
+if ( ($this->listhint == 'first') || ($this->rowcount == 1) ) {
+    echo "<div class='query-list-talk-performer'>" . PHP_EOL;
+}
+
+// if we have a literal item, do not do anything but a html comment
+if (!Erfurt_Uri::check($resourceUri)) {
+    echo "<!-- $title is not a resource -->";
+} else {
+    // prepare the logo link
+    $logo          = $this->img(array(
+        'property' => 'foaf:depiction',
+        'class'    => 'logo',
+        'alt'      => 'depiction',
+        'prefix'   => '<div class="logo">',
+        'suffix'   => '</div>'
+    ));
+    if ($logo != '') {
+        $logolink = $this->link(array(
+            'uri'    => $resourceUri, 'text' => $logo,
+            'prefix'   => '<!-- project logo start -->',
+            'suffix'   => '<!-- project logo end -->',
+        ));
+    } else {
+        $logolink = '';
+    }
+
+    // prepare the abstract
+    $content      = $this->literal(array(
+        'uri'      => $resourceUri,
+        'property' => 'site:content',
+        'tag'      => 'p',
+        'class'    => 'abstract')
+    );
+?>
+    <div about="<?php echo $this->curie($resourceUri) ?>" class="abstract <?php echo $logo ? 'abstract-with-logo': '' ?>">
+    <h2><strong><?php echo $title ?></strong></h2>
+    <?php echo $logo ?>
+    <?php echo $content ?>
+    </div>
+<?php
+}
+
+if ( ($this->listhint == 'last') || ($this->rowcount == 1) ) {
+    echo "</div>" . PHP_EOL;
+}
