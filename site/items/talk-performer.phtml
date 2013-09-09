@@ -30,14 +30,14 @@ if (!Erfurt_Uri::check($resourceUri)) {
 } else {
     // prepare the logo link
     $logo          = $this->img(array(
-        'property' => 'foaf:depiction',
+        'property' => 'schema:image',
         'class'    => 'logo',
         'alt'      => 'depiction',
         'prefix'   => '<div class="logo">',
         'suffix'   => '</div>'
     ));
 
-    $affiliationUri = $resourceModel->getValue($resourceUri, 'http://aksw.org/schema/affiliation');
+    $affiliationUri = $resourceModel->getValue($resourceUri, 'http://schema.org/affiliation');
     if ($affiliationUri === null) {
         $affiliation = '';
     } else {
