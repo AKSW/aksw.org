@@ -12,9 +12,13 @@
  */
 
 // prepare vars from the querylist helper
-$resourceUri = $this->resourceUri;
-$title       = $this->title;
-$oddclass    = $this->oddclass;
+$resourceUri   = $this->resourceUri;
+$resource      = new OntoWiki_Resource(
+    $this->resourceUri, OntoWiki::getInstance()->selectedModel
+);
+$resourceModel = $resource->getMemoryModel();
+$title         = $this->title;
+$oddclass      = $this->oddclass;
 
 if ( ($this->listhint == 'first') || ($this->rowcount == 1) ) {
     echo "<div class='query-list-talk-performer'>" . PHP_EOL;
@@ -32,28 +36,32 @@ if (!Erfurt_Uri::check($resourceUri)) {
         'prefix'   => '<div class="logo">',
         'suffix'   => '</div>'
     ));
-    if ($logo != '') {
-        $logolink = $this->link(array(
-            'uri'    => $resourceUri, 'text' => $logo,
-            'prefix'   => '<!-- project logo start -->',
-            'suffix'   => '<!-- project logo end -->',
-        ));
+
+    $affiliationUri = $resourceModel->getValue($resourceUri, 'http://aksw.org/schema/affiliation');
+    if ($affiliationUri === null) {
+        $affiliation = '';
     } else {
-        $logolink = '';
+        $affiliation = $this->link(
+            array(
+                'uri'    => $affiliationUri,
+                'direct' => 'true',
+                'prefix'   => '<h3 class="affiliation">',
+                'suffix'   => '</h3>'
+            )
+        );
     }
 
     // prepare the abstract
     $content      = $this->literal(array(
-        'uri'      => $resourceUri,
         'property' => 'site:content',
         'tag'      => 'p',
         'class'    => 'abstract')
     );
 ?>
-    <div about="<?php echo $this->curie($resourceUri) ?>" class="abstract <?php echo $logo ? 'abstract-with-logo': '' ?>">
-    <h2><strong><?php echo $title ?></strong></h2>
+    <div about="<?php echo $this->curie($resourceUri) ?>" class="clearfix abstract <?php echo $logo ? 'abstract-with-logo': '' ?>">
     <?php echo $logo ?>
-    <?php echo $content ?>
+    <h2><a href="<?php echo $resourceUri ?>"><?php echo $title ?></a></h2>
+    <?php echo $affiliation, $content ?>
     </div>
 <?php
 }
