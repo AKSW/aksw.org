@@ -1,3 +1,4 @@
+/*
 img.depiction {
     border: 3em;
     float: left;
@@ -5,4 +6,9 @@ img.depiction {
     height: auto;
     max-width: 10em;
     max-height: 5em;
+}
+*/
+
+div.exhibit-toolboxWidget-popup {
+    position: static !important;
 }
