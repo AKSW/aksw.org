@@ -508,13 +508,13 @@
     width: 66.737%;
     float: left;
     clear: left;
-    margin-top: -21.923em;
+    margin-top: 4.423em;
     margin-bottom: 5.385em;
     position: relative;
     z-index: 100;
   }
 
-  #sidecontent, #associations, #userinfo, #search {
+  #sidecontent, #userinfo, #search {
     width: auto;
     margin-left: 66.737%;
     padding-left: 2.308em;
