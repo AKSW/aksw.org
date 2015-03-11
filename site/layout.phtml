@@ -106,7 +106,7 @@ $types = $memoryModel->getValues($this->resourceUri, EF_RDF_TYPE);
     // includes the exhibit header links
     $this->headScriptExhibit( array(
         array ('uri' => 'http://aksw.org/schema/publicationTag',
-               'sprintf' => 'http://docs.aksw.org/BibsonomyProxy/exhibit-proxy.php?suffix=user/aksw/%s&callback=cb'),
+               'sprintf' => 'http://www.bibsonomy.org/json/user/aksw/%s?callback=cb'),
         array ('uri' => 'http://lod2.eu/schema/exhibitData')
     ));
     // other head scripts
