@@ -3,7 +3,7 @@
  * This file is part of the {@link http://ontowiki.net OntoWiki} project.
  *
  * @copyright Copyright (c) 2009, {@link http://aksw.org AKSW}
- * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ * @license   http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
  */
 
 /**
@@ -465,6 +465,8 @@ function populateRDFauthor(data, protect, resource, graph, workingmode) {
                     // remove all values except for type
                     if ( stmt.predicateURI() !== 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' ) {
                         stmt._object.value = "";
+                    } else {
+                        stmt._hidden = true;
                     }
                 }
 

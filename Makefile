@@ -1,4 +1,4 @@
-ZENDVERSION=1.12.7
+ZENDVERSION=1.12.9
 ZEND2VERSION=2.2.2
 
 default:
@@ -218,7 +218,7 @@ test-integration-mysql-cc: test-directories
 	@cd application/tests/integration && EF_STORE_ADAPTER=zenddb phpunit
 
 test-extensions: directories
-	@phpunit --bootstrap application/tests/Bootstrap.php extensions
+	@phpunit --bootstrap application/tests/BootstrapExtensions.php extensions
 
 test:
 	make test-unit
