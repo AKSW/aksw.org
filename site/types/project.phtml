@@ -73,7 +73,8 @@ $screenshots = $this->query(array(
 $content = $this->literal(array('tag' => 'div', 'class' => 'content'));
 
 // prepare team list
-$team = $this->query(array(
+$team = '<div class="c50l"><div class="subcl"><h1>Project Team</h1>';
+$team.= $this->query(array(
     'where' => '{?resourceUri foaf:currentProject <'.$this->resourceUri.'> .} UNION '.
         '{<'.$this->resourceUri.'> doap:maintainer ?resourceUri . }'.
         ' OPTIONAL { ?resourceUri <http://xmlns.com/foaf/0.1/familyName> ?familyName }',
@@ -81,9 +82,16 @@ $team = $this->query(array(
     'template' => 'liplain',
     'activeSuffix' => ' (Principle Contact / Maintainer)',
     'active' => $this->literal(array('property' => 'doap:maintainer', 'plain' => 'true')),
-    'prefix' => '<div class="c50l"><div class="subcl"><h1>Current Team</h1>',
-    'suffix' => '</div></div>'
 ));
+$team.= $this->query(array(
+    'where' => '{?resourceUri foaf:pastProject <'.$this->resourceUri.'> .}'.
+        ' OPTIONAL { ?resourceUri <http://xmlns.com/foaf/0.1/familyName> ?familyName }',
+    'orderby' => 'ASC(?familyName)',
+    'template' => 'liplain',
+    'prefix' => '<h2>Former Members</h2>' . PHP_EOL,
+));
+$team.= "</div></div>";
+
 
 // prepare partner list
 $partner = $this->query(array(
