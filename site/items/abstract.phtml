@@ -48,7 +48,8 @@ if (!Erfurt_Uri::check($resourceUri)) {
     ));
     if ($logo != '') {
         $logolink = $this->link(array(
-            'uri'    => $resourceUri, 'text' => $logo,
+            'uri'    => $resourceUri,
+            'text' => $logo,
             'prefix'   => '<!-- project logo start -->',
             'suffix'   => '<!-- project logo end -->',
         ));
