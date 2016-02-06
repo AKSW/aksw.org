@@ -54,13 +54,13 @@ $types = $memoryModel->getValues($this->resourceUri, EF_RDF_TYPE);
         href="<?php echo $this->baseUri ?>/css/addons.css"
         title="Standard" />
     <link
-        rel="icon" 
-        type="image/png" 
+        rel="icon"
+        type="image/png"
         href="<?php echo $this->baseUri ?>/images/favicon.png" />
 
     <link rel="alternate"
-        type="application/wiki" 
-        title="Edit this page!" 
+        type="application/wiki"
+        title="Edit this page!"
         href="javascript:myEdit()" />
 
     <!-- TODO: we should include all the js via a parallel loading script.
@@ -81,7 +81,7 @@ $types = $memoryModel->getValues($this->resourceUri, EF_RDF_TYPE);
         function myEdit() {
             RDFauthor.edit({
                 loadOwStylesheet: false,
-                onSubmitSuccess: function() { 
+                onSubmitSuccess: function() {
                   // HACK: reload whole page after 500 ms
                   window.setTimeout(function () {
                       window.location.href = window.location.href;
