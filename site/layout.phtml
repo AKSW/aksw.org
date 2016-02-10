@@ -123,7 +123,7 @@ $types = $memoryModel->getValues($this->resourceUri, EF_RDF_TYPE);
                 <?php echo $this->partial('local/header.phtml', $templateData) ?>
             <article id="content">
                 <?php //echo $this->partial('local/breadcrumbs.phtml', $templateData) ?>
-                <?php echo $this->renderx(); ?>
+                <?php echo $this->renderx($this->templateData); ?>
             </article> <!-- /#content -->
             <section id="sidecontent">
                 <?php echo $this->partial('local/side.phtml', $templateData) ?>
@@ -133,4 +133,3 @@ $types = $memoryModel->getValues($this->resourceUri, EF_RDF_TYPE);
     </div> <!-- /.page_margins -->
 </body>
 </html>
-
