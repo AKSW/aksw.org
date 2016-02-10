@@ -10,3 +10,6 @@
 [submodule "Thesisannouncements"]
 	path = Thesisannouncements
 	url = https://github.com/AKSW/googledoc-viewer.git
+[submodule "site/libs/AnnotationClient"]
+	path = site/libs/AnnotationClient
+	url = https://github.com/AKSW/AnnotationClient.git
