@@ -213,13 +213,13 @@ class ExhibitProxy
                 $newItem->mergeWith(new ExhibitItem( $this->json->items[$delete] ));
                 $this->json->items[$hold] = $newItem->getContent();
             }
-        }
 
-        // and again iterate (this time, add only non-sameas_ referenced items
-        $items = array ();
-        foreach ($this->json->items as $intraHash => $item) {
-            if ($this->sameAsIntraHashs[$intraHash] != true) {
-                $items[] = $item;
+            // and again iterate (this time, add only non-sameas_ referenced items
+            $items = array ();
+            foreach ($this->json->items as $intraHash => $item) {
+                if ($this->sameAsIntraHashs[$intraHash] != true) {
+                    $items[] = $item;
+                }
             }
         }
         $this->json->items = $items;
