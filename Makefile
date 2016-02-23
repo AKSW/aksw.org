@@ -90,6 +90,11 @@ custom:
 	git clone git://github.com/AKSW/site.ontowiki.git extensions/site
 	rm -f extensions/site/sites/local
 	cd extensions/site/sites/ && ln -s ../../../site local
+	rm -rf Thesisannouncements
+	@echo 'Cloning Thesisannouncements'
+	git clone git://github.com/AKSW/googledoc-viewer.git Thesisannouncements
+	cd Thesisannouncements && curl -s https://getcomposer.org/installer | php && php composer.phar install
+
 
 # top level target
 
