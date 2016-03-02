@@ -23,5 +23,5 @@ on how to set up different Sites and new Content
 ## Setting up Thesis Announcements Feature
 
 1. Please see https://github.com/AKSW/googledoc-viewer and follow the Deploy Steps starting with step 2
-2. in Model, set template (http://ns.ontowiki.net/SysOnt/Site/template) to 'teaching' which itself renders the thesisannouncement template
+2. in Model, set template (http://ns.ontowiki.net/SysOnt/Site/template) if the 'Teaching' Document to 'teaching' which itself renders the thesisannouncement template
 3. to see the provided theses on each individual supervisor page, set the supervisorTag (http://aksw.org/schema/supervisorTag) to the respective Name in the Model
