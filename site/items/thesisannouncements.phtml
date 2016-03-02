@@ -1,0 +1,66 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2015, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org supervison template
+ *
+ * this template renders a resources thesis supervisons
+ */
+
+$baseUrl = 'http://aksw.org/Thesisannouncements';
+
+$supervisorTag   = $this->literal(array(
+    'property' => 'aksw:supervisorTag',
+    'plain' => true
+));
+$templateOptions = $this->literal(array(
+    'property' => 'site:templateOption',
+    'array' => 'true'
+));
+if (
+    (isset($supervisorTag) && !empty($supervisorTag)) ||
+    (isset($this->options['enabled']) && $this->options['enabled'])
+) :
+?>
+
+<?php if (in_array('noheading', $templateOptions) === false) : ?>
+<h1>Thesis and Essay Proposals</h1>
+<?php endif; ?>
+
+<div id="thesisproposal_filter"></div>
+
+<div id="thesisproposal_reply"></div>
+
+<script src="<?= $baseUrl ?>/formhandler.js"></script>
+<script type="text/javascript">
+
+    var endpoint = '<?= $baseUrl ?>/requestHandler.php';
+    var id = 'thesisproposal_filter';
+    var replyId = 'thesisproposal_reply';
+
+    var labels = {
+        "Sorry, no topic matched your criteria." : "Sorry, no topic matched your criteria.",
+        "status":"Status",
+        "type": "Type",
+        "bachelorThesis": "Bachelor Thesis",
+        "masterThesis": "Master Thesis",
+        "project": "Project",
+        "dissertation": "Dissertation"
+    };
+
+    var selector;
+    <?php if (isset($supervisorTag) && !empty($supervisorTag)): ?>
+    //if ($this->property("rdf:type") == "foaf:Person")
+    selector = {"supervisor" :"<?= $supervisorTag ?>"};
+    <?php endif; ?>
+
+    $(document).ready(function(){
+        showform(endpoint,id,replyId,labels,selector);
+    });
+</script>
+<?php endif; ?>
