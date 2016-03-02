@@ -13,3 +13,6 @@
 [submodule "extensions/feeds"]
 	path = extensions/feeds
 	url = git://github.com/AKSW/feeds.ontowiki.git
+[submodule "Thesisannouncements"]
+	path = Thesisannouncements
+	url = https://github.com/AKSW/googledoc-viewer.git
