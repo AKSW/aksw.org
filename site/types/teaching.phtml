@@ -1,0 +1,51 @@
+<?php
+/**
+ * This file is part of the {@link http://ontowiki.net OntoWiki} project.
+ *
+ * @copyright Copyright (c) 2011, {@link http://aksw.org AKSW}
+ * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
+ */
+
+/**
+ * aksw.org project template
+ *
+ * arranges the content for the project class
+ */
+
+// prepare hookline and abstract (both optional)
+// yes, hookline also for documents please :-)
+$hookline = $this->literal(array(
+    'property' => 'aksw:hookline',
+    'class' => 'hookline',
+    'prefix' => '<span class="hideme">:</span> '
+));
+$abstract = $this->literal(array(
+    'property' => 'dcterms:abstract',
+    'tag' => 'p',
+    'class' => 'abstract'
+));
+
+// create optional side navigation
+$sideNavigation = $this->navigationList(
+    array(
+        'navProperty' => 'http://aksw.org/schema/sideNavigation',
+        'navClass' => 'nav-sidelinks',
+        'suffix'    => '<!-- /#nav-sidelinks -->',
+        'activeUrl' => $this->resourceUri
+    )
+);
+echo $sideNavigation;
+?>
+<header class="intro">
+    <h1><?php echo $this->title . $hookline ?></h1>
+    <?php echo $abstract ?>
+</header> <!-- /.intro -->
+<?php
+echo $this->literal(array('tag' => 'div', 'class' => 'content')); // uses default content properties
+echo $this->renderx(array(
+    'template' => 'local/items/thesisannouncements.phtml',
+    'enabled' => true
+));
+echo $this->renderx(array(
+    'template' => 'local/items/publications.phtml'
+));

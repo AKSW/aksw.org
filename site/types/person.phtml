@@ -89,7 +89,10 @@ $buttons = $this->querylist($queryForButtons, 'local/items/buttons.phtml');
 
 <?php echo $this->literal(array('tag' => 'div', 'class' => 'content')) ?>
 <?php echo $currentProjects, $pastProjects; ?>
-<?php echo $this->renderx(array(
+<?php
+echo $this->renderx(array(
+    'template' => 'local/items/thesisannouncements.phtml'
+));
+echo $this->renderx(array(
     'template' => 'local/items/publications.phtml'
 ));
-
