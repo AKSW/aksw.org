@@ -29,19 +29,19 @@ if (
 ?>
 
 <?php if (in_array('noheading', $templateOptions) === false) : ?>
-<h1>Thesis and Essay Proposals</h1>
+<h1>Thesis and Essay Announcements</h1>
 <?php endif; ?>
 
-<div id="thesisproposal_filter"></div>
+<div id="thesisannouncement_filter"></div>
 
-<div id="thesisproposal_reply"></div>
+<div id="thesisannouncement_reply"></div>
 
 <script src="<?= $baseUrl ?>/formhandler.js"></script>
 <script type="text/javascript">
 
     var endpoint = '<?= $baseUrl ?>/requestHandler.php';
-    var id = 'thesisproposal_filter';
-    var replyId = 'thesisproposal_reply';
+    var id = 'thesisannouncement_filter';
+    var replyId = 'thesisannouncement_reply';
 
     var labels = {
         "Sorry, no topic matched your criteria." : "Sorry, no topic matched your criteria.",
