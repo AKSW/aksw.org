@@ -18,6 +18,12 @@ $editUrl = $this->wikiBaseUrl .'view?r=' . urlencode($this->resourceUri);
 // this is the standard template data
 $templateData = $this->templateData;
 
+if ($this->templateOptions()->getValue('pingbackUrl')) {
+    $this->pingbackUrl = $this->templateOptions()->getValue('pingbackUrl');
+} elseif (isset($templateData['pingbackUrl'])) {
+    $this->pingbackUrl = $templateData['pingbackUrl'];
+}
+
 $memoryModel = new Erfurt_Rdf_MemoryModel($this->description);
 $types = $memoryModel->getValues($this->resourceUri, EF_RDF_TYPE);
 
