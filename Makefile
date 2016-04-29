@@ -1,14 +1,25 @@
 PHPUNIT = ./vendor/bin/phpunit
 PHPCS = ./vendor/bin/phpcs
 PHPCBF = ./vendor/bin/phpcbf
+
+# Get calid composer executable
+COMPOSER = $(shell which composer)
+ifeq ($(findstring composer, $(COMPOSER)), )
+    COMPOSER = $(shell which composer.phar)
+    ifeq ($(findstring composer.phar, $(COMPOSER)), )
+        ifneq ($(wildcard composer.phar), )
+            COMPOSER = php composer.phar
+        else
+            COMPOSER =
+        endif
+    endif
+endif
+
 default:
 	@echo "Typical targets your could want to reach:"
 	@echo ""
 	@echo "-->   make deploy ............... Install OntoWiki <-- in doubt, use this"
-	@echo "                                  (use this for server installations)"
-	@echo ""
-	@echo "      make install .............. Install OntoWiki for developer"
-	@echo "                                  (you will need github access and ssh for this)"
+	@echo "      make install .............. deploy and install are equivalent"
 	@echo ""
 	@echo "      make help ................. Show more (developer related) make targets"
 	@echo ""
@@ -19,7 +30,7 @@ default:
 help:
 	@echo "Please use: (e.g. make deploy)"
 	@echo "     deploy ..................... Runs everything which is needed for a deployment"
-	@echo "     install .................... Make directories and libraries"
+	@echo "     install .................... Equivalent to deploy"
 	@echo "     help ....................... This help screen"
 	@echo "     help-cs .................... Show help for code sniffing targets"
 	@echo "     help-test .................. Show help for test related targets"
@@ -32,7 +43,8 @@ help:
 
 help-cs:
 	@echo "Please use: (e.g. make codesniffer)"
-	@echo "     codesniffer ............................ Run CodeSniffer"
+	@echo "     codesniffer ............................ Run CodeSniffer except for the FileCommentSniff"
+	@echo "			codesniffer_year ....................... Run CodeSniffer including the FileCommentSniff"
 	@echo "     codebeautifier ......................... Run CodeBeautifier"
 
 help-test:
@@ -62,16 +74,18 @@ custom:
 
 # top level target
 
-getcomposer: #seems that there is no way to constantly get the newest version(install way outdates with new versions)
-	php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php
-	php -r "if (hash('SHA384', file_get_contents('composer-setup.php')) === '41e71d86b40f28e771d4bb662b997f79625196afcca95a5abf44391188c695c6c1456e16154c75a211d238cc3bc5cb47') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); }"
-	php composer-setup.php
-	php -r "unlink('composer-setup.php');"
+getcomposer:
+	curl -o composer.phar "https://getcomposer.org/composer.phar"
 	php composer.phar self-update
 
 install: deploy
 
+ifdef COMPOSER
 deploy: directories clean composer-install
+else
+deploy: getcomposer
+	make deploy
+endif
 
 vagrant: directories clean #add composer install
 	rm -rf libraries/Zend # vagrant has own zend
@@ -113,8 +127,20 @@ submodules-developer: # read-write
 add-upstream:
 	git remote add upstream git://github.com/AKSW/OntoWiki.git
 
+ifdef COMPOSER
 composer-install: #add difference for user and dev (with phpunit etc and without)
-	php composer.phar install
+	$(COMPOSER) install
+else
+composer-install:
+	@echo
+	@echo
+	@echo "!!! make $@ failed !!!"
+	@echo
+	@echo "Sorry, there doesn't seem to be a PHP composer (dependency manager for PHP) on your system!"
+	@echo "Please have a look at http://getcomposer.org/ for further information,"
+	@echo "or just run 'make getcomposer' to download the composer locally"
+	@echo "and run 'make $@' again"
+endif
 
 # test stuff
 
@@ -165,21 +191,15 @@ debianize:
 	rm Makefile
 	@echo "now do: cp -R application/scripts/debian debian"
 
-
-# coding standard
-STANDARD =application/tests/CodeSniffer/Standards/Ontowiki/ruleset.xml
 # #### config ####
 
-# ignore pattern
-IGNOREPATTERN =libraries,extensions/exconf/pclzip.lib.php,extensions/exconf/Archive.php,application/scripts,extensions/markdown/parser/markdown.php,vendor
-
-REQUESTSTR =-p --standard=$(STANDARD) --ignore=$(IGNOREPATTERN) --extensions=php */
-
 codesniffer:
-	$(PHPCS) $(REQUESTSTR)
+	$(PHPCS)
 
+codesniffer_year:
+	$(PHPCS) --standard=phpcs_year.xml
 codebeautifier:
-	$(PHPCBF) $(REQUESTSTR)
+	$(PHPCBF)
 
 # other stuff
 
