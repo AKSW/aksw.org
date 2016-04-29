@@ -11,6 +11,9 @@ used to fetch and push OntoWiki changesets.
 ## Setup
 
 To use `aksw.org` please run `make deploy` and `make custom`.
+For correctly invoking sendmail the according sendmail parameter has to be configuired in `php.ini` resp. a separate file in `conf.d`:
+
+    sendmail_path = /usr/sbin/sendmail -t -i -f'from@my-domain.net'
 
 ## Setting up Sites and Templates
 
