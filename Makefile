@@ -70,6 +70,7 @@ custom:
 	@echo 'Cloning Thesisannouncements'
 	git clone git://github.com/AKSW/googledoc-viewer.git Thesisannouncements
 	cd Thesisannouncements && curl -s https://getcomposer.org/installer | php && php composer.phar install
+	cd Thesisannouncements && npm install datatables.net && npm install datatables.net-dt
 
 
 # top level target
