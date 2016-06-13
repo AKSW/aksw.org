@@ -69,15 +69,15 @@ custom:
 	if [ -d "Thesisannouncements/backend/serviceConfigs" ]; then \
 		rm -rf ThesisannouncementsConfigBackup ;\
 		mkdir ThesisannouncementsConfigBackup ;\
-		cp -r Thesisannouncements/backend/config.php Thesisannouncements/backend/serviceConfigs ThesisannouncementsConfigBackup ;\
+		cp -r Thesisannouncements/backend/serviceConfigs ThesisannouncementsConfigBackup ;\
+		cp Thesisannouncements/backend/config.php ThesisannouncementsConfigBackup ;\
 	fi
 	rm -rf Thesisannouncements
 	@echo 'Cloning Thesisannouncements'
 	git clone git://github.com/AKSW/googledoc-viewer.git Thesisannouncements
 	cd Thesisannouncements && curl -s https://getcomposer.org/installer | php && php composer.phar install
-	cd Thesisannouncements && npm install datatables.net && npm install datatables.net-dt
 	if [ -d "ThesisannouncementsConfigBackup" ]; then \
-		cp -r ThesisannouncementsConfigBackup Thesisannouncements/backend ;\
+		cp -r ThesisannouncementsConfigBackup/* Thesisannouncements/backend ;\
 		rm -rf ThesisannouncementsConfigBackup ;\
 	fi
 
