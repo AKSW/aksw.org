@@ -1,0 +1,12 @@
+# robots.txt for aksw.org
+# Those webcrawlers are excluded
+User-agent: *
+Allow: /*.html$
+Allow: /*.rdf$
+Allow: /*.ttl$
+
+Disallow: /history/
+Disallow: /source/
+Disallow: /model/
+Disallow: /resource/
+
