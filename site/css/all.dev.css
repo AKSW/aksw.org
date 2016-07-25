@@ -996,8 +996,28 @@
     border-radius: 0.154em / 0.462em;
     cursor: pointer;
   }
+  button.current, .button.current {
+    display: inline-block;
+    color: black;
+    background: #d9e7f6;
+    border-width: 1px;
+    border-style: none;
+    border-color: white;
+    font-weight: normal;
+    text-decoration: none;
+    line-height: 1.538;
+    padding: 0.269em;
+    margin: 0.385em 0.385em 0 0;
+    -webkit-border-radius: 0.154em 0.462em;
+    -moz-border-radius: 0.154em / 0.462em;
+    -o-border-radius: 0.154em / 0.462em;
+    -ms-border-radius: 0.154em / 0.462em;
+    -khtml-border-radius: 0.154em / 0.462em;
+    border-radius: 0.154em / 0.462em;
+    cursor: pointer;
+  }  
   button:focus, button:hover, .button:focus, .button:hover {
-    background: #333333;
+    background: #757474;
   }
   button:active, .button:active {
     background: black;
