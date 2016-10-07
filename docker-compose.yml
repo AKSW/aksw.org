@@ -1,0 +1,59 @@
+version: '2'
+services:
+  aksw_docker_virtuoso:
+    image: tenforce/virtuoso
+    container_name: aksw_docker_virtuoso
+    environment:
+      DBA_PASSWORD: dba
+      SPARQL_UPDATE: "true"
+    volumes:
+      - /data
+    ports:
+      - "8890:8890"
+      - "1111:1111"
+      
+  aksw_docker_mysql:
+    image: mysql
+    container_name: aksw_docker_mysql
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_USER: php
+      MYSQL_PASSWORD: owdev
+      MYSQL_DATABASE: ontowiki-dev
+    volumes:
+      - /var/lib/mysql
+    ports:
+      - "3306:3306"
+      
+  aksw_docker_phpserver:
+    build: ./docker/php
+    image: aksw_docker/phpserver
+    container_name: aksw_docker_phpserver
+    volumes:
+      - .:/var/www/aksw.org
+      - /var/www/ontowiki
+    links:
+      - aksw_docker_virtuoso
+      - aksw_docker_mysql
+
+  nginx_ontowiki:
+    build: ./docker/nginx-ontowiki
+    image: aksw_docker/nginx-ontowiki
+    container_name: aksw_docker_nginx_ontowiki
+    volumes:
+      - /var/www/ontowiki
+    links:
+      - aksw_docker_phpserver
+    ports:
+      - "8080:8080"
+      
+  nginx_aksw:
+    build: ./docker/nginx-aksw
+    image: aksw_docker/nginx-aksw
+    container_name: aksw_docker_nginx_aksw
+    volumes:
+      - .:/var/www/aksw.org
+    links:
+      - aksw_docker_phpserver
+    ports:
+      - "80:8081"
