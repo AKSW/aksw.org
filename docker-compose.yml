@@ -12,19 +12,6 @@ services:
       - "8890:8890"
       - "1111:1111"
       
-  aksw_docker_mysql:
-    image: mysql
-    container_name: aksw_docker_mysql
-    environment:
-      MYSQL_RANDOM_ROOT_PASSWORD: 1
-      MYSQL_USER: php
-      MYSQL_PASSWORD: owdev
-      MYSQL_DATABASE: ontowiki-dev
-    volumes:
-      - /var/lib/mysql
-    ports:
-      - "3306:3306"
-      
   aksw_docker_phpserver:
     build: ./docker/php
     image: aksw_docker/phpserver
@@ -34,7 +21,6 @@ services:
       - /var/www/ontowiki
     links:
       - aksw_docker_virtuoso
-      - aksw_docker_mysql
 
   nginx_ontowiki:
     build: ./docker/nginx-ontowiki
@@ -57,3 +43,6 @@ services:
       - aksw_docker_phpserver
     ports:
       - "80:8081"
+      
+#TODO shared Volumes for Ontowiki
+#invalid controller message
