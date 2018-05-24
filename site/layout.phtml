@@ -102,8 +102,6 @@ $types = $memoryModel->getValues($this->resourceUri, EF_RDF_TYPE);
     <title><?php echo $templateData['title'] ?> &mdash; <?php echo $this->siteConfig['name'] ?></title>
 
 <?php
-    // includes the GA header script
-    $this->headScriptGoogleAnalytics('UA-241023-8');
     // includes the exhibit header links
     $this->headScriptExhibit( array(
         array ('uri' => 'http://aksw.org/schema/publicationTag',
