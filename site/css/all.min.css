@@ -1,4 +1,4 @@
-@charset "UTF-8";@import url("http://fonts.googleapis.com/css?family=Droid+Sans");@media all{*{margin:0;padding:0}
+@charset "UTF-8";@font-face {font-family: 'Droid Sans';font-style: normal;font-weight: 400;src: local('Droid Sans Regular'), local('DroidSans-Regular'), url(./web_fonts/droidsans_regular_macroman/DroidSans-webfont.woff) format('woff');};@media all{*{margin:0;padding:0}
 option{padding-left:.4em}
 select{padding:1px}
 * html body *{overflow:visible}
