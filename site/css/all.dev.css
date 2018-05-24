@@ -21,8 +21,13 @@
  * 3) additional styles for print media
  * 4) customization on special media types
  */
-/* == IMPORTS ========================================================== */
-@import url("http://fonts.googleapis.com/css?family=Droid+Sans");
+/* latin */
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Sans Regular'), local('DroidSans-Regular'), url(./web_fonts/droidsans_regular_macroman/DroidSans-webfont.woff) format('woff');
+}
 /* "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework 3.3.1       */
 /*
  *
